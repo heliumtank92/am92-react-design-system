@@ -1,0 +1,41 @@
+{
+  "name": "@am92/react-design-system",
+  "version": "0.0.1",
+  "description": "ReactJS Design System using Material UI",
+  "type": "module",
+  "main": "src/index.mjs",
+  "module": "src/index.mjs",
+  "scripts": {
+    "test": "echo 'Error: no test specified'",
+    "preversion": "pnpm test",
+    "version": "echo 'Versioning'",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": "git@github.com:heliumtank92/am92-react-design-system.git",
+  "homepage": "https://github.com/heliumtank92/am92-react-design-system#readme",
+  "contributors": [
+    {
+      "name": "Ankit Gandhi",
+      "email": "ankitgandhi452@gmail.com",
+      "url": "https://github.com/ankitgandhi452"
+    },
+    {
+      "name": "Mehul Agarwal",
+      "email": "agarwalmehul92@gmail.com",
+      "url": "https://github.com/agarwalmehul"
+    }
+  ],
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [
+    "react",
+    "reactjs",
+    "material",
+    "material ui",
+    "design system"
+  ]
+}
