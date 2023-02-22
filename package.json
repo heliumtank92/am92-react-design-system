@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "ReactJS Design System using Material UI",
   "type": "module",
-  "main": "src/index.mjs",
-  "module": "src/index.mjs",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
     "test": "echo 'Error: no test specified'",
     "preversion": "pnpm test",
@@ -26,11 +26,33 @@
     }
   ],
   "license": "MIT",
+  "sideEffects": false,
   "exports": {
-    ".": "./src/index.mjs"
+    ".": "./src/index.js",
+    "./Components": "./src/Components/index.js",
+    "./Hocs": "./src/Hocs/index.js",
+    "./Theme": "./src/Theme/index.js",
+    "./locale": "./src/locale.js",
+    "./material": "./src/material.js",
+    "./styles": "./src/styles.js",
+    "./transitions": "./src/transitions.js",
+    "./utils": "./src/utils.js"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/base": "5.0.0-alpha.118",
+    "@mui/lab": "5.0.0-alpha.120",
+    "@mui/material": "^5.11.10",
+    "@mui/system": "^5.11.9",
+    "@mui/x-date-pickers": "^5.0.19",
+    "mui-image": "^1.0.7",
+    "prop-types": "^15.8.1"
+  },
+  "peerDependencies": {
+    "react": "^18.x.x",
+    "react-dom": "^18.x.x"
+  },
   "keywords": [
     "react",
     "reactjs",
