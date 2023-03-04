@@ -32,6 +32,7 @@
     "./Components": "./src/Components/index.js",
     "./Hocs": "./src/Hocs/index.js",
     "./Theme": "./src/Theme/index.js",
+    "./Constants": "./src/Constants/index.js",
     "./locale": "./src/locale.js",
     "./material": "./src/material.js",
     "./styles": "./src/styles.js",

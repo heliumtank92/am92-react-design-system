@@ -1,17 +1,21 @@
+import PALETTE from '../Constants/PALATTE'
+import FONT_FAMILY_NAME from '../Constants/FONT_FAMILY_NAME'
+
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 import getColorScheme from './getColorScheme'
 import getTypography from './getTypography'
 import breakpoints from './breakpoints'
 import components from './components'
 import dsRules from './rules'
-import { dsSpacingCssVars, SPACE_COEFFICIENT } from './spacing'
+import dsSpacing, { dsSpacingCssVars, SPACE_COEFFICIENT } from './spacing'
 import dsElevation from './elevation'
 
-export default function getTheme (colorPalette = {}, fontFamilyName = '') {
+export default function getTheme (palette = {}, fontFamilyName = FONT_FAMILY_NAME) {
   const { typography, dsTypo } = getTypography(fontFamilyName)
+
+  const colorPalette = { ...PALETTE, ...palette }
   const lightColorScheme = getColorScheme(colorPalette, 'light')
   const darkColorScheme = getColorScheme(colorPalette, 'dark')
-
   const colorSchemes = {}
 
   if (lightColorScheme) {
@@ -54,3 +58,5 @@ export default function getTheme (colorPalette = {}, fontFamilyName = '') {
   window.theme = theme
   return theme
 }
+
+export { dsSpacing }
