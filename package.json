@@ -6,6 +6,7 @@
   "module": "index.js",
   "scripts": {
     "test": "echo 'Error: no test specified'",
+    "build": "babel src -d .",
     "preversion": "pnpm test",
     "version": "echo 'Versioning'",
     "postversion": "git push && git push --tags"
@@ -59,5 +60,10 @@
     "material",
     "material ui",
     "design system"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-react": "^7.18.6"
+  }
 }
