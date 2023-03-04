@@ -6,10 +6,13 @@
   "module": "index.js",
   "scripts": {
     "test": "echo 'Error: no test specified'",
-    "build": "babel src -d .",
+    "clean": "rm -rf publish/",
+    "copy": "cp .npmignore LICENSE README.md package.json publish/",
+    "build": "pnpm run clean;babel src -d publish;pnpm run copy",
     "preversion": "pnpm test",
     "version": "echo 'Versioning'",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "publish": "pnpm run build;pnpm publish publish --access public;pnpm run clean"
   },
   "repository": "git@github.com:heliumtank92/am92-react-design-system.git",
   "homepage": "https://github.com/heliumtank92/am92-react-design-system#readme",
