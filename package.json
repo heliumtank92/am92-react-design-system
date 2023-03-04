@@ -12,7 +12,7 @@
     "preversion": "pnpm test",
     "version": "echo 'Versioning'",
     "postversion": "git push && git push --tags",
-    "publish": "pnpm run build;pnpm publish publish --access public;pnpm run clean"
+    "publish": "pnpm run build;cd publish;pnpm publish --access public;cd ../;pnpm run clean"
   },
   "repository": "git@github.com:heliumtank92/am92-react-design-system.git",
   "homepage": "https://github.com/heliumtank92/am92-react-design-system#readme",
