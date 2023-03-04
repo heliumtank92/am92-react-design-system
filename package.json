@@ -32,15 +32,15 @@
   "sideEffects": false,
   "exports": {
     ".": "./index.js",
-    "./Components": "./src/Components/index.js",
-    "./Hocs": "./src/Hocs/index.js",
-    "./Theme": "./src/Theme/index.js",
-    "./Constants": "./src/Constants/index.js",
-    "./locale": "./src/locale.js",
-    "./material": "./src/material.js",
-    "./styles": "./src/styles.js",
-    "./transitions": "./src/transitions.js",
-    "./utils": "./src/utils.js"
+    "./Components": "./Components/index.js",
+    "./Hocs": "./Hocs/index.js",
+    "./Theme": "./Theme/index.js",
+    "./Constants": "./Constants/index.js",
+    "./locale": "./locale.js",
+    "./material": "./material.js",
+    "./styles": "./styles.js",
+    "./transitions": "./transitions.js",
+    "./utils": "./utils.js"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
