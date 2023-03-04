@@ -13,25 +13,22 @@ export default class DsImage extends PureComponent {
     src: PropTypes.string,
     srcSet: PropTypes.arrayOf(PropTypes.object),
     alt: PropTypes.string,
-    errorIconFontSize: PropTypes.any
+    errorIconFontSize: PropTypes.any,
+    errorIconClass: PropTypes.string
   }
 
   static defaultProps = {
     src: '',
     srcSet: [],
     alt: '',
-    errorIconFontSize: 'var(--ds-typo-fontSizeMild)'
+    errorIconFontSize: 'var(--ds-typo-fontSizeMild)',
+    errorIconClass: 'ri-image-2-line'
   }
 
   state = { loadState: 'LOADING' }
 
   handleLoad = (e) => this.setState({ loadState: 'LOADED' })
   handleError = (e) => this.setState({ loadState: 'ERROR' })
-
-  replaceExtension = (src, extension) => {
-    const currentExtension = src.split('.').pop()
-    return src.replace(`.${currentExtension}`, `.${extension}`)
-  }
 
   hasSource = () => {
     const { src, srcSet } = this.props
@@ -60,9 +57,8 @@ export default class DsImage extends PureComponent {
   }
 
   renderError = () => {
-    const { errorIconFontSize } = this.props
+    const { errorIconFontSize, errorIconClass } = this.props
     const { loadState } = this.state
-    console.log('this.props', this.props)
 
     const isError = loadState === 'ERROR' || !this.hasSource()
     if (!isError) return false
@@ -78,7 +74,7 @@ export default class DsImage extends PureComponent {
           fontSize: errorIconFontSize
         }}
       >
-        <DsRemixIcon className='ri-image-2-line' color='iconDisabled' fontSize='inherit' />
+        <DsRemixIcon className={errorIconClass} color='iconDisabled' fontSize='inherit' />
       </DsBox>
     )
   }
@@ -89,7 +85,7 @@ export default class DsImage extends PureComponent {
     if (!isValidSource) { return false }
 
     const { loadState } = this.state
-    const { src, srcSet, alt, ...restProps } = this.props
+    const { src, srcSet, alt, errorIconClass, errorIconFontSize, ...restProps } = this.props
 
     const isLoaded = loadState === 'LOADED'
     const imgDisplayProps = isLoaded ? {} : { display: 'none' }
@@ -110,30 +106,32 @@ export default class DsImage extends PureComponent {
         const isLast = index === lastIndex
 
         if (!isLast) {
-          return (<source key={index} alt={alt} {...src} />)
+          return (<source key={index} alt={alt} srcSet={src.src} {...src} />)
         } else {
           return <img key={index} alt={alt} {...src} {...imgProps} />
         }
       })
     }
 
-    return (
-      <Fade in={isLoaded}>
-        {children}
-      </Fade>
-    )
+    return children
   }
 
   render () {
+    const { loadState } = this.state
+    const isLoaded = loadState === 'LOADED' || loadState === 'ERROR'
     return (
-      <picture
-        onLoad={this.handleLoad}
-        onError={this.handleError}
-      >
-        {this.renderImageSrcSet()}
+      <>
+        <Fade in={isLoaded}>
+          <picture
+            onLoad={this.handleLoad}
+            onError={this.handleError}
+          >
+            {this.renderError()}
+            {this.renderImageSrcSet()}
+          </picture>
+        </Fade>
         {this.renderLoading()}
-        {this.renderError()}
-      </picture>
+      </>
     )
   }
 }

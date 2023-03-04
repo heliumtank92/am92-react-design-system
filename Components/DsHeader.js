@@ -7,7 +7,7 @@ import DsImage from 'src/DesignSystem/Components/DsImage'
 
 export default class DsHeader extends Component {
   static propTypes = {
-    logoUrl: PropTypes.string.isRequired,
+    logoUrl: PropTypes.string,
     BoxProps: PropTypes.object,
     StackProps: PropTypes.object
   }
@@ -18,7 +18,7 @@ export default class DsHeader extends Component {
   }
 
   render () {
-    const { logoUrl, children, BoxProps, StackProps, ...HeaderProps } = this.props
+    const { logoUrl, logo, children, BoxProps, StackProps, ...HeaderProps } = this.props
 
     return (
       <DsBox
@@ -29,13 +29,13 @@ export default class DsHeader extends Component {
             lg: 'var(--ds-rules-headerDesktopHeight)'
           },
           backgroundColor: 'var(--ds-color-surfacePrimary)',
+          display: 'flex',
           boxShadow: 'var(--ds-elevation-3)',
           position: 'relative',
           overflow: 'hidden',
           ...HeaderProps.sx
         }}
       >
-        <DsImage src={logoUrl} style={{ height: '100%' }} alt='logo' />
         <DsBox
           {...BoxProps}
           sx={{
@@ -57,6 +57,8 @@ export default class DsHeader extends Component {
             {children}
           </DsStack>
         </DsBox>
+        {logoUrl && <DsImage src={logoUrl} style={{ height: '100%' }} alt='logo' />}
+        {logo && logo}
       </DsBox>
     )
   }

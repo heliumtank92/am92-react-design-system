@@ -1,20 +1,23 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 
 import DsRemixIcon from './DsRemixIcon'
 import DsTypo from './DsTypo'
 import DsBox from './DsBox'
 import DsIconButton from './DsIconButton'
+import DsDrawer from './DsDrawer'
 
 export class DsBottomStagger extends PureComponent {
   static propTypes = {
     kicker: PropTypes.node,
     title: PropTypes.node,
-    buttonGroup: PropTypes.element
+    buttonGroup: PropTypes.element,
+    showClose: PropTypes.bool
   }
 
-  static defaultProps = {}
+  static defaultProps = {
+    showClose: true
+  }
 
   render () {
     const {
@@ -22,6 +25,7 @@ export class DsBottomStagger extends PureComponent {
       title,
       buttonGroup,
       flushedButtonGroup,
+      showClose,
 
       children,
       ...restProps
@@ -33,30 +37,32 @@ export class DsBottomStagger extends PureComponent {
 
     return (
       <>
-        <SwipeableDrawer
+        <DsDrawer
           anchor='bottom'
           elevation={0}
           {...restProps}
         >
-          <DsBox
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              pb: 'var(--ds-spacing-bitterCold)'
-            }}
-          >
-            <DsIconButton
-              onClick={onClose}
+          {showClose && (
+            <DsBox
               sx={{
-                backgroundColor: 'var(--ds-color-iconDefault)',
-                color: 'var(--ds-color-iconDisabled)',
-                borderRadius: '50%',
-                p: 'var(--ds-spacing-glacial)'
+                display: 'flex',
+                justifyContent: 'center',
+                pb: 'var(--ds-spacing-bitterCold)'
               }}
             >
-              <DsRemixIcon className='ri-close-line' />
-            </DsIconButton>
-          </DsBox>
+              <DsIconButton
+                onClick={onClose}
+                sx={{
+                  backgroundColor: 'var(--ds-color-iconDefault)',
+                  color: 'var(--ds-color-iconDisabled)',
+                  borderRadius: '50%',
+                  p: 'var(--ds-spacing-glacial)'
+                }}
+              >
+                <DsRemixIcon className='ri-close-line' />
+              </DsIconButton>
+            </DsBox>
+          )}
           <DsBox
             sx={{
               boxShadow: 'var(--ds-elevation-0)',
@@ -112,7 +118,7 @@ export class DsBottomStagger extends PureComponent {
             </DsBox>
             {drawerButtonGroup}
           </DsBox>
-        </SwipeableDrawer>
+        </DsDrawer>
       </>
     )
   }
