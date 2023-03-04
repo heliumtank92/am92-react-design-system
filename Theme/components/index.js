@@ -27,7 +27,7 @@ import DsTextFieldTheme from './DsTextField.Theme'
 import DsToastTheme from './DsToast.Theme'
 import DsToggleTheme from './DsToggle.Theme'
 import DsTooltipTheme from './DsTooltip.Theme'
-import DsTypoTheme from './DsTypo.Theme'
+import DsTypographyTheme from './DsTypography.Theme'
 import extrasTheme from './extras.Theme'
 
 const components = {
@@ -60,7 +60,7 @@ const components = {
   ...DsToastTheme,
   ...DsToggleTheme,
   ...DsTooltipTheme,
-  ...DsTypoTheme,
+  ...DsTypographyTheme,
   ...extrasTheme
 }
 

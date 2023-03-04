@@ -5,7 +5,7 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 
 import DsBox from './DsBox'
-import DsTypo from './DsTypo'
+import DsTypography from './DsTypography'
 
 export default class DsAppBar extends PureComponent {
   static propTypes = {
@@ -26,7 +26,7 @@ export default class DsAppBar extends PureComponent {
     const iconColor = color === 'primary' ? 'iconOnSurface' : undefined
 
     const contentJSX = typeof content === 'string'
-      ? <DsTypo variant='headingBoldSmall'>{content}</DsTypo>
+      ? <DsTypography variant='headingBoldSmall'>{content}</DsTypography>
       : content
 
     return (

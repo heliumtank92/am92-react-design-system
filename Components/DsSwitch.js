@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-import DsTypo from './DsTypo'
+import DsTypography from './DsTypography'
 
 class DsSwitch extends PureComponent {
   static propTypes = {
@@ -37,10 +37,10 @@ class DsSwitch extends PureComponent {
         onChange={this.handleChange}
       >
         <ToggleButton value={positiveValue}>
-          <DsTypo variant='supportBoldTextButton'>YES</DsTypo>
+          <DsTypography variant='supportBoldTextButton'>YES</DsTypography>
         </ToggleButton>
         <ToggleButton value={negativeValue}>
-          <DsTypo variant='supportBoldTextButton'>NO</DsTypo>
+          <DsTypography variant='supportBoldTextButton'>NO</DsTypography>
         </ToggleButton>
       </ToggleButtonGroup>
     )

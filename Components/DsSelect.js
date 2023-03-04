@@ -7,7 +7,7 @@ import DsFormControl from './DsFormControl'
 import DsInputLabel from './DsInputLabel'
 import DsInputBase from './DsInputBase'
 import DsMenuItem from './DsMenuItem'
-import DsTypo from './DsTypo'
+import DsTypography from './DsTypography'
 import DsRemixIcon from './DsRemixIcon'
 import DsHelperText from './DsHelperText'
 
@@ -19,9 +19,9 @@ const IconComponent = (props) => {
 
 const Placeholder = ({ placeholder }) => {
   return (
-    <DsTypo variant='bodyRegularMedium' color='text.disabled'>
+    <DsTypography variant='bodyRegularMedium' color='text.disabled'>
       {placeholder}
-    </DsTypo>
+    </DsTypography>
   )
 }
 

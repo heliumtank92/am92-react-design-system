@@ -5,7 +5,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
 import DsButton from './DsButton'
 import DsButtonGroup from './DsButtonGroup'
-import DsTypo from './DsTypo'
+import DsTypography from './DsTypography'
 import DsStack from './DsStack'
 import DsTextField from './DsTextField'
 import DsInputAdornment from './DsInputAdornment'
@@ -39,8 +39,8 @@ const DefaultToolbar = (props) => {
       }}
       spacing='var(--ds-spacing-quickFreeze)'
     >
-      <DsTypo variant='headingBoldExtraSmall' sx={{ color: 'var(--ds-color-typoSecondary)' }}>{currentYear}</DsTypo>
-      <DsTypo variant='headingBoldMedium' sx={{ color: 'var(--ds-color-typoPrimary)' }}>{currentDateAndDay}</DsTypo>
+      <DsTypography variant='headingBoldExtraSmall' sx={{ color: 'var(--ds-color-typoSecondary)' }}>{currentYear}</DsTypography>
+      <DsTypography variant='headingBoldMedium' sx={{ color: 'var(--ds-color-typoPrimary)' }}>{currentDateAndDay}</DsTypography>
     </DsStack>
   )
 }

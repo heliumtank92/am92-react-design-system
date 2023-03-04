@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import InputLabel from '@mui/material/InputLabel'
-import DsTypo from './DsTypo'
+import DsTypography from './DsTypography'
 
 export default class DsInputLabel extends PureComponent {
   render () {
@@ -16,19 +16,19 @@ export default class DsInputLabel extends PureComponent {
 
     return (
       <InputLabel error={error} {...inputLabelProps}>
-        <DsTypo
+        <DsTypography
           component='p'
           variant='bodyRegularMediun'
         >
           {label}
-        </DsTypo>
-        <DsTypo
+        </DsTypography>
+        <DsTypography
           component='p'
           variant='bodyRegularSmall'
           color='text.secondary'
         >
           {labelSupportText}
-        </DsTypo>
+        </DsTypography>
       </InputLabel>
     )
   }

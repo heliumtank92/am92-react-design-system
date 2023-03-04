@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Radio from '@mui/material/Radio'
 
-import DsTypo from './DsTypo'
+import DsTypography from './DsTypography'
 import DsRemixIcon from './DsRemixIcon'
 
 class DsRadio extends PureComponent {

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import DsRemixIcon from './DsRemixIcon'
-import DsTypo from './DsTypo'
+import DsTypography from './DsTypography'
 import DsBox from './DsBox'
 import DsIconButton from './DsIconButton'
 import DsDrawer from './DsDrawer'
@@ -77,7 +77,7 @@ export class DsBottomStagger extends PureComponent {
               }}
             >
               {kicker && (
-                <DsTypo
+                <DsTypography
                   variant='subheadingSemiboldDefault'
                   color='text.tertiary'
                   component='div'
@@ -87,10 +87,10 @@ export class DsBottomStagger extends PureComponent {
                   }}
                 >
                   {kicker}
-                </DsTypo>
+                </DsTypography>
               )}
               {title && (
-                <DsTypo
+                <DsTypography
                   variant='headingBoldMedium'
                   component='div'
                   sx={{
@@ -98,7 +98,7 @@ export class DsBottomStagger extends PureComponent {
                   }}
                 >
                   {title}
-                </DsTypo>
+                </DsTypography>
               )}
             </DsBox>
             <DsBox

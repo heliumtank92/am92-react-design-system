@@ -11,7 +11,7 @@ import dsSpacing, { dsSpacingCssVars, SPACE_COEFFICIENT } from './spacing'
 import dsElevation from './elevation'
 
 export default function getTheme (palette = {}, fontFamilyName = FONT_FAMILY_NAME) {
-  const { typography, dsTypo } = getTypography(fontFamilyName)
+  const { typography, DsTypography } = getTypography(fontFamilyName)
 
   const colorPalette = { ...PALETTE, ...palette }
   const lightColorScheme = getColorScheme(colorPalette, 'light')
@@ -24,7 +24,7 @@ export default function getTheme (palette = {}, fontFamilyName = FONT_FAMILY_NAM
       ds: {
         color: lightColorScheme.dsColor,
         spacing: dsSpacingCssVars,
-        typo: dsTypo,
+        typo: DsTypography,
         rules: dsRules,
         elevation: dsElevation
       }
@@ -37,7 +37,7 @@ export default function getTheme (palette = {}, fontFamilyName = FONT_FAMILY_NAM
       ds: {
         color: darkColorScheme.dsColor,
         spacing: dsSpacingCssVars,
-        typo: dsTypo,
+        typo: DsTypography,
         rules: dsRules,
         elevation: dsElevation
       }

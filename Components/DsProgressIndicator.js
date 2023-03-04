@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import DsBox from './DsBox'
 import { CircularProgress, Typography } from '@mui/material'
-import DsTypo from './DsTypo'
+import DsTypography from './DsTypography'
 
 class DsProgressIndicator extends Component {
   static propTypes = {
@@ -45,9 +45,9 @@ class DsProgressIndicator extends Component {
               thickness={4}
               style={{ position: 'absolute', strokeLinecap: 'round', left: -12, height: 56, top: 12 }}
             />
-            <DsTypo sx={{ position: 'absolute', top: 30, right: 30 }}>
+            <DsTypography sx={{ position: 'absolute', top: 30, right: 30 }}>
               <Typography variant='subheadingSemiboldDefault'>{fillText}</Typography>
-            </DsTypo>
+            </DsTypography>
           </DsBox>
         </DsBox>
       </DsBox>

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Tooltip from '@mui/material/Tooltip'
-import DsTypo from './DsTypo'
+import DsTypography from './DsTypography'
 import DsLink from './DsLink'
 
 class DsTooltip extends PureComponent {
@@ -35,21 +35,21 @@ class DsTooltip extends PureComponent {
     return (
       <>
         {heading && (
-          <DsTypo
+          <DsTypography
             component='div'
             variant='headingBoldExtraSmall'
             sx={{ mb: 'var(--ds-spacing-glacial)' }}
           >
             {heading}
-          </DsTypo>
+          </DsTypography>
         )}
         {description && (
-          <DsTypo
+          <DsTypography
             component='div'
             variant='bodyRegularMedium'
           >
             {description}
-          </DsTypo>
+          </DsTypography>
         )}
         {tooltipButtonGroup}
       </>

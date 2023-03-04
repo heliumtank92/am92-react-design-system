@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import FormHelperText from '@mui/material/FormHelperText'
 
 import DsBox from './DsBox'
-import DsTypo from './DsTypo'
+import DsTypography from './DsTypography'
 import DsRemixIcon from './DsRemixIcon'
 
 export default class DsHelperText extends PureComponent {
@@ -60,14 +60,14 @@ export default class DsHelperText extends PureComponent {
               }}
             />
           )}
-          <DsTypo
+          <DsTypography
             variant='bodyRegularSmall'
             color='inherit'
             sx={{ pl: 'var(--ds-spacing-deepFreeze)' }}
           >
             {helperText}
             &#8203;
-          </DsTypo>
+          </DsTypography>
         </DsBox>
       </FormHelperText>
     )

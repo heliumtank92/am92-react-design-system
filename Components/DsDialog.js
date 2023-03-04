@@ -8,7 +8,7 @@ import DialogActions from '@mui/material/DialogActions'
 // import DialogContentText from '@mui/material/DialogContentText'
 import DsBox from './DsBox'
 import DsImage from './DsImage'
-import DsTypo from './DsTypo'
+import DsTypography from './DsTypography'
 import DsRemixIcon from './DsRemixIcon'
 import DsIconButton from './DsIconButton'
 import DsStack from './DsStack'
@@ -121,7 +121,7 @@ export default class DsDialog extends PureComponent {
             }}
           >
             {heading && (
-              <DsTypo
+              <DsTypography
                 variant='headingBoldMedium'
                 component='div'
                 textAlign={textAlign}
@@ -134,10 +134,10 @@ export default class DsDialog extends PureComponent {
                 }}
               >
                 {heading}
-              </DsTypo>
+              </DsTypography>
             )}
             {description && (
-              <DsTypo
+              <DsTypography
                 variant='bodyRegularLarge'
                 component='div'
                 textAlign={textAlign}
@@ -147,7 +147,7 @@ export default class DsDialog extends PureComponent {
                 }}
               >
                 {description}
-              </DsTypo>
+              </DsTypography>
             )}
             {children}
           </DsBox>
