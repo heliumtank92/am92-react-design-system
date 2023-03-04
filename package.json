@@ -1,6 +1,6 @@
 {
   "name": "@am92/react-design-system",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "ReactJS Design System using Material UI",
   "main": "index.js",
   "module": "index.js",
