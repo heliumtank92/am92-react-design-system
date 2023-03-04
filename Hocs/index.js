@@ -1,1 +1,1 @@
-export { default as withBreakpoints } from './withBreakpoints'
+export { default as withBreakpoints } from './withBreakpoints.js'
