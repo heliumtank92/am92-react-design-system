@@ -1,4 +1,4 @@
-const DsTooltipTheme = {
+const DsTypographyTheme = {
   MuiTypography: {
     defaultProps: {
       variant: 'bodyRegularMedium'
@@ -6,4 +6,4 @@ const DsTooltipTheme = {
   }
 }
 
-export default DsTooltipTheme
+export default DsTypographyTheme
