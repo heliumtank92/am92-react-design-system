@@ -1,4 +1,4 @@
-import PALETTE from '../Constants/PALATTE'
+import PALETTE from '../Constants/PALETTE'
 import FONT_FAMILY_NAME from '../Constants/FONT_FAMILY_NAME'
 
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
