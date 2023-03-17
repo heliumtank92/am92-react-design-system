@@ -1,6 +1,7 @@
 export * as Components from './Components'
 export * as Hocs from './Hocs'
 export * as Theme from './Theme'
+export * as Constants from './Constants'
 
 export * as locale from './locale'
 export * as material from './material'

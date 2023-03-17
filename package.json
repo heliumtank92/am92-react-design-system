@@ -2,17 +2,83 @@
   "name": "@am92/react-design-system",
   "version": "0.0.11",
   "description": "ReactJS Design System using Material UI",
-  "main": "index.js",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./index.js",
+      "import": "./types/index.js"
+    },
+    "./Components": {
+      "types": "./Components/index.js",
+      "import": "./types/Components/index.js"
+    },
+    "./Hocs": {
+      "types": "./Hocs/index.js",
+      "import": "./types/Hocs/index.js"
+    },
+    "./Theme": {
+      "types": "./Theme/index.js",
+      "import": "./types/Theme/index.js"
+    },
+    "./Constants": {
+      "types": "./Constants/index.js",
+      "import": "./types/Constants/index.js"
+    },
+    "./locale": {
+      "types": "./locale.js",
+      "import": "./types/locale.js"
+    },
+    "./material": {
+      "types": "./material.js",
+      "import": "./types/material.js"
+    },
+    "./styles": {
+      "types": "./styles.js",
+      "import": "./types/styles.js"
+    },
+    "./transitions": {
+      "types": "./transitions.js",
+      "import": "./types/transitions.js"
+    },
+    "./utils": {
+      "types": "./utils.js",
+      "import": "./types/utils.js"
+    }
+  },
+  "types": "./types/index.d.ts",
   "module": "index.js",
+  "main": "index.js",
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/base": "5.0.0-alpha.118",
+    "@mui/lab": "5.0.0-alpha.120",
+    "@mui/material": "^5.11.10",
+    "@mui/system": "^5.11.9",
+    "@mui/x-date-pickers": "^6.0.2",
+    "prop-types": "^15.8.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-react": "^7.18.6",
+    "@types/node": "^18.15.3",
+    "@types/prop-types": "^15.7.5"
+  },
+  "peerDependencies": {
+    "react": "^18.x.x",
+    "react-dom": "^18.x.x"
+  },
   "scripts": {
     "test": "echo 'Error: no test specified'",
     "clean": "rm -rf publish/",
-    "copy": "cp .npmignore LICENSE README.md package.json publish/",
-    "build": "pnpm run clean;babel src -d publish;pnpm run copy",
+    "copy": "cp -R .npmignore LICENSE README.md package.json types publish/",
+    "build": "pnpm run clean && babel src -d publish && pnpm run copy",
+    "generate:types": "rm -rf types && npx -p typescript tsc",
     "preversion": "pnpm test",
     "version": "echo 'Versioning'",
-    "postversion": "git push && git push --tags",
-    "pub": "pnpm run build;cd publish;pnpm publish --access public;cd ../;pnpm run clean"
+    "postversion": "git push && git push --tags && pnpm run publish:pkg",
+    "publish:pkg": "pnpm run build && cd publish && pnpm publish && cd ../ && pnpm run clean"
   },
   "repository": "git@github.com:heliumtank92/am92-react-design-system.git",
   "homepage": "https://github.com/heliumtank92/am92-react-design-system#readme",
@@ -28,45 +94,15 @@
       "url": "https://github.com/agarwalmehul"
     }
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
-  "sideEffects": false,
-  "exports": {
-    ".": "./index.js",
-    "./Components": "./Components/index.js",
-    "./Hocs": "./Hocs/index.js",
-    "./Theme": "./Theme/index.js",
-    "./Constants": "./Constants/index.js",
-    "./locale": "./locale.js",
-    "./material": "./material.js",
-    "./styles": "./styles.js",
-    "./transitions": "./transitions.js",
-    "./utils": "./utils.js"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/base": "5.0.0-alpha.118",
-    "@mui/lab": "5.0.0-alpha.120",
-    "@mui/material": "^5.11.10",
-    "@mui/system": "^5.11.9",
-    "@mui/x-date-pickers": "^5.0.19",
-    "mui-image": "^1.0.7",
-    "prop-types": "^15.8.1"
-  },
-  "peerDependencies": {
-    "react": "^18.x.x",
-    "react-dom": "^18.x.x"
-  },
   "keywords": [
     "react",
     "reactjs",
     "material",
     "material ui",
     "design system"
-  ],
-  "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.0",
-    "@babel/preset-react": "^7.18.6"
-  }
+  ]
 }
