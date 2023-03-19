@@ -1,4 +1,4 @@
-export default class DsHeader extends Component<any, any, any> {
+export default class DsHeader {
     static propTypes: {
         logoUrl: any;
         BoxProps: any;
@@ -8,8 +8,5 @@ export default class DsHeader extends Component<any, any, any> {
         BoxProps: {};
         StackProps: {};
     };
-    constructor(props: any);
-    constructor(props: any, context: any);
     render(): JSX.Element;
 }
-import { Component } from "react";

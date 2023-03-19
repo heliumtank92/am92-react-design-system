@@ -1,5 +1,5 @@
 export default DsSwitch;
-declare class DsSwitch extends PureComponent<any, any, any> {
+declare class DsSwitch {
     static propTypes: {
         name: any;
         value: any;
@@ -12,9 +12,6 @@ declare class DsSwitch extends PureComponent<any, any, any> {
         positiveValue: boolean;
         negativeValue: boolean;
     };
-    constructor(props: any);
-    constructor(props: any, context: any);
     handleChange: (event: any, value: any) => void;
     render(): JSX.Element;
 }
-import { PureComponent } from "react";

@@ -1,4 +1,4 @@
-export default class DsButtonGroup extends PureComponent<any, any, any> {
+export default class DsButtonGroup {
     static propTypes: {
         fullWidth: any;
         noPadding: any;
@@ -9,8 +9,5 @@ export default class DsButtonGroup extends PureComponent<any, any, any> {
         noPadding: boolean;
         size: string;
     };
-    constructor(props: any);
-    constructor(props: any, context: any);
     render(): JSX.Element;
 }
-import { PureComponent } from "react";

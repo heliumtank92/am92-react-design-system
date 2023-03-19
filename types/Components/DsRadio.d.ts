@@ -1,5 +1,5 @@
 export default DsRadio;
-declare class DsRadio extends PureComponent<any, any, any> {
+declare class DsRadio {
     static propTypes: {
         label: any;
         labelPlacement: any;
@@ -7,8 +7,5 @@ declare class DsRadio extends PureComponent<any, any, any> {
     static defaultProps: {
         labelPlacement: string;
     };
-    constructor(props: any);
-    constructor(props: any, context: any);
     render(): JSX.Element;
 }
-import { PureComponent } from "react";
