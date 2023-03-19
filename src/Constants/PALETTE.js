@@ -1,14 +1,14 @@
 const PALETTE = {
-  primary: '#be9e44',
+  primary: '#97144D',
   primaryBlack: '#000000',
   primaryBlackLight: '#282828',
   primaryWhite: '#FFFFFF',
 
-  secondary100: '#548fcf',
-  secondary80: '#5c9ddc',
-  secondary60: '#6cabe1',
-  secondary40: '#81bae6',
-  secondary20: '#a0cdee',
+  secondary100: '#ED1164',
+  secondary80: '#F14687',
+  secondary60: '#F57BA9',
+  secondary40: '#F9B0CC',
+  secondary20: '#FDE5EE',
 
   secondaryGrey100: '#404040',
   secondaryGrey90: '#575757',
