@@ -75,7 +75,7 @@
     "copy": "cp -R .npmignore LICENSE README.md package.json types publish/",
     "build": "pnpm run clean && babel src -d publish && pnpm run copy",
     "generate:types": "rm -rf types && npx -p typescript tsc",
-    "preversion": "pnpm test",
+    "preversion": "pnpm test && pnpm run generate:types",
     "version": "echo 'Versioning'",
     "postversion": "git push && git push --tags && pnpm run publish:pkg",
     "publish:pkg": "pnpm run build && cd publish && pnpm publish && cd ../ && pnpm run clean"
