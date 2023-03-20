@@ -20,10 +20,10 @@ export default function getTypography (fontFamilyName = '') {
     fontSizeBlizzard: '11px',
     fontSizeIceAge: '10px',
 
-    fontWeightRegular: 400,
-    fontWeightSemibold: 600,
-    fontWeightBold: 700,
-    fontWeightBoldItalic: 700,
+    fontWeightRegular: '400',
+    fontWeightSemibold: '600',
+    fontWeightBold: '700',
+    fontWeightBoldItalic: '700',
 
     lineHeightIceAge: '10px',
     lineHeightGlacial: '8px',
@@ -32,11 +32,11 @@ export default function getTypography (fontFamilyName = '') {
     lineHeightDeepfreeze: '2px',
     lineHeightZero: '0px',
 
-    characterSpacingArctic: 1,
-    characterSpacingAlps: 0.32,
-    characterSpacingHindukush: 0.24,
-    characterSpacingHimalayas: 0.16,
-    characterSpacingZero: 0,
+    characterSpacingArctic: '1',
+    characterSpacingAlps: '0.32',
+    characterSpacingHindukush: '0.24',
+    characterSpacingHimalayas: '0.16',
+    characterSpacingZero: '0',
 
     paragraphSpacing: '0px',
     casingUppercase: 'uppercase',

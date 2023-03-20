@@ -10,7 +10,7 @@ import dsRules from './rules'
 import dsSpacing, { dsSpacingCssVars, SPACE_COEFFICIENT } from './spacing'
 import dsElevation from './elevation'
 
-export default function getTheme(palette = PALETTE, fontFamilyName = FONT_FAMILY_NAME) {
+export default function getTheme (palette = PALETTE, fontFamilyName = FONT_FAMILY_NAME) {
   const { typography, dsTypo } = getTypography(fontFamilyName)
 
   const colorPalette = { ...PALETTE, ...palette }
