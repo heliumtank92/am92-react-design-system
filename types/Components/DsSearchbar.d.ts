@@ -1,4 +1,4 @@
-export default class DsSearchbar {
+export default class DsSearchbar extends PureComponent<any, any, any> {
     static propTypes: {
         placeholder: any;
         options: any;
@@ -9,7 +9,10 @@ export default class DsSearchbar {
         placeholder: string;
         options: any[];
     };
+    constructor(props: any);
+    constructor(props: any, context: any);
     handleClearClick: () => void;
     handleChange: (event: any, newValue: any) => void;
     render(): JSX.Element;
 }
+import { PureComponent } from "react";
