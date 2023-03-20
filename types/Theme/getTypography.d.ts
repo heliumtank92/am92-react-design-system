@@ -2,210 +2,210 @@ export default function getTypography(fontFamilyName?: string): {
     dsTypo: {
         displayBoldLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         displayBoldMedium: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         displayBoldSmall: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         displayBoldItalicLarge: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         displayBoldItalicMedium: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         displayBoldItalicSmall: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldExtraLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldMedium: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldSmall: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldExtraSmall: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         subheadingSemiboldLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
             textTransform: string;
         };
         subheadingSemiboldDefault: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
             textTransform: string;
         };
         headingBoldItalicExtraLarge: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldItalicLarge: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldItalicMedium: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldItalicSmall: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldItalicExtraSmall: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyRegularLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyRegularMedium: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyRegularSmall: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyBoldLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyBoldMedium: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyBoldSmall: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         supportRegularInfo: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         supportRegularFootnote: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         supportBoldTextButton: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
             textTransform: string;
         };
         supportRegularMetadata: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
             textTransform: string;
         };
         primaryFont: string;
@@ -224,21 +224,21 @@ export default function getTypography(fontFamilyName?: string): {
         fontSizeFrostbite: string;
         fontSizeBlizzard: string;
         fontSizeIceAge: string;
-        fontWeightRegular: number;
-        fontWeightSemibold: number;
-        fontWeightBold: number;
-        fontWeightBoldItalic: number;
+        fontWeightRegular: string;
+        fontWeightSemibold: string;
+        fontWeightBold: string;
+        fontWeightBoldItalic: string;
         lineHeightIceAge: string;
         lineHeightGlacial: string;
         lineHeightGelid: string;
         lineHeightQuickFreeze: string;
         lineHeightDeepfreeze: string;
         lineHeightZero: string;
-        characterSpacingArctic: number;
-        characterSpacingAlps: number;
-        characterSpacingHindukush: number;
-        characterSpacingHimalayas: number;
-        characterSpacingZero: number;
+        characterSpacingArctic: string;
+        characterSpacingAlps: string;
+        characterSpacingHindukush: string;
+        characterSpacingHimalayas: string;
+        characterSpacingZero: string;
         paragraphSpacing: string;
         casingUppercase: string;
         casingNone: string;
@@ -247,215 +247,215 @@ export default function getTypography(fontFamilyName?: string): {
         htmlFontSize: number;
         fontSize: number;
         fontFamily: string;
-        fontWeightRegular: number;
+        fontWeightRegular: string;
         fontWeightMedium: any;
-        fontWeightBold: number;
+        fontWeightBold: string;
         displayBoldLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         displayBoldMedium: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         displayBoldSmall: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         displayBoldItalicLarge: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         displayBoldItalicMedium: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         displayBoldItalicSmall: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldExtraLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldMedium: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldSmall: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldExtraSmall: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         subheadingSemiboldLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
             textTransform: string;
         };
         subheadingSemiboldDefault: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
             textTransform: string;
         };
         headingBoldItalicExtraLarge: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldItalicLarge: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldItalicMedium: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldItalicSmall: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         headingBoldItalicExtraSmall: {
             fontFamily: string;
             fontStyle: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyRegularLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyRegularMedium: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyRegularSmall: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyBoldLarge: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyBoldMedium: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         bodyBoldSmall: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         supportRegularInfo: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         supportRegularFootnote: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
         };
         supportBoldTextButton: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
             textTransform: string;
         };
         supportRegularMetadata: {
             fontFamily: string;
-            fontWeight: number;
+            fontWeight: string;
             fontSize: string;
             lineHeight: string;
-            letterSpacing: number;
+            letterSpacing: string;
             textTransform: string;
         };
     };
