@@ -1,4 +1,4 @@
-export default class DsTextFieldPassword extends Component<any, any, any> {
+export default class DsTextFieldPassword {
     static propTypes: {
         visible: any;
     };
@@ -13,4 +13,3 @@ export default class DsTextFieldPassword extends Component<any, any, any> {
     handleTogglePassword: () => void;
     render(): JSX.Element;
 }
-import { Component } from "react";

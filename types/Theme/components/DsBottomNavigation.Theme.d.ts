@@ -7,6 +7,8 @@ declare namespace DsBottomNavigationTheme {
         namespace styleOverrides {
             namespace root {
                 const background: string;
+                const height: string;
+                const maxHeight: string;
             }
         }
     }

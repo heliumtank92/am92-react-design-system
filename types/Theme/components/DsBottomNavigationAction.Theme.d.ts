@@ -10,20 +10,30 @@ declare namespace DsBottomNavigationActionTheme {
                 marginRight: string;
                 borderTopWidth: string;
                 borderTopStyle: string;
+                borderTopColor: string;
                 padding: string;
+                justifyContent: string;
+                color: string;
                 '> .MuiIcon-root': {
                     paddingTop: string;
                 };
+                '&.Mui-selected': {
+                    borderTopColor: string;
+                    color: string;
+                };
             };
-            namespace label {
-                const fontWeight: string;
-                const fontSize: string;
-                const lineHeight: string;
-                const letterSpacing: string;
-            }
-            namespace selected {
-                const borderTopColor: string;
-            }
+            const label: {
+                fontWeight: string;
+                fontSize: string;
+                lineHeight: string;
+                letterSpacing: string;
+                color: string;
+                paddingBottom: string;
+                '&.Mui-selected': {
+                    fontSize: string;
+                    color: string;
+                };
+            };
         }
     }
 }

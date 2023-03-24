@@ -5,7 +5,9 @@ const DsBottomNavigationTheme = {
     },
     styleOverrides: {
       root: {
-        background: 'var(--ds-color-surfacePrimary)'
+        background: 'var(--ds-color-surfacePrimary)',
+        height: 'auto',
+        maxHeight: '56px'
       }
     }
   }

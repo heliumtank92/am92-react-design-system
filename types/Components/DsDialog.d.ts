@@ -1,4 +1,4 @@
-export default class DsDialog extends PureComponent<any, any, any> {
+export default class DsDialog {
     static propTypes: {
         imageSrc: any;
         imageAlt: any;
@@ -16,8 +16,5 @@ export default class DsDialog extends PureComponent<any, any, any> {
         showClose: boolean;
         fullWidth: boolean;
     };
-    constructor(props: any);
-    constructor(props: any, context: any);
     render(): JSX.Element;
 }
-import { PureComponent } from "react";

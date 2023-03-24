@@ -1470,9 +1470,16 @@ declare const components: {
                 marginRight: string;
                 borderTopWidth: string;
                 borderTopStyle: string;
+                borderTopColor: string;
                 padding: string;
+                justifyContent: string;
+                color: string;
                 '> .MuiIcon-root': {
                     paddingTop: string;
+                };
+                '&.Mui-selected': {
+                    borderTopColor: string;
+                    color: string;
                 };
             };
             label: {
@@ -1480,9 +1487,12 @@ declare const components: {
                 fontSize: string;
                 lineHeight: string;
                 letterSpacing: string;
-            };
-            selected: {
-                borderTopColor: string;
+                color: string;
+                paddingBottom: string;
+                '&.Mui-selected': {
+                    fontSize: string;
+                    color: string;
+                };
             };
         };
     };
@@ -1493,6 +1503,8 @@ declare const components: {
         styleOverrides: {
             root: {
                 background: string;
+                height: string;
+                maxHeight: string;
             };
         };
     };
