@@ -1460,6 +1460,42 @@ declare const components: {
             };
         })[];
     };
+    MuiBottomNavigationAction: {
+        defaultProps: {
+            showLabel: boolean;
+        };
+        styleOverrides: {
+            root: {
+                marginLeft: string;
+                marginRight: string;
+                borderTopWidth: string;
+                borderTopStyle: string;
+                padding: string;
+                '> .MuiIcon-root': {
+                    paddingTop: string;
+                };
+            };
+            label: {
+                fontWeight: string;
+                fontSize: string;
+                lineHeight: string;
+                letterSpacing: string;
+            };
+            selected: {
+                borderTopColor: string;
+            };
+        };
+    };
+    MuiBottomNavigation: {
+        defaultProps: {
+            showLabels: boolean;
+        };
+        styleOverrides: {
+            root: {
+                background: string;
+            };
+        };
+    };
     MuiBadge: {
         defaultProps: {
             color: string;

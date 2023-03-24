@@ -4,6 +4,8 @@ import DsAutocompleteTheme from './DsAutocomplete.Theme'
 import DsAvatarTheme from './DsAvatar.Theme'
 import DsBackdropTheme from './DsBackdrop.Theme'
 import DsBadgeTheme from './DsBadge.Theme'
+import DsBottomNavigationTheme from './DsBottomNavigation.Theme'
+import DsBottomNavigationActionTheme from './DsBottomNavigationAction.Theme'
 import DsBottomStaggerTheme from './DsBottomStagger.Theme'
 import DsButtonTheme from './DsButton.Theme'
 import DsChipDsTagTheme from './DsChipDsTag.Theme'
@@ -37,6 +39,8 @@ const components = {
   ...DsAvatarTheme,
   ...DsBackdropTheme,
   ...DsBadgeTheme,
+  ...DsBottomNavigationTheme,
+  ...DsBottomNavigationActionTheme,
   ...DsBottomStaggerTheme,
   ...DsButtonTheme,
   ...DsChipDsTagTheme,
