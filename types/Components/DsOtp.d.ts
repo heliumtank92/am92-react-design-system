@@ -1,4 +1,4 @@
-export default class DsOtp {
+export default class DsOtp extends Component<any, any, any> {
     static propTypes: {
         onComplete: any;
         name: any;
@@ -23,3 +23,4 @@ export default class DsOtp {
     render(): JSX.Element;
     #private;
 }
+import { Component } from "react";
