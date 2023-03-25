@@ -20,6 +20,7 @@ export default function getTypography (fontFamilyName = '') {
     fontSizeBlizzard: '11px',
     fontSizeIceAge: '10px',
 
+    fontWeightLight: '300',
     fontWeightRegular: '400',
     fontWeightSemibold: '600',
     fontWeightBold: '700',

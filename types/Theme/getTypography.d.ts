@@ -224,6 +224,7 @@ export default function getTypography(fontFamilyName?: string): {
         fontSizeFrostbite: string;
         fontSizeBlizzard: string;
         fontSizeIceAge: string;
+        fontWeightLight: string;
         fontWeightRegular: string;
         fontWeightSemibold: string;
         fontWeightBold: string;
