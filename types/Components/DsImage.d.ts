@@ -1,4 +1,4 @@
-export default class DsImage {
+export default class DsImage extends PureComponent<any, any, any> {
     static propTypes: {
         src: any;
         srcSet: any;
@@ -13,14 +13,17 @@ export default class DsImage {
         errorIconFontSize: string;
         errorIconClass: string;
     };
+    constructor(props: any);
+    constructor(props: any, context: any);
     state: {
         loadState: string;
     };
-    handleLoad: (e: any) => any;
-    handleError: (e: any) => any;
+    handleLoad: (e: any) => void;
+    handleError: (e: any) => void;
     hasSource: () => boolean;
     renderLoading: () => false | JSX.Element;
     renderError: () => false | JSX.Element;
     renderImageSrcSet: () => any;
     render(): JSX.Element;
 }
+import { PureComponent } from "react";

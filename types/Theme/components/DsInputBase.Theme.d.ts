@@ -1,48 +1,10 @@
-export default DsTextFieldTheme;
-declare namespace DsTextFieldTheme {
-    namespace MuiInputLabel {
-        namespace defaultProps {
-            const shrink: boolean;
-        }
-        namespace styleOverrides {
-            const root: {
-                fontWeight: string;
-                fontSize: string;
-                lineHeight: string;
-                letterSpacing: string;
-                transform: string;
-                position: string;
-                marginBottom: string;
-                color: string;
-                '> p:first-of-type': {
-                    paddingTop: string;
-                    paddingBottom: string;
-                    paddingRight: string;
-                };
-                '&.Mui-focused:not(.Mui-disabled)': {
-                    color: string;
-                };
-                '&.MuiFormLabel-colorSuccess': {
-                    color: string;
-                };
-                '&.Mui-focused.MuiFormLabel-colorSuccess': {
-                    color: string;
-                };
-                '&.Mui-error': {
-                    color: string;
-                };
-                '&.Mui-focused.Mui-error': {
-                    color: string;
-                };
-            };
-        }
-    }
+export default DsInputBaseTheme;
+declare namespace DsInputBaseTheme {
     namespace MuiInputBase {
-        export namespace defaultProps_1 {
+        namespace defaultProps {
             const size: string;
         }
-        export { defaultProps_1 as defaultProps };
-        export const variants: ({
+        const variants: ({
             props: {
                 'ds-variant': string;
                 size?: undefined;
@@ -116,8 +78,8 @@ declare namespace DsTextFieldTheme {
                 width?: undefined;
             };
         })[];
-        export namespace styleOverrides_1 {
-            const root_1: {
+        namespace styleOverrides {
+            const root: {
                 background: string;
                 borderWidth: string;
                 borderStyle: string;
@@ -162,8 +124,7 @@ declare namespace DsTextFieldTheme {
                     height: string;
                 };
             };
-            export { root_1 as root };
-            export const input: {
+            const input: {
                 padding: string;
                 fontWeight: string;
                 fontSize: string;
@@ -178,31 +139,12 @@ declare namespace DsTextFieldTheme {
                     opacity: number;
                 };
             };
-            export namespace adornedStart {
+            namespace adornedStart {
                 const paddingLeft: string;
             }
-            export namespace adornedEnd {
+            namespace adornedEnd {
                 const paddingRight: string;
             }
         }
-        export { styleOverrides_1 as styleOverrides };
-    }
-    namespace MuiInputAdornment {
-        export namespace styleOverrides_2 {
-            const root_2: {
-                color: string;
-                '& .MuiSvgIcon-root': {
-                    cursor: string;
-                };
-            };
-            export { root_2 as root };
-            export namespace positionStart {
-                const marginRight: string;
-            }
-            export namespace positionEnd {
-                const marginLeft: string;
-            }
-        }
-        export { styleOverrides_2 as styleOverrides };
     }
 }

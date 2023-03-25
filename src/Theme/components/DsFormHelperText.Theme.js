@@ -1,4 +1,4 @@
-const DsHelperTextTheme = {
+const DsFormHelperTextTheme = {
   MuiFormHelperText: {
     styleOverrides: {
       root: {
@@ -14,4 +14,4 @@ const DsHelperTextTheme = {
   }
 }
 
-export default DsHelperTextTheme
+export default DsFormHelperTextTheme

@@ -52,17 +52,4 @@ declare namespace DsAccordionTheme {
         }
         export { styleOverrides_1 as styleOverrides };
     }
-    namespace MuiAccordionDetails {
-        export namespace styleOverrides_2 {
-            export namespace root_2 {
-                const border: string;
-                const paddingTop: string;
-                const paddingBottom: string;
-                const paddingLeft: string;
-                const paddingRight: string;
-            }
-            export { root_2 as root };
-        }
-        export { styleOverrides_2 as styleOverrides };
-    }
 }

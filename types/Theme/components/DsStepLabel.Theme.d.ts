@@ -1,21 +1,7 @@
-export default DsProgressTrackerTheme;
-declare namespace DsProgressTrackerTheme {
-    namespace MuiStepper {
-        namespace styleOverrides {
-            const vertical: {
-                '> .MuiStep-root': {
-                    '&:first-of-type': {
-                        paddingTop: string;
-                    };
-                    '&:last-of-type': {
-                        paddingBottom: string;
-                    };
-                };
-            };
-        }
-    }
+export default DsStepLabelTheme;
+declare namespace DsStepLabelTheme {
     namespace MuiStepLabel {
-        export namespace styleOverrides_1 {
+        namespace styleOverrides {
             namespace root {
                 const paddingLeft: string;
                 const paddingRight: string;
@@ -64,21 +50,5 @@ declare namespace DsProgressTrackerTheme {
                 };
             };
         }
-        export { styleOverrides_1 as styleOverrides };
-    }
-    namespace MuiStepConnector {
-        export namespace styleOverrides_2 {
-            export namespace line {
-                const borderLeftWidth: string;
-                const borderLeftStyle: string;
-                const borderLeftColor: string;
-                const minHeight: string;
-            }
-            export namespace vertical_1 {
-                const marginLeft: string;
-            }
-            export { vertical_1 as vertical };
-        }
-        export { styleOverrides_2 as styleOverrides };
     }
 }

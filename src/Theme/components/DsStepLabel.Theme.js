@@ -1,18 +1,4 @@
-const DsProgressTrackerTheme = {
-  MuiStepper: {
-    styleOverrides: {
-      vertical: {
-        '> .MuiStep-root': {
-          '&:first-of-type': {
-            paddingTop: 'var(--ds-spacing-bitterCold)'
-          },
-          '&:last-of-type': {
-            paddingBottom: 'var(--ds-spacing-bitterCold)'
-          }
-        }
-      }
-    }
-  },
+const DsStepLabelTheme = {
   MuiStepLabel: {
     styleOverrides: {
       root: {
@@ -64,20 +50,7 @@ const DsProgressTrackerTheme = {
         }
       }
     }
-  },
-  MuiStepConnector: {
-    styleOverrides: {
-      line: {
-        borderLeftWidth: '2px',
-        borderLeftStyle: 'solid',
-        borderLeftColor: 'var(--ds-color-strokeDefault)',
-        minHeight: 'var(--ds-rules-stepperConnectorMinHeight)'
-      },
-      vertical: {
-        marginLeft: '27px'
-      }
-    }
   }
 }
 
-export default DsProgressTrackerTheme
+export default DsStepLabelTheme

@@ -1,10 +1,4 @@
 const DsDatePickerTheme = {
-  MuiCalendarPicker: {
-    styleOverrides: {
-      root: {
-      }
-    }
-  },
   MuiPickersDay: {
     styleOverrides: {
       root: {

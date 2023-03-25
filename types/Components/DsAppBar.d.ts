@@ -1,4 +1,4 @@
-export default class DsAppBar {
+export default class DsAppBar extends PureComponent<any, any, any> {
     static propTypes: {
         open: any;
         leftIcon: any;
@@ -9,5 +9,8 @@ export default class DsAppBar {
         open: boolean;
         content: string;
     };
+    constructor(props: any);
+    constructor(props: any, context: any);
     render(): JSX.Element;
 }
+import { PureComponent } from "react";

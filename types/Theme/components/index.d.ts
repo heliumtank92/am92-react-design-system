@@ -162,206 +162,6 @@ declare const components: {
             };
         };
     };
-    MuiInputLabel: {
-        defaultProps: {
-            shrink: boolean;
-        };
-        styleOverrides: {
-            root: {
-                fontWeight: string;
-                fontSize: string;
-                lineHeight: string;
-                letterSpacing: string;
-                transform: string;
-                position: string;
-                marginBottom: string;
-                color: string;
-                '> p:first-of-type': {
-                    paddingTop: string;
-                    paddingBottom: string;
-                    paddingRight: string;
-                };
-                '&.Mui-focused:not(.Mui-disabled)': {
-                    color: string;
-                };
-                '&.MuiFormLabel-colorSuccess': {
-                    color: string;
-                };
-                '&.Mui-focused.MuiFormLabel-colorSuccess': {
-                    color: string;
-                };
-                '&.Mui-error': {
-                    color: string;
-                };
-                '&.Mui-focused.Mui-error': {
-                    color: string;
-                };
-            };
-        };
-    };
-    MuiInputBase: {
-        defaultProps: {
-            size: string;
-        };
-        variants: ({
-            props: {
-                'ds-variant': string;
-                size?: undefined;
-            };
-            style: {
-                textAlign: string;
-                height?: undefined;
-                width?: undefined;
-                '> input'?: undefined;
-                borderRadius?: undefined;
-                paddingLeft?: undefined;
-                paddingRight?: undefined;
-                paddingTop?: undefined;
-                paddingBottom?: undefined;
-                minWidth?: undefined;
-                fontWeight?: undefined;
-                fontSize?: undefined;
-                lineHeight?: undefined;
-                letterSpacing?: undefined;
-                '> input::placeholder'?: undefined;
-            };
-        } | {
-            props: {
-                'ds-variant': string;
-                size: string;
-            };
-            style: {
-                height: string;
-                width: string;
-                '> input': {
-                    padding: string;
-                };
-                textAlign?: undefined;
-                borderRadius?: undefined;
-                paddingLeft?: undefined;
-                paddingRight?: undefined;
-                paddingTop?: undefined;
-                paddingBottom?: undefined;
-                minWidth?: undefined;
-                fontWeight?: undefined;
-                fontSize?: undefined;
-                lineHeight?: undefined;
-                letterSpacing?: undefined;
-                '> input::placeholder'?: undefined;
-            };
-        } | {
-            props: {
-                'ds-variant': string;
-                size?: undefined;
-            };
-            style: {
-                borderRadius: string;
-                paddingLeft: string;
-                paddingRight: string;
-                paddingTop: string;
-                paddingBottom: string;
-                height: string;
-                minWidth: string;
-                fontWeight: string;
-                fontSize: string;
-                lineHeight: string;
-                letterSpacing: string;
-                '> input': {
-                    padding: string;
-                };
-                '> input::placeholder': {
-                    color: string;
-                    opacity: number;
-                };
-                textAlign?: undefined;
-                width?: undefined;
-            };
-        })[];
-        styleOverrides: {
-            root: {
-                background: string;
-                borderWidth: string;
-                borderStyle: string;
-                borderColor: string;
-                borderRadius: string;
-                '&.Mui-focused:not(.Mui-disabled)': {
-                    borderColor: string;
-                };
-                '&.MuiInputBase-colorSuccess': {
-                    borderColor: string;
-                };
-                '&.Mui-focused.MuiInputBase-colorSuccess': {
-                    borderColor: string;
-                };
-                '&.Mui-disabled': {
-                    background: string;
-                    borderColor: string;
-                    cursor: string;
-                    pointerEvents: string;
-                    '> .MuiInputAdornment-root': {
-                        color: string;
-                        cursor: string;
-                        pointerEvents: string;
-                    };
-                };
-                '&.Mui-error': {
-                    borderColor: string;
-                };
-                '&.Mui-focused.Mui-error': {
-                    borderColor: string;
-                };
-                '&.MuiInputBase-readOnly': {
-                    background: string;
-                    borderColor: string;
-                    pointerEvents: string;
-                    '> .MuiInputAdornment-root': {
-                        color: string;
-                    };
-                };
-                '> .MuiInputAdornment-root': {
-                    padding: string;
-                    height: string;
-                };
-            };
-            input: {
-                padding: string;
-                fontWeight: string;
-                fontSize: string;
-                lineHeight: string;
-                letterSpacing: string;
-                '&.Mui-disabled': {
-                    cursor: string;
-                    pointerEvents: string;
-                };
-                '&::placeholder': {
-                    color: string;
-                    opacity: number;
-                };
-            };
-            adornedStart: {
-                paddingLeft: string;
-            };
-            adornedEnd: {
-                paddingRight: string;
-            };
-        };
-    };
-    MuiInputAdornment: {
-        styleOverrides: {
-            root: {
-                color: string;
-                '& .MuiSvgIcon-root': {
-                    cursor: string;
-                };
-            };
-            positionStart: {
-                marginRight: string;
-            };
-            positionEnd: {
-                marginLeft: string;
-            };
-        };
-    };
     MuiToggleButtonGroup: {
         styleOverrides: {
             root: {
@@ -407,6 +207,84 @@ declare const components: {
                         };
                     };
                 };
+            };
+        };
+    };
+    MuiStepper: {
+        styleOverrides: {
+            vertical: {
+                '> .MuiStep-root': {
+                    '&:first-of-type': {
+                        paddingTop: string;
+                    };
+                    '&:last-of-type': {
+                        paddingBottom: string;
+                    };
+                };
+            };
+        };
+    };
+    MuiStepLabel: {
+        styleOverrides: {
+            root: {
+                paddingLeft: string;
+                paddingRight: string;
+                paddingTop: string;
+                paddingBottom: string;
+            };
+            label: {
+                fontWeight: string;
+                fontSize: string;
+                lineHeight: string;
+                letterSpacing: string;
+                textTransform: string;
+                color: string;
+                marginLeft: string;
+                marginRight: string;
+                '&.Mui-disabled': {
+                    color: string;
+                };
+            };
+            iconContainer: {
+                fontSize: string;
+                padding: string;
+                margin: string;
+                marginTop: string;
+                marginBottom: string;
+                '&.Mui-disabled': {
+                    marginTop: string;
+                    marginBottom: string;
+                    fontWeight: string;
+                    fontSize: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    textTransform: string;
+                    color: string;
+                    height: string;
+                    width: string;
+                    marginLeft: string;
+                    padding: string;
+                    borderWidth: string;
+                    borderStyle: string;
+                    borderColor: string;
+                    borderRadius: string;
+                    display: string;
+                    justifyContent: string;
+                    alignItems: string;
+                };
+            };
+        };
+    };
+    MuiStepConnector: {
+        styleOverrides: {
+            line: {
+                borderLeftWidth: string;
+                borderLeftStyle: string;
+                borderLeftColor: string;
+                minHeight: string;
+            };
+            vertical: {
+                marginLeft: string;
             };
         };
     };
@@ -635,98 +513,9 @@ declare const components: {
             };
         };
     };
-    MuiStepper: {
-        styleOverrides: {
-            vertical: {
-                '> .MuiStep-root': {
-                    '&:first-of-type': {
-                        paddingTop: string;
-                    };
-                    '&:last-of-type': {
-                        paddingBottom: string;
-                    };
-                };
-            };
-        };
-    };
-    MuiStepLabel: {
-        styleOverrides: {
-            root: {
-                paddingLeft: string;
-                paddingRight: string;
-                paddingTop: string;
-                paddingBottom: string;
-            };
-            label: {
-                fontWeight: string;
-                fontSize: string;
-                lineHeight: string;
-                letterSpacing: string;
-                textTransform: string;
-                color: string;
-                marginLeft: string;
-                marginRight: string;
-                '&.Mui-disabled': {
-                    color: string;
-                };
-            };
-            iconContainer: {
-                fontSize: string;
-                padding: string;
-                margin: string;
-                marginTop: string;
-                marginBottom: string;
-                '&.Mui-disabled': {
-                    marginTop: string;
-                    marginBottom: string;
-                    fontWeight: string;
-                    fontSize: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    textTransform: string;
-                    color: string;
-                    height: string;
-                    width: string;
-                    marginLeft: string;
-                    padding: string;
-                    borderWidth: string;
-                    borderStyle: string;
-                    borderColor: string;
-                    borderRadius: string;
-                    display: string;
-                    justifyContent: string;
-                    alignItems: string;
-                };
-            };
-        };
-    };
-    MuiStepConnector: {
-        styleOverrides: {
-            line: {
-                borderLeftWidth: string;
-                borderLeftStyle: string;
-                borderLeftColor: string;
-                minHeight: string;
-            };
-            vertical: {
-                marginLeft: string;
-            };
-        };
-    };
     MuiPaper: {
         defaultProps: {
             elevation: number;
-        };
-    };
-    MuiMenu: {
-        defaultProps: {
-            disableAutoFocusItem: boolean;
-        };
-        styleOverrides: {
-            list: {
-                boxShadow: string;
-                borderRadius: string;
-            };
         };
     };
     MuiMenuItem: {
@@ -779,6 +568,17 @@ declare const components: {
             };
         };
     };
+    MuiMenu: {
+        defaultProps: {
+            disableAutoFocusItem: boolean;
+        };
+        styleOverrides: {
+            list: {
+                boxShadow: string;
+                borderRadius: string;
+            };
+        };
+    };
     MuiLink: {
         defaultProps: {
             color: string;
@@ -805,6 +605,206 @@ declare const components: {
                 '&:focus': {
                     textDecoration: string;
                 };
+            };
+        };
+    };
+    MuiInputLabel: {
+        defaultProps: {
+            shrink: boolean;
+        };
+        styleOverrides: {
+            root: {
+                fontWeight: string;
+                fontSize: string;
+                lineHeight: string;
+                letterSpacing: string;
+                transform: string;
+                position: string;
+                marginBottom: string;
+                color: string;
+                '> p:first-of-type': {
+                    paddingTop: string;
+                    paddingBottom: string;
+                    paddingRight: string;
+                };
+                '&.Mui-focused:not(.Mui-disabled)': {
+                    color: string;
+                };
+                '&.MuiFormLabel-colorSuccess': {
+                    color: string;
+                };
+                '&.Mui-focused.MuiFormLabel-colorSuccess': {
+                    color: string;
+                };
+                '&.Mui-error': {
+                    color: string;
+                };
+                '&.Mui-focused.Mui-error': {
+                    color: string;
+                };
+            };
+        };
+    };
+    MuiInputBase: {
+        defaultProps: {
+            size: string;
+        };
+        variants: ({
+            props: {
+                'ds-variant': string;
+                size?: undefined;
+            };
+            style: {
+                textAlign: string;
+                height?: undefined;
+                width?: undefined;
+                '> input'?: undefined;
+                borderRadius?: undefined;
+                paddingLeft?: undefined;
+                paddingRight?: undefined;
+                paddingTop?: undefined;
+                paddingBottom?: undefined;
+                minWidth?: undefined;
+                fontWeight?: undefined;
+                fontSize?: undefined;
+                lineHeight?: undefined;
+                letterSpacing?: undefined;
+                '> input::placeholder'?: undefined;
+            };
+        } | {
+            props: {
+                'ds-variant': string;
+                size: string;
+            };
+            style: {
+                height: string;
+                width: string;
+                '> input': {
+                    padding: string;
+                };
+                textAlign?: undefined;
+                borderRadius?: undefined;
+                paddingLeft?: undefined;
+                paddingRight?: undefined;
+                paddingTop?: undefined;
+                paddingBottom?: undefined;
+                minWidth?: undefined;
+                fontWeight?: undefined;
+                fontSize?: undefined;
+                lineHeight?: undefined;
+                letterSpacing?: undefined;
+                '> input::placeholder'?: undefined;
+            };
+        } | {
+            props: {
+                'ds-variant': string;
+                size?: undefined;
+            };
+            style: {
+                borderRadius: string;
+                paddingLeft: string;
+                paddingRight: string;
+                paddingTop: string;
+                paddingBottom: string;
+                height: string;
+                minWidth: string;
+                fontWeight: string;
+                fontSize: string;
+                lineHeight: string;
+                letterSpacing: string;
+                '> input': {
+                    padding: string;
+                };
+                '> input::placeholder': {
+                    color: string;
+                    opacity: number;
+                };
+                textAlign?: undefined;
+                width?: undefined;
+            };
+        })[];
+        styleOverrides: {
+            root: {
+                background: string;
+                borderWidth: string;
+                borderStyle: string;
+                borderColor: string;
+                borderRadius: string;
+                '&.Mui-focused:not(.Mui-disabled)': {
+                    borderColor: string;
+                };
+                '&.MuiInputBase-colorSuccess': {
+                    borderColor: string;
+                };
+                '&.Mui-focused.MuiInputBase-colorSuccess': {
+                    borderColor: string;
+                };
+                '&.Mui-disabled': {
+                    background: string;
+                    borderColor: string;
+                    cursor: string;
+                    pointerEvents: string;
+                    '> .MuiInputAdornment-root': {
+                        color: string;
+                        cursor: string;
+                        pointerEvents: string;
+                    };
+                };
+                '&.Mui-error': {
+                    borderColor: string;
+                };
+                '&.Mui-focused.Mui-error': {
+                    borderColor: string;
+                };
+                '&.MuiInputBase-readOnly': {
+                    background: string;
+                    borderColor: string;
+                    pointerEvents: string;
+                    '> .MuiInputAdornment-root': {
+                        color: string;
+                    };
+                };
+                '> .MuiInputAdornment-root': {
+                    padding: string;
+                    height: string;
+                };
+            };
+            input: {
+                padding: string;
+                fontWeight: string;
+                fontSize: string;
+                lineHeight: string;
+                letterSpacing: string;
+                '&.Mui-disabled': {
+                    cursor: string;
+                    pointerEvents: string;
+                };
+                '&::placeholder': {
+                    color: string;
+                    opacity: number;
+                };
+            };
+            adornedStart: {
+                paddingLeft: string;
+            };
+            adornedEnd: {
+                paddingRight: string;
+            };
+        };
+    };
+    MuiInputAdornment: {
+        styleOverrides: {
+            root: {
+                color: string;
+                '& .MuiSvgIcon-root': {
+                    cursor: string;
+                };
+            };
+            positionStart: {
+                marginRight: string;
+            };
+            positionEnd: {
+                marginLeft: string;
             };
         };
     };
@@ -976,22 +976,6 @@ declare const components: {
             };
         }[];
     };
-    MuiDialog: {
-        defaultProps: {
-            scroll: string;
-            maxWidth: string;
-        };
-        styleOverrides: {
-            paper: {
-                backgroundColor: string;
-                borderRadius: string;
-                boxShadow: string;
-            };
-            paperWidthXs: {
-                maxWidth: string;
-            };
-        };
-    };
     MuiDialogTitle: {
         styleOverrides: {
             root: {
@@ -1041,9 +1025,20 @@ declare const components: {
             };
         };
     };
-    MuiCalendarPicker: {
+    MuiDialog: {
+        defaultProps: {
+            scroll: string;
+            maxWidth: string;
+        };
         styleOverrides: {
-            root: {};
+            paper: {
+                backgroundColor: string;
+                borderRadius: string;
+                boxShadow: string;
+            };
+            paperWidthXs: {
+                maxWidth: string;
+            };
         };
     };
     MuiPickersDay: {
@@ -1712,6 +1707,17 @@ declare const components: {
             };
         };
     };
+    MuiAccordionDetails: {
+        styleOverrides: {
+            root: {
+                border: string;
+                paddingTop: string;
+                paddingBottom: string;
+                paddingLeft: string;
+                paddingRight: string;
+            };
+        };
+    };
     MuiAccordion: {
         defaultProps: {
             TransitionProps: {
@@ -1759,17 +1765,6 @@ declare const components: {
                     margin: string;
                     marginRight: string;
                 };
-            };
-        };
-    };
-    MuiAccordionDetails: {
-        styleOverrides: {
-            root: {
-                border: string;
-                paddingTop: string;
-                paddingBottom: string;
-                paddingLeft: string;
-                paddingRight: string;
             };
         };
     };

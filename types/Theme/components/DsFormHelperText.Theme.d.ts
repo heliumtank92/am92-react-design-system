@@ -1,5 +1,5 @@
-export default DsHelperTextTheme;
-declare namespace DsHelperTextTheme {
+export default DsFormHelperTextTheme;
+declare namespace DsFormHelperTextTheme {
     namespace MuiFormHelperText {
         namespace styleOverrides {
             namespace root {
