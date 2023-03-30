@@ -52,5 +52,6 @@ export default function getTheme(palette?: {
     neutral5Dark: string;
     neutral6Dark: string;
 }, fontFamilyName?: string): Omit<import("@mui/material/styles").Theme, "palette"> & import("@mui/material/styles").CssVarsTheme;
-export { dsSpacing };
 import dsSpacing from "./spacing";
+import { SPACE_COEFFICIENT } from "./spacing";
+export { dsSpacing, SPACE_COEFFICIENT };

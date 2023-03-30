@@ -59,4 +59,4 @@ export default function getTheme (palette = PALETTE, fontFamilyName = FONT_FAMIL
   return theme
 }
 
-export { dsSpacing }
+export { dsSpacing, SPACE_COEFFICIENT }
