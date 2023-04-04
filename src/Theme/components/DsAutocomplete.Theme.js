@@ -7,6 +7,13 @@ const DsAutocomplete = {
             backgroundColor: 'var(--ds-color-stateSelectedPrimaryHover)'
           }
         }
+      },
+      endAdornment: {
+        position: 'relative',
+        top: 'unset',
+        display: 'flex',
+        alignItems: 'center',
+        marginLeft: 'var(--ds-spacing-frostbite)'
       }
     }
   }
