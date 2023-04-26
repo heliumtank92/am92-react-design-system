@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { withSnackbar } from 'notistack'
+import { closeSnackbar } from 'notistack'
 
 import DsToast from './DsToast'
 
@@ -11,7 +11,6 @@ class AlertMessage extends Component {
       PropTypes.shape({ current: PropTypes.any })
     ]).isRequired,
     enqueueSnackbar: PropTypes.func.isRequired,
-    closeSnackbar: PropTypes.func.isRequired,
     messageOptions: PropTypes.shape({
       message: PropTypes.string,
       onClose: PropTypes.func
@@ -25,7 +24,7 @@ class AlertMessage extends Component {
   }
 
   handleClose = async () => {
-    const { messageOptions, closeSnackbar } = this.props
+    const { messageOptions } = this.props
     const { key, onClose } = messageOptions
     if (typeof onClose === 'function') {
       await onClose(this.props)
@@ -51,10 +50,8 @@ class AlertMessage extends Component {
   }
 }
 
-const NotistackAlert = withSnackbar(AlertMessage)
-
 const DsNotistackAlert = React.forwardRef((props, ref) => {
-  return <NotistackAlert forwardedRef={ref} messageOptions={props.options} />
+  return <AlertMessage forwardedRef={ref} messageOptions={props.options} />
 })
 
 export default DsNotistackAlert
