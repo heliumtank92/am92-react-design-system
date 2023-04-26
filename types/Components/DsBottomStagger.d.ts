@@ -1,4 +1,4 @@
-export class DsBottomStagger extends PureComponent<any, any, any> {
+export class DsBottomStagger {
     static propTypes: {
         kicker: any;
         title: any;
@@ -8,9 +8,6 @@ export class DsBottomStagger extends PureComponent<any, any, any> {
     static defaultProps: {
         showClose: boolean;
     };
-    constructor(props: any);
-    constructor(props: any, context: any);
     render(): JSX.Element;
 }
 export default DsBottomStagger;
-import { PureComponent } from "react";

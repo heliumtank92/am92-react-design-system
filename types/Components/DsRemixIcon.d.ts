@@ -1,6 +1,3 @@
-export default class DsRemixIcon extends PureComponent<any, any, any> {
-    constructor(props: any);
-    constructor(props: any, context: any);
+export default class DsRemixIcon {
     render(): JSX.Element;
 }
-import { PureComponent } from "react";

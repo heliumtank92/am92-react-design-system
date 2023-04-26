@@ -1,6 +1,3 @@
-export default class DsInputLabel extends PureComponent<any, any, any> {
-    constructor(props: any);
-    constructor(props: any, context: any);
+export default class DsInputLabel {
     render(): JSX.Element;
 }
-import { PureComponent } from "react";

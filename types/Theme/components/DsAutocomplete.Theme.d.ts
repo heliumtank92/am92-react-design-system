@@ -9,6 +9,13 @@ declare namespace DsAutocomplete {
                     };
                 };
             };
+            namespace endAdornment {
+                const position: string;
+                const top: string;
+                const display: string;
+                const alignItems: string;
+                const marginLeft: string;
+            }
         }
     }
 }

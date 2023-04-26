@@ -1,4 +1,4 @@
-export default class DsHelperText extends PureComponent<any, any, any> {
+export default class DsHelperText {
     static propTypes: {
         helperText: any;
         color: any;
@@ -8,8 +8,5 @@ export default class DsHelperText extends PureComponent<any, any, any> {
     static defaultProps: {
         helperText: string;
     };
-    constructor(props: any);
-    constructor(props: any, context: any);
     render(): JSX.Element;
 }
-import { PureComponent } from "react";

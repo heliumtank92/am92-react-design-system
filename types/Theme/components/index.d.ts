@@ -1610,6 +1610,13 @@ declare const components: {
                     };
                 };
             };
+            endAdornment: {
+                position: string;
+                top: string;
+                display: string;
+                alignItems: string;
+                marginLeft: string;
+            };
         };
     };
     MuiListItemButton: {

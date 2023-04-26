@@ -1,4 +1,4 @@
-export class DsProgressTracker extends PureComponent<any, any, any> {
+export class DsProgressTracker {
     static propsTypes: {
         activeStep: any;
         orientation: any;
@@ -8,8 +8,6 @@ export class DsProgressTracker extends PureComponent<any, any, any> {
         activeStep: number;
         orientation: string;
     };
-    constructor(props: any);
-    constructor(props: any, context: any);
     renderStepIcon: (stepProps: any) => any;
     renderStep: ({ stepName }: {
         stepName: any;
@@ -17,4 +15,3 @@ export class DsProgressTracker extends PureComponent<any, any, any> {
     render(): JSX.Element;
 }
 export default DsProgressTracker;
-import { PureComponent } from "react";

@@ -1,18 +1,17 @@
-export default class DsSearchbar extends PureComponent<any, any, any> {
+export class DsSearchbar {
     static propTypes: {
         placeholder: any;
         options: any;
         onChange: any;
-        onMicClick: any;
+        startAdornmentProps: any;
     };
     static defaultProps: {
         placeholder: string;
         options: any[];
+        startAdornmentProps: {};
     };
-    constructor(props: any);
-    constructor(props: any, context: any);
-    handleClearClick: () => void;
     handleChange: (event: any, newValue: any) => void;
+    renderStartAdornment: () => JSX.Element;
     render(): JSX.Element;
 }
-import { PureComponent } from "react";
+export default DsSearchbar;

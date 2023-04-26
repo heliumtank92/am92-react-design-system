@@ -1,4 +1,4 @@
-export default class DsSideNav extends PureComponent<any, any, any> {
+export default class DsSideNav {
     static propTypes: {
         navLinks: any;
         open: any;
@@ -11,10 +11,7 @@ export default class DsSideNav extends PureComponent<any, any, any> {
         onDrawerclose: () => any;
         onNavlinkClick: () => any;
     };
-    constructor(props: any);
-    constructor(props: any, context: any);
     renderNavLinks(): any;
     getDrawer(): JSX.Element;
     render(): JSX.Element;
 }
-import { PureComponent } from "react";
