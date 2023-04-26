@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import DsInputAdornment from 'src/DesignSystem/Components/DsInputAdornment'
-import DsRemixIcon from 'src/DesignSystem/Components/DsRemixIcon'
-import DsIconButton from 'src/DesignSystem/Components/DsIconButton'
-import DsTextField from 'src/DesignSystem/Components/DsTextField'
+import DsInputAdornment from './DsInputAdornment'
+import DsRemixIcon from './DsRemixIcon'
+import DsIconButton from './DsIconButton'
+import DsTextField from './DsTextField'
 
 export default class DsTextFieldPassword extends Component {
   static propTypes = {

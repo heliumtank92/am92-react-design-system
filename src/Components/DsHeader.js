@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import DsBox from './DsBox'
 import DsStack from './DsStack'
-import DsImage from 'src/DesignSystem/Components/DsImage'
+import DsImage from './DsImage'
 
 export default class DsHeader extends Component {
   static propTypes = {
