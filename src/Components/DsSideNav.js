@@ -9,7 +9,6 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import Toolbar from '@mui/material/Toolbar'
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import DsRemixIcon from './DsRemixIcon'
 
 const DRAWER_WIDTH = 240
