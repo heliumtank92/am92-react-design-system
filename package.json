@@ -64,7 +64,8 @@
     "@babel/core": "^7.21.0",
     "@babel/preset-react": "^7.18.6",
     "@types/node": "^18.15.3",
-    "@types/prop-types": "^15.7.5"
+    "@types/prop-types": "^15.7.5",
+    "date-fns": "^2.30.0"
   },
   "peerDependencies": {
     "react": "^18.x.x",
