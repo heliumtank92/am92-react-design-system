@@ -27,8 +27,8 @@ export default class DsImage extends PureComponent {
 
   state = { loadState: 'LOADING' }
 
-  handleLoad = (e) => this.setState({ loadState: 'LOADED' })
-  handleError = (e) => this.setState({ loadState: 'ERROR' })
+  handleLoad = e => this.setState({ loadState: 'LOADED' })
+  handleError = e => this.setState({ loadState: 'ERROR' })
 
   hasSource = () => {
     const { src, srcSet } = this.props
@@ -51,7 +51,10 @@ export default class DsImage extends PureComponent {
           height: '100%'
         }}
       >
-        <DsCircularProgress size='100%' sx={{ maxHeight: '50px', maxWidth: '50px' }} />
+        <DsCircularProgress
+          size="100%"
+          sx={{ maxHeight: '50px', maxWidth: '50px' }}
+        />
       </DsBox>
     )
   }
@@ -74,7 +77,11 @@ export default class DsImage extends PureComponent {
           fontSize: errorIconFontSize
         }}
       >
-        <DsRemixIcon className={errorIconClass} color='iconDisabled' fontSize='inherit' />
+        <DsRemixIcon
+          className={errorIconClass}
+          color="iconDisabled"
+          fontSize="inherit"
+        />
       </DsBox>
     )
   }
@@ -82,10 +89,19 @@ export default class DsImage extends PureComponent {
   renderImageSrcSet = () => {
     const isValidSource = this.hasSource()
 
-    if (!isValidSource) { return false }
+    if (!isValidSource) {
+      return false
+    }
 
     const { loadState } = this.state
-    const { src, srcSet, alt, errorIconClass, errorIconFontSize, ...restProps } = this.props
+    const {
+      src,
+      srcSet,
+      alt,
+      errorIconClass,
+      errorIconFontSize,
+      ...restProps
+    } = this.props
 
     const isLoaded = loadState === 'LOADED'
     const imgDisplayProps = isLoaded ? {} : { display: 'none' }
@@ -104,9 +120,17 @@ export default class DsImage extends PureComponent {
       const lastIndex = srcSet.length - 1
       children = srcSet.map((src, index) => {
         const isLast = index === lastIndex
+        const { src: imageSrc, ...restProps } = src
 
         if (!isLast) {
-          return (<source key={index} alt={alt} srcSet={src.src} {...src} />)
+          return (
+            <source
+              key={index}
+              alt={alt}
+              srcSet={imageSrc}
+              {...restProps}
+            />
+          )
         } else {
           return <img key={index} alt={alt} {...src} {...imgProps} />
         }
@@ -116,7 +140,7 @@ export default class DsImage extends PureComponent {
     return children
   }
 
-  render () {
+  render() {
     const { loadState } = this.state
     const isLoaded = loadState === 'LOADED' || loadState === 'ERROR'
     return (
