@@ -7,8 +7,7 @@ import DsToast from './DsToast'
 export {
   closeSnackbar,
   enqueueSnackbar,
-  useSnackbar,
-  buildEnqueueSnackbarProps
+  useSnackbar
 }
 
 export class DsNotistackProvider extends Component {
@@ -39,41 +38,40 @@ class AlertMessage extends Component {
       PropTypes.func,
       PropTypes.shape({ current: PropTypes.any })
     ]).isRequired,
-    messageOptions: PropTypes.shape({
-      variant: PropTypes.string,
-      severity: PropTypes.string,
-      message: PropTypes.string,
-      onClose: PropTypes.func
-    })
+    message: PropTypes.string.isRequired,
+    toastVariant: PropTypes.oneOf(['outlined', 'filled']),
+    variant: PropTypes.oneOf(['default', 'info', 'success', 'error', 'warning']),
+    sx: PropTypes.object
   }
 
   static defaultProps = {
-    messageOptions: {
-      variant: 'filled',
-      severity: 'info',
-      message: '',
-      onClose: undefined
-    }
+    toastVariant: 'filled',
+    variant: 'default'
   }
 
-  handleClose = async () => {
-    const { messageOptions } = this.props
-    const { key, onClose } = messageOptions
-    if (typeof onClose === 'function') {
-      await onClose(this.props)
+  handleClose = () => {
+    const { key, onClose } = this.props
+    if (onClose && typeof onClose === 'function') {
+      onClose(this.props)
     }
+
     closeSnackbar(key)
   }
 
   render () {
-    const { forwardedRef, messageOptions } = this.props
-    const { variant, severity, message, sx } = messageOptions
+    const {
+      forwardedRef,
+      message,
+      toastVariant,
+      variant,
+      sx
+    } = this.props
 
     return (
       <DsToast
         forwardedRef={forwardedRef}
-        variant={variant}
-        color={severity}
+        variant={toastVariant}
+        color={variant}
         sx={sx}
         onClose={this.handleClose}
       >
@@ -84,51 +82,21 @@ class AlertMessage extends Component {
 }
 
 const DsNotistackAlertDefault = React.forwardRef((props, ref) => {
-  return (
-    <AlertMessage
-      forwardedRef={ref}
-      messageOptions={{ ...props, severity: 'default' }}
-    />
-  )
+  return <AlertMessage forwardedRef={ref} {...props} variant='default' />
 })
 
 const DsNotistackAlertSuccess = React.forwardRef((props, ref) => {
-  return (
-    <AlertMessage
-      forwardedRef={ref}
-      messageOptions={{ ...props, severity: 'success' }}
-    />
-  )
+  return <AlertMessage forwardedRef={ref} {...props} variant='success' />
 })
 
 const DsNotistackAlertError = React.forwardRef((props, ref) => {
-  return (
-    <AlertMessage
-      forwardedRef={ref}
-      messageOptions={{ ...props, severity: 'error' }}
-    />
-  )
+  return <AlertMessage forwardedRef={ref} {...props} variant='error' />
 })
 
 const DsNotistackAlertWarning = React.forwardRef((props, ref) => {
-  return (
-    <AlertMessage
-      forwardedRef={ref}
-      messageOptions={{ ...props, severity: 'warning' }}
-    />
-  )
+  return <AlertMessage forwardedRef={ref} {...props} variant='warning' />
 })
 
 const DsNotistackAlertInfo = React.forwardRef((props, ref) => {
-  return (
-    <AlertMessage
-      forwardedRef={ref}
-      messageOptions={{ ...props, severity: 'info' }}
-    />
-  )
+  return <AlertMessage forwardedRef={ref} {...props} variant='info' />
 })
-
-function buildEnqueueSnackbarProps (options = {}) {
-  const key = new Date().getTime()
-  return { ...options, key }
-}
