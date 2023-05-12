@@ -7,7 +7,8 @@ import DsToast from './DsToast'
 export {
   closeSnackbar,
   enqueueSnackbar,
-  useSnackbar
+  useSnackbar,
+  buildNotificationProps
 }
 
 export class DsNotistackProvider extends Component {
@@ -100,3 +101,8 @@ const DsNotistackAlertWarning = React.forwardRef((props, ref) => {
 const DsNotistackAlertInfo = React.forwardRef((props, ref) => {
   return <AlertMessage forwardedRef={ref} {...props} variant='info' />
 })
+
+function buildNotificationProps (notificationObj) {
+  const key = new Date().getTime()
+  return { ...notificationObj, key }
+}

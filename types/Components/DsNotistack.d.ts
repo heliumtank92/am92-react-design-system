@@ -7,4 +7,5 @@ export class DsNotistackProvider {
 import { closeSnackbar } from 'notistack';
 import { enqueueSnackbar } from 'notistack';
 import { useSnackbar } from 'notistack';
+export function buildNotificationProps(notificationObj: any): any;
 export { closeSnackbar, enqueueSnackbar, useSnackbar };
