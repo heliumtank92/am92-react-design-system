@@ -51,12 +51,12 @@ class AlertMessage extends Component {
   }
 
   handleClose = () => {
-    const { key, onClose } = this.props
+    const { id, onClose } = this.props
     if (onClose && typeof onClose === 'function') {
       onClose(this.props)
     }
 
-    closeSnackbar(key)
+    closeSnackbar(id)
   }
 
   render () {
