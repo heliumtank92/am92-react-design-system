@@ -18,7 +18,8 @@ class AlertMessage extends Component {
   }
 
   static defaultProps = {
-    variant: 'info',
+    variant: 'filled',
+    severity: 'info',
     message: '',
     onClose: undefined
   }
