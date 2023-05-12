@@ -87,7 +87,7 @@ const DsNotistackAlertDefault = React.forwardRef((props, ref) => {
   return (
     <AlertMessage
       forwardedRef={ref}
-      messageOptions={{ ...props.options, severity: 'default' }}
+      messageOptions={{ ...props, severity: 'default' }}
     />
   )
 })
@@ -96,7 +96,7 @@ const DsNotistackAlertSuccess = React.forwardRef((props, ref) => {
   return (
     <AlertMessage
       forwardedRef={ref}
-      messageOptions={{ ...props.options, severity: 'success' }}
+      messageOptions={{ ...props, severity: 'success' }}
     />
   )
 })
@@ -105,7 +105,7 @@ const DsNotistackAlertError = React.forwardRef((props, ref) => {
   return (
     <AlertMessage
       forwardedRef={ref}
-      messageOptions={{ ...props.options, severity: 'error' }}
+      messageOptions={{ ...props, severity: 'error' }}
     />
   )
 })
@@ -114,7 +114,7 @@ const DsNotistackAlertWarning = React.forwardRef((props, ref) => {
   return (
     <AlertMessage
       forwardedRef={ref}
-      messageOptions={{ ...props.options, severity: 'warning' }}
+      messageOptions={{ ...props, severity: 'warning' }}
     />
   )
 })
@@ -123,7 +123,7 @@ const DsNotistackAlertInfo = React.forwardRef((props, ref) => {
   return (
     <AlertMessage
       forwardedRef={ref}
-      messageOptions={{ ...props.options, severity: 'info' }}
+      messageOptions={{ ...props, severity: 'info' }}
     />
   )
 })
