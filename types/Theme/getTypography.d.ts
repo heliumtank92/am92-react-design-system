@@ -228,7 +228,6 @@ export default function getTypography(fontFamilyName?: string): {
         fontWeightRegular: string;
         fontWeightSemibold: string;
         fontWeightBold: string;
-        fontWeightBoldItalic: string;
         lineHeightIceAge: string;
         lineHeightGlacial: string;
         lineHeightGelid: string;
@@ -248,8 +247,9 @@ export default function getTypography(fontFamilyName?: string): {
         htmlFontSize: number;
         fontSize: number;
         fontFamily: string;
+        fontWeightLight: string;
         fontWeightRegular: string;
-        fontWeightMedium: any;
+        fontWeightMedium: string;
         fontWeightBold: string;
         displayBoldLarge: {
             fontFamily: string;

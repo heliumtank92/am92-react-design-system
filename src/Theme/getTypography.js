@@ -24,7 +24,6 @@ export default function getTypography (fontFamilyName = '') {
     fontWeightRegular: '400',
     fontWeightSemibold: '600',
     fontWeightBold: '700',
-    fontWeightBoldItalic: '700',
 
     lineHeightIceAge: '10px',
     lineHeightGlacial: '8px',
@@ -270,8 +269,9 @@ export default function getTypography (fontFamilyName = '') {
     htmlFontSize: 16,
     fontSize: 14,
     fontFamily,
+    fontWeightLight: dsTypo.fontWeightLight,
     fontWeightRegular: dsTypo.fontWeightRegular,
-    fontWeightMedium: dsTypo.fontWeightMedium,
+    fontWeightMedium: dsTypo.fontWeightSemibold,
     fontWeightBold: dsTypo.fontWeightBold,
 
     displayBoldLarge: dsTypo.displayBoldLarge,
