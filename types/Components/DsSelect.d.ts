@@ -1,4 +1,4 @@
-export default class DsSelect {
+export default class DsSelect extends PureComponent<any, any, any> {
     static propTypes: {
         options: any;
     };
@@ -9,3 +9,4 @@ export default class DsSelect {
     inputBaseRef: any;
     render(): JSX.Element;
 }
+import { PureComponent } from "react";

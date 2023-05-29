@@ -1035,6 +1035,7 @@ declare const components: {
                 backgroundColor: string;
                 borderRadius: string;
                 boxShadow: string;
+                backgroundImage: string;
             };
             paperWidthXs: {
                 maxWidth: string;

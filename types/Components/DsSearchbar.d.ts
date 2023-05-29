@@ -1,4 +1,4 @@
-export class DsSearchbar {
+export class DsSearchbar extends Component<any, any, any> {
     static propTypes: {
         placeholder: any;
         options: any;
@@ -10,8 +10,11 @@ export class DsSearchbar {
         options: any[];
         startAdornmentProps: {};
     };
+    constructor(props: any);
+    constructor(props: any, context: any);
     handleChange: (event: any, newValue: any) => void;
     renderStartAdornment: () => JSX.Element;
     render(): JSX.Element;
 }
 export default DsSearchbar;
+import { Component } from "react";

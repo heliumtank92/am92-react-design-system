@@ -10,6 +10,7 @@ declare namespace DsDialogTheme {
                 const backgroundColor: string;
                 const borderRadius: string;
                 const boxShadow: string;
+                const backgroundImage: string;
             }
             namespace paperWidthXs {
                 const maxWidth_1: string;
