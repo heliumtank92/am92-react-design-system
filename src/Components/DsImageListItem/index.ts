@@ -1,4 +1,3 @@
-export {
-  default,
-  ImageListItemProps as DsImageListItemProps
-} from '@mui/material/ImageListItem'
+export * from './DsImageListItem.Component'
+export * from './DsImageListItem.Types'
+export * from './DsImageListItem.Overrides'
