@@ -1,3 +1,5 @@
-export { ContainerProps as DsContainerProps } from '@mui/material/Container'
+import { ContainerProps } from '@mui/material'
 
-export const DsContainerDefaultProps = {}
+export interface DsContainerProps extends ContainerProps {}
+
+export const DsContainerDefaultProps: DsContainerProps = {}
