@@ -2,4 +2,6 @@ import { BottomNavigationProps } from '@mui/material'
 
 export interface DsBottomNavigationProps extends BottomNavigationProps {}
 
-export const DsBottomNavigationDefaultProps: DsBottomNavigationProps = {}
+export const DsBottomNavigationDefaultProps: DsBottomNavigationProps = {
+  showLabels: true
+}
