@@ -1,4 +1,3 @@
-export {
-  default,
-  PortalProps as DsPortalProps
-} from '@mui/material/Portal'
+export * from './DsPortal.Component'
+export * from './DsPortal.Types'
+export * from './DsPortal.Overrides'
