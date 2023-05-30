@@ -1,4 +1,3 @@
-export {
-  default,
-  TabScrollButtonProps as DsTabScrollButtonProps
-} from '@mui/material/TabScrollButton'
+export * from './DsTabScrollButton.Component'
+export * from './DsTabScrollButton.Types'
+export * from './DsTabScrollButton.Overrides'
