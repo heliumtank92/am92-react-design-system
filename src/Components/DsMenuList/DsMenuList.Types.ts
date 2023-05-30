@@ -1,3 +1,5 @@
-export { MenuListProps as DsMenuListProps } from '@mui/material/MenuList'
+import { MenuListProps } from '@mui/material'
 
-export const DsMenuListDefaultProps = {}
+export interface DsMenuListProps extends MenuListProps {}
+
+export const DsMenuListDefaultProps: DsMenuListProps = {}
