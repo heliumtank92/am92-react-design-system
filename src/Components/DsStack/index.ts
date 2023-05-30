@@ -1,4 +1,3 @@
-export {
-  default,
-  StackProps as DsStackProps
-} from '@mui/material/Stack'
+export * from './DsStack.Component'
+export * from './DsStack.Types'
+export * from './DsStack.Overrides'
