@@ -1,4 +1,3 @@
-export {
-  default,
-  FormLabelProps as DsFormLabelProps
-} from '@mui/material/FormLabel'
+export * from './DsFormLabel.Component'
+export * from './DsFormLabel.Types'
+export * from './DsFormLabel.Overrides'
