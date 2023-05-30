@@ -1,3 +1,5 @@
-export { CircularProgressProps as DsCircularProgressProps } from '@mui/material/CircularProgress'
+import { CircularProgressProps } from '@mui/material'
 
-export const DsCircularProgressDefaultProps = {}
+export interface DsCircularProgressProps extends CircularProgressProps {}
+
+export const DsCircularProgressDefaultProps: DsCircularProgressProps = {}
