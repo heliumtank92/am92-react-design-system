@@ -1,4 +1,3 @@
-export {
-  default,
-  CssBaselineProps as DsCssBaselineProps
-} from '@mui/material/CssBaseline'
+export * from './DsCssBaseline.Component'
+export * from './DsCssBaseline.Types'
+export * from './DsCssBaseline.Overrides'
