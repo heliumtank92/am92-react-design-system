@@ -1,4 +1,3 @@
-export {
-  default,
-  SliderProps as DsSliderProps
-} from '@mui/material/Slider'
+export * from './DsSlider.Component'
+export * from './DsSlider.Types'
+export * from './DsSlider.Overrides'
