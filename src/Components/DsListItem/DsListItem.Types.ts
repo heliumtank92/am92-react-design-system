@@ -1,3 +1,5 @@
-export { ListItemProps as DsListItemProps } from '@mui/material/ListItem'
+import { ListItemProps } from '@mui/material'
 
-export const DsListItemDefaultProps = {}
+export interface DsListItemProps extends ListItemProps {}
+
+export const DsListItemDefaultProps: DsListItemProps = {}
