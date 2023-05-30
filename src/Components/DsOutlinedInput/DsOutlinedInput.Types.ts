@@ -1,3 +1,5 @@
-export { OutlinedInputProps as DsOutlinedInputProps } from '@mui/material/OutlinedInput'
+import { OutlinedInputProps } from '@mui/material'
 
-export const DsOutlinedInputDefaultProps = {}
+export interface DsOutlinedInputProps extends OutlinedInputProps {}
+
+export const DsOutlinedInputDefaultProps: DsOutlinedInputProps = {}
