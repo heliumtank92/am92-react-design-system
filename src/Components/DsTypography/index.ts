@@ -1,4 +1,3 @@
-export {
-  default,
-  TypographyProps as DsTypographyProps
-} from '@mui/material/Typography'
+export * from './DsTypography.Component'
+export * from './DsTypography.Types'
+export * from './DsTypography.Overrides'
