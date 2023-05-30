@@ -1,4 +1,3 @@
-export {
-  default,
-  SkeletonProps as DsSkeletonProps
-} from '@mui/material/Skeleton'
+export * from './DsSkeleton.Component'
+export * from './DsSkeleton.Types'
+export * from './DsSkeleton.Overrides'
