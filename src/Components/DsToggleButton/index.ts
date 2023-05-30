@@ -1,4 +1,3 @@
-export {
-  default,
-  ToggleButtonProps as DsToggleButtonProps
-} from '@mui/material/ToggleButton'
+export * from './DsToggleButton.Component'
+export * from './DsToggleButton.Types'
+export * from './DsToggleButton.Overrides'
