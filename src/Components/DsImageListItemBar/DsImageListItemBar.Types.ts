@@ -1,3 +1,5 @@
-export { ImageListItemBarProps as DsImageListItemBarProps } from '@mui/material/ImageListItemBar'
+import { ImageListItemBarProps } from '@mui/material'
 
-export const DsImageListItemBarDefaultProps = {}
+export interface DsImageListItemBarProps extends ImageListItemBarProps {}
+
+export const DsImageListItemBarDefaultProps: DsImageListItemBarProps = {}
