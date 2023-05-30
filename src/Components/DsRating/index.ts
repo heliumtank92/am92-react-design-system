@@ -1,4 +1,3 @@
-export {
-  default,
-  RatingProps as DsRatingProps
-} from '@mui/material/Rating'
+export * from './DsRating.Component'
+export * from './DsRating.Types'
+export * from './DsRating.Overrides'
