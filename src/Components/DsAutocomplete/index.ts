@@ -1,4 +1,3 @@
-export {
-  default,
-  AutocompleteProps as DsAutocompleteProps
-} from '@mui/material/Autocomplete'
+export * from './DsAutocomplete.Component'
+export * from './DsAutocomplete.Types'
+export * from './DsAutocomplete.Overrides'
