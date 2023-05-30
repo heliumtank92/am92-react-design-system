@@ -1,3 +1,3 @@
-export * from './DsBox.Component'
-export * from './DsBox.Types'
-export * from './DsBox.Overrides'
+export * from './DsAvatarGroup.Component'
+export * from './DsAvatarGroup.Types'
+export * from './DsAvatarGroup.Overrides'
