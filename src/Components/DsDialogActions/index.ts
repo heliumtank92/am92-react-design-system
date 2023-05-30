@@ -1,4 +1,3 @@
-export {
-  default,
-  DialogActionsProps as DsDialogActionsProps
-} from '@mui/material/DialogActions'
+export * from './DsDialogActions.Component'
+export * from './DsDialogActions.Types'
+export * from './DsDialogActions.Overrides'
