@@ -1,3 +1,5 @@
-export { BoxProps as DsBoxProps } from '@mui/material/Box'
+import { BoxProps } from '@mui/material'
 
-export const DsBoxDefaultProps = {}
+export interface DsBoxProps extends BoxProps {}
+
+export const DsBoxDefaultProps: DsBoxProps = {}
