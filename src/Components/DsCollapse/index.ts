@@ -1,4 +1,3 @@
-export {
-  default,
-  CollapseProps as DsCollapseProps
-} from '@mui/material/Collapse'
+export * from './DsCollapse.Component'
+export * from './DsCollapse.Types'
+export * from './DsCollapse.Overrides'
