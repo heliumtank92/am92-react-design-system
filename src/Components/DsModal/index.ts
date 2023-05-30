@@ -1,4 +1,3 @@
-export {
-  default,
-  ModalProps as DsModalProps
-} from '@mui/material/Modal'
+export * from './DsModal.Component'
+export * from './DsModal.Types'
+export * from './DsModal.Overrides'
