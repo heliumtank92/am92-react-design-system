@@ -1,4 +1,3 @@
-export {
-  default,
-  SwipeableDrawerProps as DsSwipeableDrawerProps
-} from '@mui/material/SwipeableDrawer'
+export * from './DsSwipeableDrawer.Component'
+export * from './DsSwipeableDrawer.Types'
+export * from './DsSwipeableDrawer.Overrides'
