@@ -1,3 +1,5 @@
-export { GridProps as DsGridProps } from '@mui/material/Grid'
+import { GridProps } from '@mui/material'
 
-export const DsGridDefaultProps = {}
+export interface DsGridProps extends GridProps {}
+
+export const DsGridDefaultProps: DsGridProps = {}
