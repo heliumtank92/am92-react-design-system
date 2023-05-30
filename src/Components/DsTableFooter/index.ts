@@ -1,4 +1,3 @@
-export {
-  default,
-  TableFooterProps as DsTableFooterProps
-} from '@mui/material/TableFooter'
+export * from './DsTableFooter.Component'
+export * from './DsTableFooter.Types'
+export * from './DsTableFooter.Overrides'
