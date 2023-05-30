@@ -1,4 +1,3 @@
-export {
-  default,
-  StepButtonProps as DsStepButtonProps
-} from '@mui/material/StepButton'
+export * from './DsStepButton.Component'
+export * from './DsStepButton.Types'
+export * from './DsStepButton.Overrides'
