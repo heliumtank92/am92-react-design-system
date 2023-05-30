@@ -1,4 +1,3 @@
-export {
-  default,
-  BreadcrumbsProps as DsBreadcrumbsProps
-} from '@mui/material/Breadcrumbs'
+export * from './DsBreadcrumbs.Component'
+export * from './DsBreadcrumbs.Types'
+export * from './DsBreadcrumbs.Overrides'
