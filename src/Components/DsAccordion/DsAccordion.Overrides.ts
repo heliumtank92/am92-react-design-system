@@ -1,8 +1,8 @@
-import { AccordionDefaultProps } from './DsAccordion.Types'
+import { DsAccordionDefaultProps } from './DsAccordion.Types'
 
 export const DsAccordionOverrides = {
   MuiAccordion: {
-    defaultProps: AccordionDefaultProps,
+    defaultProps: DsAccordionDefaultProps,
     styleOverrides: {
       root: {
         backgroundColor: 'var(--ds-color-surfacePrimary)',

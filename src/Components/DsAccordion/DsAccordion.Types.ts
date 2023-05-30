@@ -5,3 +5,11 @@ export interface DsAccordionProps extends Omit<AccordionProps, 'children'> {
   summary: React.ReactNode
   expandIcon?: React.ReactNode
 }
+
+export const DsAccordionDefaultProps: DsAccordionProps = {
+  header: '',
+  summary: '',
+  TransitionProps: {
+    unmountOnExit: true
+  }
+}
