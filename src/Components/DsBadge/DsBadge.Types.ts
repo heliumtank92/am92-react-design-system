@@ -1,3 +1,8 @@
-export { BadgeProps as DsBadgeProps } from '@mui/material/Badge'
+import { BadgeProps } from '@mui/material'
 
-export const DsBadgeDefaultProps = {}
+export interface DsBadgeProps extends BadgeProps {}
+
+export const DsBadgeDefaultProps: DsBadgeProps = {
+  color: 'secondary',
+  showZero: true
+}
