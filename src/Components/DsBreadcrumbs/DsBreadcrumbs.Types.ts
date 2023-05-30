@@ -1,3 +1,5 @@
-export { BreadcrumbsProps as DsBreadcrumbsProps } from '@mui/material/Breadcrumbs'
+import { BreadcrumbsProps } from '@mui/material'
 
-export const DsBreadcrumbsDefaultProps = {}
+export interface DsBreadcrumbsProps extends BreadcrumbsProps {}
+
+export const DsBreadcrumbsDefaultProps: DsBreadcrumbsProps = {}
