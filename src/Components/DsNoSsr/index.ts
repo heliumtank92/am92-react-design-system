@@ -1,4 +1,3 @@
-export {
-  default,
-  NoSsrProps as DsNoSsrProps
-} from '@mui/material/NoSsr'
+export * from './DsNoSsr.Component'
+export * from './DsNoSsr.Types'
+export * from './DsNoSsr.Overrides'
