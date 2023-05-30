@@ -1,1 +1,3 @@
-export { default, GridProps as DsGridProps } from '@mui/material/Grid'
+export * from './DsGrid.Component'
+export * from './DsGrid.Types'
+export * from './DsGrid.Overrides'
