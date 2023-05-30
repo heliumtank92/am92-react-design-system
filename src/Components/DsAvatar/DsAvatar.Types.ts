@@ -1,3 +1,9 @@
-export { AvatarProps as DsAvatarProps } from '@mui/material/Avatar'
+import { AvatarProps } from '@mui/material'
+export interface DsAvatarProps extends AvatarProps {
+  'ds-variant'?: 'text' | 'icon'
+  'ds-size': 'S' | 'M' | 'L' | 'XL' | 'XXL' | '3XL'
+}
 
-export const DsAvatarDefaultProps = {}
+export const DsAvatarDefaultProps: DsAvatarProps = {
+  'ds-size': 'L'
+}
