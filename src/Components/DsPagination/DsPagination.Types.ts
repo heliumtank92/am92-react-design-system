@@ -1,3 +1,5 @@
-export { PaginationProps as DsPaginationProps } from '@mui/material/Pagination'
+import { PaginationProps } from '@mui/material'
 
-export const DsPaginationDefaultProps = {}
+export interface DsPaginationProps extends PaginationProps {}
+
+export const DsPaginationDefaultProps: DsPaginationProps = {}
