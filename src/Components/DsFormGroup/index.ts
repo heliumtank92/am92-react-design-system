@@ -1,4 +1,3 @@
-export {
-  default,
-  FormGroupProps as DsFormGroupProps
-} from '@mui/material/FormGroup'
+export * from './DsFormGroup.Component'
+export * from './DsFormGroup.Types'
+export * from './DsFormGroup.Overrides'
