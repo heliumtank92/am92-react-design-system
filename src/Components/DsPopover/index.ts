@@ -1,4 +1,3 @@
-export {
-  default,
-  PopoverProps as DsPopoverProps
-} from '@mui/material/Popover'
+export * from './DsPopover.Component'
+export * from './DsPopover.Types'
+export * from './DsPopover.Overrides'
