@@ -1,4 +1,3 @@
-export {
-  default,
-  ListSubheaderProps as DsListSubheaderProps
-} from '@mui/material/ListSubheader'
+export * from './DsListSubheader.Component'
+export * from './DsListSubheader.Types'
+export * from './DsListSubheader.Overrides'
