@@ -1,4 +1,3 @@
-export {
-  default,
-  PopperProps as DsPopperProps
-} from '@mui/material/Popper'
+export * from './DsPopper.Component'
+export * from './DsPopper.Types'
+export * from './DsPopper.Overrides'
