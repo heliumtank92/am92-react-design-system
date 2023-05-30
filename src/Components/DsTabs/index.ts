@@ -1,1 +1,3 @@
-export { default, TabsProps as DsTabsProps } from '@mui/material/Tabs'
+export * from './DsTabs.Component'
+export * from './DsTabs.Types'
+export * from './DsTabs.Overrides'
