@@ -1,4 +1,3 @@
-export {
-  default,
-  ToolbarProps as DsToolbarProps
-} from '@mui/material/Toolbar'
+export * from './DsToolbar.Component'
+export * from './DsToolbar.Types'
+export * from './DsToolbar.Overrides'
