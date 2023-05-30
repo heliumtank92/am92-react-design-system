@@ -1,4 +1,3 @@
-export {
-  default,
-  BottomNavigationProps as DsBottomNavigationProps
-} from '@mui/material/BottomNavigation'
+export * from './DsBottomNavigation.Component'
+export * from './DsBottomNavigation.Types'
+export * from './DsBottomNavigation.Overrides'
