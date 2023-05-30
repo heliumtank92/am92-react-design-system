@@ -1,4 +1,3 @@
-export {
-  default,
-  HiddenProps as DsHiddenProps
-} from '@mui/material/Hidden'
+export * from './DsHidden.Component'
+export * from './DsHidden.Types'
+export * from './DsHidden.Overrides'
