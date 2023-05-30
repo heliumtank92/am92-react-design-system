@@ -1,4 +1,3 @@
-export {
-  default,
-  GlobalStylesProps as DsGlobalStylesProps
-} from '@mui/material/GlobalStyles'
+export * from './DsGlobalStyles.Component'
+export * from './DsGlobalStyles.Types'
+export * from './DsGlobalStyles.Overrides'
