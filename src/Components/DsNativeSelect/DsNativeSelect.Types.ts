@@ -1,3 +1,5 @@
-export { NativeSelectProps as DsNativeSelectProps } from '@mui/material/NativeSelect'
+import { NativeSelectProps } from '@mui/material'
 
-export const DsNativeSelectDefaultProps = {}
+export interface DsNativeSelectProps extends NativeSelectProps {}
+
+export const DsNativeSelectDefaultProps: DsNativeSelectProps = {}
