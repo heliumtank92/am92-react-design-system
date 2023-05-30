@@ -1,7 +1,3 @@
-import { DsColorOverides } from '../Theme/getColorScheme'
-
-export { default, IconProps as DsIconProps } from '@mui/material/Icon'
-
-declare module '@mui/material/Icon' {
-  interface IconPropsColorOverrides extends DsColorOverides {}
-}
+export * from './DsIcon.Component'
+export * from './DsIcon.Types'
+export * from './DsIcon.Overrides'

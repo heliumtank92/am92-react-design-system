@@ -1,4 +1,3 @@
-export {
-  default,
-  AccordionActionsProps as DsAccordionActionsProps
-} from '@mui/material/AccordionActions'
+export * from './DsAccordionActions.Component'
+export * from './DsAccordionActions.Types'
+export * from './DsAccordionActions.Overrides'

@@ -40,17 +40,12 @@ export const DsImageDefultState: DsImageState = {
   loadState: 'LOADING'
 }
 
-export default class DsImage extends PureComponent<
-  DsImageProps,
-  DsImageState
-> {
+export default class DsImage extends PureComponent<DsImageProps, DsImageState> {
   static defaultProps = DsImageDefaultProps
   state = DsImageDefultState
 
-  handleLoad = (e: SyntheticEvent): void =>
-    this.setState({ loadState: 'LOADED' })
-  handleError = (e: SyntheticEvent): void =>
-    this.setState({ loadState: 'ERROR' })
+  handleLoad = (e: SyntheticEvent): void => this.setState({ loadState: 'LOADED' })
+  handleError = (e: SyntheticEvent): void => this.setState({ loadState: 'ERROR' })
 
   hasSource = (): boolean => {
     const { src, srcSet } = this.props
@@ -73,10 +68,7 @@ export default class DsImage extends PureComponent<
           height: '100%'
         }}
       >
-        <DsCircularProgress
-          size="100%"
-          sx={{ maxHeight: '50px', maxWidth: '50px' }}
-        />
+        <DsCircularProgress size="100%" sx={{ maxHeight: '50px', maxWidth: '50px' }} />
       </DsBox>
     )
   }
@@ -99,11 +91,7 @@ export default class DsImage extends PureComponent<
           fontSize: errorIconFontSize
         }}
       >
-        <DsRemixIcon
-          className={errorIconClass}
-          color="iconDisabled"
-          fontSize="inherit"
-        />
+        <DsRemixIcon className={errorIconClass} color="iconDisabled" fontSize="inherit" />
       </DsBox>
     )
   }
@@ -116,14 +104,8 @@ export default class DsImage extends PureComponent<
     }
 
     const { loadState } = this.state
-    const {
-      src,
-      srcSet,
-      alt,
-      errorIconClass,
-      errorIconFontSize,
-      ...restProps
-    } = this.props
+    const { src, srcSet, alt, errorIconClass, errorIconFontSize, ...restProps } =
+      this.props
 
     const isLoaded = loadState === 'LOADED'
     const imgDisplayProps = isLoaded ? {} : { display: 'none' }
@@ -147,9 +129,7 @@ export default class DsImage extends PureComponent<
           const { src: imageSrc, style, ...restProps } = src
 
           if (!isLast) {
-            return (
-              <source key={index} srcSet={imageSrc} {...restProps} />
-            )
+            return <source key={index} srcSet={imageSrc} {...restProps} />
           } else {
             return <img key={index} {...src} {...imgProps} />
           }
@@ -165,10 +145,7 @@ export default class DsImage extends PureComponent<
     return (
       <>
         <Fade in={isLoaded}>
-          <picture
-            onLoad={this.handleLoad}
-            onError={this.handleError}
-          >
+          <picture onLoad={this.handleLoad} onError={this.handleError}>
             {this.renderError()}
             {this.renderImageSrcSet()}
           </picture>

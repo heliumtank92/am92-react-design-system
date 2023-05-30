@@ -1,4 +1,3 @@
-export {
-  default,
-  AccordionSummaryProps as DsAccordionSummaryProps
-} from '@mui/material/AccordionSummary'
+export * from './DsAccordionSummary.Component'
+export * from './DsAccordionSummary.Types'
+export * from './DsAccordionSummary.Overrides'
