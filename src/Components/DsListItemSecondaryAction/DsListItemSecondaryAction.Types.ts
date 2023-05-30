@@ -1,3 +1,5 @@
-export { ListItemSecondaryActionProps as DsListItemSecondaryActionProps } from '@mui/material/ListItemSecondaryAction'
+import { ListItemSecondaryActionProps } from '@mui/material'
 
-export const DsListItemSecondaryActionDefaultProps = {}
+export interface DsListItemSecondaryActionProps extends ListItemSecondaryActionProps {}
+
+export const DsListItemSecondaryActionDefaultProps: DsListItemSecondaryActionProps = {}
