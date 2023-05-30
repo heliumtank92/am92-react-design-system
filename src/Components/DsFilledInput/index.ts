@@ -1,4 +1,3 @@
-export {
-  default,
-  FilledInputProps as DsFilledInputProps
-} from '@mui/material/FilledInput'
+export * from './DsFilledInput.Component'
+export * from './DsFilledInput.Types'
+export * from './DsFilledInput.Overrides'
