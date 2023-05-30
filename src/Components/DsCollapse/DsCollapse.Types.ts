@@ -1,3 +1,5 @@
-export { CollapseProps as DsCollapseProps } from '@mui/material/Collapse'
+import { CollapseProps } from '@mui/material'
 
-export const DsCollapseDefaultProps = {}
+export interface DsCollapseProps extends CollapseProps {}
+
+export const DsCollapseDefaultProps: DsCollapseProps = {}
