@@ -1,4 +1,3 @@
-export {
-  default,
-  PaginationItemProps as DsPaginationItemProps
-} from '@mui/material/PaginationItem'
+export * from './DsPaginationItem.Component'
+export * from './DsPaginationItem.Types'
+export * from './DsPaginationItem.Overrides'
