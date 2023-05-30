@@ -1,1 +1,3 @@
-export { default, BoxProps as DsBoxProps } from '@mui/material/Box'
+export * from './DsBox.Component'
+export * from './DsBox.Types'
+export * from './DsBox.Overrides'
