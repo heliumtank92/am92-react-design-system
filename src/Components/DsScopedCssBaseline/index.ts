@@ -1,4 +1,3 @@
-export {
-  default,
-  ScopedCssBaselineProps as DsScopedCssBaselineProps
-} from '@mui/material/ScopedCssBaseline'
+export * from './DsScopedCssBaseline.Component'
+export * from './DsScopedCssBaseline.Types'
+export * from './DsScopedCssBaseline.Overrides'
