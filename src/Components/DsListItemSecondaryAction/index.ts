@@ -1,4 +1,3 @@
-export {
-  default,
-  ListItemSecondaryActionProps as DsListItemSecondaryActionProps
-} from '@mui/material/ListItemSecondaryAction'
+export * from './DsListItemSecondaryAction.Component'
+export * from './DsListItemSecondaryAction.Types'
+export * from './DsListItemSecondaryAction.Overrides'
