@@ -1,4 +1,3 @@
-export {
-  default,
-  RadioGroupProps as DsRadioGroupProps
-} from '@mui/material/RadioGroup'
+export * from './DsRadioGroup.Component'
+export * from './DsRadioGroup.Types'
+export * from './DsRadioGroup.Overrides'
