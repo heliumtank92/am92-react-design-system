@@ -1,4 +1,3 @@
-export {
-  default,
-  BadgeProps as DsBadgeProps
-} from '@mui/material/Badge'
+export * from './DsBadge.Component'
+export * from './DsBadge.Types'
+export * from './DsBadge.Overrides'
