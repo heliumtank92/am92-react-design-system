@@ -1,4 +1,3 @@
-export {
-  default,
-  TableContainerProps as DsTableContainerProps
-} from '@mui/material/TableContainer'
+export * from './DsTableContainer.Component'
+export * from './DsTableContainer.Types'
+export * from './DsTableContainer.Overrides'
