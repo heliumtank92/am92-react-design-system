@@ -1,4 +1,3 @@
-export {
-  default,
-  TableSortLabelProps as DsTableSortLabelProps
-} from '@mui/material/TableSortLabel'
+export * from './DsTableSortLabel.Component'
+export * from './DsTableSortLabel.Types'
+export * from './DsTableSortLabel.Overrides'
