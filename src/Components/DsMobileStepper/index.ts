@@ -1,4 +1,3 @@
-export {
-  default,
-  MobileStepperProps as DsMobileStepperProps
-} from '@mui/material/MobileStepper'
+export * from './DsMobileStepper.Component'
+export * from './DsMobileStepper.Types'
+export * from './DsMobileStepper.Overrides'
