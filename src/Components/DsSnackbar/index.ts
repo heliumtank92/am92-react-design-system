@@ -1,4 +1,3 @@
-export {
-  default,
-  SnackbarProps as DsSnackbarProps
-} from '@mui/material/Snackbar'
+export * from './DsSnackbar.Component'
+export * from './DsSnackbar.Types'
+export * from './DsSnackbar.Overrides'
