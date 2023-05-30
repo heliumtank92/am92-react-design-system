@@ -1,4 +1,3 @@
-export {
-  default,
-  ListItemAvatarProps as DsListItemAvatarProps
-} from '@mui/material/ListItemAvatar'
+export * from './DsListItemAvatar.Component'
+export * from './DsListItemAvatar.Types'
+export * from './DsListItemAvatar.Overrides'
