@@ -1,4 +1,3 @@
-export {
-  default,
-  StepConnectorProps as DsStepConnectorProps
-} from '@mui/material/StepConnector'
+export * from './DsStepConnector.Component'
+export * from './DsStepConnector.Types'
+export * from './DsStepConnector.Overrides'
