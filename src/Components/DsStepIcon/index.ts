@@ -1,4 +1,3 @@
-export {
-  default,
-  StepIconProps as DsStepIconProps
-} from '@mui/material/StepIcon'
+export * from './DsStepIcon.Component'
+export * from './DsStepIcon.Types'
+export * from './DsStepIcon.Overrides'
