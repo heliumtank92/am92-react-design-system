@@ -1,4 +1,3 @@
-export {
-  default,
-  TableProps as DsTableProps
-} from '@mui/material/Table'
+export * from './DsTable.Component'
+export * from './DsTable.Types'
+export * from './DsTable.Overrides'
