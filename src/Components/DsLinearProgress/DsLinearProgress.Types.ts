@@ -1,3 +1,5 @@
-export { LinearProgressProps as DsLinearProgressProps } from '@mui/material/LinearProgress'
+import { LinearProgressProps } from '@mui/material'
 
-export const DsLinearProgressDefaultProps = {}
+export interface DsLinearProgressProps extends LinearProgressProps {}
+
+export const DsLinearProgressDefaultProps: DsLinearProgressProps = {}
