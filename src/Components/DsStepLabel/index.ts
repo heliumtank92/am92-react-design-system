@@ -1,4 +1,3 @@
-export {
-  default,
-  StepLabelProps as DsStepLabelProps
-} from '@mui/material/StepLabel'
+export * from './DsStepLabel.Component'
+export * from './DsStepLabel.Types'
+export * from './DsStepLabel.Overrides'
