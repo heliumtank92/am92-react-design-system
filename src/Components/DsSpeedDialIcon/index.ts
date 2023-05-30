@@ -1,4 +1,3 @@
-export {
-  default,
-  SpeedDialIconProps as DsSpeedDialIconProps
-} from '@mui/material/SpeedDialIcon'
+export * from './DsSpeedDialIcon.Component'
+export * from './DsSpeedDialIcon.Types'
+export * from './DsSpeedDialIcon.Overrides'
