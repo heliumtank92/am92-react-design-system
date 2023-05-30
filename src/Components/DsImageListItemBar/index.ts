@@ -1,4 +1,3 @@
-export {
-  default,
-  ImageListItemBarProps as DsImageListItemBarProps
-} from '@mui/material/ImageListItemBar'
+export * from './DsImageListItemBar.Component'
+export * from './DsImageListItemBar.Types'
+export * from './DsImageListItemBar.Overrides'
