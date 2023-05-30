@@ -1,4 +1,3 @@
-export {
-  default,
-  StepContentProps as DsStepContentProps
-} from '@mui/material/StepContent'
+export * from './DsStepContent.Component'
+export * from './DsStepContent.Types'
+export * from './DsStepContent.Overrides'
