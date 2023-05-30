@@ -1,4 +1,3 @@
-export {
-  default,
-  LinearProgressProps as DsLinearProgressProps
-} from '@mui/material/LinearProgress'
+export * from './DsLinearProgress.Component'
+export * from './DsLinearProgress.Types'
+export * from './DsLinearProgress.Overrides'
