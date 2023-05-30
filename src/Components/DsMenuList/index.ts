@@ -1,4 +1,3 @@
-export {
-  default,
-  MenuListProps as DsMenuListProps
-} from '@mui/material/MenuList'
+export * from './DsMenuList.Component'
+export * from './DsMenuList.Types'
+export * from './DsMenuList.Overrides'
