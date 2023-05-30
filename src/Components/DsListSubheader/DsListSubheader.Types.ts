@@ -1,3 +1,5 @@
-export { ListSubheaderProps as DsListSubheaderProps } from '@mui/material/ListSubheader'
+import { ListSubheaderProps } from '@mui/material'
 
-export const DsListSubheaderDefaultProps = {}
+export interface DsListSubheaderProps extends ListSubheaderProps {}
+
+export const DsListSubheaderDefaultProps: DsListSubheaderProps = {}
