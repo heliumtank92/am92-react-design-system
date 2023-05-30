@@ -1,4 +1,3 @@
-export {
-  default,
-  InputAdornmentProps as DsInputAdornmentProps
-} from '@mui/material/InputAdornment'
+export * from './DsInputAdornment.Component'
+export * from './DsInputAdornment.Types'
+export * from './DsInputAdornment.Overrides'
