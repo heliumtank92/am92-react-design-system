@@ -1,10 +1,15 @@
+import { AccordionProps } from '@mui/material'
+
+const AccordionDefaultProps: AccordionProps = {
+  children: false,
+  TransitionProps: {
+    unmountOnExit: true
+  }
+}
+
 const DsAccordionTheme = {
   MuiAccordion: {
-    defaultProps: {
-      TransitionProps: {
-        unmountOnExit: true
-      }
-    },
+    defaultProps: AccordionDefaultProps,
     styleOverrides: {
       root: {
         backgroundColor: 'var(--ds-color-surfacePrimary)',

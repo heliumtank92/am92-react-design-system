@@ -1,3 +1,11 @@
+import { AppBarProps } from '@mui/material'
+
+const AppBarDefaultProps: AppBarProps = {
+  // color: 'surface', // TODO
+  enableColorOnDark: true,
+  elevation: -1
+}
+
 const DsAppBarTheme = {
   MuiListItemButton: {
     variants: [
@@ -23,29 +31,31 @@ const DsAppBarTheme = {
     variants: [
       {
         props: { 'ds-variant': 'mini-drawer' },
-        style: ({ ownerState, theme }) => {
+        style: ({ ownerState: AppBarState, theme }) => {
           return {
-            transition: theme.transitions.create(['width', 'margin'], {
-              easing: theme.transitions.easing.sharp,
-              duration: theme.transitions.duration.leavingScreen
-            }),
+            transition: theme.transitions.create(
+              ['width', 'margin'],
+              {
+                easing: theme.transitions.easing.sharp,
+                duration: theme.transitions.duration.leavingScreen
+              }
+            ),
             ...(ownerState.open && {
               marginLeft: 'var(--ds-rules-drawerWidth)',
               width: 'calc(100% - var(--ds-rules-drawerWidth))',
-              transition: theme.transitions.create(['width', 'margin'], {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.enteringScreen
-              })
+              transition: theme.transitions.create(
+                ['width', 'margin'],
+                {
+                  easing: theme.transitions.easing.sharp,
+                  duration: theme.transitions.duration.enteringScreen
+                }
+              )
             })
           }
         }
       }
     ],
-    defaultProps: {
-      color: 'surface', // TODO
-      enableColorOnDark: true,
-      elevation: -1
-    }
+    defaultProps: AppBarDefaultProps
   },
   MuiToolbar: {
     styleOverrides: {

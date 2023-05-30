@@ -1,10 +1,14 @@
+import { AlertProps } from '@mui/material'
+
+const defaultProps: AlertProps = {
+  variant: 'standard',
+  icon: false,
+  severity: undefined
+}
+
 const DsToastTheme = {
   MuiAlert: {
-    defaultProps: {
-      variant: 'filled',
-      icon: false,
-      severity: ''
-    },
+    defaultProps,
     styleOverrides: {
       root: {
         padding: 'var(--ds-spacing-frostbite)',
@@ -19,7 +23,8 @@ const DsToastTheme = {
         fontWeight: 'var(--ds-typo-bodyRegularMedium-fontWeight)',
         fontSize: 'var(--ds-typo-bodyRegularMedium-fontSize)',
         lineHeight: 'var(--ds-typo-bodyRegularMedium-lineHeight)',
-        letterSpacing: 'var(--ds-typo-bodyRegularMedium-letterSpacing)'
+        letterSpacing:
+          'var(--ds-typo-bodyRegularMedium-letterSpacing)'
       },
       icon: {
         padding: 'var(--ds-spacing-zero)'

@@ -1,8 +1,11 @@
+import { AvatarProps } from '@mui/material'
+
+const AvatarDefaultProps: AvatarProps = {
+  'ds-size': 'L'
+}
 const DsAvatarTheme = {
   MuiAvatar: {
-    defaultProps: {
-      'ds-size': 'L'
-    },
+    defaultProps: AvatarDefaultProps,
     variants: [
       {
         props: { 'ds-variant': 'text' },
@@ -27,7 +30,8 @@ const DsAvatarTheme = {
           fontWeight: 'var(--ds-typo-bodyRegularSmall-fontWeight)',
           fontSize: 'var(--ds-typo-bodyRegularSmall-fontSize)',
           lineHeight: 'var(--ds-typo-bodyRegularSmall-lineHeight)',
-          letterSpacing: 'var(--ds-typo-bodyRegularSmall-letterSpacing)',
+          letterSpacing:
+            'var(--ds-typo-bodyRegularSmall-letterSpacing)',
           width: 'var(--ds-rules-avatarSSize)',
           height: 'var(--ds-rules-avatarSSize)',
           '> .MuiIcon-root': {
@@ -41,7 +45,8 @@ const DsAvatarTheme = {
           fontWeight: 'var(--ds-typo-bodyRegularMedium-fontWeight)',
           fontSize: 'var(--ds-typo-bodyRegularMedium-fontSize)',
           lineHeight: 'var(--ds-typo-bodyRegularMedium-lineHeight)',
-          letterSpacing: 'var(--ds-typo-bodyRegularMedium-letterSpacing)',
+          letterSpacing:
+            'var(--ds-typo-bodyRegularMedium-letterSpacing)',
           width: 'var(--ds-rules-avatarMSize)',
           height: 'var(--ds-rules-avatarMSize)',
           '> .MuiIcon-root': {
@@ -55,7 +60,8 @@ const DsAvatarTheme = {
           fontWeight: 'var(--ds-typo-bodyRegularLarge-fontWeight)',
           fontSize: 'var(--ds-typo-bodyRegularLarge-fontSize)',
           lineHeight: 'var(--ds-typo-bodyRegularLarge-lineHeight)',
-          letterSpacing: 'var(--ds-typo-bodyRegularLarge-letterSpacing)',
+          letterSpacing:
+            'var(--ds-typo-bodyRegularLarge-letterSpacing)',
           width: 'var(--ds-rules-avatarLSize)',
           height: 'var(--ds-rules-avatarLSize)',
           '> .MuiIcon-root': {
@@ -69,7 +75,8 @@ const DsAvatarTheme = {
           fontWeight: 'var(--ds-typo-headingBoldMedium-fontWeight)',
           fontSize: 'var(--ds-typo-headingBoldMedium-fontSize)',
           lineHeight: 'var(--ds-typo-headingBoldMedium-lineHeight)',
-          letterSpacing: 'var(--ds-typo-headingBoldMedium-letterSpacing)',
+          letterSpacing:
+            'var(--ds-typo-headingBoldMedium-letterSpacing)',
           width: 'var(--ds-rules-avatarXLSize)',
           height: 'var(--ds-rules-avatarXLSize)',
           '> .MuiIcon-root': {
@@ -83,7 +90,8 @@ const DsAvatarTheme = {
           fontWeight: 'var(--ds-typo-headingBoldLarge-fontWeight)',
           fontSize: 'var(--ds-typo-headingBoldLarge-fontSize)',
           lineHeight: 'var(--ds-typo-headingBoldLarge-lineHeight)',
-          letterSpacing: 'var(--ds-typo-headingBoldLarge-letterSpacing)',
+          letterSpacing:
+            'var(--ds-typo-headingBoldLarge-letterSpacing)',
           width: 'var(--ds-rules-avatarXXLSize)',
           height: 'var(--ds-rules-avatarXXLSize)',
           '> .MuiIcon-root': {
@@ -94,10 +102,13 @@ const DsAvatarTheme = {
       {
         props: { 'ds-size': '3XL' },
         style: {
-          fontWeight: 'var(--ds-typo-headingBoldExtraLarge-fontWeight)',
+          fontWeight:
+            'var(--ds-typo-headingBoldExtraLarge-fontWeight)',
           fontSize: 'var(--ds-typo-headingBoldExtraLarge-fontSize)',
-          lineHeight: 'var(--ds-typo-headingBoldExtraLarge-lineHeight)',
-          letterSpacing: 'var(--ds-typo-headingBoldExtraLarge-letterSpacing)',
+          lineHeight:
+            'var(--ds-typo-headingBoldExtraLarge-lineHeight)',
+          letterSpacing:
+            'var(--ds-typo-headingBoldExtraLarge-letterSpacing)',
           width: 'var(--ds-rules-avatar3XLSize)',
           height: 'var(--ds-rules-avatar3XLSize)',
           '> .MuiIcon-root': {
