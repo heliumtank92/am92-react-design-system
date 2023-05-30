@@ -1,4 +1,3 @@
-export {
-  default,
-  TableCellProps as DsTableCellProps
-} from '@mui/material/TableCell'
+export * from './DsTableCell.Component'
+export * from './DsTableCell.Types'
+export * from './DsTableCell.Overrides'
