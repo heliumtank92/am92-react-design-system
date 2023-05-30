@@ -1,4 +1,3 @@
-export {
-  default,
-  ListItemTextProps as DsListItemTextProps
-} from '@mui/material/ListItemText'
+export * from './DsListItemText.Component'
+export * from './DsListItemText.Types'
+export * from './DsListItemText.Overrides'
