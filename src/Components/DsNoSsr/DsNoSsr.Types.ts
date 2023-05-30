@@ -1,3 +1,5 @@
-export { NoSsrProps as DsNoSsrProps } from '@mui/material/NoSsr'
+import { NoSsrProps } from '@mui/material'
 
-export const DsNoSsrDefaultProps = {}
+export interface DsNoSsrProps extends NoSsrProps {}
+
+export const DsNoSsrDefaultProps: DsNoSsrProps = {}
