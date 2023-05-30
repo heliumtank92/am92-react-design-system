@@ -1,4 +1,3 @@
-export {
-  default,
-  NativeSelectProps as DsNativeSelectProps
-} from '@mui/material/NativeSelect'
+export * from './DsNativeSelect.Component'
+export * from './DsNativeSelect.Types'
+export * from './DsNativeSelect.Overrides'
