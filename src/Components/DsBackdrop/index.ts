@@ -1,4 +1,3 @@
-export {
-  default,
-  BackdropProps as DsBackdropProps
-} from '@mui/material/Backdrop'
+export * from './DsBackdrop.Component'
+export * from './DsBackdrop.Types'
+export * from './DsBackdrop.Overrides'
