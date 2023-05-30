@@ -14,7 +14,7 @@ export default class DsTextFieldPassword extends Component {
     visible: false
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -22,7 +22,7 @@ export default class DsTextFieldPassword extends Component {
     }
   }
 
-  componentDidUpdate (nextProps = {}, nextState = {}) {
+  componentDidUpdate(nextProps = {}, nextState = {}) {
     if (this.props.visible !== nextProps.visible) {
       this.setState({ passwordVisible: nextProps.visible })
     }
@@ -32,17 +32,17 @@ export default class DsTextFieldPassword extends Component {
     this.setState({ passwordVisible: !this.state.passwordVisible })
   }
 
-  render () {
+  render() {
     const { passwordVisible } = this.state
     const { type, endAdornment, ...restProps } = this.props
 
     const rightIcon = (
-      <DsInputAdornment position='end'>
-        <DsIconButton
-          onClick={this.handleTogglePassword}
-        >
+      <DsInputAdornment position="end">
+        <DsIconButton onClick={this.handleTogglePassword}>
           <DsRemixIcon
-            className={passwordVisible ? 'ri-eye-line' : 'ri-eye-off-line'}
+            className={
+              passwordVisible ? 'ri-eye-line' : 'ri-eye-off-line'
+            }
           />
         </DsIconButton>
       </DsInputAdornment>
@@ -51,9 +51,7 @@ export default class DsTextFieldPassword extends Component {
     return (
       <DsTextField
         {...restProps}
-        type={
-          passwordVisible ? type : 'password'
-        }
+        type={passwordVisible ? type : 'password'}
         endAdornment={rightIcon}
       />
     )

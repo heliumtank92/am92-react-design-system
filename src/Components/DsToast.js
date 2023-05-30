@@ -4,12 +4,12 @@ import React, { PureComponent } from 'react'
 import Alert from '@mui/material/Alert'
 import DsRemixIcon from './DsRemixIcon'
 
-const CloseIcon = (props) => (
-  <DsRemixIcon {...props} fontSize='mild' className='ri-close-line' />
+const CloseIcon = props => (
+  <DsRemixIcon {...props} fontSize="mild" className="ri-close-line" />
 )
 
 class DsToast extends PureComponent {
-  render () {
+  render() {
     return (
       <Alert
         ref={this.props.forwardedRef}

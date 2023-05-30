@@ -10,7 +10,7 @@ export default class DsTextField extends PureComponent {
     autoComplete: 'off'
   }
 
-  render () {
+  render() {
     const {
       id,
       name,

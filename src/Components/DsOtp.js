@@ -24,7 +24,7 @@ export default class DsOtp extends Component {
     length: 6
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     const { initialOtp = '', length } = this.props
     this.optInputRefs = new Map()
@@ -33,7 +33,7 @@ export default class DsOtp extends Component {
     }
   }
 
-  handleFocus = (event) => {
+  handleFocus = event => {
     const { onFocus } = this.props
     const { target } = event
     target.select()
@@ -42,7 +42,7 @@ export default class DsOtp extends Component {
     }
   }
 
-  handleKeyDown = (event) => {
+  handleKeyDown = event => {
     const { onKeyDown } = this.props
     const { keyCode, currentTarget = {} } = event
     const { name, value } = currentTarget
@@ -58,7 +58,7 @@ export default class DsOtp extends Component {
     }
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { onChange, onComplete, length } = this.props
     const { otp } = this.state
     const { currentTarget = {} } = event
@@ -81,7 +81,10 @@ export default class DsOtp extends Component {
       }
 
       const otpString = otp.join('')
-      if (otpString.length === length && typeof onComplete === 'function') {
+      if (
+        otpString.length === length &&
+        typeof onComplete === 'function'
+      ) {
         onComplete(otpString)
       }
     })
@@ -95,7 +98,7 @@ export default class DsOtp extends Component {
     }
   }
 
-  handlePaste = (event) => {
+  handlePaste = event => {
     event.preventDefault()
     const { onPaste, onComplete, length } = this.props
     const { clipboardData = window.clipboardData, target } = event
@@ -114,7 +117,10 @@ export default class DsOtp extends Component {
     }
 
     const otpString = otp.join('')
-    if (otpString.length === length && typeof onComplete === 'function') {
+    if (
+      otpString.length === length &&
+      typeof onComplete === 'function'
+    ) {
       onComplete(otpString)
     }
   }
@@ -125,7 +131,15 @@ export default class DsOtp extends Component {
 
   renderOtpBoxes = () => {
     const { otp } = this.state
-    const { label, labelSupportText, name, length, helperText, inputProps = {}, ...restProps } = this.props
+    const {
+      label,
+      labelSupportText,
+      name,
+      length,
+      helperText,
+      inputProps = {},
+      ...restProps
+    } = this.props
     const lengthArray = Array(length).fill('')
 
     const otpInputProps = {
@@ -137,28 +151,27 @@ export default class DsOtp extends Component {
       }
     }
 
-    return lengthArray.map(
-      (value, index) =>
-        <DsTextField
-          key={index}
-          {...restProps}
-          type='tel'
-          name={`${name}.${index}`}
-          ds-variant='otp'
-          inputProps={otpInputProps}
-          onPaste={this.handlePaste}
-          onFocus={this.handleFocus}
-          onChange={this.handleChange}
-          onKeyDown={this.handleKeyDown}
-          value={otp[index] || ''}
-          inputRef={(ref) => {
-            this.optInputRefs.set(index, ref)
-          }}
-        />
-    )
+    return lengthArray.map((value, index) => (
+      <DsTextField
+        key={index}
+        {...restProps}
+        type="tel"
+        name={`${name}.${index}`}
+        ds-variant="otp"
+        inputProps={otpInputProps}
+        onPaste={this.handlePaste}
+        onFocus={this.handleFocus}
+        onChange={this.handleChange}
+        onKeyDown={this.handleKeyDown}
+        value={otp[index] || ''}
+        inputRef={ref => {
+          this.optInputRefs.set(index, ref)
+        }}
+      />
+    ))
   }
 
-  render () {
+  render() {
     const {
       id,
       name,
@@ -186,7 +199,11 @@ export default class DsOtp extends Component {
           disabled={disabled}
           {...inputLabelProps}
         />
-        <DsStack direction='row' spacing='var(--ds-spacing-glacial)' style={{}}>
+        <DsStack
+          direction="row"
+          spacing="var(--ds-spacing-glacial)"
+          style={{}}
+        >
           {this.renderOtpBoxes()}
         </DsStack>
         <DsHelperText

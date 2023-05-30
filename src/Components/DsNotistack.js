@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { SnackbarProvider, closeSnackbar, enqueueSnackbar, useSnackbar } from 'notistack'
+import {
+  SnackbarProvider,
+  closeSnackbar,
+  enqueueSnackbar,
+  useSnackbar
+} from 'notistack'
 
 import DsToast from './DsToast'
 
@@ -16,7 +21,7 @@ export class DsNotistackProvider extends Component {
     hideIconVariant: true
   }
 
-  render () {
+  render() {
     return (
       <SnackbarProvider
         {...this.props}
@@ -41,7 +46,13 @@ class AlertMessage extends Component {
     ]).isRequired,
     message: PropTypes.string.isRequired,
     toastVariant: PropTypes.oneOf(['outlined', 'filled']),
-    variant: PropTypes.oneOf(['default', 'info', 'success', 'error', 'warning']),
+    variant: PropTypes.oneOf([
+      'default',
+      'info',
+      'success',
+      'error',
+      'warning'
+    ]),
     sx: PropTypes.object
   }
 
@@ -59,14 +70,9 @@ class AlertMessage extends Component {
     closeSnackbar(id)
   }
 
-  render () {
-    const {
-      forwardedRef,
-      message,
-      toastVariant,
-      variant,
-      sx
-    } = this.props
+  render() {
+    const { forwardedRef, message, toastVariant, variant, sx } =
+      this.props
 
     return (
       <DsToast
@@ -83,26 +89,34 @@ class AlertMessage extends Component {
 }
 
 const DsNotistackAlertDefault = React.forwardRef((props, ref) => {
-  return <AlertMessage forwardedRef={ref} {...props} variant='default' />
+  return (
+    <AlertMessage forwardedRef={ref} {...props} variant="default" />
+  )
 })
 
 const DsNotistackAlertSuccess = React.forwardRef((props, ref) => {
-  return <AlertMessage forwardedRef={ref} {...props} variant='success' />
+  return (
+    <AlertMessage forwardedRef={ref} {...props} variant="success" />
+  )
 })
 
 const DsNotistackAlertError = React.forwardRef((props, ref) => {
-  return <AlertMessage forwardedRef={ref} {...props} variant='error' />
+  return (
+    <AlertMessage forwardedRef={ref} {...props} variant="error" />
+  )
 })
 
 const DsNotistackAlertWarning = React.forwardRef((props, ref) => {
-  return <AlertMessage forwardedRef={ref} {...props} variant='warning' />
+  return (
+    <AlertMessage forwardedRef={ref} {...props} variant="warning" />
+  )
 })
 
 const DsNotistackAlertInfo = React.forwardRef((props, ref) => {
-  return <AlertMessage forwardedRef={ref} {...props} variant='info' />
+  return <AlertMessage forwardedRef={ref} {...props} variant="info" />
 })
 
-function buildNotificationProps (notificationObj) {
+function buildNotificationProps(notificationObj) {
   const key = new Date().getTime()
   return { ...notificationObj, key }
 }

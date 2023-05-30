@@ -18,22 +18,22 @@ export class DsProgressTracker extends PureComponent {
     orientation: 'vertical'
   }
 
-  renderStepIcon = (stepProps) => {
+  renderStepIcon = stepProps => {
     const { active, completed, icon } = stepProps
 
     if (completed) {
       return (
         <DsRemixIcon
-          className='ri-checkbox-circle-fill'
-          color='iconSupportPositive'
+          className="ri-checkbox-circle-fill"
+          color="iconSupportPositive"
         />
       )
     }
     if (active) {
       return (
         <DsRemixIcon
-          className='ri-play-circle-fill'
-          color='iconActionSecondary'
+          className="ri-play-circle-fill"
+          color="iconActionSecondary"
         />
       )
     }
@@ -43,15 +43,13 @@ export class DsProgressTracker extends PureComponent {
 
   renderStep = ({ stepName }, index) => (
     <Step key={index}>
-      <StepLabel
-        StepIconComponent={this.renderStepIcon}
-      >
+      <StepLabel StepIconComponent={this.renderStepIcon}>
         {stepName}
       </StepLabel>
     </Step>
   )
 
-  render () {
+  render() {
     const { steps, ...stepperProps } = this.props
     return (
       <Stepper {...stepperProps}>

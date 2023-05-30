@@ -15,7 +15,7 @@ class DsProgressIndicator extends Component {
     maxStep: 0
   }
 
-  render () {
+  render() {
     const { step, maxStep } = this.props
     const squareSize = '5rem'
     const fillPercentage = Math.round((step / maxStep) * 100)
@@ -24,13 +24,14 @@ class DsProgressIndicator extends Component {
     return (
       <DsBox>
         <DsBox
-          display='flex'
-          position='relative'
-          height={squareSize} width={squareSize}
+          display="flex"
+          position="relative"
+          height={squareSize}
+          width={squareSize}
         >
           <DsBox>
             <CircularProgress
-              variant='determinate'
+              variant="determinate"
               value={100}
               sx={{ color: 'var(--ds-color-stateDisabledSurface)' }}
               size={squareSize}
@@ -38,15 +39,25 @@ class DsProgressIndicator extends Component {
             />
             <CircularProgress
               disableShrink
-              variant='determinate'
-              color='secondary'
+              variant="determinate"
+              color="secondary"
               value={fillPercentage}
               size={squareSize}
               thickness={4}
-              style={{ position: 'absolute', strokeLinecap: 'round', left: -12, height: 56, top: 12 }}
+              style={{
+                position: 'absolute',
+                strokeLinecap: 'round',
+                left: -12,
+                height: 56,
+                top: 12
+              }}
             />
-            <DsTypography sx={{ position: 'absolute', top: 30, right: 30 }}>
-              <Typography variant='subheadingSemiboldDefault'>{fillText}</Typography>
+            <DsTypography
+              sx={{ position: 'absolute', top: 30, right: 30 }}
+            >
+              <Typography variant="subheadingSemiboldDefault">
+                {fillText}
+              </Typography>
             </DsTypography>
           </DsBox>
         </DsBox>
@@ -55,8 +66,6 @@ class DsProgressIndicator extends Component {
   }
 }
 
-DsProgressIndicator.propTypes = {
-
-}
+DsProgressIndicator.propTypes = {}
 
 export default DsProgressIndicator

@@ -1,6 +1,6 @@
 import { AccordionProps } from '@mui/material'
 
-const AccordionDefaultProps: AccordionProps = {
+const AccordionDefaultProps: DsAccordianProps = {
   children: false,
   TransitionProps: {
     unmountOnExit: true

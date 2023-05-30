@@ -11,15 +11,18 @@ import DsTypography from './DsTypography'
 import DsRemixIcon from './DsRemixIcon'
 import DsHelperText from './DsHelperText'
 
-const IconComponent = (props) => {
+const IconComponent = props => {
   return (
-    <DsRemixIcon {...props} className={`${props.className} ri-arrow-drop-down-line`} />
+    <DsRemixIcon
+      {...props}
+      className={`${props.className} ri-arrow-drop-down-line`}
+    />
   )
 }
 
 const Placeholder = ({ placeholder }) => {
   return (
-    <DsTypography variant='bodyRegularMedium' color='text.disabled'>
+    <DsTypography variant="bodyRegularMedium" color="text.disabled">
       {placeholder}
     </DsTypography>
   )
@@ -27,28 +30,32 @@ const Placeholder = ({ placeholder }) => {
 
 const SelectedValue = ({ selectedValue, valueMap }) => {
   return Array.isArray(selectedValue)
-    ? selectedValue.map((selectedVal) => valueMap[selectedVal]).join(', ')
+    ? selectedValue
+        .map(selectedVal => valueMap[selectedVal])
+        .join(', ')
     : valueMap[selectedValue]
 }
 
 export default class DsSelect extends PureComponent {
   static propTypes = {
-    options: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.any
-    }))
+    options: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string,
+        value: PropTypes.any
+      })
+    )
   }
 
   static defaultProps = {
     options: []
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.inputBaseRef = React.createRef()
   }
 
-  render () {
+  render() {
     const {
       id,
       name,
@@ -110,11 +117,16 @@ export default class DsSelect extends PureComponent {
             }
           }}
           input={<DsInputBase />}
-          renderValue={(value) => (
-            (value && value.length)
-              ? <SelectedValue selectedValue={value} valueMap={valueMap} />
-              : <Placeholder placeholder={placeholder} />
-          )}
+          renderValue={value =>
+            value && value.length ? (
+              <SelectedValue
+                selectedValue={value}
+                valueMap={valueMap}
+              />
+            ) : (
+              <Placeholder placeholder={placeholder} />
+            )
+          }
           error={error}
           disabled={disabled}
           {...selectProps}
@@ -124,8 +136,7 @@ export default class DsSelect extends PureComponent {
             <DsMenuItem value={value} key={index}>
               <span>{label}</span>
             </DsMenuItem>
-          )
-          )}
+          ))}
         </Select>
         <DsHelperText
           helperText={helperText}

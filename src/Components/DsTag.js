@@ -13,7 +13,7 @@ class DsTag extends PureComponent {
     selected: false
   }
 
-  render () {
+  render() {
     const {
       label,
       value,

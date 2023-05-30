@@ -12,19 +12,19 @@ export default class DsToggle extends PureComponent {
     value: false
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { onChange } = this.props
     const { name, checked } = event.target
     onChange(name, checked)
   }
 
-  render () {
+  render() {
     const { value, onChange, ...restProps } = this.props
 
     return (
       <Switch
         {...restProps}
-        color='secondary'
+        color="secondary"
         checked={value}
         onChange={this.handleChange}
       />
