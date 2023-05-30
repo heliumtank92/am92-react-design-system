@@ -1,1 +1,3 @@
-export { default, FadeProps as DsFadeProps } from '@mui/material/Fade'
+export * from './DsFade.Component'
+export * from './DsFade.Types'
+export * from './DsFade.Overrides'
