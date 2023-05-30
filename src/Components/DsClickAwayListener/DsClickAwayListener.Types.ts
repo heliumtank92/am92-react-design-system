@@ -1,3 +1,5 @@
-export { ClickAwayListenerProps as DsClickAwayListenerProps } from '@mui/material/ClickAwayListener'
+import { ClickAwayListenerProps } from '@mui/material'
 
-export const DsClickAwayListenerDefaultProps = {}
+export interface DsClickAwayListenerProps extends ClickAwayListenerProps {}
+
+export const DsClickAwayListenerDefaultProps: DsClickAwayListenerProps = {}
