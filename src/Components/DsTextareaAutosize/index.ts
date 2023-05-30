@@ -1,4 +1,3 @@
-export {
-  default,
-  TextareaAutosizeProps as DsTextareaAutosizeProps
-} from '@mui/material/TextareaAutosize'
+export * from './DsTextareaAutosize.Component'
+export * from './DsTextareaAutosize.Types'
+export * from './DsTextareaAutosize.Overrides'
