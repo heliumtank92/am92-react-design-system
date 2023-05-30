@@ -1,4 +1,3 @@
-export {
-  default,
-  PaperProps as DsPaperProps
-} from '@mui/material/Paper'
+export * from './DsPaper.Component'
+export * from './DsPaper.Types'
+export * from './DsPaper.Overrides'
