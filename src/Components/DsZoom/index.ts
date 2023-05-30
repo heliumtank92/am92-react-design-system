@@ -1,1 +1,3 @@
-export { default, ZoomProps as DsZoomProps } from '@mui/material/Zoom'
+export * from './DsZoom.Component'
+export * from './DsZoom.Types'
+export * from './DsZoom.Overrides'
