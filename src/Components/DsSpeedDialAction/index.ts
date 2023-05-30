@@ -1,4 +1,3 @@
-export {
-  default,
-  SpeedDialActionProps as DsSpeedDialActionProps
-} from '@mui/material/SpeedDialAction'
+export * from './DsSpeedDialAction.Component'
+export * from './DsSpeedDialAction.Types'
+export * from './DsSpeedDialAction.Overrides'
