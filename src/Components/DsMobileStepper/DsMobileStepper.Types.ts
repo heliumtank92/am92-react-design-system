@@ -1,3 +1,5 @@
-export { MobileStepperProps as DsMobileStepperProps } from '@mui/material/MobileStepper'
+import { MobileStepperProps } from '@mui/material'
 
-export const DsMobileStepperDefaultProps = {}
+export interface DsMobileStepperProps extends MobileStepperProps {}
+
+export const DsMobileStepperDefaultProps: DsMobileStepperProps = {}
