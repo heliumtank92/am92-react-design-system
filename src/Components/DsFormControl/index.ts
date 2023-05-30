@@ -1,4 +1,3 @@
-export {
-  default,
-  FormControlProps as DsFormControlProps
-} from '@mui/material/FormControl'
+export * from './DsFormControl.Component'
+export * from './DsFormControl.Types'
+export * from './DsFormControl.Overrides'
