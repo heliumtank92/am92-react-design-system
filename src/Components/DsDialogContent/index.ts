@@ -1,4 +1,3 @@
-export {
-  default,
-  DialogContentProps as DsDialogContentProps
-} from '@mui/material/DialogContent'
+export * from './DsDialogContent.Component'
+export * from './DsDialogContent.Types'
+export * from './DsDialogContent.Overrides'
