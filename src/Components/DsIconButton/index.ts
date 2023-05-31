@@ -1,4 +1,3 @@
-export {
-  default,
-  IconButtonProps as DsIconButtonProps
-} from '@mui/material/IconButton'
+export * from './DsIconButton.Component'
+export * from './DsIconButton.Types'
+export * from './DsIconButton.Overrides'

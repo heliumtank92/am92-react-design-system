@@ -4,19 +4,10 @@ import Toolbar from '@mui/material/Toolbar'
 
 import { DsBox } from '../DsBox'
 import { DsTypography } from '../DsTypography'
+import { DsAppBarDefaultProps, DsAppBarProps } from './DsAppBar.Types'
 
-export default class DsAppBar extends PureComponent {
-  static propTypes = {
-    open: PropTypes.bool,
-    leftIcon: PropTypes.element,
-    content: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-    rightActions: PropTypes.arrayOf(PropTypes.element)
-  }
-
-  static defaultProps = {
-    open: false,
-    content: ''
-  }
+export class DsAppBar extends PureComponent<DsAppBarProps> {
+  static defaultProps = DsAppBarDefaultProps
 
   render() {
     const { leftIcon, content, rightActions, ...appBarProps } = this.props

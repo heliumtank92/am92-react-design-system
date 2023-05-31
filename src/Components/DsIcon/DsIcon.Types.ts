@@ -4,7 +4,8 @@ import { DsColorOverides, DsFontSizePropsVariantOverrides } from '../../Types'
 export interface DsIconProps extends IconProps {}
 
 export const IconDefaultProps: DsIconProps = {
-  fontSize: 'mild'
+  fontSize: 'mild',
+  color: 'iconActionSecondary'
 }
 
 declare module '@mui/material/Icon' {
