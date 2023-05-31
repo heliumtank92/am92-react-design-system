@@ -1,14 +1,16 @@
 import { AppBarProps } from '@mui/material'
 
 export interface DsAppBarProps extends AppBarProps {
-  leftIcon?: React.ReactElement
+  navigation?: boolean | React.ReactElement
   appBarTitle?: string | React.ReactElement
-  rightActions?: React.ReactElement[]
+  actions?: boolean | React.ReactElement[]
 }
 
 export const DsAppBarDefaultProps: DsAppBarProps = {
-  color: 'primary',
+  color: 'default',
   enableColorOnDark: true,
   elevation: -1,
-  appBarTitle: ''
+  appBarTitle: '',
+  navigation: false,
+  actions: false
 }

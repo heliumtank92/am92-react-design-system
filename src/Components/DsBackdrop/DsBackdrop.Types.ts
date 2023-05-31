@@ -1,5 +1,3 @@
 import { BackdropProps } from '@mui/material'
-export interface DsBackdropProps extends BackdropProps {
-  loader: 'true' | undefined
-}
+export interface DsBackdropProps extends BackdropProps {}
 export const DsBackdropDefaultProps = {}

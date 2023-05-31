@@ -4,27 +4,27 @@ import Toolbar from '@mui/material/Toolbar'
 
 import { DsBox } from '../DsBox'
 import { DsTypography } from '../DsTypography'
+import { DsStack } from '../DsStack'
+
 import { DsAppBarDefaultProps, DsAppBarProps } from './DsAppBar.Types'
 
 export class DsAppBar extends PureComponent<DsAppBarProps> {
   static defaultProps = DsAppBarDefaultProps
 
   render() {
-    const { leftIcon, content, rightActions, ...appBarProps } = this.props
-    const { color } = appBarProps
-    const iconColor = color === 'primary' ? 'iconOnSurface' : undefined
+    const { navigation, appBarTitle, actions, ...appBarProps } = this.props
 
     const contentJSX =
-      typeof content === 'string' ? (
-        <DsTypography variant="headingBoldSmall">{content}</DsTypography>
+      typeof appBarTitle === 'string' ? (
+        <DsTypography variant="headingBoldSmall">{appBarTitle}</DsTypography>
       ) : (
-        content
+        appBarTitle
       )
 
     return (
       <AppBar {...appBarProps}>
         <Toolbar>
-          {leftIcon && (
+          {navigation && (
             <DsBox
               sx={{
                 display: 'flex',
@@ -33,7 +33,7 @@ export class DsAppBar extends PureComponent<DsAppBarProps> {
                 pr: 'var(--ds-spacing-bitterCold)'
               }}
             >
-              {React.cloneElement(leftIcon, { color: iconColor })}
+              {navigation}
             </DsBox>
           )}
           <DsBox
@@ -46,21 +46,18 @@ export class DsAppBar extends PureComponent<DsAppBarProps> {
           >
             {contentJSX}
           </DsBox>
-          {rightActions && (
-            <DsBox
+          {actions && (
+            <DsStack
+              direction="row"
+              spacing="var(--ds-spacing-bitterCold)"
               sx={{
-                display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                ml: 'var(--ds-spacing-bitterCold)'
               }}
             >
-              {rightActions.map(rightAction =>
-                React.cloneElement(rightAction, {
-                  color: iconColor,
-                  sx: { marginLeft: 'var(--ds-spacing-bitterCold)' }
-                })
-              )}
-            </DsBox>
+              {actions}
+            </DsStack>
           )}
         </Toolbar>
       </AppBar>
