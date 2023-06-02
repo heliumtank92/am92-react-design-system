@@ -1,9 +1,9 @@
 import { AlertProps } from '@mui/material'
 
-export interface DsToastProps extends AlertProps {
-  forwardedRef: React.ForwardedRef<any>
+export interface DsToastProps<T> extends AlertProps {
+  forwardedRef: React.ForwardedRef<T>
 }
 
-export const DsToastDefaultProps: DsToastProps = {
+export const DsToastDefaultProps: DsToastProps<null> = {
   forwardedRef: () => null
 }
