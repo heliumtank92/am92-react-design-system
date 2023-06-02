@@ -1,4 +1,3 @@
-export {
-  default,
-  CardContentProps as DsCardContentProps
-} from '@mui/material/CardContent'
+export * from './DsCardContent.Component'
+export * from './DsCardContent.Types'
+export * from './DsCardContent.Overrides'
