@@ -1,5 +1,5 @@
-import { ChipGroupProps } from '@mui/material'
+import { DsStackProps } from '../DsStack'
 
-export interface DsChipGroupProps extends ChipGroupProps {}
+export interface DsChipGroupProps extends DsStackProps {}
 
-export const DsChipGroupDefaultProps: DsChipGroupProps = {}
+export const DsChipGroupDefaultProps: DsStackProps = {}
