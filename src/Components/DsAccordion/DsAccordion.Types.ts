@@ -1,9 +1,9 @@
 import { AccordionProps } from '@mui/material'
 
 export interface DsAccordionProps extends Omit<AccordionProps, 'children'> {
-  header: React.ReactNode
-  summary: React.ReactNode
-  expandIcon?: React.ReactNode
+  header: string | React.ReactElement
+  summary: string | React.ReactElement
+  expandIcon?: React.ReactElement
 }
 
 export const DsAccordionDefaultProps: DsAccordionProps = {

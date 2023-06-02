@@ -1,42 +1,47 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 
-import DsRemixIcon from './DsRemixIcon'
-import DsTypography from './DsTypography'
-import DsBox from './DsBox'
-import DsIconButton from './DsIconButton'
-import DsDrawer, { DsDrawerProps } from './DsDrawer'
-import { color, borderRadius, textTransform } from '@mui/system'
-import { pt } from 'date-fns/locale'
-import { title } from 'process'
-import elevation from '../../Theme/elevation'
-
-export interface DsBottomStaggerProps extends DsDrawerProps {
-  kicker?: React.ReactNode
-  title?: React.ReactNode
-  buttonGroup?: JSX.Element
-  showClose?: boolean
-}
-
-export const DsBottomStaggerDefaultProps: DsBottomStaggerProps = {
-  showClose: true
-}
+import { DsRemixIcon } from '../DsRemixIcon'
+import { DsTypography } from '../DsTypography'
+import { DsBox } from '../DsBox'
+import { DsIconButton } from '../DsIconButton'
+import { DsDrawer } from '../DsDrawer'
+import {
+  DsBottomStaggerProps,
+  DsBottomStaggerDefaultProps
+} from './DsBottomStagger.Types'
 
 export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
   static defaultProps = DsBottomStaggerDefaultProps
 
+  handleDrawerClose = (
+    event: any,
+    reason: 'backdropClick' | 'escapeKeyDown'
+  ) => {
+    const { onClose } = this.props
+    if (typeof onClose === 'function') {
+      onClose(event, reason)
+    }
+  }
+
+  handleCloseClick = (event: any) => {
+    const { onClose } = this.props
+    if (typeof onClose === 'function') {
+      onClose(event, 'backdropClick')
+    }
+  }
+
   render() {
     const {
       kicker,
-      title,
+      bottomStaggerTitle,
       buttonGroup,
       showClose,
 
       children,
+      onClose,
       ...restProps
     } = this.props
 
-    const { onClose } = restProps
     const padded = !!buttonGroup?.props?.noPadding
     const drawerButtonGroup =
       buttonGroup &&
@@ -47,7 +52,12 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
 
     return (
       <>
-        <DsDrawer anchor="bottom" elevation={0} {...restProps}>
+        <DsDrawer
+          anchor="bottom"
+          elevation={0}
+          {...restProps}
+          onClose={this.handleDrawerClose}
+        >
           {showClose && (
             <DsBox
               sx={{
@@ -57,7 +67,7 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
               }}
             >
               <DsIconButton
-                onClick={onClose}
+                onClick={this.handleCloseClick}
                 sx={{
                   backgroundColor: 'var(--ds-color-iconDefault)',
                   color: 'var(--ds-color-iconDisabled)',
@@ -95,7 +105,7 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
                   {kicker}
                 </DsTypography>
               )}
-              {title && (
+              {bottomStaggerTitle && (
                 <DsTypography
                   variant="headingBoldMedium"
                   component="div"
@@ -103,7 +113,7 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
                     mb: 'var(--ds-spacing-mild)'
                   }}
                 >
-                  {title}
+                  {bottomStaggerTitle}
                 </DsTypography>
               )}
             </DsBox>

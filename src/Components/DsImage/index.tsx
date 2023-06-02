@@ -1,9 +1,9 @@
 import React, { PureComponent, SyntheticEvent } from 'react'
 import { Fade } from '@mui/material'
 
-import DsBox from './DsBox'
-import DsRemixIcon from './DsRemixIcon'
-import DsCircularProgress from './DsCircularProgress'
+import { DsBox } from '../DsBox'
+import { DsRemixIcon } from '../DsRemixIcon'
+import { DsCircularProgress } from '../DsCircularProgress'
 
 interface SrcSet {
   media?: string
@@ -44,8 +44,10 @@ export default class DsImage extends PureComponent<DsImageProps, DsImageState> {
   static defaultProps = DsImageDefaultProps
   state = DsImageDefultState
 
-  handleLoad = (e: SyntheticEvent): void => this.setState({ loadState: 'LOADED' })
-  handleError = (e: SyntheticEvent): void => this.setState({ loadState: 'ERROR' })
+  handleLoad = (e: SyntheticEvent): void =>
+    this.setState({ loadState: 'LOADED' })
+  handleError = (e: SyntheticEvent): void =>
+    this.setState({ loadState: 'ERROR' })
 
   hasSource = (): boolean => {
     const { src, srcSet } = this.props
@@ -68,7 +70,10 @@ export default class DsImage extends PureComponent<DsImageProps, DsImageState> {
           height: '100%'
         }}
       >
-        <DsCircularProgress size="100%" sx={{ maxHeight: '50px', maxWidth: '50px' }} />
+        <DsCircularProgress
+          size="100%"
+          sx={{ maxHeight: '50px', maxWidth: '50px' }}
+        />
       </DsBox>
     )
   }
@@ -91,7 +96,11 @@ export default class DsImage extends PureComponent<DsImageProps, DsImageState> {
           fontSize: errorIconFontSize
         }}
       >
-        <DsRemixIcon className={errorIconClass} color="iconDisabled" fontSize="inherit" />
+        <DsRemixIcon
+          className={errorIconClass}
+          color="iconDisabled"
+          fontSize="inherit"
+        />
       </DsBox>
     )
   }
@@ -104,8 +113,14 @@ export default class DsImage extends PureComponent<DsImageProps, DsImageState> {
     }
 
     const { loadState } = this.state
-    const { src, srcSet, alt, errorIconClass, errorIconFontSize, ...restProps } =
-      this.props
+    const {
+      src,
+      srcSet,
+      alt,
+      errorIconClass,
+      errorIconFontSize,
+      ...restProps
+    } = this.props
 
     const isLoaded = loadState === 'LOADED'
     const imgDisplayProps = isLoaded ? {} : { display: 'none' }
