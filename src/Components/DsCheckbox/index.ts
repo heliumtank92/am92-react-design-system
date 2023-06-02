@@ -1,4 +1,3 @@
-export {
-  default,
-  CheckboxProps as DsCheckboxProps
-} from '@mui/material/Checkbox'
+export * from './DsCheckbox.Component'
+export * from './DsCheckbox.Types'
+export * from './DsCheckbox.Overrides'
