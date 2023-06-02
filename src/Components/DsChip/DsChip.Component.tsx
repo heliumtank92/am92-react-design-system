@@ -1,13 +1,6 @@
 import React, { PureComponent } from 'react'
-import Chip, { ChipProps } from '@mui/material/Chip'
-
-export interface DsChipProps extends ChipProps {
-  type?: 'status' | 'nudge'
-}
-
-export const DsChipDefaultProps: DsChipProps = {
-  type: 'status'
-}
+import Chip from '@mui/material/Chip'
+import { DsChipProps, DsChipDefaultProps } from './DsChip.Types'
 
 export default class DsChip extends PureComponent<DsChipProps> {
   static defaultProps = DsChipDefaultProps

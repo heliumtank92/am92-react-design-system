@@ -1,5 +1,9 @@
 import { ChipProps } from '@mui/material'
 
-export interface DsChipProps extends ChipProps {}
+export interface DsChipProps extends ChipProps {
+  type?: 'status' | 'nudge'
+}
 
-export const DsChipDefaultProps: DsChipProps = {}
+export const DsChipDefaultProps: DsChipProps = {
+  type: 'status'
+}
