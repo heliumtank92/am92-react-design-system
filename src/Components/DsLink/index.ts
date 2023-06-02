@@ -1,1 +1,3 @@
-export { default, LinkProps as DsLinkProps } from '@mui/material/Link'
+export * from './DsLink.Component'
+export * from './DsLink.Types'
+export * from './DsLink.Overrides'
