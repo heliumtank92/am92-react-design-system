@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react'
-import Button, { ButtonProps } from '@mui/material/Button'
+import Button from '@mui/material/Button'
+import { DsButtonProps } from './DsButton.Types'
 
-export interface DsButtonProps extends ButtonProps {}
-
-export default class DsButton extends PureComponent<DsButtonProps> {
+export class DsButton extends PureComponent<DsButtonProps> {
   render() {
     const { children, ...buttonProps } = this.props
     return (
