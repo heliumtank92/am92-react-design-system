@@ -1,4 +1,3 @@
-export {
-  default,
-  CardHeaderProps as DsCardHeaderProps
-} from '@mui/material/CardHeader'
+export * from './DsCardHeader.Component'
+export * from './DsCardHeader.Types'
+export * from './DsCardHeader.Overrides'
