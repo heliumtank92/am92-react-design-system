@@ -1,25 +1,16 @@
 import React, { PureComponent } from 'react'
-import { DsStack, DsStackProps } from '../DsStack'
+import { DsStack } from '../DsStack'
+import {
+  DsButtonGroupProps,
+  DsButtonGroupDefaultProps
+} from './DsButtonGroup.Types'
 
-export interface DsButtonGroupProps extends DsStackProps {
-  fullWidth?: boolean
-  noPadding?: boolean
-  size?: 'small' | 'medium' | 'large'
-}
-
-export const DsDsButtonGroupDefaultProps: DsButtonGroupProps = {
-  fullWidth: false,
-  noPadding: false,
-  size: 'medium'
-}
-
-export default class DsButtonGroup extends PureComponent<DsButtonGroupProps> {
-  static defaultProps = DsDsButtonGroupDefaultProps
+export class DsButtonGroup extends PureComponent<DsButtonGroupProps> {
+  static defaultProps = DsButtonGroupDefaultProps
 
   render() {
     const { fullWidth, noPadding, size, sx, children, ...restProps } =
       this.props
-
     const childrenArray = children instanceof Array ? children : [children]
 
     return (
