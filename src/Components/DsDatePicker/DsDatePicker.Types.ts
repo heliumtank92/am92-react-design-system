@@ -1,5 +1,6 @@
-import { DatePickerProps } from '@mui/material'
+import { MobileDatePickerProps } from '@mui/x-date-pickers'
 
-export interface DsDatePickerProps extends DatePickerProps {}
+export interface DsDatePickerProps<TDate>
+  extends MobileDatePickerProps<TDate> {}
 
 export const DsDatePickerDefaultProps: DsDatePickerProps = {}
