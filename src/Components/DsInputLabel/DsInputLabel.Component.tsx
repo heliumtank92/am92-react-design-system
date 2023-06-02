@@ -1,13 +1,7 @@
 import React, { PureComponent } from 'react'
-import InputLabel, { InputLabelProps } from '@mui/material/InputLabel'
+import InputLabel from '@mui/material/InputLabel'
+import { DsInputLabelProps } from './DsInputLabel.Types'
 import { DsTypography } from '../DsTypography'
-
-export interface DsInputLabelProps extends InputLabelProps {
-  label?: string | React.ReactElement
-  labelSupportText?: string | React.ReactElement
-  success?: boolean
-  error?: boolean
-}
 
 export default class DsInputLabel extends PureComponent<DsInputLabelProps> {
   render() {
