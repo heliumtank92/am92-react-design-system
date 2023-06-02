@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import DsStack, { DsStackProps } from './DsStack'
+import { DsStack, DsStackProps } from '../DsStack'
 
 export interface DsButtonGroupProps extends DsStackProps {
   fullWidth?: boolean
@@ -20,8 +20,7 @@ export default class DsButtonGroup extends PureComponent<DsButtonGroupProps> {
     const { fullWidth, noPadding, size, sx, children, ...restProps } =
       this.props
 
-    const childrenArray =
-      children instanceof Array ? children : [children]
+    const childrenArray = children instanceof Array ? children : [children]
 
     return (
       <DsStack
@@ -38,8 +37,7 @@ export default class DsButtonGroup extends PureComponent<DsButtonGroupProps> {
       >
         {childrenArray.map(
           (child, key) =>
-            child &&
-            React.cloneElement(child, { key, size, fullWidth })
+            child && React.cloneElement(child, { key, size, fullWidth })
         )}
       </DsStack>
     )
