@@ -1,4 +1,3 @@
-export {
-  default,
-  CardActionAreaProps as DsCardActionAreaProps
-} from '@mui/material/CardActionArea'
+export * from './DsCardActionArea.Component'
+export * from './DsCardActionArea.Types'
+export * from './DsCardActionArea.Overrides'
