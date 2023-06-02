@@ -1,4 +1,3 @@
-export {
-  default,
-  InputBaseProps as DsInputBaseProps
-} from '@mui/material/InputBase'
+export * from './DsInputBase.Component'
+export * from './DsInputBase.Types'
+export * from './DsInputBase.Overrides'
