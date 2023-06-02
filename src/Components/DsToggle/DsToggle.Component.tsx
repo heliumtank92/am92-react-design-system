@@ -1,21 +1,14 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import Switch from '@mui/material/Switch'
+import { DsToggleProps } from './DsToggle.Types'
 
-export default class DsToggle extends PureComponent {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    value: PropTypes.bool
-  }
-
-  static defaultProps = {
-    value: false
-  }
-
-  handleChange = event => {
+export default class DsToggle extends PureComponent<DsToggleProps> {
+  handleChange = (event: any) => {
     const { onChange } = this.props
     const { name, checked } = event.target
-    onChange(name, checked)
+    if (typeof onChange === 'function') {
+      onChange(name, checked)
+    }
   }
 
   render() {
