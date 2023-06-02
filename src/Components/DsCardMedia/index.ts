@@ -1,4 +1,3 @@
-export {
-  default,
-  CardMediaProps as DsCardMediaProps
-} from '@mui/material/CardMedia'
+export * from './DsCardMedia.Component'
+export * from './DsCardMedia.Types'
+export * from './DsCardMedia.Overrides'
