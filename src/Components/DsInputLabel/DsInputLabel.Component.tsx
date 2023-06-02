@@ -3,7 +3,7 @@ import InputLabel from '@mui/material/InputLabel'
 import { DsInputLabelProps } from './DsInputLabel.Types'
 import { DsTypography } from '../DsTypography'
 
-export default class DsInputLabel extends PureComponent<DsInputLabelProps> {
+export class DsInputLabel extends PureComponent<DsInputLabelProps> {
   render() {
     const { label, labelSupportText, success, error, ...inputLabelProps } =
       this.props

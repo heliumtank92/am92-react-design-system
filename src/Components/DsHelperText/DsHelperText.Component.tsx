@@ -8,7 +8,7 @@ import { DsBox } from '../DsBox'
 import { DsTypography } from '../DsTypography'
 import { DsRemixIcon } from '../DsRemixIcon'
 
-export default class DsHelperText extends PureComponent<DsHelperTextProps> {
+export class DsHelperText extends PureComponent<DsHelperTextProps> {
   static defaultProps = DsHelperTextDefaultProps
 
   render() {
