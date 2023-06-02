@@ -1,1 +1,3 @@
-export { default, CardProps as DsCardProps } from '@mui/material/Card'
+export * from './DsCard.Component'
+export * from './DsCard.Types'
+export * from './DsCard.Overrides'
