@@ -1,21 +1,20 @@
 import React, { PureComponent } from 'react'
-// import PropTypes from 'prop-types'
-
 import Alert from '@mui/material/Alert'
-import DsRemixIcon from './DsRemixIcon'
+import { DsToastProps } from './DsToast.Types'
+import { DsRemixIcon } from '../DsRemixIcon'
 
-const CloseIcon = props => (
+const CloseIcon = (props: object) => (
   <DsRemixIcon {...props} fontSize="mild" className="ri-close-line" />
 )
 
-class DsToast extends PureComponent {
+class DsToast extends PureComponent<DsToastProps> {
   render() {
     return (
       <Alert
         ref={this.props.forwardedRef}
         {...this.props}
         components={{
-          ...this.props?.components,
+          ...this.props.components,
           CloseIcon
         }}
       />
