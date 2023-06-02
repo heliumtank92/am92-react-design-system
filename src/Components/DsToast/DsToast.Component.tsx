@@ -7,7 +7,7 @@ const CloseIcon = (props: object) => (
   <DsRemixIcon {...props} fontSize="mild" className="ri-close-line" />
 )
 
-class DsToast extends PureComponent<DsToastProps> {
+export class DsToast extends PureComponent<DsToastProps> {
   render() {
     return (
       <Alert
@@ -21,5 +21,3 @@ class DsToast extends PureComponent<DsToastProps> {
     )
   }
 }
-
-export default DsToast
