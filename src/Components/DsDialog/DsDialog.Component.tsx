@@ -10,27 +10,26 @@ import { DsTypography } from '../DsTypography'
 import { DsRemixIcon } from '../DsRemixIcon'
 import { DsIconButton } from '../DsIconButton'
 import { DsStack } from '../DsStack'
+import { DsDialogDefaultProps, DsDialogProps } from './DsDialog.Types'
 
-export default class DsDialog extends PureComponent {
-  static propTypes = {
-    imageSrc: PropTypes.string,
-    imageAlt: PropTypes.string,
-    heading: PropTypes.string,
-    description: PropTypes.string,
-    buttonGroup: PropTypes.element,
+export default class DsDialog extends PureComponent<DsDialogProps> {
+  static defaultProps = DsDialogDefaultProps
 
-    textAlign: PropTypes.string,
-    showClose: PropTypes.bool,
-
-    fullWidth: PropTypes.bool
+  handleDialogClose = (
+    event: any,
+    reason: 'backdropClick' | 'escapeKeyDown'
+  ) => {
+    const { onClose } = this.props
+    if (typeof onClose === 'function') {
+      onClose(event, reason)
+    }
   }
 
-  static defaultProps = {
-    imageSrc: '',
-    imageAlt: '',
-    textAlign: 'left',
-    showClose: true,
-    fullWidth: true
+  handleCloseClick = (event: any) => {
+    const { onClose } = this.props
+    if (typeof onClose === 'function') {
+      onClose(event, 'backdropClick')
+    }
   }
 
   render() {
@@ -53,7 +52,7 @@ export default class DsDialog extends PureComponent {
 
     return (
       <Dialog
-        onClose={onClose}
+        onClose={this.handleDialogClose}
         {...restDialogProps}
         PaperProps={{
           sx: {
@@ -79,7 +78,7 @@ export default class DsDialog extends PureComponent {
       >
         {showClose && (
           <DsIconButton
-            onClick={onClose}
+            onClick={this.handleCloseClick}
             sx={{
               position: 'absolute',
               padding: 'var(--ds-spacing-glacial)',
@@ -122,7 +121,7 @@ export default class DsDialog extends PureComponent {
               <DsTypography
                 variant="headingBoldMedium"
                 component="div"
-                textAlign={textAlign}
+                align={textAlign}
                 sx={{
                   mb: {
                     xs: 'var(--ds-spacing-bitterCold)',
@@ -138,7 +137,7 @@ export default class DsDialog extends PureComponent {
               <DsTypography
                 variant="bodyRegularLarge"
                 component="div"
-                textAlign={textAlign}
+                align={textAlign}
                 color="text.secondary"
                 sx={{
                   p: 'var(--ds-spacing-zero)  var(--ds-spacing-pleasant) var(--ds-spacing-glacial)  var(--ds-spacing-pleasant)'

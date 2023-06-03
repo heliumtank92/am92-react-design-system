@@ -11,7 +11,7 @@ import {
   DsImageDefultState
 } from './DsImage.Types'
 
-export default class DsImage extends PureComponent<DsImageProps, DsImageState> {
+export class DsImage extends PureComponent<DsImageProps, DsImageState> {
   static defaultProps = DsImageDefaultProps
   state = DsImageDefultState
 
