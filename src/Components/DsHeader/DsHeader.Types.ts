@@ -1,5 +1,15 @@
-import { HeaderProps } from '@mui/material'
+import { DsBoxProps } from '../DsBox'
 
-export interface DsHeaderProps extends HeaderProps {}
+export interface DsHeaderProps extends DsBoxProps {
+  logoUrl?: string
+  logo?: React.ReactElement
+  children?: React.ReactElement
+  HeaderProps?: any
+  BoxProps?: any
+  StackProps?: any
+}
 
-export const DsHeaderDefaultProps: DsHeaderProps = {}
+export const DsHeaderDefaultProps: DsHeaderProps = {
+  BoxProps: { sx: {} },
+  StackProps: { sx: {} }
+}

@@ -1,35 +1,16 @@
 import React, { PureComponent } from 'react'
 
-import DsBox, { DsBoxProps } from './DsBox'
-import DsStack from './DsStack'
-import DsImage from './DsImage'
+import { DsBox } from '../DsBox'
+import { DsStack } from '../DsStack'
+import { DsImage } from '../DsImage'
+import { DsHeaderProps, DsHeaderDefaultProps } from './DsHeader.Types'
 
-export interface DsHeaderProps extends DsBoxProps {
-  logoUrl?: string
-  logo?: React.ReactElement
-  children?: React.ReactElement
-  HeaderProps?: any
-  BoxProps?: any
-  StackProps?: any
-}
-
-export const DsHeaderDefaultProps: DsHeaderProps = {
-  BoxProps: { sx: {} },
-  StackProps: { sx: {} }
-}
-
-export default class DsHeader extends PureComponent<DsHeaderProps> {
+export class DsHeader extends PureComponent<DsHeaderProps> {
   static defaultProps = DsHeaderDefaultProps
 
   render() {
-    const {
-      logoUrl,
-      logo,
-      children,
-      BoxProps,
-      StackProps,
-      ...HeaderProps
-    } = this.props
+    const { logoUrl, logo, children, BoxProps, StackProps, ...HeaderProps } =
+      this.props
 
     return (
       <DsBox
@@ -67,11 +48,7 @@ export default class DsHeader extends PureComponent<DsHeaderProps> {
           <DsStack {...StackProps}>{children}</DsStack>
         </DsBox>
         {logoUrl && (
-          <DsImage
-            src={logoUrl}
-            style={{ height: '100%' }}
-            alt="logo"
-          />
+          <DsImage src={logoUrl} style={{ height: '100%' }} alt="logo" />
         )}
         {logo && logo}
       </DsBox>
