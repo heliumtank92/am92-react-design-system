@@ -1,4 +1,3 @@
-export {
-  default,
-  DividerProps as DsDividerProps
-} from '@mui/material/Divider'
+export * from './DsDivider.Component'
+export * from './DsDivider.Types'
+export * from './DsDivider.Overrides'
