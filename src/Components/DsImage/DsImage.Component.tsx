@@ -1,44 +1,15 @@
 import React, { PureComponent, SyntheticEvent } from 'react'
-import { Fade } from '@mui/material'
 
+import { DsFade } from '../DsFade'
 import { DsBox } from '../DsBox'
 import { DsRemixIcon } from '../DsRemixIcon'
 import { DsCircularProgress } from '../DsCircularProgress'
-
-interface SrcSet {
-  media?: string
-  sizes?: string
-  src?: string
-  srcset?: string
-  type?: string
-  alt?: string
-  style?: string
-}
-
-export interface DsImageProps {
-  src?: string
-  srcSet?: SrcSet[]
-  alt?: string
-  errorIconFontSize?: number | string
-  errorIconClass?: string
-  style?: object
-}
-
-export interface DsImageState {
-  loadState: 'LOADING' | 'LOADED' | 'ERROR'
-}
-
-export const DsImageDefaultProps: DsImageProps = {
-  src: '',
-  srcSet: [],
-  alt: '',
-  errorIconFontSize: 'var(--ds-typo-fontSizeMild)',
-  errorIconClass: 'ri-image-2-line'
-}
-
-export const DsImageDefultState: DsImageState = {
-  loadState: 'LOADING'
-}
+import {
+  DsImageProps,
+  DsImageState,
+  DsImageDefaultProps,
+  DsImageDefultState
+} from './DsImage.Types'
 
 export default class DsImage extends PureComponent<DsImageProps, DsImageState> {
   static defaultProps = DsImageDefaultProps
@@ -159,12 +130,12 @@ export default class DsImage extends PureComponent<DsImageProps, DsImageState> {
     const isLoaded = loadState === 'LOADED' || loadState === 'ERROR'
     return (
       <>
-        <Fade in={isLoaded}>
+        <DsFade in={isLoaded}>
           <picture onLoad={this.handleLoad} onError={this.handleError}>
             {this.renderError()}
             {this.renderImageSrcSet()}
           </picture>
-        </Fade>
+        </DsFade>
         {this.renderLoading()}
       </>
     )
