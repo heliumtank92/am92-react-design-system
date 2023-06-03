@@ -1,13 +1,8 @@
-import DsRemixIconTheme from '../DsSvgIcon/DsRemixIcon.Theme'
-import { DsIconProps } from './DsIcon.Types'
-
-const AccordionDefaultProps: DsIconProps = {}
+import { IconDefaultProps } from './DsIcon.Types'
 
 export const DsIconOverrides = {
   MuiIcon: {
-    defaultProps: {
-      fontSize: 'mild'
-    },
+    defaultProps: IconDefaultProps,
     styleOverrides: {
       root: {
         height: 'auto',
@@ -89,5 +84,3 @@ export const DsIconOverrides = {
     }
   }
 }
-
-export default DsRemixIconTheme
