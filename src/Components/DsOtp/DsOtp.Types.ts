@@ -1,5 +1,14 @@
-import { OtpProps } from '@mui/material'
+import { DsTextFieldProps } from '../DsTextField'
 
-export interface DsOtpProps extends OtpProps {}
+export interface DsOtpProps extends DsTextFieldProps {
+  onComplete: (otpString: string) => void
+  name?: string
+  length?: number
+  initialOtp?: string
+}
 
-export const DsOtpDefaultProps: DsOtpProps = {}
+export const DsOtpDefaultProps: DsOtpProps = {
+  name: 'otp',
+  length: 6,
+  onComplete: () => undefined
+}
