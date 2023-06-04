@@ -1,4 +1,3 @@
-export {
-  default,
-  SvgIconProps as DsSvgIconProps
-} from '@mui/material/SvgIcon'
+export * from './DsSvgIcon.Component'
+export * from './DsSvgIcon.Types'
+export * from './DsSvgIcon.Overrides'
