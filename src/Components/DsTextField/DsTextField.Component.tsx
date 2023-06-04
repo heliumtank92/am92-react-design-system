@@ -19,6 +19,7 @@ export class DsTextField extends PureComponent<DsTextFieldProps> {
       sx,
       fullWidth,
       inputProps,
+      ref,
       inputRef,
       disabled,
       FormControlProps,
@@ -54,7 +55,7 @@ export class DsTextField extends PureComponent<DsTextFieldProps> {
           id={id || name}
           name={name}
           inputProps={inputProps}
-          inputRef={inputRef}
+          inputRef={ref || inputRef}
           disabled={disabled}
           {...inputBaseProps}
         />

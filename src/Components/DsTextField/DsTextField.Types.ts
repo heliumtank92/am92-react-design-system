@@ -4,6 +4,7 @@ import { DsInputLabelProps } from '../DsInputLabel'
 import { DsHelperTextProps } from '../DsHelperText'
 
 export interface DsTextFieldProps extends DsInputBaseProps {
+  ref?: React.Ref<any>
   FormControlProps?: DsFormControlProps
   InputLabelProps?: Omit<DsInputLabelProps, 'ref'>
   FormHelperTextProps?: Omit<DsHelperTextProps, 'ref'>
