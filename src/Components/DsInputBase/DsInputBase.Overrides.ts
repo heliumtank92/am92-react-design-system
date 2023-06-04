@@ -45,7 +45,8 @@ export const DsInputBaseOverrides = {
           lineHeight: 'var(--ds-typo-bodyRegularMedium-lineHeight)',
           letterSpacing: 'var(--ds-typo-bodyRegularMedium-letterSpacing)',
           '> input': {
-            padding: 'var(--ds-spacing-zero)'
+            padding: 'var(--ds-spacing-zero)',
+            ml: 'var(--ds-spacing-frostbite)'
           },
           '> input::placeholder': {
             color: 'var(--ds-color-typoSecondary)',
