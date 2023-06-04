@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import DsBox from './DsBox'
-import DsStack from './DsStack'
-import DsInputLabel from './DsInputLabel'
-import DsTextField from './DsTextField'
-import DsHelperText from './DsHelperText'
+import { DsBox } from '../DsBox'
+import { DsStack } from '../DsStack'
+import { DsInputLabel } from '../DsInputLabel'
+import { DsTextField } from '../DsTextField'
+import { DsHelperText } from '../DsHelperText'
 
 const KEY_CODES = {
   BACK_SPACE: 8
@@ -81,10 +81,7 @@ export default class DsOtp extends Component {
       }
 
       const otpString = otp.join('')
-      if (
-        otpString.length === length &&
-        typeof onComplete === 'function'
-      ) {
+      if (otpString.length === length && typeof onComplete === 'function') {
         onComplete(otpString)
       }
     })
@@ -117,10 +114,7 @@ export default class DsOtp extends Component {
     }
 
     const otpString = otp.join('')
-    if (
-      otpString.length === length &&
-      typeof onComplete === 'function'
-    ) {
+    if (otpString.length === length && typeof onComplete === 'function') {
       onComplete(otpString)
     }
   }
@@ -199,11 +193,7 @@ export default class DsOtp extends Component {
           disabled={disabled}
           {...inputLabelProps}
         />
-        <DsStack
-          direction="row"
-          spacing="var(--ds-spacing-glacial)"
-          style={{}}
-        >
+        <DsStack direction="row" spacing="var(--ds-spacing-glacial)" style={{}}>
           {this.renderOtpBoxes()}
         </DsStack>
         <DsHelperText
