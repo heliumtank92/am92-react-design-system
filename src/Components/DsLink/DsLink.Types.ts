@@ -1,5 +1,4 @@
 import { LinkProps } from '@mui/material'
-import { DsTypographyPropsVariantOverrides } from '../../Types'
 
 export interface DsLinkProps extends LinkProps {}
 
