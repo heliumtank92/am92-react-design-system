@@ -1,4 +1,3 @@
-export {
-  default,
-  TablePaginationProps as DsTablePaginationProps
-} from '@mui/material/TablePagination'
+export * from './DsTablePagination.Component'
+export * from './DsTablePagination.Types'
+export * from './DsTablePagination.Overrides'
