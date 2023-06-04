@@ -1,4 +1,4 @@
-import { DsInputBaseProps } from '../DsInputBase'
+import { DsInputBaseDefaultProps, DsInputBaseProps } from '../DsInputBase'
 import { DsFormControlProps } from '../DsFormControl'
 import { DsInputLabelProps } from '../DsInputLabel'
 import { DsHelperTextProps } from '../DsHelperText'
@@ -14,4 +14,4 @@ export interface DsTextFieldProps extends DsInputBaseProps {
   success?: boolean
 }
 
-export const DsTextFieldDefaultProps: DsTextFieldProps = {}
+export const DsTextFieldDefaultProps: DsTextFieldProps = DsInputBaseDefaultProps

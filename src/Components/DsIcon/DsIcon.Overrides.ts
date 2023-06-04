@@ -1,8 +1,8 @@
-import { IconDefaultProps } from './DsIcon.Types'
+import { DsIconDefaultProps } from './DsIcon.Types'
 
 export const DsIconOverrides = {
   MuiIcon: {
-    defaultProps: IconDefaultProps,
+    defaultProps: DsIconDefaultProps,
     styleOverrides: {
       root: {
         height: 'auto',

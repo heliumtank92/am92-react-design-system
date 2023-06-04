@@ -3,7 +3,7 @@ import { DsColorOverides, DsFontSizePropsVariantOverrides } from '../../Types'
 
 export interface DsIconProps extends IconProps {}
 
-export const IconDefaultProps: DsIconProps = {
+export const DsIconDefaultProps: DsIconProps = {
   fontSize: 'mild',
   color: 'iconActionSecondary'
 }

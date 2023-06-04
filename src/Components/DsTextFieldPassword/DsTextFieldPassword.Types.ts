@@ -1,12 +1,12 @@
-import { DsTextFieldProps } from '../DsTextField'
+import { DsTextFieldDefaultProps, DsTextFieldProps } from '../DsTextField'
 
 export interface DsTextFieldPasswordProps extends DsTextFieldProps {
   visible: boolean
 }
 
 export const DsTextFieldPasswordDefaultProps: DsTextFieldPasswordProps = {
-  visible: false,
-  type: 'text'
+  ...DsTextFieldDefaultProps,
+  visible: false
 }
 
 export interface DsTextFieldPasswordState {

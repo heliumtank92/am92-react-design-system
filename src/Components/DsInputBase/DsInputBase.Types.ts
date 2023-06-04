@@ -6,5 +6,6 @@ export interface DsInputBaseProps extends InputBaseProps {
 
 export const DsInputBaseDefaultProps: DsInputBaseProps = {
   size: 'medium',
-  autoComplete: 'off'
+  autoComplete: 'off',
+  type: 'text'
 }

@@ -6,6 +6,7 @@ import { DsIconButton } from '../DsIconButton'
 import { DsTextField } from '../DsTextField'
 import {
   DsTextFieldPasswordDefaultProps,
+  DsTextFieldPasswordDefaultState,
   DsTextFieldPasswordProps,
   DsTextFieldPasswordState
 } from './DsTextFieldPassword.Types'
@@ -18,6 +19,7 @@ export default class DsTextFieldPassword extends Component<DsTextFieldPasswordPr
     super(props)
 
     this.state = {
+      ...DsTextFieldPasswordDefaultState,
       isVisible: props.visible
     }
   }
@@ -29,7 +31,7 @@ export default class DsTextFieldPassword extends Component<DsTextFieldPasswordPr
     const { isVisible } = this.state
     const { type, endAdornment, ...restProps } = this.props
 
-    const inputType: string = (isVisible && 'password') || type || 'text'
+    const inputType = (isVisible && 'password') || type
 
     const rightIcon = (
       <DsInputAdornment position="end">
