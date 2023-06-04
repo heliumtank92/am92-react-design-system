@@ -11,7 +11,6 @@ export class DsToast extends PureComponent<DsToastProps> {
   render() {
     return (
       <Alert
-        ref={this.props.forwardedRef}
         {...this.props}
         components={{
           ...this.props.components,

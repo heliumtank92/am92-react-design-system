@@ -1,5 +1,5 @@
-import { NotistackProps } from '@mui/material'
+import { SnackbarProviderProps } from 'notistack'
 
-export interface DsNotistackProps extends NotistackProps {}
+export interface DsNotistackProviderProps extends SnackbarProviderProps {}
 
-export const DsNotistackDefaultProps: DsNotistackProps = {}
+export const DsNotistackDefaultProps: DsNotistackProviderProps = {}
