@@ -1,5 +1,5 @@
 import { TablePaginationProps } from '@mui/material'
 
-export interface DsTablePaginationProps extends TablePaginationProps {}
+export type DsTablePaginationProps = TablePaginationProps
 
-export const DsTablePaginationDefaultProps: DsTablePaginationProps = {}
+export const DsTablePaginationDefaultProps = {}
