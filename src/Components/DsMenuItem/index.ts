@@ -1,4 +1,3 @@
-export {
-  default,
-  MenuItemProps as DsMenuItemProps
-} from '@mui/material/MenuItem'
+export * from './DsMenuItem.Component'
+export * from './DsMenuItem.Types'
+export * from './DsMenuItem.Overrides'
