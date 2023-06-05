@@ -1,5 +1,3 @@
-import PALETTE, { Palette } from '../Constants/PALETTE'
-
 import {
   CssVarsTheme,
   CssVarsThemeOptions,
@@ -9,14 +7,11 @@ import {
 import getColorScheme, { ColorScheme } from './getColorScheme'
 import getTypography from './getTypography'
 import breakpoints from './breakpoints'
-import components from './components'
+import componentOverrides from './componentOverrides'
 import dsRules from './rules'
-import dsSpacing, {
-  dsSpacingCssVars,
-  SPACE_COEFFICIENT
-} from './spacing'
+import dsSpacing, { dsSpacingCssVars, SPACE_COEFFICIENT } from './spacing'
 import dsElevation from './elevation'
-import FONT_FAMILY_NAME from '../Constants/FONT_FAMILY_NAME'
+import { PALETTE, DsPalette, FONT_FAMILY_NAME } from '../Constants'
 
 interface colorSchemes {
   light?: any
@@ -24,20 +19,14 @@ interface colorSchemes {
 }
 
 export default function getTheme(
-  palette: Palette = PALETTE,
+  palette: DsPalette = PALETTE,
   fontFamilyName: string = FONT_FAMILY_NAME
 ): Omit<Theme, 'palette'> & CssVarsTheme {
   const { typography, dsTypo } = getTypography(fontFamilyName)
 
-  const colorPalette: Palette = { ...PALETTE, ...palette }
-  const lightColorScheme: ColorScheme = getColorScheme(
-    colorPalette,
-    'light'
-  )
-  const darkColorScheme: ColorScheme = getColorScheme(
-    colorPalette,
-    'dark'
-  )
+  const colorPalette: DsPalette = { ...PALETTE, ...palette }
+  const lightColorScheme: ColorScheme = getColorScheme(colorPalette, 'light')
+  const darkColorScheme: ColorScheme = getColorScheme(colorPalette, 'dark')
   let colorSchemes: colorSchemes = {}
 
   if (lightColorScheme) {
@@ -68,7 +57,7 @@ export default function getTheme(
 
   const cssVarsThemeOptions: CssVarsThemeOptions = {
     cssVarPrefix: '',
-    components,
+    components: componentOverrides,
     colorSchemes
   }
 
