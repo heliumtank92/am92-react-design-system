@@ -5,9 +5,18 @@ import { DsHelperTextProps } from '../DsHelperText'
 
 export interface DsTextFieldProps extends DsInputBaseProps {
   ref?: React.Ref<any>
-  FormControlProps?: DsFormControlProps
-  InputLabelProps?: Omit<DsInputLabelProps, 'ref'>
-  FormHelperTextProps?: Omit<DsHelperTextProps, 'ref'>
+  FormControlProps?: Omit<
+    DsFormControlProps,
+    'fullWidth' | 'color' | 'error' | 'disabled'
+  >
+  InputLabelProps?: Omit<
+    DsInputLabelProps,
+    'ref' | 'error' | 'success' | 'htmlFor' | 'disabled'
+  >
+  HelperTextProps?: Omit<
+    DsHelperTextProps,
+    'ref' | 'color' | 'success' | 'error'
+  >
   label?: string
   labelSupportText?: string
   helperText?: string

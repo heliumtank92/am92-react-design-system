@@ -18,13 +18,12 @@ export class DsTextField extends PureComponent<DsTextFieldProps> {
       error,
       sx,
       fullWidth,
-      inputProps,
       ref,
       inputRef,
       disabled,
       FormControlProps,
       InputLabelProps,
-      FormHelperTextProps,
+      HelperTextProps,
       ...inputBaseProps
     } = this.props
 
@@ -54,7 +53,6 @@ export class DsTextField extends PureComponent<DsTextFieldProps> {
           error={error}
           id={id || name}
           name={name}
-          inputProps={inputProps}
           inputRef={ref || inputRef}
           disabled={disabled}
           {...inputBaseProps}
@@ -64,7 +62,7 @@ export class DsTextField extends PureComponent<DsTextFieldProps> {
           color={color}
           success={success}
           error={error}
-          {...FormHelperTextProps}
+          {...HelperTextProps}
         />
       </DsFormControl>
     )
