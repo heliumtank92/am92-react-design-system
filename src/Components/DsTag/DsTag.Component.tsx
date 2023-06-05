@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import Chip from '@mui/material/Chip'
 import { DsTagProps, DsTagDefaultProps } from './DsTag.Types'
 
-export class DsChip extends PureComponent<DsTagProps> {
+export class DsTag extends PureComponent<DsTagProps> {
   static defaultProps = DsTagDefaultProps
 
   handleClick = (): void => {
