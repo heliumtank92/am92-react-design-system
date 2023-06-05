@@ -1,19 +1,14 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import DsBox from './DsBox'
-import { CircularProgress, Typography } from '@mui/material'
-import DsTypography from './DsTypography'
+import {
+  DsProgressIndicatorDefaultProps,
+  DsProgressIndicatorProps
+} from './DsProgressIndicator.Types'
+import { DsBox } from '../DsBox'
+import { DsCircularProgress } from '../DsCircularProgress'
+import { DsTypography } from '../DsTypography'
 
-class DsProgressIndicator extends Component {
-  static propTypes = {
-    step: PropTypes.number,
-    maxStep: PropTypes.number
-  }
-
-  static defaultProps = {
-    step: 0,
-    maxStep: 0
-  }
+export class DsProgressIndicator extends Component<DsProgressIndicatorProps> {
+  static defaultProps = DsProgressIndicatorDefaultProps
 
   render() {
     const { step, maxStep } = this.props
@@ -30,14 +25,14 @@ class DsProgressIndicator extends Component {
           width={squareSize}
         >
           <DsBox>
-            <CircularProgress
+            <DsCircularProgress
               variant="determinate"
               value={100}
               sx={{ color: 'var(--ds-color-stateDisabledSurface)' }}
               size={squareSize}
               thickness={4}
             />
-            <CircularProgress
+            <DsCircularProgress
               disableShrink
               variant="determinate"
               color="secondary"
@@ -52,12 +47,10 @@ class DsProgressIndicator extends Component {
                 top: 12
               }}
             />
-            <DsTypography
-              sx={{ position: 'absolute', top: 30, right: 30 }}
-            >
-              <Typography variant="subheadingSemiboldDefault">
+            <DsTypography sx={{ position: 'absolute', top: 30, right: 30 }}>
+              <DsTypography variant="subheadingSemiboldDefault">
                 {fillText}
-              </Typography>
+              </DsTypography>
             </DsTypography>
           </DsBox>
         </DsBox>
@@ -65,7 +58,3 @@ class DsProgressIndicator extends Component {
     )
   }
 }
-
-DsProgressIndicator.propTypes = {}
-
-export default DsProgressIndicator
