@@ -1,3 +1,4 @@
+import { CSSInterpolation } from '@mui/system'
 import { DsBottomNavigationActionDefaultProps } from './DsBottomNavigationAction.Types'
 
 export const DsBottomNavigationActionOverrides = {
@@ -20,7 +21,7 @@ export const DsBottomNavigationActionOverrides = {
           borderTopColor: 'var(--ds-color-actionSecondary)',
           color: 'var(--ds-color-actionSecondary)'
         }
-      },
+      } as CSSInterpolation,
       label: {
         fontWeight: 'var(--ds-typo-bodyRegularSmall-fontWeight)',
         fontSize: 'var(--ds-typo-bodyRegularSmall-fontSize)',
@@ -32,7 +33,7 @@ export const DsBottomNavigationActionOverrides = {
           fontSize: 'var(--ds-typo-bodyRegularSmall-fontSize)',
           color: 'var(--ds-color-actionSecondary)'
         }
-      }
+      } as CSSInterpolation
     }
   }
 }

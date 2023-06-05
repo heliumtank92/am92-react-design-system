@@ -8,3 +8,9 @@ export const DsButtonDefaultProps: DsButtonProps = {
   color: 'primary',
   disableElevation: true
 }
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsVariantOverrides {
+    flushed: true
+  }
+}

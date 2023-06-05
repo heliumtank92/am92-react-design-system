@@ -1,3 +1,5 @@
+import { CSSInterpolation } from '@mui/system'
+
 export const DsAutocompleteOverrides = {
   MuiAutocomplete: {
     styleOverrides: {
@@ -7,15 +9,14 @@ export const DsAutocompleteOverrides = {
             backgroundColor: 'var(--ds-color-stateSelectedPrimaryHover)'
           }
         }
-      },
+      } as CSSInterpolation,
       endAdornment: {
-        // TODO: Handling Left
-        // position: 'relative',
+        position: 'relative',
         top: 'unset',
         display: 'flex',
         alignItems: 'center',
         marginLeft: 'var(--ds-spacing-frostbite)'
-      }
+      } as CSSInterpolation
     }
   }
 }
