@@ -9,7 +9,8 @@ export const DsAutocompleteOverrides = {
         }
       },
       endAdornment: {
-        position: 'relative',
+        // TODO: Handling Left
+        // position: 'relative',
         top: 'unset',
         display: 'flex',
         alignItems: 'center',

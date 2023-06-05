@@ -1,11 +1,12 @@
-import { DsAvatarDefaultProps } from './DsAvatar.Types'
+import { AvatarProps } from '@mui/material'
+import { DsAvatarDefaultProps, DsAvatarProps } from './DsAvatar.Types'
 
 export const DsAvatarOverrides = {
   MuiAvatar: {
     defaultProps: DsAvatarDefaultProps,
     variants: [
       {
-        props: { 'ds-variant': 'text' },
+        props: { 'ds-variant': 'text' } as Partial<DsAvatarProps>,
         style: {
           borderWidth: '1px',
           borderStyle: 'solid',
@@ -15,14 +16,14 @@ export const DsAvatarOverrides = {
         }
       },
       {
-        props: { 'ds-variant': 'icon' },
+        props: { 'ds-variant': 'icon' } as Partial<DsAvatarProps>,
         style: {
           color: 'var(--ds-color-iconDefault)',
           backgroundColor: 'transparent'
         }
       },
       {
-        props: { 'ds-size': 'S' },
+        props: { 'ds-size': 'S' } as Partial<DsAvatarProps>,
         style: {
           fontWeight: 'var(--ds-typo-bodyRegularSmall-fontWeight)',
           fontSize: 'var(--ds-typo-bodyRegularSmall-fontSize)',
@@ -36,7 +37,7 @@ export const DsAvatarOverrides = {
         }
       },
       {
-        props: { 'ds-size': 'M' },
+        props: { 'ds-size': 'M' } as Partial<DsAvatarProps>,
         style: {
           fontWeight: 'var(--ds-typo-bodyRegularMedium-fontWeight)',
           fontSize: 'var(--ds-typo-bodyRegularMedium-fontSize)',
@@ -50,7 +51,7 @@ export const DsAvatarOverrides = {
         }
       },
       {
-        props: { 'ds-size': 'L' },
+        props: { 'ds-size': 'L' } as Partial<DsAvatarProps>,
         style: {
           fontWeight: 'var(--ds-typo-bodyRegularLarge-fontWeight)',
           fontSize: 'var(--ds-typo-bodyRegularLarge-fontSize)',
@@ -64,7 +65,7 @@ export const DsAvatarOverrides = {
         }
       },
       {
-        props: { 'ds-size': 'XL' },
+        props: { 'ds-size': 'XL' } as Partial<DsAvatarProps>,
         style: {
           fontWeight: 'var(--ds-typo-headingBoldMedium-fontWeight)',
           fontSize: 'var(--ds-typo-headingBoldMedium-fontSize)',
@@ -78,7 +79,7 @@ export const DsAvatarOverrides = {
         }
       },
       {
-        props: { 'ds-size': 'XXL' },
+        props: { 'ds-size': 'XXL' } as Partial<DsAvatarProps>,
         style: {
           fontWeight: 'var(--ds-typo-headingBoldLarge-fontWeight)',
           fontSize: 'var(--ds-typo-headingBoldLarge-fontSize)',
@@ -92,7 +93,9 @@ export const DsAvatarOverrides = {
         }
       },
       {
-        props: { 'ds-size': '3XL' },
+        props: {
+          'ds-size': '3XL'
+        } as Partial<DsAvatarProps> as Partial<DsAvatarProps>,
         style: {
           fontWeight: 'var(--ds-typo-headingBoldExtraLarge-fontWeight)',
           fontSize: 'var(--ds-typo-headingBoldExtraLarge-fontSize)',
