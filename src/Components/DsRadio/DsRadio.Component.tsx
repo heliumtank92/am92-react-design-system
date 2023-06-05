@@ -1,35 +1,18 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 
-import FormControlLabel from '@mui/material/FormControlLabel'
 import Radio from '@mui/material/Radio'
+import { DsRadioDefaultProps, DsRadioProps } from './DsRadio.Types'
+import { DsFormControlLabel } from '../DsFormControlLabel'
+import { DsRemixIcon } from '../DsRemixIcon'
 
-import DsTypography from './DsTypography'
-import DsRemixIcon from './DsRemixIcon'
-
-class DsRadio extends PureComponent {
-  static propTypes = {
-    label: PropTypes.node,
-    labelPlacement: PropTypes.string
-  }
-
-  static defaultProps = {
-    labelPlacement: 'end'
-  }
+export class DsRadio extends PureComponent<DsRadioProps> {
+  static defaultProps = DsRadioDefaultProps
 
   render() {
-    const {
-      label,
-      labelPlacement,
-      disabled,
-      helperText,
-      labelProps,
-      radioProps,
-      ...restProps
-    } = this.props
+    const { disabled, RadioProps, ...restProps } = this.props
     return (
       <>
-        <FormControlLabel
+        <DsFormControlLabel
           {...restProps}
           disabled={disabled}
           control={
@@ -48,15 +31,11 @@ class DsRadio extends PureComponent {
               }
               color="secondary"
               disabled={disabled}
-              {...radioProps}
+              {...RadioProps}
             />
           }
-          label={label}
-          labelPlacement={labelPlacement}
         />
       </>
     )
   }
 }
-
-export default DsRadio
