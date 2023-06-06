@@ -41,7 +41,7 @@
     "build:clean": "rm -rf ./dist",
     "build": "npm-run-all build:clean compile",
     "test": "echo 'Error: no test specified'",
-    "preversion": "npm-run-all test",
+    "preversion": "npm-run-all build test",
     "version": "echo 'Versioning'",
     "postversion": "git push && git push --tags && npm run publish:pkg",
     "publish:pkg": "npm publish"
