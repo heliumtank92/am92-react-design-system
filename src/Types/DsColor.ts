@@ -119,3 +119,64 @@ export interface DsColorOverides {
   overlay: true
   overlayLoader: true
 }
+
+export interface DsColorClass {
+  colorActionPrimary: string
+  colorActionSecondary: string
+  colorActionTertiary: string
+  colorSurfaceBackground: string
+  colorSurfacePrimary: string
+  colorSurfaceSecondary: string
+  colorSurfaceTertiary: string
+  colorTypoPrimary: string
+  colorTypoSecondary: string
+  colorTypoTertiary: string
+  colorTypoActionPrimary: string
+  colorTypoActionSecondary: string
+  colorTypoActionTertiary: string
+  colorTypoOnSurface: string
+  colorTypoDisabled: string
+  colorTypoTypical: string
+  colorNeutral1: string
+  colorNeutral2: string
+  colorNeutral3: string
+  colorNeutral4: string
+  colorNeutral5: string
+  colorNeutral6: string
+  colorIconSupportNegative: string
+  colorIconSupportPositive: string
+  colorIconSupportWarning: string
+  colorIconActionPrimary: string
+  colorIconActionSecondary: string
+  colorIconActionTertiary: string
+  colorIconOnSurface: string
+  colorIconDisabled: string
+  colorIconDefault: string
+  colorIconTypical: string
+  colorStrokeDefault: string
+  colorStrokeSelected: string
+  colorStrokeSecondarySelected: string
+  colorStrokeHover: string
+  colorStrokeDisabled: string
+  colorStrokeActive: string
+  colorSupportNegative: string
+  colorSupportPositive: string
+  colorSupportWarning: string
+  colorSupportVariable: string
+  colorSupportTypical: string
+  colorSupportNegativeNeutral: string
+  colorSupportPositiveNeutral: string
+  colorSupportWarningNeutral: string
+  colorSupportTypicalNeutral: string
+  colorStateSelectedPrimaryHover: string
+  colorStateSelectedPrimaryPressed: string
+  colorStateSelectedSecondaryHover: string
+  colorStateSelectedSecondaryPressed: string
+  colorStateSelectedVisitedTextLink: string
+  colorStateUnselectedDefault: string
+  colorStateUnselectedHover: string
+  colorStateUnselectedPressed: string
+  colorStateDisabledSurface: string
+  colorOverlay: string
+  colorOverlayLoader: string
+}

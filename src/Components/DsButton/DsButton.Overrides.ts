@@ -1,6 +1,15 @@
+import type {} from '@mui/material/themeCssVarsAugmentation'
 import { DsButtonDefaultProps, DsButtonProps } from './DsButton.Types'
 import STATE_STYLES from '../../Theme/STATE_STYLES'
 import { CSSInterpolation } from '@mui/system'
+
+const supportBoldTextButton = {
+  fontWeight: 'var(--ds-typo-supportBoldTextButton-fontWeight)',
+  fontSize: 'var(--ds-typo-supportBoldTextButton-fontSize)',
+  lineHeight: 'var(--ds-typo-supportBoldTextButton-lineHeight)',
+  letterSpacing: 'var(--ds-typo-supportBoldTextButton-letterSpacing)',
+  textTransform: 'var(--ds-typo-supportBoldTextButton-textTransform)'
+}
 
 export const DsButtonOverrides = {
   MuiButton: {
@@ -89,7 +98,7 @@ export const DsButtonOverrides = {
         fontSize: 'var(--ds-typo-supportBoldTextButton-fontSize)',
         lineHeight: 'var(--ds-typo-supportBoldTextButton-lineHeight)',
         letterSpacing: 'var(--ds-typo-supportBoldTextButton-letterSpacing)',
-        // textTransform: 'var(--ds-typo-supportBoldTextButton-textTransform)',
+        textTransform: 'uppercase',
         borderRadius: 0,
         '&.MuiIcon-root': {
           fontSize: 'var(--ds-fontSizeBitterCold)',

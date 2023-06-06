@@ -12,3 +12,10 @@ export const DsOtpDefaultProps: DsOtpProps = {
   length: 6,
   onComplete: () => undefined
 }
+export interface DsOtpState {
+  otp: string[]
+}
+
+export const DsOtpDefaultState = {
+  otp: []
+}

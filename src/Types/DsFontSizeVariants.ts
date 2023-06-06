@@ -31,3 +31,20 @@ export interface DsFontSizePropsVariantOverrides {
   blizzard: true
   iceAge: true
 }
+
+export interface DsFontSizeClass {
+  fontSizeScorched: string
+  fontSizeTorrid: string
+  fontSizeBlazzing: string
+  fontSizeHot: string
+  fontSizeTropical: string
+  fontSizeWarm: string
+  fontSizeMild: string
+  fontSizeCool: string
+  fontSizeCold: string
+  fontSizeBitterCold: string
+  fontSizeFrigid: string
+  fontSizeFrostbite: string
+  fontSizeBlizzard: string
+  fontSizeIceAge: string
+}

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, SyntheticEvent } from 'react'
 import PropTypes from 'prop-types'
 
 import { DsBox } from '../DsBox'
@@ -6,13 +6,13 @@ import { DsStack } from '../DsStack'
 import { DsInputLabel } from '../DsInputLabel'
 import { DsTextField } from '../DsTextField'
 import { DsHelperText } from '../DsHelperText'
-import { DsOtpDefaultProps, DsOtpProps } from './DsOtp.Types'
+import { DsOtpDefaultProps, DsOtpProps, DsOtpState } from './DsOtp.Types'
 
 const KEY_CODES = {
   BACK_SPACE: 8
 }
 
-export default class DsOtp extends Component<DsOtpProps> {
+export default class DsOtp extends Component<DsOtpProps, DsOtpState> {
   static defaultProps = DsOtpDefaultProps
   optInputRefs = new Map()
 
@@ -24,7 +24,7 @@ export default class DsOtp extends Component<DsOtpProps> {
     }
   }
 
-  handleFocus = event => {
+  handleFocus = (event: React.FocusEvent<HTMLInputElement, Element>) => {
     const { onFocus } = this.props
     const { target } = event
     target.select()
@@ -33,10 +33,10 @@ export default class DsOtp extends Component<DsOtpProps> {
     }
   }
 
-  handleKeyDown = event => {
+  handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const { onKeyDown } = this.props
-    const { keyCode, currentTarget = {} } = event
-    const { name, value } = currentTarget
+    const { keyCode, target } = event
+    const { name, value } = target
     const index = parseInt(name?.split('.').pop(), 10)
 
     // Call _handleNavigation on back button pressed
@@ -49,12 +49,12 @@ export default class DsOtp extends Component<DsOtpProps> {
     }
   }
 
-  handleChange = event => {
+  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { onChange, onComplete, length } = this.props
     const { otp } = this.state
-    const { currentTarget = {} } = event
-    const { name, value = '' } = currentTarget
-    const index = parseInt(name?.split('.').pop(), 10)
+    const { target } = event
+    const { name = '', value = '' } = target
+    const index: number = parseInt(name.split('.').pop(), 10)
 
     // Check if valid value
     const filteredValue = value.replace(/\D/g, '').charAt(0) || ''
