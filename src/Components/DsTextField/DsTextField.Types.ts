@@ -2,6 +2,7 @@ import { DsInputBaseDefaultProps, DsInputBaseProps } from '../DsInputBase'
 import { DsFormControlProps } from '../DsFormControl'
 import { DsInputLabelProps } from '../DsInputLabel'
 import { DsHelperTextProps } from '../DsHelperText'
+import { TextFieldProps } from '@mui/material'
 
 export interface DsTextFieldProps extends DsInputBaseProps {
   ref?: React.Ref<any>
@@ -17,9 +18,9 @@ export interface DsTextFieldProps extends DsInputBaseProps {
     DsHelperTextProps,
     'ref' | 'color' | 'success' | 'error'
   >
-  label?: string
+  label?: TextFieldProps['label']
   labelSupportText?: string
-  helperText?: string
+  helperText?: TextFieldProps['helperText']
   success?: boolean
 }
 

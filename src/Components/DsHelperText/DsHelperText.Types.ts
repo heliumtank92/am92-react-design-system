@@ -1,7 +1,7 @@
 import { DsFormHelperTextProps } from '../DsFormHelperText'
 
 export interface DsHelperTextProps extends DsFormHelperTextProps {
-  helperText: string | React.ReactNode
+  helperText: React.ReactNode
   color?: string
   success?: boolean
   error?: boolean
