@@ -1,1 +1,1 @@
-export * as transitions from '@mui/material/transitions'
+export * from '@mui/material/transitions'
