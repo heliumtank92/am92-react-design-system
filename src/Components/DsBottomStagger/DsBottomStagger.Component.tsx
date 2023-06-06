@@ -54,7 +54,6 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
       <>
         <DsDrawer
           anchor="bottom"
-          elevation={0}
           {...restProps}
           onClose={this.handleDrawerClose}
         >
