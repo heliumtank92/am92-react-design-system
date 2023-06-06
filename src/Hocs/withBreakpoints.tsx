@@ -1,13 +1,13 @@
-import { useTheme } from '@mui/material/styles'
+import { Breakpoint, useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-export function withBreakpoints(Child: any) {
+export function withBreakpoints(Child: React.ElementType) {
   return (props: any) => {
     const theme = useTheme()
     const { keys } = theme.breakpoints
-    const breakPoints: any = {}
+    let breakPoints: { [key in Breakpoint]?: boolean } = {}
 
-    keys.forEach(key => {
+    keys.forEach((key: Breakpoint) => {
       breakPoints[key] = useMediaQuery(theme.breakpoints.only(key))
     })
 
