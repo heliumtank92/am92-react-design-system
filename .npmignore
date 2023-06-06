@@ -16,3 +16,6 @@ coverage/
 profile/
 reports/
 tests/
+
+# Source
+src/
