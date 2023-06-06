@@ -3,9 +3,9 @@
   "version": "0.1.7",
   "description": "ReactJS Design System using Material UI",
   "sideEffects": false,
-  "types": "dist/index.d.ts",
-  "module": "dist/index.js",
-  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.js",
+  "main": "./dist/index.js",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
