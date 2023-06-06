@@ -1,5 +1,4 @@
-import React, { Component, SyntheticEvent } from 'react'
-import PropTypes from 'prop-types'
+import React, { CSSProperties, Component } from 'react'
 
 import { DsBox } from '../DsBox'
 import { DsStack } from '../DsStack'
@@ -9,7 +8,7 @@ import { DsHelperText } from '../DsHelperText'
 import { DsOtpDefaultProps, DsOtpProps, DsOtpState } from './DsOtp.Types'
 
 const KEY_CODES = {
-  BACK_SPACE: 8
+  BACK_SPACE: 'Backspace'
 }
 
 export default class DsOtp extends Component<DsOtpProps, DsOtpState> {
@@ -35,12 +34,13 @@ export default class DsOtp extends Component<DsOtpProps, DsOtpState> {
 
   handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const { onKeyDown } = this.props
-    const { keyCode, target } = event
-    const { name, value } = target
-    const index = parseInt(name?.split('.').pop(), 10)
+    const { key, currentTarget } = event
+    const { name, value } = currentTarget
+    const indexString = name.split('.').pop() || ''
+    const index = parseInt(indexString, 10)
 
     // Call _handleNavigation on back button pressed
-    if (keyCode === KEY_CODES.BACK_SPACE && !value) {
+    if (key === KEY_CODES.BACK_SPACE && !value) {
       this._handleNavigation(index, true)
     }
 
@@ -53,8 +53,9 @@ export default class DsOtp extends Component<DsOtpProps, DsOtpState> {
     const { onChange, onComplete, length } = this.props
     const { otp } = this.state
     const { target } = event
-    const { name = '', value = '' } = target
-    const index: number = parseInt(name.split('.').pop(), 10)
+    const { name, value = '' } = target
+    const indexString = name.split('.').pop() || ''
+    const index = parseInt(indexString, 10)
 
     // Check if valid value
     const filteredValue = value.replace(/\D/g, '').charAt(0) || ''
@@ -86,17 +87,17 @@ export default class DsOtp extends Component<DsOtpProps, DsOtpState> {
     }
   }
 
-  handlePaste = event => {
+  handlePaste = (event: React.ClipboardEvent<HTMLInputElement>) => {
     event.preventDefault()
     const { onPaste, onComplete, length } = this.props
-    const { clipboardData = window.clipboardData, target } = event
+    const { clipboardData, currentTarget } = event
 
-    const pastedData = clipboardData.getData('Text')
+    const pastedData = clipboardData.getData('text')
     const filteredValue = pastedData.replace(/\D/g, '') || ''
     const otp = filteredValue.split('').slice(0, length)
 
     this.setState({ otp })
-    target.blur()
+    currentTarget.blur()
     const focusIndex = otp.length - 1
     this._handleNavigation(focusIndex)
 
@@ -123,6 +124,9 @@ export default class DsOtp extends Component<DsOtpProps, DsOtpState> {
       length,
       helperText,
       inputProps = {},
+      HelperTextProps,
+      BoxProps,
+      InputLabelProps,
       ...restProps
     } = this.props
     const lengthArray = Array(length).fill('')
@@ -133,7 +137,7 @@ export default class DsOtp extends Component<DsOtpProps, DsOtpState> {
       style: {
         ...inputProps.style,
         textAlign: 'center'
-      }
+      } as CSSProperties
     }
 
     return lengthArray.map((value, index) => (
@@ -168,13 +172,13 @@ export default class DsOtp extends Component<DsOtpProps, DsOtpState> {
       error,
       inputProps,
       disabled,
-      inputLabelProps,
-      formHelperTextProps,
-      ...restProps
+      InputLabelProps,
+      HelperTextProps,
+      BoxProps
     } = this.props
 
     return (
-      <DsBox {...restProps}>
+      <DsBox {...BoxProps}>
         <DsInputLabel
           label={label}
           labelSupportText={labelSupportText}
@@ -182,7 +186,7 @@ export default class DsOtp extends Component<DsOtpProps, DsOtpState> {
           success={success}
           htmlFor={id || name}
           disabled={disabled}
-          {...inputLabelProps}
+          {...InputLabelProps}
         />
         <DsStack direction="row" spacing="var(--ds-spacing-glacial)" style={{}}>
           {this.renderOtpBoxes()}
@@ -192,7 +196,7 @@ export default class DsOtp extends Component<DsOtpProps, DsOtpState> {
           color={color}
           success={success}
           error={error}
-          {...formHelperTextProps}
+          {...HelperTextProps}
         />
       </DsBox>
     )

@@ -1,3 +1,4 @@
+import { DsBoxProps } from '..'
 import { DsTextFieldProps } from '../DsTextField'
 
 export interface DsOtpProps extends DsTextFieldProps {
@@ -5,6 +6,7 @@ export interface DsOtpProps extends DsTextFieldProps {
   name?: string
   length?: number
   initialOtp?: string
+  BoxProps?: DsBoxProps
 }
 
 export const DsOtpDefaultProps: DsOtpProps = {
