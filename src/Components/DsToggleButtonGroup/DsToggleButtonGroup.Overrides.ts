@@ -1,8 +1,11 @@
+import { CSSInterpolation } from '@mui/system'
+import { DsToggleButtonGroupProps } from './DsToggleButtonGroup.Types'
+
 export const DsToggleButtonGroupOverrides = {
   MuiToggleButtonGroup: {
     variants: [
       {
-        props: { 'ds-variant': 'switch' },
+        props: { 'ds-variant': 'switch' } as Partial<DsToggleButtonGroupProps>,
         style: {
           border: '1px solid var(--ds-color-strokeDefault)',
           borderRadius: '6px',
@@ -51,7 +54,7 @@ export const DsToggleButtonGroupOverrides = {
               }
             }
           }
-        }
+        } as CSSInterpolation
       }
     ]
   }

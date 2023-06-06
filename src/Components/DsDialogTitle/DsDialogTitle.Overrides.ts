@@ -1,3 +1,5 @@
+import { CSSInterpolation } from '@mui/system'
+
 export const DsDialogTitleOverrides = {
   MuiDialogTitle: {
     styleOverrides: {
@@ -12,7 +14,7 @@ export const DsDialogTitleOverrides = {
         paddingBottom: 'var(--ds-spacing-bitterCold)',
         paddingTop: 'var(--ds-spacing-mild)',
         textAlign: 'center'
-      }
+      } as CSSInterpolation
     }
   }
 }

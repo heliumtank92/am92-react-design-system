@@ -1,37 +1,44 @@
-import { DsInputBaseDefaultProps } from './DsInputBase.Types'
+import { CSSInterpolation } from '@mui/system'
+import { DsInputBaseDefaultProps, DsInputBaseProps } from './DsInputBase.Types'
 
 export const DsInputBaseOverrides = {
   MuiInputBase: {
     defaultProps: DsInputBaseDefaultProps,
     variants: [
       {
-        props: { 'ds-variant': 'otp' },
+        props: { 'ds-variant': 'otp' } as Partial<DsInputBaseProps>,
         style: {
           textAlign: 'center'
-        }
+        } as CSSInterpolation
       },
       {
-        props: { 'ds-variant': 'otp', size: 'medium' },
+        props: {
+          'ds-variant': 'otp',
+          size: 'medium'
+        } as Partial<DsInputBaseProps>,
         style: {
           height: '56px',
           width: '56px',
           '> input': {
             padding: 'var(--ds-spacing-bitterCold)'
           }
-        }
+        } as CSSInterpolation
       },
       {
-        props: { 'ds-variant': 'otp', size: 'small' },
+        props: {
+          'ds-variant': 'otp',
+          size: 'small'
+        } as Partial<DsInputBaseProps>,
         style: {
           height: '40px',
           width: '40px',
           '> input': {
             padding: 'var(--ds-spacing-glacial)'
           }
-        }
+        } as CSSInterpolation
       },
       {
-        props: { 'ds-variant': 'search' },
+        props: { 'ds-variant': 'search' } as Partial<DsInputBaseProps>,
         style: {
           borderRadius: 'var(--ds-spacing-pleasant)',
           paddingLeft: 'var(--ds-spacing-frostbite)',
@@ -52,7 +59,7 @@ export const DsInputBaseOverrides = {
             color: 'var(--ds-color-typoSecondary)',
             opacity: 1
           }
-        }
+        } as CSSInterpolation
       }
     ],
     styleOverrides: {
@@ -100,7 +107,7 @@ export const DsInputBaseOverrides = {
           padding: 'var(--ds-spacing-deepFreeze)',
           height: 'auto'
         }
-      },
+      } as CSSInterpolation,
       input: {
         padding: 'var(--ds-spacing-frostbite) var(--ds-spacing-glacial)',
         fontWeight: 'var(--ds-typo-bodyRegularMedium-fontWeight)',
@@ -115,13 +122,13 @@ export const DsInputBaseOverrides = {
           color: 'var(--ds-color-typoTertiary)',
           opacity: 1
         }
-      },
+      } as CSSInterpolation,
       adornedStart: {
         paddingLeft: 'var(--ds-spacing-glacial)'
-      },
+      } as CSSInterpolation,
       adornedEnd: {
         paddingRight: 'var(--ds-spacing-glacial)'
-      }
+      } as CSSInterpolation
     }
   }
 }

@@ -1,3 +1,5 @@
+import { CSSInterpolation } from '@mui/system'
+
 export const DsStepLabelOverrides = {
   MuiStepLabel: {
     styleOverrides: {
@@ -6,20 +8,20 @@ export const DsStepLabelOverrides = {
         paddingRight: 'var(--ds-spacing-bitterCold)',
         paddingTop: 'var(--ds-spacing-zero)',
         paddingBottom: 'var(--ds-spacing-zero)'
-      },
+      } as CSSInterpolation,
       label: {
         fontWeight: 'var(--ds-typo-bodyRegularMedium-fontWeight)',
         fontSize: 'var(--ds-typo-bodyRegularMedium-fontSize)',
         lineHeight: 'var(--ds-typo-bodyRegularMedium-lineHeight)',
         letterSpacing: 'var(--ds-typo-bodyRegularMedium-letterSpacing)',
-        textTransform: 'var(--ds-typo-bodyRegularMedium-textTransform)',
+        // textTransform: 'var(--ds-typo-bodyRegularMedium-textTransform)',
         color: 'var(--ds-color-typoPrimary)',
         marginLeft: 'var(--ds-spacing-mild)',
         marginRight: 'var(--ds-spacing-mild)',
         '&.Mui-disabled': {
           color: 'var(--ds-color-typoPrimary)'
         }
-      },
+      } as CSSInterpolation,
       iconContainer: {
         fontSize: 'var(--ds-typo-fontSizeMild)',
         padding: 'var(--ds-spacing-zero)',
@@ -48,7 +50,7 @@ export const DsStepLabelOverrides = {
           justifyContent: 'center',
           alignItems: 'center'
         }
-      }
+      } as CSSInterpolation
     }
   }
 }

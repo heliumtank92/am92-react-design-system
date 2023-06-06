@@ -1,4 +1,5 @@
-import { DsDividerDefaultProps } from './DsDivider.Types'
+import { CSSInterpolation } from '@mui/system'
+import { DsDividerDefaultProps, DsDividerProps } from './DsDivider.Types'
 
 export const DsDividerOverrides = {
   MuiDivider: {
@@ -13,16 +14,16 @@ export const DsDividerOverrides = {
     },
     variants: [
       {
-        props: { 'ds-size': 'M' },
+        props: { 'ds-size': 'M' } as Partial<DsDividerProps>,
         style: {
           borderWidth: '0.5px'
-        }
+        } as CSSInterpolation
       },
       {
-        props: { 'ds-size': 'L' },
+        props: { 'ds-size': 'L' } as Partial<DsDividerProps>,
         style: {
           borderWidth: '6px'
-        }
+        } as CSSInterpolation
       }
     ]
   }

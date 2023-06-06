@@ -1,3 +1,5 @@
+import { CSSInterpolation } from '@mui/system'
+
 export const DsFormHelperTextOverrides = {
   MuiFormHelperText: {
     styleOverrides: {
@@ -9,7 +11,7 @@ export const DsFormHelperTextOverrides = {
         paddingTop: 'var(--ds-spacing-deepFreeze)',
         paddingBottom: 'var(--ds-spacing-deepFreeze)',
         minHeight: 'var(--ds-rules-formHelperTextMinHeight)'
-      }
+      } as CSSInterpolation
     }
   }
 }

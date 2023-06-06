@@ -1,3 +1,4 @@
+import { CSSInterpolation } from '@mui/system'
 import { DsInputLabelDefaultProps } from './DsInputLabel.Types'
 
 export const DsInputLabelOverrides = {
@@ -35,7 +36,7 @@ export const DsInputLabelOverrides = {
         '&.Mui-focused.Mui-error': {
           color: 'var(--ds-color-supportNegative)'
         }
-      }
+      } as CSSInterpolation
     }
   }
 }
