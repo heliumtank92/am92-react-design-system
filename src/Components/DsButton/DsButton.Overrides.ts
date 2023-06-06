@@ -1,4 +1,3 @@
-import type {} from '@mui/material/themeCssVarsAugmentation'
 import { DsButtonDefaultProps, DsButtonProps } from './DsButton.Types'
 import STATE_STYLES from '../../Theme/STATE_STYLES'
 import { CSSInterpolation } from '@mui/system'

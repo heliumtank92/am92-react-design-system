@@ -16,7 +16,7 @@ export default class DsDialog extends PureComponent<DsDialogProps> {
   static defaultProps = DsDialogDefaultProps
 
   handleDialogClose = (
-    event: any,
+    event: React.SyntheticEvent,
     reason: 'backdropClick' | 'escapeKeyDown'
   ) => {
     const { onClose } = this.props
@@ -25,7 +25,7 @@ export default class DsDialog extends PureComponent<DsDialogProps> {
     }
   }
 
-  handleCloseClick = (event: any) => {
+  handleCloseClick = (event: React.SyntheticEvent) => {
     const { onClose } = this.props
     if (typeof onClose === 'function') {
       onClose(event, 'backdropClick')

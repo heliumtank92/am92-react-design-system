@@ -1,3 +1,5 @@
 export * from './DsColor'
-export * from './DsFontSizeVariants'
-export * from './DsTypographyVariants'
+export * from './DsTypography'
+export * from './DsElevation'
+export * from './DsSpacing'
+export * from './DsPalette'

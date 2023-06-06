@@ -13,7 +13,7 @@ export class DsSearchbar extends Component<
 > {
   static defaultProps = DsSearchbarDefaultProps
 
-  handleChange = (event: any, newValue: any): void => {
+  handleChange = (event: React.SyntheticEvent, newValue: any): void => {
     const { name, onChange } = this.props
     onChange(name, newValue)
   }

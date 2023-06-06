@@ -1,5 +1,5 @@
 import { TypographyProps } from '@mui/material'
-import { DsTypographyPropsVariantOverrides } from '../../Types'
+import { DsTypographyOverides } from '../../Types'
 
 export interface DsTypographyProps extends TypographyProps {}
 
@@ -8,6 +8,5 @@ export const DsTypographyDefaultProps: DsTypographyProps = {
 }
 
 declare module '@mui/material/Typography' {
-  interface TypographyPropsVariantOverrides
-    extends DsTypographyPropsVariantOverrides {}
+  interface TypographyPropsVariantOverrides extends DsTypographyOverides {}
 }

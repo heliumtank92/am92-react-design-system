@@ -1,4 +1,6 @@
-const dsElevation: object = {
+import { DsElevation } from '../Types'
+
+const dsElevation: DsElevation = {
   '-1': 'none',
   0: '0px 0px 10px rgba(0, 0, 0, 0.1)',
   1: '0px 0px 2px rgba(0, 0, 0, 0.1)',

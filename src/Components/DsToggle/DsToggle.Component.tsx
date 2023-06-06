@@ -3,7 +3,7 @@ import Switch from '@mui/material/Switch'
 import { DsToggleProps } from './DsToggle.Types'
 
 export class DsToggle extends PureComponent<DsToggleProps> {
-  handleChange = (event: any) => {
+  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { onChange } = this.props
     const { name, checked } = event.target
     if (typeof onChange === 'function') {

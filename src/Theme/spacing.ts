@@ -1,6 +1,8 @@
+import { DsSpacing, DsSpacingKeys } from '../Types'
+
 const SPACE_COEFFICIENT = 4
 
-const dsSpacingCssVars = {
+const dsSpacingCssVars: DsSpacing = {
   zero: 0,
   deepFreeze: 2,
   quickFreeze: 4,
@@ -22,27 +24,14 @@ const dsSpacingCssVars = {
   plasma: 128
 }
 
-const dsSpacing = {
-  zero: dsSpacingCssVars.zero / SPACE_COEFFICIENT,
-  deepFreeze: dsSpacingCssVars.deepFreeze / SPACE_COEFFICIENT,
-  quickFreeze: dsSpacingCssVars.quickFreeze / SPACE_COEFFICIENT,
-  glacial: dsSpacingCssVars.glacial / SPACE_COEFFICIENT,
-  frostbite: dsSpacingCssVars.frostbite / SPACE_COEFFICIENT,
-  bitterCold: dsSpacingCssVars.bitterCold / SPACE_COEFFICIENT,
-  cool: dsSpacingCssVars.cool / SPACE_COEFFICIENT,
-  mild: dsSpacingCssVars.mild / SPACE_COEFFICIENT,
-  pleasant: dsSpacingCssVars.pleasant / SPACE_COEFFICIENT,
-  warm: dsSpacingCssVars.warm / SPACE_COEFFICIENT,
-  tepid: dsSpacingCssVars.tepid / SPACE_COEFFICIENT,
-  tropical: dsSpacingCssVars.tropical / SPACE_COEFFICIENT,
-  hot: dsSpacingCssVars.hot / SPACE_COEFFICIENT,
-  blazing: dsSpacingCssVars.blazing / SPACE_COEFFICIENT,
-  molten: dsSpacingCssVars.molten / SPACE_COEFFICIENT,
-  superheated: dsSpacingCssVars.superheated / SPACE_COEFFICIENT,
-  meltdown: dsSpacingCssVars.meltdown / SPACE_COEFFICIENT,
-  whiteHot: dsSpacingCssVars.whiteHot / SPACE_COEFFICIENT,
-  plasma: dsSpacingCssVars.plasma / SPACE_COEFFICIENT
-}
+const dsSpacing: DsSpacing = Object.keys(dsSpacingCssVars).reduce(
+  (accumaltor: DsSpacing, currentValue) => {
+    accumaltor[currentValue as DsSpacingKeys] =
+      dsSpacingCssVars[currentValue as DsSpacingKeys] / SPACE_COEFFICIENT
+    return accumaltor
+  },
+  {} as DsSpacing
+)
 
 export { SPACE_COEFFICIENT, dsSpacingCssVars, getSpacingPX }
 

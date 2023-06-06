@@ -1,36 +1,12 @@
-interface DsTypographyVariants {
-  displayBoldLarge: React.CSSProperties
-  displayBoldMedium: React.CSSProperties
-  displayBoldSmall: React.CSSProperties
-  displayBoldItalicLarge: React.CSSProperties
-  displayBoldItalicMedium: React.CSSProperties
-  displayBoldItalicSmall: React.CSSProperties
-  headingBoldExtraLarge: React.CSSProperties
-  headingBoldLarge: React.CSSProperties
-  headingBoldMedium: React.CSSProperties
-  headingBoldSmall: React.CSSProperties
-  headingBoldExtraSmall: React.CSSProperties
-  subheadingSemiboldLarge: React.CSSProperties
-  subheadingSemiboldDefault: React.CSSProperties
-  headingBoldItalicExtraLarge: React.CSSProperties
-  headingBoldItalicLarge: React.CSSProperties
-  headingBoldItalicMedium: React.CSSProperties
-  headingBoldItalicSmall: React.CSSProperties
-  headingBoldItalicExtraSmall: React.CSSProperties
-  bodyRegularLarge: React.CSSProperties
-  bodyRegularMedium: React.CSSProperties
-  bodyRegularSmall: React.CSSProperties
-  bodyBoldLarge: React.CSSProperties
-  bodyBoldMedium: React.CSSProperties
-  bodyBoldSmall: React.CSSProperties
-  supportRegularInfo: React.CSSProperties
-  supportRegularFootnote: React.CSSProperties
-  supportBoldTextButton: React.CSSProperties
-  supportRegularMetadata: React.CSSProperties
+import { PaletteOptions, Typography } from '@mui/material'
+import { DsColor, DsTypographyVariants } from '../Types'
+
+export type Typography = {
+  palette?: PaletteOptions
+  dsColor?: DsColor
 }
-export default function getTypography(
-  fontFamilyName: string = ''
-): any {
+
+export default function getTypography(fontFamilyName: string = ''): any {
   const fontFamily = `"${fontFamilyName}", "Helvetica"`
 
   const dsTypoPrimitive: any = {
@@ -346,100 +322,8 @@ export default function getTypography(
 }
 
 declare module '@mui/material/styles' {
-  interface TypographyVariants {
-    displayBoldLarge: React.CSSProperties
-    displayBoldMedium: React.CSSProperties
-    displayBoldSmall: React.CSSProperties
-    displayBoldItalicLarge: React.CSSProperties
-    displayBoldItalicMedium: React.CSSProperties
-    displayBoldItalicSmall: React.CSSProperties
-    headingBoldExtraLarge: React.CSSProperties
-    headingBoldLarge: React.CSSProperties
-    headingBoldMedium: React.CSSProperties
-    headingBoldSmall: React.CSSProperties
-    headingBoldExtraSmall: React.CSSProperties
-    subheadingSemiboldLarge: React.CSSProperties
-    subheadingSemiboldDefault: React.CSSProperties
-    headingBoldItalicExtraLarge: React.CSSProperties
-    headingBoldItalicLarge: React.CSSProperties
-    headingBoldItalicMedium: React.CSSProperties
-    headingBoldItalicSmall: React.CSSProperties
-    headingBoldItalicExtraSmall: React.CSSProperties
-    bodyRegularLarge: React.CSSProperties
-    bodyRegularMedium: React.CSSProperties
-    bodyRegularSmall: React.CSSProperties
-    bodyBoldLarge: React.CSSProperties
-    bodyBoldMedium: React.CSSProperties
-    bodyBoldSmall: React.CSSProperties
-    supportRegularInfo: React.CSSProperties
-    supportRegularFootnote: React.CSSProperties
-    supportBoldTextButton: React.CSSProperties
-    supportRegularMetadata: React.CSSProperties
-  }
+  interface TypographyVariants extends DsTypographyVariants {}
 
   // allow configuration using `createTheme`
-  interface TypographyVariantsOptions {
-    displayBoldLarge: React.CSSProperties
-    displayBoldMedium: React.CSSProperties
-    displayBoldSmall: React.CSSProperties
-    displayBoldItalicLarge: React.CSSProperties
-    displayBoldItalicMedium: React.CSSProperties
-    displayBoldItalicSmall: React.CSSProperties
-    headingBoldExtraLarge: React.CSSProperties
-    headingBoldLarge: React.CSSProperties
-    headingBoldMedium: React.CSSProperties
-    headingBoldSmall: React.CSSProperties
-    headingBoldExtraSmall: React.CSSProperties
-    subheadingSemiboldLarge: React.CSSProperties
-    subheadingSemiboldDefault: React.CSSProperties
-    headingBoldItalicExtraLarge: React.CSSProperties
-    headingBoldItalicLarge: React.CSSProperties
-    headingBoldItalicMedium: React.CSSProperties
-    headingBoldItalicSmall: React.CSSProperties
-    headingBoldItalicExtraSmall: React.CSSProperties
-    bodyRegularLarge: React.CSSProperties
-    bodyRegularMedium: React.CSSProperties
-    bodyRegularSmall: React.CSSProperties
-    bodyBoldLarge: React.CSSProperties
-    bodyBoldMedium: React.CSSProperties
-    bodyBoldSmall: React.CSSProperties
-    supportRegularInfo: React.CSSProperties
-    supportRegularFootnote: React.CSSProperties
-    supportBoldTextButton: React.CSSProperties
-    supportRegularMetadata: React.CSSProperties
-  }
-}
-
-// Update the Typography's variant prop options
-declare module '@mui/material/Typography' {
-  interface TypographyPropsVariantOverrides {
-    displayBoldLarge: true
-    displayBoldMedium: true
-    displayBoldSmall: true
-    displayBoldItalicLarge: true
-    displayBoldItalicMedium: true
-    displayBoldItalicSmall: true
-    headingBoldExtraLarge: true
-    headingBoldLarge: true
-    headingBoldMedium: true
-    headingBoldSmall: true
-    headingBoldExtraSmall: true
-    subheadingSemiboldLarge: true
-    subheadingSemiboldDefault: true
-    headingBoldItalicExtraLarge: true
-    headingBoldItalicLarge: true
-    headingBoldItalicMedium: true
-    headingBoldItalicSmall: true
-    headingBoldItalicExtraSmall: true
-    bodyRegularLarge: true
-    bodyRegularMedium: true
-    bodyRegularSmall: true
-    bodyBoldLarge: true
-    bodyBoldMedium: true
-    bodyBoldSmall: true
-    supportRegularInfo: true
-    supportRegularFootnote: true
-    supportBoldTextButton: true
-    supportRegularMetadata: true
-  }
+  interface TypographyVariantsOptions extends DsTypographyVariants {}
 }

@@ -14,7 +14,7 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
   static defaultProps = DsBottomStaggerDefaultProps
 
   handleDrawerClose = (
-    event: any,
+    event: React.SyntheticEvent,
     reason: 'backdropClick' | 'escapeKeyDown'
   ) => {
     const { onClose } = this.props
@@ -23,7 +23,7 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
     }
   }
 
-  handleCloseClick = (event: any) => {
+  handleCloseClick = (event: React.SyntheticEvent) => {
     const { onClose } = this.props
     if (typeof onClose === 'function') {
       onClose(event, 'backdropClick')

@@ -3,7 +3,7 @@ import {
   DsColorClass,
   DsColorOverides,
   DsFontSizeClass,
-  DsFontSizePropsVariantOverrides
+  DsFontSizeOverides
 } from '../../Types'
 
 export interface DsSvgIconProps extends SvgIconProps {}
@@ -15,6 +15,6 @@ export const DsSvgIconDefaultProps: DsSvgIconProps = {
 
 declare module '@mui/material/SvgIcon' {
   interface SvgIconPropsColorOverrides extends DsColorOverides {}
-  interface SvgIconPropsSizeOverrides extends DsFontSizePropsVariantOverrides {}
+  interface SvgIconPropsSizeOverrides extends DsFontSizeOverides {}
   interface SvgIconClasses extends DsColorClass, DsFontSizeClass {}
 }

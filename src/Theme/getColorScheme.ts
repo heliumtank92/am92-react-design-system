@@ -1,132 +1,13 @@
-export interface DsColor {
-  actionPrimary: string
-  actionSecondary: string
-  actionTertiary: string
-  surfaceBackground: string
-  surfacePrimary: string
-  surfaceSecondary: string
-  surfaceTertiary: string
-  typoPrimary: string
-  typoSecondary: string
-  typoTertiary: string
-  typoActionPrimary: string
-  typoActionSecondary: string
-  typoActionTertiary: string
-  typoOnSurface: string
-  typoDisabled: string
-  typoTypical: string
-  neutral1: string
-  neutral2: string
-  neutral3: string
-  neutral4: string
-  neutral5: string
-  neutral6: string
-  iconSupportNegative: string
-  iconSupportPositive: string
-  iconSupportWarning: string
-  iconActionPrimary: string
-  iconActionSecondary: string
-  iconActionTertiary: string
-  iconOnSurface: string
-  iconDisabled: string
-  iconDefault: string
-  iconTypical: string
-  strokeDefault: string
-  strokeSelected: string
-  strokeSecondarySelected: string
-  strokeHover: string
-  strokeDisabled: string
-  strokeActive: string
-  supportNegative: string
-  supportPositive: string
-  supportWarning: string
-  supportVariable: string
-  supportTypical: string
-  supportNegativeNeutral: string
-  supportPositiveNeutral: string
-  supportWarningNeutral: string
-  supportTypicalNeutral: string
-  stateSelectedPrimaryHover: string
-  stateSelectedPrimaryPressed: string
-  stateSelectedSecondaryHover: string
-  stateSelectedSecondaryPressed: string
-  stateSelectedVisitedTextLink: string
-  stateUnselectedDefault: string
-  stateUnselectedHover: string
-  stateUnselectedPressed: string
-  stateDisabledSurface: string
-  overlay: string
-  overlayLoader: string
-}
+import { PaletteColorOptions, PaletteOptions } from '@mui/material/styles'
+import { DsColor, DsPalette } from '../Types'
 
-export interface DsColorOverides {
-  actionPrimary: true
-  actionSecondary: true
-  actionTertiary: true
-  surfaceBackground: true
-  surfacePrimary: true
-  surfaceSecondary: true
-  surfaceTertiary: true
-  typoPrimary: true
-  typoSecondary: true
-  typoTertiary: true
-  typoActionPrimary: true
-  typoActionSecondary: true
-  typoActionTertiary: true
-  typoOnSurface: true
-  typoDisabled: true
-  typoTypical: true
-  neutral1: true
-  neutral2: true
-  neutral3: true
-  neutral4: true
-  neutral5: true
-  neutral6: true
-  iconSupportNegative: true
-  iconSupportPositive: true
-  iconSupportWarning: true
-  iconActionPrimary: true
-  iconActionSecondary: true
-  iconActionTertiary: true
-  iconOnSurface: true
-  iconDisabled: true
-  iconDefault: true
-  iconTypical: true
-  strokeDefault: true
-  strokeSelected: true
-  strokeSecondarySelected: true
-  strokeHover: true
-  strokeDisabled: true
-  strokeActive: true
-  supportNegative: true
-  supportPositive: true
-  supportWarning: true
-  supportVariable: true
-  supportTypical: true
-  supportNegativeNeutral: true
-  supportPositiveNeutral: true
-  supportWarningNeutral: true
-  supportTypicalNeutral: true
-  stateSelectedPrimaryHover: true
-  stateSelectedPrimaryPressed: true
-  stateSelectedSecondaryHover: true
-  stateSelectedSecondaryPressed: true
-  stateSelectedVisitedTextLink: true
-  stateUnselectedDefault: true
-  stateUnselectedHover: true
-  stateUnselectedPressed: true
-  stateDisabledSurface: true
-  overlay: true
-  overlayLoader: true
-}
-
-export interface ColorScheme {
-  palette?: any
+export type ColorScheme = {
+  palette?: PaletteOptions
   dsColor?: DsColor
 }
 
 export default function getModeColorScheme(
-  colorPalette: any,
+  colorPalette: DsPalette,
   mode: 'light' | 'dark'
 ): ColorScheme {
   if (!colorPalette) {
@@ -201,26 +82,19 @@ export default function getModeColorScheme(
     actionSecondary: secondary100,
     actionTertiary: tertiary100,
 
-    surfaceBackground:
-      mode === 'light' ? primaryWhite : primaryBlackLight,
+    surfaceBackground: mode === 'light' ? primaryWhite : primaryBlackLight,
     surfacePrimary: mode === 'light' ? primaryWhite : primaryBlack,
-    surfaceSecondary:
-      mode === 'light' ? secondaryGrey10 : secondaryGrey100,
-    surfaceTertiary:
-      mode === 'light' ? secondaryGrey100 : secondaryGrey10,
+    surfaceSecondary: mode === 'light' ? secondaryGrey10 : secondaryGrey100,
+    surfaceTertiary: mode === 'light' ? secondaryGrey100 : secondaryGrey10,
 
-    typoPrimary:
-      mode === 'light' ? primaryBlackLight : secondaryGrey10,
-    typoSecondary:
-      mode === 'light' ? secondaryGrey80 : secondaryGrey30,
-    typoTertiary:
-      mode === 'light' ? secondaryGrey60 : secondaryGrey50,
+    typoPrimary: mode === 'light' ? primaryBlackLight : secondaryGrey10,
+    typoSecondary: mode === 'light' ? secondaryGrey80 : secondaryGrey30,
+    typoTertiary: mode === 'light' ? secondaryGrey60 : secondaryGrey50,
     typoActionPrimary: mode === 'light' ? primary : primaryWhite,
     typoActionSecondary: secondary100,
     typoActionTertiary: mode === 'light' ? tertiary100 : tertiary10,
     typoOnSurface: primaryWhite,
-    typoDisabled:
-      mode === 'light' ? secondaryGrey50 : secondaryGrey60,
+    typoDisabled: mode === 'light' ? secondaryGrey50 : secondaryGrey60,
     typoTypical: typical,
 
     neutral1: mode === 'light' ? neutral1Light : neutral1Dark,
@@ -237,21 +111,16 @@ export default function getModeColorScheme(
     iconActionSecondary: secondary100,
     iconActionTertiary: mode === 'light' ? tertiary100 : tertiary10,
     iconOnSurface: primaryWhite,
-    iconDisabled:
-      mode === 'light' ? secondaryGrey50 : secondaryGrey60,
+    iconDisabled: mode === 'light' ? secondaryGrey50 : secondaryGrey60,
     iconDefault: mode === 'light' ? secondaryGrey100 : primaryWhite,
     iconTypical: typical,
 
-    strokeDefault:
-      mode === 'light' ? secondaryGrey30 : secondaryGrey80,
+    strokeDefault: mode === 'light' ? secondaryGrey30 : secondaryGrey80,
     strokeSelected: mode === 'light' ? secondary80 : secondary60,
-    strokeSecondarySelected:
-      mode === 'light' ? tertiary60 : tertiary40,
+    strokeSecondarySelected: mode === 'light' ? tertiary60 : tertiary40,
     strokeHover: secondary40,
-    strokeDisabled:
-      mode === 'light' ? secondaryGrey50 : secondaryGrey60,
-    strokeActive:
-      mode === 'light' ? secondaryGrey100 : secondaryGrey10,
+    strokeDisabled: mode === 'light' ? secondaryGrey50 : secondaryGrey60,
+    strokeActive: mode === 'light' ? secondaryGrey100 : secondaryGrey10,
 
     supportNegative: errorRed,
     supportPositive: successGreen,
@@ -262,13 +131,9 @@ export default function getModeColorScheme(
     supportNegativeNeutral:
       mode === 'light' ? errorRedNeutralLight : errorRedNeutralDark,
     supportPositiveNeutral:
-      mode === 'light'
-        ? successGreenNeutralLight
-        : successGreenNeutralDark,
+      mode === 'light' ? successGreenNeutralLight : successGreenNeutralDark,
     supportWarningNeutral:
-      mode === 'light'
-        ? warningOrangeNeutralLight
-        : warningOrangeNeutralDark,
+      mode === 'light' ? warningOrangeNeutralLight : warningOrangeNeutralDark,
     supportTypicalNeutral:
       mode === 'light' ? snackBlueNeutralLight : snackBlueNeutralDark,
 
@@ -277,10 +142,8 @@ export default function getModeColorScheme(
         ? hexToRgbA(secondary80, 0.08)
         : hexToRgbA(secondary40, 0.2),
     stateSelectedPrimaryPressed: secondary40,
-    stateSelectedSecondaryHover:
-      mode === 'light' ? tertiary10 : '#081919', // TODO
-    stateSelectedSecondaryPressed:
-      mode === 'light' ? tertiary20 : '#154B3F', // TODO
+    stateSelectedSecondaryHover: mode === 'light' ? tertiary10 : '#081919', // TODO
+    stateSelectedSecondaryPressed: mode === 'light' ? tertiary20 : '#154B3F', // TODO
 
     stateSelectedVisitedTextLink:
       mode === 'light' ? linkPurpleLight : linkPurpleDark,
@@ -295,8 +158,7 @@ export default function getModeColorScheme(
       mode === 'light'
         ? hexToRgbA(secondaryGrey50, 0.16)
         : hexToRgbA(secondaryGrey50, 0.25),
-    stateDisabledSurface:
-      mode === 'light' ? secondaryGrey20 : secondaryGrey100,
+    stateDisabledSurface: mode === 'light' ? secondaryGrey20 : secondaryGrey100,
 
     overlay: hexToRgbA(primaryBlack, 0.5),
     overlayLoader:
@@ -305,7 +167,7 @@ export default function getModeColorScheme(
         : hexToRgbA(primaryBlack, 0.3)
   }
 
-  const palette: any = {
+  const palette: PaletteOptions = {
     common: {
       black: primaryBlack,
       white: primaryWhite,
@@ -314,35 +176,35 @@ export default function getModeColorScheme(
     primary: {
       main: dsColor.actionPrimary,
       contrastText: dsColor.typoOnSurface
-    },
+    } as PaletteColorOptions,
     secondary: {
       main: dsColor.actionSecondary,
       contrastText: dsColor.typoOnSurface
-    },
+    } as PaletteColorOptions,
     tertiary: {
       main: dsColor.actionTertiary,
       contrastText: dsColor.typoOnSurface
-    },
+    } as PaletteColorOptions,
     error: {
       main: dsColor.supportNegative,
       contrastText: dsColor.typoOnSurface
-    },
+    } as PaletteColorOptions,
     warning: {
       main: dsColor.supportWarning,
       contrastText: dsColor.typoOnSurface
-    },
+    } as PaletteColorOptions,
     info: {
       main: dsColor.supportVariable,
       contrastText: dsColor.typoOnSurface
-    },
+    } as PaletteColorOptions,
     success: {
       main: dsColor.supportPositive,
       contrastText: dsColor.typoOnSurface
-    },
+    } as PaletteColorOptions,
     surface: {
       main: dsColor.surfaceBackground,
       contrastText: dsColor.typoPrimary
-    },
+    } as PaletteColorOptions,
     grey: {
       50: secondaryGrey100,
       100: secondaryGrey90,
@@ -375,7 +237,10 @@ export default function getModeColorScheme(
   return { palette, dsColor }
 }
 
-function hexToRgbA(hexCode: string, alpha: number = 1): string {
+function hexToRgbA(
+  hexCode: string | undefined = '',
+  alpha: number = 1
+): string {
   if (/^#([A-Fa-f0-9]{6})$/.test(hexCode)) {
     const hex: any = hexCode.replace('#', '0x')
     return `rgba(${(hex >> 16) & 255},${(hex >> 8) & 255},${
@@ -383,4 +248,17 @@ function hexToRgbA(hexCode: string, alpha: number = 1): string {
     },${alpha})`
   }
   return hexCode
+}
+
+declare module '@mui/material/styles' {
+  interface TypeText {
+    tertiary: string
+  }
+  interface CommonColors {
+    blackLight: string
+  }
+  interface PaletteOptions {
+    surface?: PaletteColorOptions
+    tertiary?: PaletteColorOptions
+  }
 }

@@ -1,3 +1,4 @@
+import type {} from '@mui/material/themeCssVarsAugmentation'
 import {
   CssVarsTheme,
   CssVarsThemeOptions,
@@ -11,7 +12,8 @@ import componentOverrides from './componentOverrides'
 import dsRules from './rules'
 import dsSpacing, { dsSpacingCssVars, SPACE_COEFFICIENT } from './spacing'
 import dsElevation from './elevation'
-import { PALETTE, DsPalette, FONT_FAMILY_NAME } from '../Constants'
+import { PALETTE, FONT_FAMILY_NAME } from '../Constants'
+import { DsPalette } from '../Types'
 
 interface colorSchemes {
   light?: any
@@ -58,17 +60,14 @@ export default function getTheme(
   const cssVarsThemeOptions: CssVarsThemeOptions = {
     cssVarPrefix: '',
     components: componentOverrides,
-    colorSchemes
-  }
-
-  const themeConfig = {
+    colorSchemes,
     breakpoints,
     typography,
     shadows: dsElevation,
     spacing: (input: number) => input * SPACE_COEFFICIENT
   }
 
-  const theme = extendTheme(cssVarsThemeOptions, themeConfig)
+  const theme = extendTheme(cssVarsThemeOptions)
   return theme
 }
 

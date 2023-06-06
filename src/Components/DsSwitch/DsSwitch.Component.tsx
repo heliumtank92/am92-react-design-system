@@ -7,10 +7,7 @@ import { DsTypography } from '../DsTypography'
 export class DsSwitch extends PureComponent<DsSwitchProps> {
   static defaultProp = DsSwitchDefaultProps
 
-  handleChange = (event: any, value: any) => {
-    if (value === null) {
-      return
-    }
+  handleChange = (event: React.SyntheticEvent, value: NonNullable<any>) => {
     const { name, onChange } = this.props
     onChange(name, value)
   }

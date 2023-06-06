@@ -1,9 +1,6 @@
-interface Breakpoints {
-  keys: string[]
-  values: {}
-}
+import { Breakpoints, Breakpoint } from '@mui/system'
 
-const breakpoints: Breakpoints = {
+const breakpoints: Partial<Breakpoints> = {
   keys: ['xs', 'sm', 'md', 'lg', 'xl'],
   values: {
     xs: 0,
