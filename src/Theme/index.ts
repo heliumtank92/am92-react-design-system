@@ -63,7 +63,6 @@ export default function getTheme(
     colorSchemes,
     breakpoints,
     typography,
-    shadows: dsElevation,
     spacing: (input: number) => input * SPACE_COEFFICIENT
   }
 
