@@ -46,9 +46,7 @@ export default function getTypography(fontFamilyName: string = ''): any {
     characterSpacingHimalayas: '0.16',
     characterSpacingZero: '0',
 
-    paragraphSpacing: '0px',
-    casingUppercase: 'uppercase',
-    casingNone: 'none'
+    paragraphSpacing: '0px'
   }
 
   const dsTypoComposite: DsTypographyVariants = {
@@ -140,7 +138,7 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontSize: dsTypoPrimitive.fontSizeFrigid,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush,
-      textTransform: dsTypoPrimitive.casingUppercase
+      textTransform: 'uppercase'
     },
     subheadingSemiboldDefault: {
       fontFamily,
@@ -148,7 +146,7 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush,
-      textTransform: dsTypoPrimitive.casingUppercase
+      textTransform: 'uppercase'
     },
 
     headingBoldItalicExtraLarge: {
@@ -256,7 +254,7 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightZero})`,
       letterSpacing: dsTypoPrimitive.characterSpacingArctic,
-      textTransform: dsTypoPrimitive.casingUppercase
+      textTransform: 'uppercase'
     },
     supportRegularMetadata: {
       fontFamily,
@@ -264,7 +262,7 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightZero})`,
       letterSpacing: dsTypoPrimitive.characterSpacingAlps,
-      textTransform: dsTypoPrimitive.casingUppercase
+      textTransform: 'uppercase'
     }
   }
 

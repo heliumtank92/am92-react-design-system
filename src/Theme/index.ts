@@ -20,7 +20,7 @@ interface colorSchemes {
   dark?: any
 }
 
-export default function getTheme(
+export function getTheme(
   palette: DsPalette = PALETTE,
   fontFamilyName: string = FONT_FAMILY_NAME
 ): Omit<Theme, 'palette'> & CssVarsTheme {
