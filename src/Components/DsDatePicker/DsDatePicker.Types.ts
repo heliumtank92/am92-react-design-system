@@ -1,5 +1,4 @@
-import { MobileDatePickerProps } from '@mui/x-date-pickers'
-import { DateOrTimeView } from '@mui/x-date-pickers/internals'
+import { DateOrTimeView, MobileDatePickerProps } from '@mui/x-date-pickers'
 
 export interface DsDatePickerProps<TDate>
   extends MobileDatePickerProps<TDate> {}

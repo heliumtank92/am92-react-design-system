@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 
 import { DsStack } from '../DsStack'
 import { DsTypography } from '../DsTypography'
-import { DatePickerToolbarProps } from '@mui/x-date-pickers'
-import { DateOrTimeView } from '@mui/x-date-pickers/internals'
+import { DateOrTimeView, DatePickerToolbarProps } from '@mui/x-date-pickers'
 
 export class DefaultToolbar extends Component<
   DatePickerToolbarProps<DateOrTimeView>
