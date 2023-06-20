@@ -12,7 +12,7 @@ import { DsIconButton } from '../DsIconButton'
 import { DsStack } from '../DsStack'
 import { DsDialogDefaultProps, DsDialogProps } from './DsDialog.Types'
 
-export default class DsDialog extends PureComponent<DsDialogProps> {
+export class DsDialog extends PureComponent<DsDialogProps> {
   static defaultProps = DsDialogDefaultProps
 
   handleDialogClose = (

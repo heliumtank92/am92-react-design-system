@@ -11,7 +11,7 @@ import {
   DsTextFieldPasswordState
 } from './DsTextFieldPassword.Types'
 
-export default class DsTextFieldPassword extends Component<
+export class DsTextFieldPassword extends Component<
   DsTextFieldPasswordProps,
   DsTextFieldPasswordState
 > {

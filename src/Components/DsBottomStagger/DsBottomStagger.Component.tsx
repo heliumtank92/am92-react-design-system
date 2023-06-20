@@ -140,5 +140,3 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
     )
   }
 }
-
-export default DsBottomStagger

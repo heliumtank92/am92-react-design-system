@@ -11,7 +11,9 @@ import {
   DsDatePickerProps
 } from './DsDatePicker.Types'
 
-class DsDatePicker extends PureComponent<DsDatePickerProps<DateOrTimeView>> {
+export class DsDatePicker extends PureComponent<
+  DsDatePickerProps<DateOrTimeView>
+> {
   static defaultProps = DsDatePickerDefaultProps
 
   render() {
@@ -29,5 +31,3 @@ class DsDatePicker extends PureComponent<DsDatePickerProps<DateOrTimeView>> {
     )
   }
 }
-
-export default DsDatePicker

@@ -3,7 +3,7 @@ import { DsStack } from '../DsStack'
 import { DsTagGroupDefaultProps, DsTagGroupProps } from './DsTagGroup.Types'
 import { DsRemixIcon } from '../DsRemixIcon'
 
-export default class DsTagGroup extends PureComponent<DsTagGroupProps> {
+export class DsTagGroup extends PureComponent<DsTagGroupProps> {
   static defaultProps = DsTagGroupDefaultProps
 
   handleUnselect = (handleValue: any) => {
