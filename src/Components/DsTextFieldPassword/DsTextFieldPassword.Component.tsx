@@ -34,7 +34,7 @@ export class DsTextFieldPassword extends Component<
     const { isVisible } = this.state
     const { type, endAdornment, ...restProps } = this.props
 
-    const inputType = (isVisible && 'password') || type
+    const inputType = (isVisible && type) || 'password'
 
     const rightIcon = (
       <DsInputAdornment position="end">
