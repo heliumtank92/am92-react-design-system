@@ -23,7 +23,7 @@ export class DsTextFieldPassword extends Component<
 
     this.state = {
       ...DsTextFieldPasswordDefaultState,
-      isVisible: props.visible
+      isVisible: props.isVisible
     }
   }
 
