@@ -9,7 +9,13 @@ export class DefaultActionBar extends PureComponent<PickersActionBarProps> {
   render(): React.ReactNode {
     const { onAccept, onCancel } = this.props
     return (
-      <DsButtonGroup fullWidth size="medium">
+      <DsButtonGroup
+        sx={{
+          gridArea: '3 / 1 / auto / 4'
+        }}
+        fullWidth
+        size="large"
+      >
         <DsButton color="secondary" onClick={onCancel}>
           {' '}
           Cancel{' '}

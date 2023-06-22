@@ -31,7 +31,6 @@ import {
   DsCollapseOverrides,
   DsContainerOverrides,
   DsCssBaselineOverrides,
-  DsDatePickerOverrides,
   DsDialogOverrides,
   DsDialogActionsOverrides,
   DsDialogContentOverrides,
@@ -140,7 +139,8 @@ import {
   DsToolbarOverrides,
   DsTooltipOverrides,
   DsTypographyOverrides,
-  DsZoomOverrides
+  DsZoomOverrides,
+  DsDatePickerOverrides
 } from '../Components'
 
 const componentOverrides = {
