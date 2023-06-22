@@ -40,7 +40,7 @@ export class DsTextFieldPassword extends Component<
       <DsInputAdornment position="end">
         <DsIconButton onClick={this.handleTogglePassword}>
           <DsRemixIcon
-            className={isVisible ? 'ri-eye-line' : 'ri-eye-off-line'}
+            className={isVisible ? 'ri-eye-off-line' : 'ri-eye-line'}
           />
         </DsIconButton>
       </DsInputAdornment>
