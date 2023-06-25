@@ -115,7 +115,7 @@ export const DsDatePickerOverrides = {
     styleOverrides: {
       root: {
         width: '252px',
-        maxHeight: '268px',
+        maxHeight: '302px',
         padding: 'var(--ds-spacing-glacial)',
         marginTop: '-34px',
         backgroundColor: 'var(--ds-color-surfaceBackground)'

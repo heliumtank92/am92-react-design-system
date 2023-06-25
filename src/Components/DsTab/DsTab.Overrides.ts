@@ -1,1 +1,6 @@
-export const DsTabOverrides = {}
+export const DsTabOverrides = {
+  MuiTab: {
+    defaultProps: {},
+    styleOverrides: {}
+  }
+}
