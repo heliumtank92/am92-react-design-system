@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
 import { DsInputAdornment } from '../DsInputAdornment'
-import { DsRemixIcon } from '../DsRemixIcon'
-import { DsIconButton } from '../DsIconButton'
 import { DsTextField } from '../DsTextField'
+import { DsButton } from '../DsButton'
+
 import {
   DsTextFieldPasswordDefaultProps,
   DsTextFieldPasswordDefaultState,
@@ -32,22 +33,29 @@ export class DsTextFieldPassword extends Component<
 
   render() {
     const { isVisible } = this.state
-    const { type, endAdornment, ...restProps } = this.props
+    const { type, endAdornment, disabled, ...restProps } = this.props
 
     const inputType = (isVisible && type) || 'password'
 
     const rightIcon = (
       <DsInputAdornment position="end">
-        <DsIconButton onClick={this.handleTogglePassword}>
-          <DsRemixIcon
-            className={isVisible ? 'ri-eye-line' : 'ri-eye-off-line'}
-          />
-        </DsIconButton>
+        <DsButton
+          onClick={this.handleTogglePassword}
+          variant="text"
+          disabled={disabled}
+        >
+          {isVisible ? 'HIDE' : 'SHOW'}
+        </DsButton>
       </DsInputAdornment>
     )
 
     return (
-      <DsTextField {...restProps} type={inputType} endAdornment={rightIcon} />
+      <DsTextField
+        {...restProps}
+        disabled={disabled}
+        type={inputType}
+        endAdornment={rightIcon}
+      />
     )
   }
 }
