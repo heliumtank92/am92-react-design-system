@@ -64,6 +64,7 @@ export const DsInputBaseOverrides = {
     ],
     styleOverrides: {
       root: {
+        padding: 'var(--ds-spacing-glacial)',
         background: 'var(--ds-color-surfacePrimary)',
         borderWidth: '1px',
         borderStyle: 'solid',
@@ -106,10 +107,13 @@ export const DsInputBaseOverrides = {
         '> .MuiInputAdornment-root': {
           padding: 'var(--ds-spacing-deepFreeze)',
           height: 'auto'
+        },
+        '> :nth-child(even)': {
+          marginLeft: 'var(--ds-spacing-quickFreeze)'
         }
       } as CSSInterpolation,
       input: {
-        padding: 'var(--ds-spacing-frostbite) var(--ds-spacing-glacial)',
+        padding: 'var(--ds-spacing-quickFreeze) var(--ds-spacing-zero)',
         fontWeight: 'var(--ds-typo-bodyRegularMedium-fontWeight)',
         fontSize: 'var(--ds-typo-bodyRegularMedium-fontSize)',
         lineHeight: 'var(--ds-typo-bodyRegularMedium-lineHeight)',
@@ -122,12 +126,6 @@ export const DsInputBaseOverrides = {
           color: 'var(--ds-color-typoTertiary)',
           opacity: 1
         }
-      } as CSSInterpolation,
-      adornedStart: {
-        paddingLeft: 'var(--ds-spacing-glacial)'
-      } as CSSInterpolation,
-      adornedEnd: {
-        paddingRight: 'var(--ds-spacing-glacial)'
       } as CSSInterpolation
     }
   }

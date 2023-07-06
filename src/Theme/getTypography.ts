@@ -40,11 +40,11 @@ export default function getTypography(fontFamilyName: string = ''): any {
     lineHeightDeepfreeze: '2px',
     lineHeightZero: '0px',
 
-    characterSpacingArctic: '1',
-    characterSpacingAlps: '0.32',
-    characterSpacingHindukush: '0.24',
-    characterSpacingHimalayas: '0.16',
-    characterSpacingZero: '0',
+    characterSpacingArctic: '1px',
+    characterSpacingAlps: '0.32px',
+    characterSpacingHindukush: '0.24px',
+    characterSpacingHimalayas: '0.16px',
+    characterSpacingZero: '0px',
 
     paragraphSpacing: '0px'
   }

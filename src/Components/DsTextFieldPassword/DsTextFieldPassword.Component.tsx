@@ -38,16 +38,17 @@ export class DsTextFieldPassword extends Component<
     const inputType = (isVisible && type) || 'password'
 
     const rightIcon = (
-      <DsInputAdornment position="end">
-        <DsButton
-          onClick={this.handleTogglePassword}
-          variant="text"
-          color="secondary"
-          disabled={disabled}
-        >
-          {isVisible ? 'HIDE' : 'SHOW'}
-        </DsButton>
-      </DsInputAdornment>
+      <DsButton
+        onClick={this.handleTogglePassword}
+        variant="text"
+        color="secondary"
+        disabled={disabled}
+        sx={{
+          minWidth: '50px'
+        }}
+      >
+        {isVisible ? 'HIDE' : 'SHOW'}
+      </DsButton>
     )
 
     return (
