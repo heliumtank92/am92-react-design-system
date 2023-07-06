@@ -1,11 +1,12 @@
 {
   "name": "@am92/react-design-system",
-  "version": "2.0.2",
+  "version": "2.0.16",
   "description": "ReactJS Design System using Material UI",
   "sideEffects": false,
   "types": "dist/index.d.ts",
   "module": "dist/index.js",
   "main": "dist/index.js",
+  "type": "module",
   "files": [
     "dist/**/*.js",
     "dist/**/*.d.ts"
@@ -17,7 +18,7 @@
     "@mui/lab": "5.0.0-alpha.120",
     "@mui/material": "^5.11.10",
     "@mui/system": "^5.11.9",
-    "@mui/x-date-pickers": "^6.0.2",
+    "@mui/x-date-pickers": "^6.7.0",
     "date-fns": "^2.30.0",
     "notistack": "^3.0.1",
     "prop-types": "^15.8.1"
@@ -30,14 +31,14 @@
     "@types/prop-types": "^15.7.5",
     "@types/react": "^18.2.7",
     "npm-run-all": "^4.1.5",
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.3"
   },
   "peerDependencies": {
     "react": "^18.x.x",
     "react-dom": "^18.x.x"
   },
   "scripts": {
-    "compile": "tsc -b ./tsconfig.esm.json ./tsconfig.types.json",
+    "compile": "tsc",
     "build:clean": "rm -rf ./dist",
     "build": "npm-run-all build:clean compile",
     "test": "echo 'Error: no test specified'",

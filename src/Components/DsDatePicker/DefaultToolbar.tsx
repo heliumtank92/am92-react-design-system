@@ -3,29 +3,37 @@ import React, { Component } from 'react'
 import { DsStack } from '../DsStack'
 import { DsTypography } from '../DsTypography'
 import { DatePickerToolbarProps } from '@mui/x-date-pickers'
-import { DateOrTimeView } from '@mui/x-date-pickers/internals'
+import { parseISO } from 'date-fns'
 
-export class DefaultToolbar extends Component<
-  DatePickerToolbarProps<DateOrTimeView>
-> {
+export class DefaultToolbar extends Component<DatePickerToolbarProps<Date>> {
+  setViewYear = () => {
+    const { onViewChange } = this.props
+    onViewChange('year')
+  }
+
   render(): React.ReactNode {
-    const val = new Date()
-    const currentYear = val && val.getFullYear()
+    const { disabled, readOnly, view, value } = this.props
+    const isClickable = !(disabled || readOnly || view === 'year')
+    const currentYear = (value && value.getFullYear()) || '----'
     const formatOptions = {
       month: 'short',
       day: 'numeric',
       weekday: 'short'
     } as Intl.DateTimeFormatOptions
     const currentDateAndDay =
-      val && val.toLocaleDateString('en-us', formatOptions)
+      (value && value.toLocaleDateString('en-us', formatOptions)) ||
+      '---, --- --'
 
     return (
       <DsStack
         sx={{
           backgroundColor: 'var(--ds-color-surfaceSecondary)',
-          padding: 'var(--ds-spacing-bitterCold) var(--ds-spacing-bitterCold)'
+          padding: 'var(--ds-spacing-bitterCold) var(--ds-spacing-bitterCold)',
+          gridArea: '1 / 2 / auto / 4',
+          cursor: isClickable ? 'pointer' : 'unset'
         }}
         spacing="var(--ds-spacing-quickFreeze)"
+        onClick={(isClickable && this.setViewYear) || undefined}
       >
         <DsTypography
           variant="headingBoldExtraSmall"

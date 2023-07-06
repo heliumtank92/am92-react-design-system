@@ -19,3 +19,4 @@ tests/
 
 # Source
 src/
+tsconfig.json

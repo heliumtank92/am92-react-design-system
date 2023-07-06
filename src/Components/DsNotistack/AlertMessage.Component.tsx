@@ -5,7 +5,6 @@ import { DsToast, DsToastProps } from '../DsToast'
 
 export interface AlertMessageProps
   extends Omit<DsToastProps, 'variant' | 'color' | 'ref'> {
-  ref?: React.Ref<any>
   message: string
   toastVariant: DsToastProps['variant']
   onClose: (props: object) => void
@@ -32,11 +31,11 @@ class AlertMessage extends Component<AlertMessageProps> {
   }
 
   render() {
-    const { ref, message, toastVariant, variant, sx } = this.props
+    const { forwardedRef, message, toastVariant, variant, sx } = this.props
 
     return (
       <DsToast
-        ref={ref}
+        forwardedRef={forwardedRef}
         variant={toastVariant}
         color={variant}
         sx={sx}
@@ -49,36 +48,36 @@ class AlertMessage extends Component<AlertMessageProps> {
 }
 
 export const DsNotistackAlertDefault = React.forwardRef<
-  DsToast,
+  HTMLDivElement,
   AlertMessageProps
 >((props, ref) => {
-  return <AlertMessage ref={ref} {...props} />
+  return <AlertMessage forwardedRef={ref} {...props} />
 })
 
 export const DsNotistackAlertSuccess = React.forwardRef<
-  DsToast,
+  HTMLDivElement,
   AlertMessageProps
 >((props, ref) => {
-  return <AlertMessage ref={ref} {...props} variant="success" />
+  return <AlertMessage forwardedRef={ref} {...props} variant="success" />
 })
 
 export const DsNotistackAlertError = React.forwardRef<
-  DsToast,
+  HTMLDivElement,
   AlertMessageProps
 >((props, ref) => {
-  return <AlertMessage ref={ref} {...props} variant="error" />
+  return <AlertMessage forwardedRef={ref} {...props} variant="error" />
 })
 
 export const DsNotistackAlertWarning = React.forwardRef<
-  DsToast,
+  HTMLDivElement,
   AlertMessageProps
 >((props, ref) => {
-  return <AlertMessage ref={ref} {...props} variant="warning" />
+  return <AlertMessage forwardedRef={ref} {...props} variant="warning" />
 })
 
 export const DsNotistackAlertInfo = React.forwardRef<
-  DsToast,
+  HTMLDivElement,
   AlertMessageProps
 >((props, ref) => {
-  return <AlertMessage ref={ref} {...props} variant="info" />
+  return <AlertMessage forwardedRef={ref} {...props} variant="info" />
 })

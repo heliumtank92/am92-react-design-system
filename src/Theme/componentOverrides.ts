@@ -31,7 +31,6 @@ import {
   DsCollapseOverrides,
   DsContainerOverrides,
   DsCssBaselineOverrides,
-  DsDatePickerOverrides,
   DsDialogOverrides,
   DsDialogActionsOverrides,
   DsDialogContentOverrides,
@@ -100,8 +99,6 @@ import {
   DsSkeletonOverrides,
   DsSlideOverrides,
   DsSliderOverrides,
-  DsSnackbarOverrides,
-  DsSnackbarContentOverrides,
   DsSpeedDialOverrides,
   DsSpeedDialActionOverrides,
   DsSpeedDialIconOverrides,
@@ -140,7 +137,8 @@ import {
   DsToolbarOverrides,
   DsTooltipOverrides,
   DsTypographyOverrides,
-  DsZoomOverrides
+  DsZoomOverrides,
+  DsDatePickerOverrides
 } from '../Components'
 
 const componentOverrides = {
@@ -245,8 +243,6 @@ const componentOverrides = {
   ...DsSkeletonOverrides,
   ...DsSlideOverrides,
   ...DsSliderOverrides,
-  ...DsSnackbarOverrides,
-  ...DsSnackbarContentOverrides,
   ...DsSpeedDialOverrides,
   ...DsSpeedDialActionOverrides,
   ...DsSpeedDialIconOverrides,

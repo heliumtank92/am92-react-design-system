@@ -8,7 +8,7 @@ export const DsFabOverrides = {
     styleOverrides: {
       root: {
         boxShadow: 'var(--ds-elevation-8)',
-        // textTransform: 'var(--ds-typo-casingNone)',
+        textTransform: 'none',
         height: 'auto',
         width: 'auto',
         borderRadius: '28px',

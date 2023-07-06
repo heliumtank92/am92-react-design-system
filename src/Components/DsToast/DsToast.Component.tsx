@@ -9,9 +9,11 @@ const CloseIcon = (props: object) => (
 
 export class DsToast extends PureComponent<DsToastProps> {
   render() {
+    const { forwardedRef, ...restProps } = this.props
     return (
       <Alert
-        {...this.props}
+        ref={forwardedRef}
+        {...restProps}
         components={{
           ...this.props.components,
           CloseIcon

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
 import { DsInputAdornment } from '../DsInputAdornment'
-import { DsRemixIcon } from '../DsRemixIcon'
-import { DsIconButton } from '../DsIconButton'
 import { DsTextField } from '../DsTextField'
+import { DsButton } from '../DsButton'
+
 import {
   DsTextFieldPasswordDefaultProps,
   DsTextFieldPasswordDefaultState,
@@ -11,7 +12,10 @@ import {
   DsTextFieldPasswordState
 } from './DsTextFieldPassword.Types'
 
-export default class DsTextFieldPassword extends Component<DsTextFieldPasswordProps> {
+export class DsTextFieldPassword extends Component<
+  DsTextFieldPasswordProps,
+  DsTextFieldPasswordState
+> {
   static defaultProps = DsTextFieldPasswordDefaultProps
   state: DsTextFieldPasswordState
 
@@ -20,7 +24,7 @@ export default class DsTextFieldPassword extends Component<DsTextFieldPasswordPr
 
     this.state = {
       ...DsTextFieldPasswordDefaultState,
-      isVisible: props.visible
+      isVisible: props.isVisible
     }
   }
 
@@ -29,22 +33,29 @@ export default class DsTextFieldPassword extends Component<DsTextFieldPasswordPr
 
   render() {
     const { isVisible } = this.state
-    const { type, endAdornment, ...restProps } = this.props
+    const { type, endAdornment, disabled, ...restProps } = this.props
 
-    const inputType = (isVisible && 'password') || type
+    const inputType = (isVisible && type) || 'password'
 
     const rightIcon = (
       <DsInputAdornment position="end">
-        <DsIconButton onClick={this.handleTogglePassword}>
-          <DsRemixIcon
-            className={isVisible ? 'ri-eye-line' : 'ri-eye-off-line'}
-          />
-        </DsIconButton>
+        <DsButton
+          onClick={this.handleTogglePassword}
+          variant="text"
+          disabled={disabled}
+        >
+          {isVisible ? 'HIDE' : 'SHOW'}
+        </DsButton>
       </DsInputAdornment>
     )
 
     return (
-      <DsTextField {...restProps} type={inputType} endAdornment={rightIcon} />
+      <DsTextField
+        {...restProps}
+        disabled={disabled}
+        type={inputType}
+        endAdornment={rightIcon}
+      />
     )
   }
 }

@@ -10,7 +10,7 @@ export interface DsIconProps extends IconProps {}
 
 export const DsIconDefaultProps: DsIconProps = {
   fontSize: 'mild',
-  color: 'iconActionSecondary'
+  color: 'inherit'
 }
 
 declare module '@mui/material/Icon' {

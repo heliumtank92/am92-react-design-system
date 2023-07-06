@@ -4,7 +4,7 @@ import { DsTooltipProps } from './DsTooltip.Types'
 import { DsTypography } from '../DsTypography'
 import { DsLink } from '../DsLink'
 
-class DsTooltip extends PureComponent<DsTooltipProps> {
+export class DsTooltip extends PureComponent<DsTooltipProps> {
   renderTitle = () => {
     const { heading, description, buttonGroup, title } = this.props
 
@@ -68,5 +68,3 @@ class DsTooltip extends PureComponent<DsTooltipProps> {
     )
   }
 }
-
-export default DsTooltip

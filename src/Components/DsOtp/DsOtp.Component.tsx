@@ -11,7 +11,7 @@ const KEY_CODES = {
   BACK_SPACE: 'Backspace'
 }
 
-export default class DsOtp extends Component<DsOtpProps, DsOtpState> {
+export class DsOtp extends Component<DsOtpProps, DsOtpState> {
   static defaultProps = DsOtpDefaultProps
   optInputRefs = new Map()
 
