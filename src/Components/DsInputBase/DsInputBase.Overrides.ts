@@ -1,4 +1,4 @@
-import { CSSInterpolation } from '@mui/system'
+import { CSSInterpolation, padding } from '@mui/system'
 import { DsInputBaseDefaultProps, DsInputBaseProps } from './DsInputBase.Types'
 
 export const DsInputBaseOverrides = {
@@ -8,7 +8,10 @@ export const DsInputBaseOverrides = {
       {
         props: { 'ds-variant': 'otp' } as Partial<DsInputBaseProps>,
         style: {
-          textAlign: 'center'
+          textAlign: 'center',
+          '> input': {
+            padding: 'var(--ds-spacing-zero)'
+          }
         } as CSSInterpolation
       },
       {
@@ -19,9 +22,8 @@ export const DsInputBaseOverrides = {
         style: {
           height: '56px',
           width: '56px',
-          '> input': {
-            padding: 'var(--ds-spacing-bitterCold)'
-          }
+          padding:
+            'calc(var(--ds-spacing-quickFreeze) + var(--ds-spacing-deepFreeze)) var(--ds-spacing-bitterCold)'
         } as CSSInterpolation
       },
       {
@@ -32,9 +34,8 @@ export const DsInputBaseOverrides = {
         style: {
           height: '40px',
           width: '40px',
-          '> input': {
-            padding: 'var(--ds-spacing-glacial)'
-          }
+          padding:
+            'calc(var(--ds-spacing-quickFreeze) + var(--ds-spacing-deepFreeze)) var(--ds-spacing-glacial)'
         } as CSSInterpolation
       },
       {
