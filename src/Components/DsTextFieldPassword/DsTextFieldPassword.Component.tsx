@@ -42,6 +42,7 @@ export class DsTextFieldPassword extends Component<
         <DsButton
           onClick={this.handleTogglePassword}
           variant="text"
+          color="secondary"
           disabled={disabled}
         >
           {isVisible ? 'HIDE' : 'SHOW'}
