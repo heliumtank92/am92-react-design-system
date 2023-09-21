@@ -46,7 +46,7 @@ export const DsInputBaseOverrides = {
           paddingRight: 'var(--ds-spacing-bitterCold)',
           paddingTop: 'var(--ds-spacing-glacial)',
           paddingBottom: 'var(--ds-spacing-glacial)',
-          height: 'var(--ds-rules-searchbarHeight)',
+          // height: 'var(--ds-rules-searchbarHeight)',
           minWidth: 'var(--ds-rules-searchbarMinWidth)',
           fontWeight: 'var(--ds-typo-bodyRegularMedium-fontWeight)',
           fontSize: 'var(--ds-typo-bodyRegularMedium-fontSize)',
