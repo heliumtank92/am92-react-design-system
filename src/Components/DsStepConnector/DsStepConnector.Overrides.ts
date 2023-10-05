@@ -3,7 +3,7 @@ import { CSSInterpolation } from '@mui/system'
 export const DsStepConnectorOverrides = {
   MuiStepConnector: {
     styleOverrides: {
-      line: {
+      lineVertical: {
         borderLeftWidth: '2px',
         borderLeftStyle: 'solid',
         borderLeftColor: 'var(--ds-color-strokeDefault)',

@@ -1,9 +1,14 @@
 export interface DsProgressIndicatorProps {
-  step: number
-  maxStep: number
+  'ds-variant'?: 'percentage' | 'fraction'
+  steps: number
+  activeStep: number
+
+  isError?: boolean
+  isSuccess?: boolean
 }
 
 export const DsProgressIndicatorDefaultProps: DsProgressIndicatorProps = {
-  step: 0,
-  maxStep: 0
+  'ds-variant': 'fraction',
+  steps: 0,
+  activeStep: 0
 }
