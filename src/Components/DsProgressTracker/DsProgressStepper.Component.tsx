@@ -50,6 +50,14 @@ export class DsProgressStepper extends PureComponent<DsProgressStepperProps> {
 
   render() {
     const { steps, ...stepperProps } = this.props
-    return <DsStepper {...stepperProps}>{steps.map(this.renderStep)}</DsStepper>
+
+    return (
+      <DsStepper
+        {...stepperProps}
+        alternativeLabel={stepperProps.orientation === 'horizontal'}
+      >
+        {steps.map(this.renderStep)}
+      </DsStepper>
+    )
   }
 }

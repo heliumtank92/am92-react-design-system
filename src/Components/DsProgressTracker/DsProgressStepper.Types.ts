@@ -4,7 +4,8 @@ export interface DsProgressStepperStepProps {
   stepName: string
 }
 
-export interface DsProgressStepperProps extends DsStepperProps {
+export interface DsProgressStepperProps
+  extends Pick<DsStepperProps, 'activeStep' | 'orientation' | 'sx'> {
   steps: DsProgressStepperStepProps[]
 }
 
