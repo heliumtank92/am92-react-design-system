@@ -57,9 +57,10 @@ export class DsProgressTracker extends PureComponent<
 
     const { activeStep, steps } = this.props
     const currentStep = steps[activeStep] || {}
-    const nextStep = steps[activeStep]
-    const haveNextStep = activeStep < steps.length
-    const isNextStepLastStep = activeStep + 1 === steps.length
+    const nextStepIndex = activeStep + 1
+    const nextStep = steps[nextStepIndex]
+    const haveNextStep = nextStepIndex <= steps.length
+    const isNextStepLastStep = nextStepIndex === steps.length
 
     return (
       <DsStack
