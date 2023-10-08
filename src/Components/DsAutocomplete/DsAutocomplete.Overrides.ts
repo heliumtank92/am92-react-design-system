@@ -16,7 +16,7 @@ export const DsAutocompleteOverrides = {
       listbox: {
         '.MuiAutocomplete-option': {
           '&.Mui-focused': {
-            backgroundColor: 'var(--ds-color-stateSelectedPrimaryHover)'
+            backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
           }
         }
       },

@@ -13,7 +13,7 @@ export const DsFabOverrides = {
         width: 'auto',
         borderRadius: '28px',
         '&.MuiFab-default': {
-          backgroundColor: 'var(--ds-color-surfacePrimary)'
+          backgroundColor: 'var(--ds-colour-surfacePrimary)'
         },
         '&.MuiFab-extended .MuiTypography-root': {
           fontWeight: 'var(--ds-typo-bodyBoldMedium-fontWeight)',

@@ -104,9 +104,9 @@ export default function getModeColorScheme(
     neutral5: mode === 'light' ? neutral5Light : neutral5Dark,
     neutral6: mode === 'light' ? neutral6Light : neutral6Dark,
 
-    iconSupportNegative: errorRed,
-    iconSupportPositive: successGreen,
-    iconSupportWarning: warningOrange,
+    iconNegative: errorRed,
+    iconPositive: successGreen,
+    iconWarning: warningOrange,
     iconActionPrimary: primary,
     iconActionSecondary: secondary100,
     iconActionTertiary: mode === 'light' ? tertiary100 : tertiary10,

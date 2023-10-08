@@ -8,7 +8,7 @@ export const DsDialogTitleOverrides = {
         fontSize: 'var(--ds-typo-headingBoldSmall-fontSize)',
         lineHeight: 'var(--ds-typo-headingBoldSmall-lineHeight)',
         letterSpacing: 'var(--ds-typo-headingBoldSmall-letterSpacing)',
-        color: 'var(--ds-color-typoPrimary)',
+        color: 'var(--ds-colour-typoPrimary)',
         paddingLeft: 'var(--ds-spacing-bitterCold)',
         paddingRight: 'var(--ds-spacing-bitterCold)',
         paddingBottom: 'var(--ds-spacing-bitterCold)',

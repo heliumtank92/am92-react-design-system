@@ -7,10 +7,10 @@ export const DsToggleButtonGroupOverrides = {
       {
         props: { 'ds-variant': 'switch' } as Partial<DsToggleButtonGroupProps>,
         style: {
-          border: '1px solid var(--ds-color-strokeDefault)',
+          border: '1px solid var(--ds-colour-strokeDefault)',
           borderRadius: '6px',
           padding: 'var(--ds-spacing-deepFreeze)',
-          backgroundColor: 'var(--ds-color-surfaceBackground)',
+          backgroundColor: 'var(--ds-colour-surfaceBackground)',
 
           '> .MuiToggleButtonGroup-grouped': {
             border: 'none',
@@ -27,29 +27,29 @@ export const DsToggleButtonGroupOverrides = {
             },
 
             '&:hover': {
-              backgroundColor: 'var(--ds-color-surfaceBackground)'
+              backgroundColor: 'var(--ds-colour-surfaceBackground)'
             },
 
             '&:not(.Mui-disabled)': {
-              color: 'var(--ds-color-actionSecondary)',
+              color: 'var(--ds-colour-actionSecondary)',
               '&.Mui-selected': {
-                backgroundColor: 'var(--ds-color-actionSecondary)',
-                color: 'var(--ds-color-typoOnSurface)',
+                backgroundColor: 'var(--ds-colour-actionSecondary)',
+                color: 'var(--ds-colour-typoOnSurface)',
                 '&:hover': {
-                  backgroundColor: 'var(--ds-color-actionSecondary)'
+                  backgroundColor: 'var(--ds-colour-actionSecondary)'
                 }
               }
             },
 
             '&.Mui-disabled': {
-              color: 'var(--ds-color-typoDisabled)',
+              color: 'var(--ds-colour-typoDisabled)',
               border: 'none',
               cursor: 'not-allowed',
               pointerEvents: 'all',
               '&.Mui-selected': {
-                backgroundColor: 'var(--ds-color-stateDisabledSurface)',
+                backgroundColor: 'var(--ds-colour-stateDisabledSurface)',
                 '&:hover': {
-                  backgroundColor: 'var(--ds-color-stateDisabledSurface)'
+                  backgroundColor: 'var(--ds-colour-stateDisabledSurface)'
                 }
               }
             }

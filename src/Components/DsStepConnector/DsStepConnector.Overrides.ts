@@ -6,7 +6,7 @@ export const DsStepConnectorOverrides = {
       lineVertical: {
         borderLeftWidth: '2px',
         borderLeftStyle: 'solid',
-        borderLeftColor: 'var(--ds-color-strokeDefault)',
+        borderLeftColor: 'var(--ds-colour-strokeDefault)',
         minHeight: 'var(--ds-rules-stepperConnectorMinHeight)'
       } as CSSInterpolation,
       vertical: {

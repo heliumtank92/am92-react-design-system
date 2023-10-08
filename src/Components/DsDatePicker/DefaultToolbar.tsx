@@ -27,7 +27,7 @@ export class DefaultToolbar extends Component<DatePickerToolbarProps<Date>> {
     return (
       <DsStack
         sx={{
-          backgroundColor: 'var(--ds-color-surfaceSecondary)',
+          backgroundColor: 'var(--ds-colour-surfaceSecondary)',
           padding: 'var(--ds-spacing-bitterCold) var(--ds-spacing-bitterCold)',
           gridArea: '1 / 2 / auto / 4',
           cursor: isClickable ? 'pointer' : 'unset'
@@ -37,13 +37,13 @@ export class DefaultToolbar extends Component<DatePickerToolbarProps<Date>> {
       >
         <DsTypography
           variant="headingBoldExtraSmall"
-          sx={{ color: 'var(--ds-color-typoSecondary)' }}
+          sx={{ color: 'var(--ds-colour-typoSecondary)' }}
         >
           {currentYear}
         </DsTypography>
         <DsTypography
           variant="headingBoldMedium"
-          sx={{ color: 'var(--ds-color-typoPrimary)' }}
+          sx={{ color: 'var(--ds-colour-typoPrimary)' }}
         >
           {currentDateAndDay}
         </DsTypography>

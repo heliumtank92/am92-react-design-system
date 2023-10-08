@@ -13,7 +13,7 @@ export const DsInputLabelOverrides = {
         transform: 'var(--ds-typo-casingNone)',
         position: 'relative',
         marginBottom: 'var(--ds-spacing-glacial)',
-        color: 'var(--ds-color-typoPrimary)',
+        color: 'var(--ds-colour-typoPrimary)',
 
         '> p:first-of-type': {
           paddingTop: 'var(--ds-spacing-deepFreeze)',
@@ -22,19 +22,19 @@ export const DsInputLabelOverrides = {
         },
 
         '&.Mui-focused:not(.Mui-disabled)': {
-          color: 'var(--ds-color-typoPrimary)'
+          color: 'var(--ds-colour-typoPrimary)'
         },
         '&.MuiFormLabel-colorSuccess': {
-          color: 'var(--ds-color-supportPositive)'
+          color: 'var(--ds-colour-supportPositive)'
         },
         '&.Mui-focused.MuiFormLabel-colorSuccess': {
-          color: 'var(--ds-color-supportPositive)'
+          color: 'var(--ds-colour-supportPositive)'
         },
         '&.Mui-error': {
-          color: 'var(--ds-color-supportNegative)'
+          color: 'var(--ds-colour-supportNegative)'
         },
         '&.Mui-focused.Mui-error': {
-          color: 'var(--ds-color-supportNegative)'
+          color: 'var(--ds-colour-supportNegative)'
         }
       } as CSSInterpolation
     }

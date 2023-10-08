@@ -57,7 +57,7 @@ export const DsInputBaseOverrides = {
             ml: 'var(--ds-spacing-frostbite)'
           },
           '> input::placeholder': {
-            color: 'var(--ds-color-typoSecondary)',
+            color: 'var(--ds-colour-typoSecondary)',
             opacity: 1
           }
         } as CSSInterpolation
@@ -66,43 +66,43 @@ export const DsInputBaseOverrides = {
     styleOverrides: {
       root: {
         padding: 'var(--ds-spacing-glacial)',
-        background: 'var(--ds-color-surfacePrimary)',
+        background: 'var(--ds-colour-surfacePrimary)',
         borderWidth: '1px',
         borderStyle: 'solid',
-        borderColor: 'var(--ds-color-strokeDefault)',
+        borderColor: 'var(--ds-colour-strokeDefault)',
         borderRadius: '4px',
         '&.Mui-focused:not(.Mui-disabled)': {
-          borderColor: 'var(--ds-color-strokeActive)'
+          borderColor: 'var(--ds-colour-strokeActive)'
         },
         '&.MuiInputBase-colorSuccess': {
-          borderColor: 'var(--ds-color-supportPositive)'
+          borderColor: 'var(--ds-colour-supportPositive)'
         },
         '&.Mui-focused.MuiInputBase-colorSuccess': {
-          borderColor: 'var(--ds-color-supportPositive)'
+          borderColor: 'var(--ds-colour-supportPositive)'
         },
         '&.Mui-disabled': {
-          background: 'var(--ds-color-stateDisabledSurface)',
-          borderColor: 'var(--ds-color-strokeDisabled)',
+          background: 'var(--ds-colour-stateDisabledSurface)',
+          borderColor: 'var(--ds-colour-strokeDisabled)',
           cursor: 'not-allowed',
           pointerEvents: 'all',
           '> .MuiInputAdornment-root': {
-            color: 'var(--ds-color-iconDisabled)',
+            color: 'var(--ds-colour-iconDisabled)',
             cursor: 'not-allowed',
             pointerEvents: 'all'
           }
         },
         '&.Mui-error': {
-          borderColor: 'var(--ds-color-supportNegative)'
+          borderColor: 'var(--ds-colour-supportNegative)'
         },
         '&.Mui-focused.Mui-error': {
-          borderColor: 'var(--ds-color-supportNegative)'
+          borderColor: 'var(--ds-colour-supportNegative)'
         },
         '&.MuiInputBase-readOnly': {
-          background: 'var(--ds-color-stateDisabledSurface)',
-          borderColor: 'var(--ds-color-strokeDisabled)',
+          background: 'var(--ds-colour-stateDisabledSurface)',
+          borderColor: 'var(--ds-colour-strokeDisabled)',
           pointerEvents: 'none',
           '> .MuiInputAdornment-root': {
-            color: 'var(--ds-color-iconDisabled)'
+            color: 'var(--ds-colour-iconDisabled)'
           }
         },
         '> .MuiInputAdornment-root': {
@@ -124,7 +124,7 @@ export const DsInputBaseOverrides = {
           pointerEvents: 'all'
         },
         '&::placeholder': {
-          color: 'var(--ds-color-typoTertiary)',
+          color: 'var(--ds-colour-typoTertiary)',
           opacity: 1
         }
       } as CSSInterpolation

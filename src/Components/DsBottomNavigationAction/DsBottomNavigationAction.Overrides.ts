@@ -13,13 +13,13 @@ export const DsBottomNavigationActionOverrides = {
         borderTopColor: 'transparent',
         padding: 'var(--ds-spacing-zero)',
         justifyContent: 'flex-start',
-        color: 'var(--ds-color-iconDisabled)',
+        color: 'var(--ds-colour-iconDisabled)',
         '> .MuiIcon-root': {
           paddingTop: 'var(--ds-spacing-glacial)'
         },
         '&.Mui-selected': {
-          borderTopColor: 'var(--ds-color-actionSecondary)',
-          color: 'var(--ds-color-actionSecondary)'
+          borderTopColor: 'var(--ds-colour-actionSecondary)',
+          color: 'var(--ds-colour-actionSecondary)'
         }
       } as CSSInterpolation,
       label: {
@@ -27,11 +27,11 @@ export const DsBottomNavigationActionOverrides = {
         fontSize: 'var(--ds-typo-bodyRegularSmall-fontSize)',
         lineHeight: 'var(--ds-typo-bodyRegularSmall-lineHeight)',
         letterSpacing: 'var(--ds-typo-bodyRegularSmall-letterSpacing)',
-        color: 'var(--ds-color-typoDisabled)',
+        color: 'var(--ds-colour-typoDisabled)',
         paddingBottom: 'var(--ds-spacing-quickFreeze)',
         '&.Mui-selected': {
           fontSize: 'var(--ds-typo-bodyRegularSmall-fontSize)',
-          color: 'var(--ds-color-actionSecondary)'
+          color: 'var(--ds-colour-actionSecondary)'
         }
       } as CSSInterpolation
     }

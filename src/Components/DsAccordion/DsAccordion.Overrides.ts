@@ -5,11 +5,11 @@ export const DsAccordionOverrides = {
     defaultProps: DsAccordionDefaultProps,
     styleOverrides: {
       root: {
-        backgroundColor: 'var(--ds-color-surfacePrimary)',
+        backgroundColor: 'var(--ds-colour-surfacePrimary)',
         boxShadow: 'var(--ds-elevation--1)',
         overflow: 'hidden',
         borderStyle: 'solid',
-        borderColor: 'var(--ds-color-strokeDefault)',
+        borderColor: 'var(--ds-colour-strokeDefault)',
         borderWidth: '1px',
         '&:first-of-type': {
           borderTopLeftRadius: '8px',

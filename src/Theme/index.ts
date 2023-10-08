@@ -5,7 +5,7 @@ import {
   experimental_extendTheme as extendTheme,
   Theme
 } from '@mui/material/styles'
-import getColorScheme, { ColorScheme } from './getColorScheme'
+import getModeColorScheme, { ColorScheme } from './getColorScheme'
 import getTypography from './getTypography'
 import breakpoints from './breakpoints'
 import componentOverrides from './componentOverrides'
@@ -27,15 +27,18 @@ export function getTheme(
   const { typography, dsTypo } = getTypography(fontFamilyName)
 
   const colorPalette: DsPalette = { ...PALETTE, ...palette }
-  const lightColorScheme: ColorScheme = getColorScheme(colorPalette, 'light')
-  const darkColorScheme: ColorScheme = getColorScheme(colorPalette, 'dark')
+  const lightColorScheme: ColorScheme = getModeColorScheme(
+    colorPalette,
+    'light'
+  )
+  const darkColorScheme: ColorScheme = getModeColorScheme(colorPalette, 'dark')
   let colorSchemes: colorSchemes = {}
 
   if (lightColorScheme) {
     colorSchemes.light = {
       palette: lightColorScheme.palette,
       ds: {
-        color: lightColorScheme.dsColor,
+        colour: lightColorScheme.dsColor,
         spacing: dsSpacingCssVars,
         typo: dsTypo,
         rules: dsRules,
@@ -48,7 +51,7 @@ export function getTheme(
     colorSchemes.dark = {
       palette: darkColorScheme.palette,
       ds: {
-        color: darkColorScheme.dsColor,
+        colour: darkColorScheme.dsColor,
         spacing: dsSpacingCssVars,
         typo: dsTypo,
         rules: dsRules,

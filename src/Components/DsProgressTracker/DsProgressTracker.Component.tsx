@@ -67,8 +67,8 @@ export class DsProgressTracker extends PureComponent<
         sx={{
           p: 'var(--ds-spacing-bitterCold)',
           alignItems: 'center',
-          borderBottom: '1px solid var(--ds-color-strokeDefault)',
-          backgroundColor: 'var(--ds-color-surfaceBackground)',
+          borderBottom: '1px solid var(--ds-colour-strokeDefault)',
+          backgroundColor: 'var(--ds-colour-surfaceBackground)',
           cursor: this.props['ds-variant'] === 'default' ? 'pointer' : 'unset'
         }}
         spacing="var(--ds-spacing-bitterCold)"
@@ -84,7 +84,7 @@ export class DsProgressTracker extends PureComponent<
           <DsTypography
             component="div"
             textAlign="right"
-            color="var(--ds-color-actionSecondary)"
+            color="var(--ds-colour-actionSecondary)"
             variant="headingBoldExtraSmall"
           >
             {currentStep.stepName}
@@ -93,7 +93,7 @@ export class DsProgressTracker extends PureComponent<
             <DsTypography
               component="div"
               textAlign="right"
-              color="var(--ds-color-typoTertiary)"
+              color="var(--ds-colour-typoTertiary)"
               variant="subheadingSemiboldDefault"
             >
               {isNextStepLastStep

@@ -9,34 +9,34 @@ export const DsIconButtonOverrides = {
         fontSize: 'var(--ds-typo-fontSizeMild)'
       },
       colorIconSupportNegative: {
-        color: 'var(--ds-color-iconSupportNegative)'
+        color: 'var(--ds-colour-iconNegative)'
       },
       colorIconSupportPositive: {
-        color: 'var(--ds-color-iconSupportPositive)'
+        color: 'var(--ds-colour-iconPositive)'
       },
       colorIconSupportWarning: {
-        color: 'var(--ds-color-iconSupportWarning)'
+        color: 'var(--ds-colour-iconWarning)'
       },
       colorIconActionPrimary: {
-        color: 'var(--ds-color-iconActionPrimary)'
+        color: 'var(--ds-colour-iconActionPrimary)'
       },
       colorIconActionSecondary: {
-        color: 'var(--ds-color-iconActionSecondary)'
+        color: 'var(--ds-colour-iconActionSecondary)'
       },
       colorIconActionTertiary: {
-        color: 'var(--ds-color-iconActionTertiary)'
+        color: 'var(--ds-colour-iconActionTertiary)'
       },
       colorIconOnSurface: {
-        color: 'var(--ds-color-iconOnSurface)'
+        color: 'var(--ds-colour-iconOnSurface)'
       },
       colorIconDisabled: {
-        color: 'var(--ds-color-iconDisabled)'
+        color: 'var(--ds-colour-iconDisabled)'
       },
       colorIconDefault: {
-        color: 'var(--ds-color-iconDefault)'
+        color: 'var(--ds-colour-iconDefault)'
       },
       colorIconTypical: {
-        color: 'var(--ds-color-iconTypical)'
+        color: 'var(--ds-colour-iconTypical)'
       },
       fontSizeScorched: {
         fontSize: 'var(--ds-typo-fontSizeScorched)'

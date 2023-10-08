@@ -10,15 +10,15 @@ export const DsAvatarOverrides = {
         style: {
           borderWidth: '1px',
           borderStyle: 'solid',
-          borderColor: 'var(--ds-color-strokeDefault)',
-          color: 'var(--ds-color-typoPrimary)',
-          backgroundColor: 'var(--ds-color-surfaceSecondary)'
+          borderColor: 'var(--ds-colour-strokeDefault)',
+          color: 'var(--ds-colour-typoPrimary)',
+          backgroundColor: 'var(--ds-colour-surfaceSecondary)'
         }
       },
       {
         props: { 'ds-variant': 'icon' } as Partial<DsAvatarProps>,
         style: {
-          color: 'var(--ds-color-iconDefault)',
+          color: 'var(--ds-colour-iconDefault)',
           backgroundColor: 'transparent'
         }
       },

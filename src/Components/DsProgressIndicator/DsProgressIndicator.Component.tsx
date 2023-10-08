@@ -17,7 +17,7 @@ export class DsProgressIndicator extends Component<DsProgressIndicatorProps> {
     if (isSuccess) {
       return (
         <DsRemixIcon
-          sx={{ color: 'var(--ds-color-iconSupportPositive)' }}
+          sx={{ color: 'var(--ds-colour-iconPositive)' }}
           className="ri-check-line"
         />
       )
@@ -26,7 +26,7 @@ export class DsProgressIndicator extends Component<DsProgressIndicatorProps> {
     if (isError) {
       return (
         <DsRemixIcon
-          sx={{ color: 'var(--ds-color-iconSupportNegative)' }}
+          sx={{ color: 'var(--ds-colour-iconNegative)' }}
           className="ri-error-warning-line"
         />
       )
@@ -55,7 +55,7 @@ export class DsProgressIndicator extends Component<DsProgressIndicatorProps> {
         <DsCircularProgress
           variant="determinate"
           value={100}
-          sx={{ color: 'var(--ds-color-stateDisabledSurface)' }}
+          sx={{ color: 'var(--ds-colour-stateDisabledSurface)' }}
           size={squareSize}
           thickness={4}
         />

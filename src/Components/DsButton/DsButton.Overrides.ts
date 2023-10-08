@@ -15,14 +15,14 @@ export const DsButtonOverrides = {
         }
       } as CSSInterpolation,
       containedSecondary: {
-        backgroundColor: 'var(--ds-color-surfaceSecondary)',
+        backgroundColor: 'var(--ds-colour-surfaceSecondary)',
         borderWidth: '1px',
         borderStyle: 'solid',
-        borderColor: 'var(--ds-color-strokeDefault)',
-        color: 'var(--ds-color-typoActionPrimary)',
+        borderColor: 'var(--ds-colour-strokeDefault)',
+        color: 'var(--ds-colour-typoActionPrimary)',
         '&:disabled': {
-          backgroundColor: 'var(--ds-color-stateDisabledSurface)',
-          color: 'var(--ds-color-typoDisabled)'
+          backgroundColor: 'var(--ds-colour-stateDisabledSurface)',
+          color: 'var(--ds-colour-typoDisabled)'
         },
         ...STATE_STYLES.SURFACE_SECONDARY_STATE_PRIMARY
       } as CSSInterpolation,
@@ -83,7 +83,7 @@ export const DsButtonOverrides = {
         }
       } as CSSInterpolation,
       textSizeSmall: {
-        color: 'var(--ds-color-actionSecondary)',
+        color: 'var(--ds-colour-actionSecondary)',
         padding: 'var(--ds-spacing-glacial) var(--ds-spacing-quickFreeze)',
         fontWeight: 'var(--ds-typo-supportBoldTextButton-fontWeight)',
         fontSize: 'var(--ds-typo-supportBoldTextButton-fontSize)',
@@ -101,11 +101,11 @@ export const DsButtonOverrides = {
           }
         },
         '&:disabled': {
-          color: 'var(--ds-color-typoDisabled)'
+          color: 'var(--ds-colour-typoDisabled)'
         }
       } as CSSInterpolation,
       textSizeMedium: {
-        color: 'var(--ds-color-actionSecondary)',
+        color: 'var(--ds-colour-actionSecondary)',
         padding: 'var(--ds-spacing-glacial) var(--ds-spacing-quickFreeze)',
         fontWeight: 'var(--ds-typo-supportBoldTextButton-fontWeight)',
         fontSize: 'var(--ds-typo-supportBoldTextButton-fontSize)',
@@ -123,11 +123,11 @@ export const DsButtonOverrides = {
           }
         },
         '&:disabled': {
-          color: 'var(--ds-color-typoDisabled)'
+          color: 'var(--ds-colour-typoDisabled)'
         }
       } as CSSInterpolation,
       textSizeLarge: {
-        color: 'var(--ds-color-actionSecondary)',
+        color: 'var(--ds-colour-actionSecondary)',
         padding: 'var(--ds-spacing-glacial) var(--ds-spacing-quickFreeze)',
         fontWeight: 'var(--ds-typo-supportBoldTextButton-fontWeight)',
         fontSize: 'var(--ds-typo-supportBoldTextButton-fontSize)',
@@ -145,7 +145,7 @@ export const DsButtonOverrides = {
           }
         },
         '&:disabled': {
-          color: 'var(--ds-color-typoDisabled)'
+          color: 'var(--ds-colour-typoDisabled)'
         }
       } as CSSInterpolation
     },
@@ -154,17 +154,17 @@ export const DsButtonOverrides = {
         props: { variant: 'flushed' } as Partial<DsButtonProps>,
         style: {
           borderRadius: 0,
-          color: 'var(--ds-color-typoOnSurface)',
-          backgroundColor: 'var(--ds-color-actionPrimary)'
+          color: 'var(--ds-colour-typoOnSurface)',
+          backgroundColor: 'var(--ds-colour-actionPrimary)'
         } as CSSInterpolation
       },
       {
         props: { color: 'primary' } as Partial<DsButtonProps>,
         style: {
-          color: 'var(--ds-color-typoOnSurface)',
+          color: 'var(--ds-colour-typoOnSurface)',
           '&:disabled': {
-            color: 'var(--ds-color-typoOnSurface)',
-            backgroundColor: 'var(--ds-color-stateUnselectedDefault)'
+            color: 'var(--ds-colour-typoOnSurface)',
+            backgroundColor: 'var(--ds-colour-stateUnselectedDefault)'
           },
           ...STATE_STYLES.ACTION_PRIMARY_STATE_PRIMARY
         } as CSSInterpolation

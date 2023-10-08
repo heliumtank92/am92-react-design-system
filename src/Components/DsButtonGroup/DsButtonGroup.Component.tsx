@@ -18,7 +18,7 @@ export class DsButtonGroup extends PureComponent<DsButtonGroupProps> {
         direction="row"
         spacing="var(--ds-spacing-frostbite)"
         sx={{
-          bgcolor: 'var(--ds-color-surfacePrimary)',
+          bgcolor: 'var(--ds-colour-surfacePrimary)',
           p: noPadding
             ? 'var(--ds-spacing-zero)'
             : 'var(--ds-spacing-bitterCold)',

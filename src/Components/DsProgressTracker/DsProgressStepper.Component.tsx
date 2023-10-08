@@ -18,10 +18,7 @@ export class DsProgressStepper extends PureComponent<DsProgressStepperProps> {
 
     if (completed) {
       return (
-        <DsRemixIcon
-          className="ri-checkbox-circle-fill"
-          color="iconSupportPositive"
-        />
+        <DsRemixIcon className="ri-checkbox-circle-fill" color="iconPositive" />
       )
     }
 

@@ -2,7 +2,7 @@ export const DsDialogOverrides = {
   MuiDialog: {
     styleOverrides: {
       paper: {
-        backgroundColor: 'var(--ds-color-surfacePrimary)',
+        backgroundColor: 'var(--ds-colour-surfacePrimary)',
         borderRadius: '16px',
         boxShadow: 'var(--ds-elevation-24)',
         backgroundImage: 'none',

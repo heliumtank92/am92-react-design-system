@@ -20,7 +20,7 @@ export class DsHeader extends PureComponent<DsHeaderProps> {
             xs: 'var(--ds-rules-headerMobileHeight)',
             lg: 'var(--ds-rules-headerDesktopHeight)'
           },
-          backgroundColor: 'var(--ds-color-surfacePrimary)',
+          backgroundColor: 'var(--ds-colour-surfacePrimary)',
           display: 'flex',
           boxShadow: 'var(--ds-elevation-3)',
           position: 'relative',

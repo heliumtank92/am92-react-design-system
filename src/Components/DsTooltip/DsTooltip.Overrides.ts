@@ -6,16 +6,16 @@ export const DsTooltipOverrides = {
     styleOverrides: {
       tooltip: {
         boxShadow: 'var(--ds-elevation-0)',
-        backgroundColor: 'var(--ds-color-surfaceTertiary)',
+        backgroundColor: 'var(--ds-colour-surfaceTertiary)',
         borderRadius: '12px',
         borderWidth: '0.5px',
         borderStyle: 'solid',
-        borderColor: 'var(--ds-color-strokeDefault)',
-        color: 'var(--ds-color-surfaceSecondary)',
+        borderColor: 'var(--ds-colour-strokeDefault)',
+        color: 'var(--ds-colour-surfaceSecondary)',
         padding: 'var(--ds-spacing-bitterCold)'
       },
       arrow: {
-        color: 'var(--ds-color-surfaceTertiary)'
+        color: 'var(--ds-colour-surfaceTertiary)'
       }
     }
   }

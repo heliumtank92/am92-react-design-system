@@ -74,15 +74,15 @@ export const DsDatePickerOverrides = {
         lineHeight: 'var(--ds-typo-bodyRegularMedium-lineHeight)',
         letterSpacing: 'var(--ds-typo-bodyRegularMedium-letterSpacing)',
         '&.Mui-selected': {
-          backgroundColor: 'var(--ds-color-actionSecondary)',
-          color: 'var(--ds-color-typoOnSurface)',
+          backgroundColor: 'var(--ds-colour-actionSecondary)',
+          color: 'var(--ds-colour-typoOnSurface)',
           '&:hover': {
-            backgroundColor: 'var(--ds-color-actionSecondary)',
-            color: 'var(--ds-color-typoOnSurface)'
+            backgroundColor: 'var(--ds-colour-actionSecondary)',
+            color: 'var(--ds-colour-typoOnSurface)'
           },
           '&:focus': {
-            backgroundColor: 'var(--ds-color-actionSecondary)',
-            color: 'var(--ds-color-typoOnSurface)'
+            backgroundColor: 'var(--ds-colour-actionSecondary)',
+            color: 'var(--ds-colour-typoOnSurface)'
           }
         }
       }
@@ -91,7 +91,7 @@ export const DsDatePickerOverrides = {
   MuiDayCalendar: {
     styleOverrides: {
       weekDayLabel: {
-        color: 'var(--ds-color-typoDisabled)',
+        color: 'var(--ds-colour-typoDisabled)',
         width: '36px',
         height: '36px',
         margin: 'var(--ds-spacing-zero)',
@@ -118,7 +118,7 @@ export const DsDatePickerOverrides = {
         maxHeight: '302px',
         padding: 'var(--ds-spacing-glacial)',
         marginTop: '-34px',
-        backgroundColor: 'var(--ds-color-surfaceBackground)'
+        backgroundColor: 'var(--ds-colour-surfaceBackground)'
       }
     }
   },
@@ -134,7 +134,7 @@ export const DsDatePickerOverrides = {
         fontSize: 'var(--ds-typo-bodyRegularLarge-fontSize)',
         lineHeight: 'var(--ds-typo-bodyRegularLarge-lineHeight)',
         letterSpacing: 'var(--ds-typo-bodyRegularLarge-letterSpacing)',
-        color: 'var(--ds-color-typoPrimary)',
+        color: 'var(--ds-colour-typoPrimary)',
         '&:hover': {
           backgroundColor: 'transparent'
         },
@@ -146,7 +146,7 @@ export const DsDatePickerOverrides = {
           fontSize: 'var(--ds-typo-headingBoldMedium-fontSize)',
           lineHeight: 'var(--ds-typo-headingBoldMedium-lineHeight)',
           letterSpacing: 'var(--ds-typo-headingBoldMedium-letterSpacing)',
-          color: 'var(--ds-color-actionSecondary)',
+          color: 'var(--ds-colour-actionSecondary)',
           backgroundColor: 'transparent',
           '&:hover': {
             backgroundColor: 'transparent'

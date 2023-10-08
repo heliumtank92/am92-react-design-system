@@ -15,11 +15,11 @@ export const DsStepLabelOverrides = {
         lineHeight: 'var(--ds-typo-bodyRegularMedium-lineHeight)',
         letterSpacing: 'var(--ds-typo-bodyRegularMedium-letterSpacing)',
         textTransform: 'none',
-        color: 'var(--ds-color-typoPrimary)',
+        color: 'var(--ds-colour-typoPrimary)',
         marginLeft: 'var(--ds-spacing-mild)',
         marginRight: 'var(--ds-spacing-mild)',
         '&.Mui-disabled': {
-          color: 'var(--ds-color-typoPrimary)'
+          color: 'var(--ds-colour-typoPrimary)'
         }
       } as CSSInterpolation,
       iconContainer: {
@@ -37,14 +37,14 @@ export const DsStepLabelOverrides = {
           lineHeight: 'var(--ds-typo-supportRegularMetadata-lineHeight)',
           letterSpacing: 'var(--ds-typo-supportRegularMetadata-letterSpacing)',
           textTransform: 'uppercase',
-          color: 'var(--ds-color-typoTertiary)',
+          color: 'var(--ds-colour-typoTertiary)',
           height: '20px',
           width: '20px',
           marginLeft: 'var(--ds-spacing-deepFreeze)',
           padding: 'var(--ds-spacing-deepFreeze)',
           borderWidth: '2px',
           borderStyle: 'solid',
-          borderColor: 'var(--ds-color-stateUnselectedDefault)',
+          borderColor: 'var(--ds-colour-stateUnselectedDefault)',
           borderRadius: '50%',
           display: 'flex',
           justifyContent: 'center',

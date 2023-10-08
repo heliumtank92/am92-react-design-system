@@ -68,8 +68,8 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
               <DsIconButton
                 onClick={this.handleCloseClick}
                 sx={{
-                  backgroundColor: 'var(--ds-color-iconDefault)',
-                  color: 'var(--ds-color-iconDisabled)',
+                  backgroundColor: 'var(--ds-colour-iconDefault)',
+                  color: 'var(--ds-colour-iconDisabled)',
                   borderRadius: '50%',
                   p: 'var(--ds-spacing-glacial)'
                 }}
@@ -82,7 +82,7 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
             sx={{
               boxShadow: 'var(--ds-elevation-0)',
               borderRadius: '16px 16px 0px 0px',
-              backgroundColor: 'var(--ds-color-surfacePrimary)',
+              backgroundColor: 'var(--ds-colour-surfacePrimary)',
               pt: 'var(--ds-spacing-mild)'
             }}
           >

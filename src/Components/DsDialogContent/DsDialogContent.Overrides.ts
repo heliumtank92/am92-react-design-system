@@ -18,7 +18,7 @@ export const DsDialogContentOverrides = {
     ],
     styleOverrides: {
       root: {
-        color: 'var(--ds-color-typoTertiary)',
+        color: 'var(--ds-colour-typoTertiary)',
         paddingLeft: 'var(--ds-spacing-bitterCold)',
         paddingRight: 'var(--ds-spacing-bitterCold)',
         paddingBottom: 'var(--ds-spacing-mild)'

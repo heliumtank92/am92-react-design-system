@@ -42,7 +42,7 @@ export class DsContentSlider extends PureComponent<
               sx={{
                 width: '100%',
                 height: '100%',
-                backgroundColor: 'var(--ds-color-stateSelectedPrimaryPressed)',
+                backgroundColor: 'var(--ds-colour-stateSelectedPrimaryPressed)',
                 position: 'absolute',
                 top: 0,
                 left: 0
@@ -52,7 +52,7 @@ export class DsContentSlider extends PureComponent<
               sx={{
                 width: '60%',
                 height: '100%',
-                backgroundColor: 'var(--ds-color-actionSecondary)',
+                backgroundColor: 'var(--ds-colour-actionSecondary)',
                 position: 'absolute',
                 top: 0,
                 left: 0
@@ -68,7 +68,7 @@ export class DsContentSlider extends PureComponent<
             width: '16px',
             height: '6px',
             borderRadius: '4px',
-            backgroundColor: 'var(--ds-color-actionSecondary)'
+            backgroundColor: 'var(--ds-colour-actionSecondary)'
           }}
         />
       )
@@ -80,7 +80,7 @@ export class DsContentSlider extends PureComponent<
           width: '6px',
           height: '6px',
           borderRadius: '50%',
-          backgroundColor: 'var(--ds-color-stateDisabledSurface)'
+          backgroundColor: 'var(--ds-colour-stateDisabledSurface)'
         }}
       />
     )

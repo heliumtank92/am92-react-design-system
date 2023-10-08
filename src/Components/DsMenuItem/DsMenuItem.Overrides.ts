@@ -13,10 +13,10 @@ export const DsMenuItemOverrides = {
         lineHeight: 'var(--ds-typo-bodyRegularMedium-lineHeight)',
         letterSpacing: 'var(--ds-typo-bodyRegularMedium-letterSpacing)',
         '&.Mui-selected': {
-          backgroundColor: 'var(--ds-color-stateSelectedPrimaryHover)'
+          backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
         },
         '&.Mui-selected:hover': {
-          backgroundColor: 'var(--ds-color-stateSelectedPrimaryHover)'
+          backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
         },
         ...STATE_STYLES.SURFACE_PRIMARY_STATE_PRIMARY
       }

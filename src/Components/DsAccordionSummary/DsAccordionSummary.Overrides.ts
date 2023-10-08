@@ -6,7 +6,7 @@ export const DsAccordionSummaryOverrides = {
         '&.Mui-expanded': {
           borderBottomStyle: 'solid',
           borderBottomWidth: '1px',
-          borderBottomColor: 'var(--ds-color-strokeDefault)',
+          borderBottomColor: 'var(--ds-colour-strokeDefault)',
           minHeight: '0px'
         }
       },
