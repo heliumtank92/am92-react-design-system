@@ -3,6 +3,7 @@ import {
   CssVarsTheme,
   CssVarsThemeOptions,
   experimental_extendTheme as extendTheme,
+  responsiveFontSizes,
   Theme
 } from '@mui/material/styles'
 import getModeColorScheme, { ColorScheme } from './getColorScheme'
@@ -14,6 +15,7 @@ import dsSpacing, { dsSpacingCssVars, SPACE_COEFFICIENT } from './spacing'
 import dsElevation from './elevation'
 import { PALETTE, FONT_FAMILY_NAME } from '../Constants'
 import { DsPalette } from '../Types'
+import { DSTYPOGRAPHY_TOKENS } from '../Constants'
 
 interface colorSchemes {
   light?: any
@@ -69,7 +71,12 @@ export function getTheme(
     spacing: (input: number) => input * SPACE_COEFFICIENT
   }
 
-  const theme = extendTheme(cssVarsThemeOptions)
+  let theme = extendTheme(cssVarsThemeOptions)
+  theme = responsiveFontSizes(theme, {
+    breakpoints: breakpoints.keys,
+    factor: 2,
+    variants: DSTYPOGRAPHY_TOKENS
+  })
   return theme
 }
 
