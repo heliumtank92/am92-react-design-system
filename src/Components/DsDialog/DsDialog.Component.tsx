@@ -47,6 +47,7 @@ export class DsDialog extends PureComponent<DsDialogProps> {
 
       children,
 
+      PaperProps,
       ...restDialogProps
     } = this.props
 
@@ -55,6 +56,7 @@ export class DsDialog extends PureComponent<DsDialogProps> {
         onClose={this.handleDialogClose}
         {...restDialogProps}
         PaperProps={{
+          ...PaperProps,
           sx: {
             paddingTop: {
               xs: 'var(--ds-spacing-mild)',
@@ -72,7 +74,8 @@ export class DsDialog extends PureComponent<DsDialogProps> {
               xs: 'var(--ds-spacing-mild)',
               md: 'calc(var(--ds-spacing-bitterCold) + var(--ds-spacing-mild))'
             },
-            position: 'relative'
+            position: 'relative',
+            ...PaperProps?.sx
           }
         }}
       >
