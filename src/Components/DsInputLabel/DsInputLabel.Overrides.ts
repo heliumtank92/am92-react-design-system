@@ -14,6 +14,7 @@ export const DsInputLabelOverrides = {
         position: 'relative',
         marginBottom: 'var(--ds-spacing-glacial)',
         color: 'var(--ds-colour-typoPrimary)',
+        whiteSpace: 'normal',
 
         '> p:first-of-type': {
           paddingTop: 'var(--ds-spacing-deepFreeze)',
