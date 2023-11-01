@@ -56,7 +56,7 @@ export const DsButtonOverrides = {
         letterSpacing: 'var(--ds-typo-bodyBoldSmall-letterSpacing)'
       } as CSSInterpolation,
       iconSizeLarge: {
-        fontSize: 'var(--ds-fontSizeMild)',
+        fontSize: 'var(--ds-typo-fontSizeMild)',
         '&.MuiButton-startIcon': {
           marginRight: 'var(--ds-spacing-glacial)'
         },
@@ -65,7 +65,7 @@ export const DsButtonOverrides = {
         }
       } as CSSInterpolation,
       iconSizeMedium: {
-        fontSize: 'var(--ds-fontSizeCool)',
+        fontSize: 'var(--ds-typo-fontSizeCool)',
         '&.MuiButton-startIcon': {
           marginRight: 'var(--ds-spacing-glacial)'
         },
@@ -74,7 +74,7 @@ export const DsButtonOverrides = {
         }
       } as CSSInterpolation,
       iconSizeSmall: {
-        fontSize: 'var(--ds-fontSizeBitterCold)',
+        fontSize: 'var(--ds-typo-fontSizeBitterCold)',
         '&.MuiButton-startIcon': {
           marginRight: 'var(--ds-spacing-quickFreeze)'
         },
@@ -92,7 +92,7 @@ export const DsButtonOverrides = {
         textTransform: 'uppercase',
         borderRadius: 0,
         '&.MuiIcon-root': {
-          fontSize: 'var(--ds-fontSizeBitterCold)',
+          fontSize: 'var(--ds-typo-fontSizeBitterCold)',
           '&.MuiButton-startIcon': {
             marginRight: 'var(--ds-spacing-glacial)'
           },
@@ -114,7 +114,7 @@ export const DsButtonOverrides = {
         textTransform: 'uppercase',
         borderRadius: 0,
         '&.MuiIcon-root': {
-          fontSize: 'var(--ds-fontSizeBitterCold)',
+          fontSize: 'var(--ds-typo-fontSizeBitterCold)',
           '&.MuiButton-startIcon': {
             marginRight: 'var(--ds-spacing-glacial)'
           },
@@ -136,7 +136,7 @@ export const DsButtonOverrides = {
         textTransform: 'uppercase',
         borderRadius: 0,
         '&.MuiIcon-root': {
-          fontSize: 'var(--ds-fontSizeBitterCold)',
+          fontSize: 'var(--ds-typo-fontSizeBitterCold)',
           '&.MuiButton-startIcon': {
             marginRight: 'var(--ds-spacing-glacial)'
           },
