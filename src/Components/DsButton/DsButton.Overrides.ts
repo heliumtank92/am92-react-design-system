@@ -91,8 +91,10 @@ export const DsButtonOverrides = {
         letterSpacing: 'var(--ds-typo-supportBoldTextButton-letterSpacing)',
         textTransform: 'uppercase',
         borderRadius: 0,
-        '&.MuiIcon-root': {
-          fontSize: 'var(--ds-typo-fontSizeBitterCold)',
+        '> .MuiButton-iconSizeSmall': {
+          '> .MuiIcon-root': {
+            fontSize: 'var(--ds-typo-fontSizeFrostbite)'
+          },
           '&.MuiButton-startIcon': {
             marginRight: 'var(--ds-spacing-glacial)'
           },
@@ -113,8 +115,10 @@ export const DsButtonOverrides = {
         letterSpacing: 'var(--ds-typo-supportBoldTextButton-letterSpacing)',
         textTransform: 'uppercase',
         borderRadius: 0,
-        '&.MuiIcon-root': {
-          fontSize: 'var(--ds-typo-fontSizeBitterCold)',
+        '> .MuiButton-iconSizeMedium': {
+          '> .MuiIcon-root': {
+            fontSize: 'var(--ds-typo-fontSizeFrostbite)'
+          },
           '&.MuiButton-startIcon': {
             marginRight: 'var(--ds-spacing-glacial)'
           },
@@ -135,8 +139,10 @@ export const DsButtonOverrides = {
         letterSpacing: 'var(--ds-typo-supportBoldTextButton-letterSpacing)',
         textTransform: 'uppercase',
         borderRadius: 0,
-        '&.MuiIcon-root': {
-          fontSize: 'var(--ds-typo-fontSizeBitterCold)',
+        '> .MuiButton-iconSizeLarge': {
+          '> .MuiIcon-root': {
+            fontSize: 'var(--ds-typo-fontSizeFrostbite)'
+          },
           '&.MuiButton-startIcon': {
             marginRight: 'var(--ds-spacing-glacial)'
           },
