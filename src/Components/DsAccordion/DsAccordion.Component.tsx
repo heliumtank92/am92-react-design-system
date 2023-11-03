@@ -16,8 +16,10 @@ export class DsAccordion extends PureComponent<DsAccordionProps> {
     const { header, summary, expandIcon, ...AccordionProps } = this.props
     return (
       <Accordion {...AccordionProps}>
-        <DsAccordionSummary expandIcon={expandIcon}>{header}</DsAccordionSummary>
-        <DsAccordionDetails>{summary}</DsAccordionDetails>
+        <DsAccordionSummary expandIcon={expandIcon}>
+          {header}
+        </DsAccordionSummary>
+        {summary && <DsAccordionDetails>{summary}</DsAccordionDetails>}
       </Accordion>
     )
   }
