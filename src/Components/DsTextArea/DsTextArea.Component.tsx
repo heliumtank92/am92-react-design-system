@@ -85,6 +85,7 @@ export class DsTextArea extends PureComponent<
             ...inputProps,
             maxLength: maxLength || ''
           }}
+          helperText={helperText}
         />
         {hasMaxLength && (
           <DsTypography
