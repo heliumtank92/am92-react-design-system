@@ -12,8 +12,8 @@ export const DsDialogOverrides = {
           }
         }
       },
-      paperWidthXs: {
-        maxWidth: 'var(--ds-rules-dialogXsMaxWidth)'
+      paperWidthMd: {
+        maxWidth: 'var(--ds-rules-dialogMdMaxWidth)'
       }
     }
   }
