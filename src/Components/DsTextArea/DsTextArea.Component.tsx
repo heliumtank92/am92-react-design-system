@@ -47,7 +47,8 @@ export class DsTextArea extends PureComponent<
   }
 
   render() {
-    const { maxLength, helperText, inputProps, ref, ...rest } = this.props
+    const { maxLength, helperText, inputProps, ref, fullWidth, ...rest } =
+      this.props
     const { count } = this.state
 
     // Provide counter if MaxLength Provided
@@ -68,11 +69,12 @@ export class DsTextArea extends PureComponent<
       counterStyle.bottom = 'calc(8px + 36px)'
     }
     return (
-      <DsFormControl>
+      <DsFormControl fullWidth={fullWidth}>
         <DsTextField
           maxRows={3}
           minRows={3}
           {...rest}
+          fullWidth={fullWidth}
           onChange={this.handleChange}
           multiline
           inputProps={{
