@@ -68,7 +68,7 @@ export class DsTextArea extends PureComponent<
       counterStyle.bottom = 'calc(8px + 36px)'
     }
     return (
-      <DsFormControl fullWidth>
+      <DsFormControl>
         <DsTextField
           maxRows={3}
           minRows={3}
