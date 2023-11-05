@@ -12,7 +12,7 @@ const dsRules = {
   drawerMiniWidth: '56px',
 
   dialogMdMaxWidth: '600px',
-  bottomStaggerWorkingAreaHeight: '45vh',
+  bottomStaggerWorkingAreaHeight: '68vh',
 
   avatarSSize: '24px',
   avatarMSize: '32px',

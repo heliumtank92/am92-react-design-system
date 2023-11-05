@@ -2,13 +2,17 @@ import React, { PureComponent } from 'react'
 
 import { DsRemixIcon } from '../DsRemixIcon'
 import { DsTypography } from '../DsTypography'
-import { DsBox } from '../DsBox'
 import { DsIconButton } from '../DsIconButton'
-import { DsDrawer } from '../DsDrawer'
+import { DsDrawer, DsDrawerProps } from '../DsDrawer'
 import {
   DsBottomStaggerProps,
   DsBottomStaggerDefaultProps
 } from './DsBottomStagger.Types'
+import { DsDialogTitle } from '../DsDialogTitle'
+import { DsDialogContent } from '../DsDialogContent'
+import { DsButton } from '../DsButton'
+import { DsDialogActions } from '../DsDialogActions'
+import { DsPaper } from '../DsPaper'
 
 export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
   static defaultProps = DsBottomStaggerDefaultProps
@@ -33,110 +37,155 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
   render() {
     const {
       kicker,
-      bottomStaggerTitle,
-      buttonGroup,
+      title,
       showClose,
-
+      primaryButtonText,
+      primaryButtonProps,
+      secondaryButtonText,
+      secondaryButtonProps,
+      PaperProps,
+      ContainerProps,
+      KickerProps,
+      TitleProps,
+      CloseIconButtonProps,
+      CloseIconProps,
+      ContentProps,
+      ActionsProps,
       children,
+
       onClose,
-      ...restProps
+      ...DrawerProps
     } = this.props
 
-    const padded = !!buttonGroup?.props?.noPadding
-    const drawerButtonGroup =
-      buttonGroup &&
-      React.cloneElement(buttonGroup, {
-        size: 'large',
-        fullWidth: true
-      })
+    const actionsAvailable = !!(primaryButtonText || secondaryButtonText)
+    const isFlushed =
+      primaryButtonText &&
+      !secondaryButtonText &&
+      primaryButtonProps &&
+      primaryButtonProps?.variant === 'flushed'
+    const accessibilityProps: Partial<DsDrawerProps> = {}
+
+    if (title) {
+      accessibilityProps['aria-labelledby'] = title as string
+    }
+
+    if (kicker) {
+      accessibilityProps['aria-describedby'] = kicker
+    }
 
     return (
-      <>
-        <DsDrawer
-          anchor="bottom"
-          {...restProps}
-          onClose={this.handleDrawerClose}
-        >
-          {showClose && (
-            <DsBox
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                pb: 'var(--ds-spacing-bitterCold)'
-              }}
-            >
-              <DsIconButton
-                onClick={this.handleCloseClick}
-                sx={{
-                  backgroundColor: 'var(--ds-colour-iconDefault)',
-                  color: 'var(--ds-colour-iconDisabled)',
-                  borderRadius: '50%',
-                  p: 'var(--ds-spacing-glacial)'
-                }}
-              >
-                <DsRemixIcon className="ri-close-line" />
-              </DsIconButton>
-            </DsBox>
-          )}
-          <DsBox
+      <DsDrawer
+        {...accessibilityProps}
+        {...DrawerProps}
+        anchor="bottom"
+        PaperProps={{
+          ...PaperProps,
+          sx: {
+            background: 'transparent',
+            maxHeight: 'var(--ds-rules-bottomStaggerWorkingAreaHeight)',
+            ...PaperProps?.sx
+          }
+        }}
+      >
+        {showClose && (
+          <DsIconButton
+            onClick={this.handleCloseClick}
+            {...CloseIconButtonProps}
             sx={{
-              boxShadow: 'var(--ds-elevation-0)',
-              borderRadius: '16px 16px 0px 0px',
-              backgroundColor: 'var(--ds-colour-surfacePrimary)',
-              pt: 'var(--ds-spacing-mild)'
+              flexGrow: 0,
+              alignSelf: 'center',
+              backgroundColor: 'var(--ds-colour-iconDefault)',
+              color: 'var(--ds-colour-iconDisabled)',
+              borderRadius: '50%',
+              p: 'var(--ds-spacing-glacial)',
+              mb: 'var(--ds-spacing-bitterCold)',
+              ...CloseIconButtonProps?.sx
             }}
           >
-            <DsBox
+            <DsRemixIcon className="ri-close-line" {...CloseIconProps} />
+          </DsIconButton>
+        )}
+
+        <DsPaper
+          {...ContainerProps}
+          sx={{
+            minHeight: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            flexGrow: 1,
+            pt: 'var(--ds-spacing-mild)',
+            pb: isFlushed ? undefined : 'var(--ds-spacing-bitterCold)',
+            ...ContainerProps?.sx
+          }}
+        >
+          {kicker && (
+            <DsTypography
+              variant="subheadingSemiboldDefault"
+              color="text.tertiary"
+              {...KickerProps}
               sx={{
-                px: 'var(--ds-spacing-bitterCold)'
+                px: 'var(--ds-spacing-bitterCold)',
+                mb: 'var(--ds-spacing-quickFreeze)',
+                textTransform: 'uppercase',
+                ...KickerProps?.sx
               }}
             >
-              {kicker && (
-                <DsTypography
-                  variant="subheadingSemiboldDefault"
-                  color="text.tertiary"
-                  component="div"
-                  sx={{
-                    mb: 'var(--ds-spacing-quickFreeze)',
-                    textTransform: 'var(--ds-typo-casingUppercase)'
-                  }}
-                >
-                  {kicker}
-                </DsTypography>
-              )}
-              {bottomStaggerTitle && (
-                <DsTypography
-                  variant="headingBoldMedium"
-                  component="div"
-                  sx={{
-                    mb: 'var(--ds-spacing-mild)'
-                  }}
-                >
-                  {bottomStaggerTitle}
-                </DsTypography>
-              )}
-            </DsBox>
-            <DsBox
+              {kicker}
+            </DsTypography>
+          )}
+
+          {title && (
+            <DsDialogTitle
+              {...TitleProps}
               sx={{
-                maxHeight: 'var(--ds-rules-bottomStaggerWorkingAreaHeight)',
-                overflow: 'auto',
-                mb: padded
-                  ? 'var(--ds-spacing-mild)'
-                  : 'var(--ds-spacing-glacial)'
+                mb: 'var(--ds-spacing-zero)',
+                px: 'var(--ds-spacing-bitterCold)',
+                ...TitleProps?.sx
               }}
             >
-              <DsBox
-                sx={{
-                  px: 'var(--ds-spacing-bitterCold)'
-                }}
-              >
-                {children}
-              </DsBox>
-            </DsBox>
-            {drawerButtonGroup}
-          </DsBox>
-        </DsDrawer>
-      </>
+              {title}
+            </DsDialogTitle>
+          )}
+
+          {children && (
+            <DsDialogContent
+              {...ContentProps}
+              sx={{
+                px: 'var(--ds-spacing-bitterCold)',
+                ...ContentProps?.sx
+              }}
+            >
+              {children}
+            </DsDialogContent>
+          )}
+
+          {actionsAvailable && (
+            <DsDialogActions
+              {...ActionsProps}
+              sx={{
+                px: isFlushed ? undefined : 'var(--ds-spacing-bitterCold)',
+                ...ActionsProps?.sx
+              }}
+            >
+              {secondaryButtonText && (
+                <DsButton
+                  color="secondary"
+                  size="large"
+                  fullWidth
+                  {...secondaryButtonProps}
+                >
+                  {secondaryButtonText}
+                </DsButton>
+              )}
+              {primaryButtonText && (
+                <DsButton size="large" fullWidth {...primaryButtonProps}>
+                  {primaryButtonText}
+                </DsButton>
+              )}
+            </DsDialogActions>
+          )}
+        </DsPaper>
+      </DsDrawer>
     )
   }
 }

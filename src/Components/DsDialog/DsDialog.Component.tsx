@@ -8,6 +8,7 @@ import { DsTypography } from '../DsTypography'
 import { DsDialogContent } from '../DsDialogContent'
 import { DsDialogActions } from '../DsDialogActions'
 import { DsButton } from '../DsButton'
+import { Theme } from '@emotion/react'
 
 export class DsDialog extends React.Component<DsDialogProps> {
   static defaultProps = DsDialogDefaultProps
@@ -38,18 +39,23 @@ export class DsDialog extends React.Component<DsDialogProps> {
       secondaryButtonText,
       secondaryButtonProps,
       PaperProps,
-      DialogTitleProps,
-      DialogDescriptionProps,
-      DialogCloseIconButtonProps,
-      DialogCloseIconProps,
-      DialogContentProps,
-      DialogActionsProps,
+      TitleProps,
+      DescriptionProps,
+      CloseIconButtonProps,
+      CloseIconProps,
+      ContentProps,
+      ActionsProps,
       children,
       ...DialogProps
     } = this.props
 
     const actionsAvailable = !!(primaryButtonText || secondaryButtonText)
     const accessibilityProps: Partial<DsDialogProps> = {}
+    const isFlushed =
+      primaryButtonText &&
+      !secondaryButtonText &&
+      primaryButtonProps &&
+      primaryButtonProps?.variant === 'flushed'
 
     if (title) {
       accessibilityProps['aria-labelledby'] = title
@@ -67,10 +73,12 @@ export class DsDialog extends React.Component<DsDialogProps> {
         PaperProps={{
           ...PaperProps,
           sx: {
-            p: {
-              xs: 'var(--ds-spacing-bitterCold)',
-              md: 'var(--ds-spacing-warm)'
-            },
+            pb: isFlushed
+              ? undefined
+              : {
+                  xs: 'var(--ds-spacing-bitterCold)',
+                  md: 'var(--ds-spacing-warm)'
+                },
             pt: {
               xs: 'var(--ds-spacing-mild)',
               md: 'var(--ds-spacing-warm)'
@@ -81,10 +89,14 @@ export class DsDialog extends React.Component<DsDialogProps> {
       >
         {title && (
           <DsDialogTitle
-            {...DialogTitleProps}
+            {...TitleProps}
             sx={{
               width: showClose ? 'calc(100% - 44px)' : '100%',
-              ...DialogTitleProps?.sx
+              px: {
+                xs: 'var(--ds-spacing-bitterCold)',
+                md: 'var(--ds-spacing-warm)'
+              },
+              ...TitleProps?.sx
             }}
           >
             {title}
@@ -92,9 +104,16 @@ export class DsDialog extends React.Component<DsDialogProps> {
         )}
         {description && (
           <DsTypography
-            {...DialogDescriptionProps}
             variant="subheadingSemiboldDefault"
             color="text.secondary"
+            {...DescriptionProps}
+            sx={{
+              px: {
+                xs: 'var(--ds-spacing-bitterCold)',
+                md: 'var(--ds-spacing-warm)'
+              },
+              ...DescriptionProps?.sx
+            }}
           >
             {description}
           </DsTypography>
@@ -102,7 +121,7 @@ export class DsDialog extends React.Component<DsDialogProps> {
         {showClose && (
           <DsIconButton
             onClick={this.handleCloseClick}
-            {...DialogCloseIconButtonProps}
+            {...CloseIconButtonProps}
             sx={{
               position: 'absolute',
               padding: 'var(--ds-spacing-quickFreeze)',
@@ -115,17 +134,39 @@ export class DsDialog extends React.Component<DsDialogProps> {
                 xs: 'var(--ds-spacing-bitterCold)',
                 md: 'var(--ds-spacing-warm)'
               },
-              ...DialogCloseIconButtonProps?.sx
+              ...CloseIconButtonProps?.sx
             }}
           >
-            <DsRemixIcon className="ri-close-line" {...DialogCloseIconProps} />
+            <DsRemixIcon className="ri-close-line" {...CloseIconProps} />
           </DsIconButton>
         )}
         {children && (
-          <DsDialogContent {...DialogContentProps}>{children}</DsDialogContent>
+          <DsDialogContent
+            {...ContentProps}
+            sx={{
+              px: {
+                xs: 'var(--ds-spacing-bitterCold)',
+                md: 'var(--ds-spacing-warm)'
+              },
+              ...ContentProps?.sx
+            }}
+          >
+            {children}
+          </DsDialogContent>
         )}
         {actionsAvailable && (
-          <DsDialogActions {...DialogActionsProps}>
+          <DsDialogActions
+            {...ActionsProps}
+            sx={{
+              px: isFlushed
+                ? undefined
+                : {
+                    xs: 'var(--ds-spacing-bitterCold)',
+                    md: 'var(--ds-spacing-warm)'
+                  },
+              ...ActionsProps?.sx
+            }}
+          >
             {secondaryButtonText && (
               <DsButton
                 color="secondary"

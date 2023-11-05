@@ -15,17 +15,18 @@ export interface DsDialogProps extends DialogProps {
   primaryButtonProps?: Omit<DsButtonProps, 'children' | 'ref'>
   secondaryButtonText?: DsButtonProps['children']
   secondaryButtonProps?: Omit<DsButtonProps, 'children' | 'ref'>
-  DialogTitleProps?: DsDialogTitleProps
-  DialogDescriptionProps?: DsTypographyProps
-  DialogCloseIconButtonProps?: DsIconButtonProps
-  DialogCloseIconProps?: Omit<DsRemixIconProps, 'ref'>
-  DialogContentProps?: DsDialogContentProps
-  DialogActionsProps?: DsDialogActionsProps
+  TitleProps?: DsDialogTitleProps
+  DescriptionProps?: DsTypographyProps
+  CloseIconButtonProps?: DsIconButtonProps
+  CloseIconProps?: Omit<DsRemixIconProps, 'ref'>
+  ContentProps?: DsDialogContentProps
+  ActionsProps?: DsDialogActionsProps
 }
 
 export const DsDialogDefaultProps: DsDialogProps = {
   open: false,
   scroll: 'paper',
   maxWidth: 'md',
-  showClose: true
+  showClose: true,
+  fullWidth: true
 }
