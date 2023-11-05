@@ -9,7 +9,7 @@ export const DsChipOverrides = {
         props: { 'ds-variant': 'chip' } as Partial<DsChipProps>,
         style: {
           border: 'none',
-          borderRadius: 'var(--ds-spacing-quickFreeze)',
+          borderRadius: 'var(--ds-radius-quickFreeze)',
           paddingLeft: 'var(--ds-spacing-glacial)',
           paddingRight: 'var(--ds-spacing-glacial)',
           height: '20px',

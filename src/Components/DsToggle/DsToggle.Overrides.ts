@@ -5,7 +5,7 @@ export const DsToggleOverrides = {
         height: '20px',
         width: '40px',
         padding: 'var(--ds-spacing-zero)',
-        borderRadius: '10px',
+        borderRadius: 'var(--ds-radius-frostbite)',
         '.Mui-disabled': {
           pointerEvents: 'all',
           cursor: 'not-allowed',

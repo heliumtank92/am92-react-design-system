@@ -125,7 +125,7 @@ export class DsDialog extends React.Component<DsDialogProps> {
             sx={{
               position: 'absolute',
               padding: 'var(--ds-spacing-quickFreeze)',
-              borderRadius: '24px',
+              borderRadius: 'var(--ds-radius-mild)',
               top: {
                 xs: 'var(--ds-spacing-mild)',
                 md: 'var(--ds-spacing-warm)'

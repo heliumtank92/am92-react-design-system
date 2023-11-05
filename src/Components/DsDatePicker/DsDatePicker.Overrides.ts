@@ -16,7 +16,7 @@ export const DsDatePickerOverrides = {
         }
       },
       paper: {
-        borderRadius: '16px',
+        borderRadius: 'var(--ds-radius-bitterCold)',
         boxShadow: 'var(--ds-elevation-24)'
       }
     }

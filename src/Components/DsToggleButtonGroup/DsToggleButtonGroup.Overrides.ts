@@ -8,7 +8,7 @@ export const DsToggleButtonGroupOverrides = {
         props: { 'ds-variant': 'switch' } as Partial<DsToggleButtonGroupProps>,
         style: {
           border: '1px solid var(--ds-colour-strokeDefault)',
-          borderRadius: '6px',
+          borderRadius: 'var(--ds-radius-glacial)',
           padding: 'var(--ds-spacing-deepFreeze)',
           backgroundColor: 'var(--ds-colour-surfaceBackground)',
 
@@ -18,12 +18,12 @@ export const DsToggleButtonGroupOverrides = {
             height: '24px',
 
             '&:not(:first-of-type)': {
-              borderRadius: '4px',
+              borderRadius: 'var(--ds-radius-quickFreeze)',
               marginLeft: 'var(--ds-spacing-zero)',
               border: 'none'
             },
             '&:first-of-type': {
-              borderRadius: '4px'
+              borderRadius: 'var(--ds-radius-quickFreeze)'
             },
 
             '&:hover': {

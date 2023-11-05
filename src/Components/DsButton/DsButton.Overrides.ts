@@ -7,7 +7,7 @@ export const DsButtonOverrides = {
     defaultProps: DsButtonDefaultProps,
     styleOverrides: {
       root: {
-        borderRadius: 8,
+        borderRadius: 'var(--ds-radius-glacial)',
         textTransform: 'none',
         '&.Mui-disabled': {
           cursor: 'not-allowed',
@@ -90,7 +90,7 @@ export const DsButtonOverrides = {
         lineHeight: 'var(--ds-typo-supportBoldTextButton-lineHeight)',
         letterSpacing: 'var(--ds-typo-supportBoldTextButton-letterSpacing)',
         textTransform: 'uppercase',
-        borderRadius: 0,
+        borderRadius: 'var(--ds-radius-zero)',
         '> .MuiButton-iconSizeSmall': {
           '> .MuiIcon-root': {
             fontSize: 'var(--ds-typo-fontSizeFrostbite)'
@@ -114,7 +114,7 @@ export const DsButtonOverrides = {
         lineHeight: 'var(--ds-typo-supportBoldTextButton-lineHeight)',
         letterSpacing: 'var(--ds-typo-supportBoldTextButton-letterSpacing)',
         textTransform: 'uppercase',
-        borderRadius: 0,
+        borderRadius: 'var(--ds-radius-zero)',
         '> .MuiButton-iconSizeMedium': {
           '> .MuiIcon-root': {
             fontSize: 'var(--ds-typo-fontSizeFrostbite)'
@@ -138,7 +138,7 @@ export const DsButtonOverrides = {
         lineHeight: 'var(--ds-typo-supportBoldTextButton-lineHeight)',
         letterSpacing: 'var(--ds-typo-supportBoldTextButton-letterSpacing)',
         textTransform: 'uppercase',
-        borderRadius: 0,
+        borderRadius: 'var(--ds-radius-zero)',
         '> .MuiButton-iconSizeLarge': {
           '> .MuiIcon-root': {
             fontSize: 'var(--ds-typo-fontSizeFrostbite)'
@@ -159,7 +159,7 @@ export const DsButtonOverrides = {
       {
         props: { variant: 'flushed' } as Partial<DsButtonProps>,
         style: {
-          borderRadius: 0,
+          borderRadius: 'var(--ds-radius-zero)',
           color: 'var(--ds-colour-typoOnSurface)',
           backgroundColor: 'var(--ds-colour-actionPrimary)'
         } as CSSInterpolation

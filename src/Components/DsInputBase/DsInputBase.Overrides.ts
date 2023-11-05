@@ -41,7 +41,7 @@ export const DsInputBaseOverrides = {
       {
         props: { 'ds-variant': 'search' } as Partial<DsInputBaseProps>,
         style: {
-          borderRadius: 'var(--ds-spacing-pleasant)',
+          borderRadius: 'var(--ds-radius-pleasant)',
           paddingLeft: 'var(--ds-spacing-frostbite)',
           paddingRight: 'var(--ds-spacing-bitterCold)',
           paddingTop: 'var(--ds-spacing-glacial)',

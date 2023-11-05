@@ -12,7 +12,7 @@ export const DsBadgeOverrides = {
         padding: 'var(--ds-spacing-deepFreeze)',
         minWidth: '16px',
         height: '16px',
-        borderRadius: '8px'
+        borderRadius: 'var(--ds-radius-glacial)'
       }
     }
   }

@@ -33,7 +33,7 @@ export class DsContentSlider extends PureComponent<
             sx={{
               width: '20px',
               height: '6px',
-              borderRadius: '4px',
+              borderRadius: 'var(--ds-radius-quickFreeze)',
               position: 'relative',
               overflow: 'hidden'
             }}
@@ -67,7 +67,7 @@ export class DsContentSlider extends PureComponent<
           sx={{
             width: '16px',
             height: '6px',
-            borderRadius: '4px',
+            borderRadius: 'var(--ds-radius-quickFreeze)',
             backgroundColor: 'var(--ds-colour-actionSecondary)'
           }}
         />

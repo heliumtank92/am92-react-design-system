@@ -16,6 +16,7 @@ import dsElevation from './elevation'
 import { PALETTE, FONT_FAMILY_NAME } from '../Constants'
 import { DsPalette } from '../Types'
 import { DSTYPOGRAPHY_TOKENS } from '../Constants'
+import dsRadius from './radius'
 
 interface colorSchemes {
   light?: any
@@ -44,6 +45,7 @@ export function getTheme(
         spacing: dsSpacingCssVars,
         typo: dsTypo,
         rules: dsRules,
+        radius: dsRadius,
         elevation: dsElevation
       }
     }
@@ -57,6 +59,7 @@ export function getTheme(
         spacing: dsSpacingCssVars,
         typo: dsTypo,
         rules: dsRules,
+        radius: dsRadius,
         elevation: dsElevation
       }
     }
@@ -66,6 +69,7 @@ export function getTheme(
     cssVarPrefix: '',
     components: componentOverrides,
     colorSchemes,
+    shape: { borderRadius: 2 },
     breakpoints,
     typography,
     spacing: (input: number) => input * SPACE_COEFFICIENT
