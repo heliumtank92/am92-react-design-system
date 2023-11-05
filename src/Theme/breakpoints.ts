@@ -1,4 +1,4 @@
-import { Breakpoints, Breakpoint } from '@mui/system'
+import { Breakpoints } from '@mui/system'
 
 const breakpoints: Partial<Breakpoints> = {
   keys: ['xs', 'sm', 'md', 'lg', 'xl'],
