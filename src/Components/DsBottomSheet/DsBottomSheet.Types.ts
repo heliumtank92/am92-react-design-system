@@ -8,7 +8,7 @@ import { DsPaperProps } from '../DsPaper'
 import { DsRemixIconProps } from '../DsRemixIcon'
 import { DsTypographyProps } from '../DsTypography'
 
-export interface DsBottomStaggerProps extends Omit<DsDrawerProps, 'title'> {
+export interface DsBottomSheetProps extends Omit<DsDrawerProps, 'title'> {
   kicker?: string
   title?: string
   showClose?: boolean
@@ -26,6 +26,6 @@ export interface DsBottomStaggerProps extends Omit<DsDrawerProps, 'title'> {
   secondaryButtonProps?: Omit<DsButtonProps, 'children' | 'ref'>
 }
 
-export const DsBottomStaggerDefaultProps: DsBottomStaggerProps = {
+export const DsBottomSheetDefaultProps: DsBottomSheetProps = {
   showClose: true
 }

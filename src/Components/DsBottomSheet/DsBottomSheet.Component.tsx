@@ -5,17 +5,17 @@ import { DsTypography } from '../DsTypography'
 import { DsIconButton } from '../DsIconButton'
 import { DsDrawer, DsDrawerProps } from '../DsDrawer'
 import {
-  DsBottomStaggerProps,
-  DsBottomStaggerDefaultProps
-} from './DsBottomStagger.Types'
+  DsBottomSheetProps,
+  DsBottomSheetDefaultProps
+} from './DsBottomSheet.Types'
 import { DsDialogTitle } from '../DsDialogTitle'
 import { DsDialogContent } from '../DsDialogContent'
 import { DsButton } from '../DsButton'
 import { DsDialogActions } from '../DsDialogActions'
 import { DsPaper } from '../DsPaper'
 
-export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
-  static defaultProps = DsBottomStaggerDefaultProps
+export class DsBottomSheet extends PureComponent<DsBottomSheetProps> {
+  static defaultProps = DsBottomSheetDefaultProps
 
   handleDrawerClose = (
     event: React.SyntheticEvent,
@@ -82,7 +82,7 @@ export class DsBottomStagger extends PureComponent<DsBottomStaggerProps> {
           ...PaperProps,
           sx: {
             background: 'transparent',
-            maxHeight: 'var(--ds-rules-bottomStaggerWorkingAreaHeight)',
+            maxHeight: 'var(--ds-rules-bottomSheetWorkingAreaHeight)',
             ...PaperProps?.sx
           }
         }}
