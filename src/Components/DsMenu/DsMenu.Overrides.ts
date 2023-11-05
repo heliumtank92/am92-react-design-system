@@ -6,7 +6,7 @@ export const DsMenuOverrides = {
     styleOverrides: {
       list: {
         boxShadow: 'var(--ds-elevation-4)',
-        borderRadius: '8px'
+        borderRadius: 'var(--ds-radius-glacial)'
       }
     }
   }

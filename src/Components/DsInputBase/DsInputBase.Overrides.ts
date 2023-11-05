@@ -70,7 +70,7 @@ export const DsInputBaseOverrides = {
         borderWidth: '1px',
         borderStyle: 'solid',
         borderColor: 'var(--ds-colour-strokeDefault)',
-        borderRadius: '4px',
+        borderRadius: 'var(--ds-radius-quickFreeze)',
         '&.Mui-focused:not(.Mui-disabled)': {
           borderColor: 'var(--ds-colour-strokeActive)'
         },

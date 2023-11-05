@@ -6,7 +6,7 @@ export const DsToastOverrides = {
     styleOverrides: {
       root: {
         padding: 'var(--ds-spacing-frostbite)',
-        borderRadius: '4px',
+        borderRadius: 'var(--ds-radius-quickFreeze)',
         borderWidth: '1px',
         borderStyle: 'solid',
         boxShadow: 'var(--ds-elevation-1)',

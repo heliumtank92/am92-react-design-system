@@ -18,7 +18,7 @@ export const DsToggleOverrides = {
         padding: 'var(--ds-spacing-deepFreeze)',
         height: '100%',
         width: '50%',
-        borderRadius: '8px',
+        borderRadius: 'var(--ds-radius-glacial)',
         '&.Mui-checked + .MuiSwitch-track': {
           opacity: 1
         },
