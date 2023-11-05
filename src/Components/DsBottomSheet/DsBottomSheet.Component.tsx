@@ -114,6 +114,8 @@ export class DsBottomSheet extends PureComponent<DsBottomSheetProps> {
             flexDirection: 'column',
             flexGrow: 1,
             pt: 'var(--ds-spacing-mild)',
+            borderTopLeftRadius: 'var(--ds-radius-bitterCold)',
+            borderTopRightRadius: 'var(--ds-radius-bitterCold)',
             pb: isFlushed ? undefined : 'var(--ds-spacing-bitterCold)',
             ...ContainerProps?.sx
           }}
