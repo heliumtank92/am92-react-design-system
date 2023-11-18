@@ -30,7 +30,7 @@ export class DsTag extends PureComponent<DsTagProps> {
         clickable
         color={color}
         onClick={this.handleClick}
-        onDelete={this.handleDelete}
+        onDelete={onDelete && this.handleDelete}
       />
     )
   }
