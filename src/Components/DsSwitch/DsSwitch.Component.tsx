@@ -5,7 +5,7 @@ import { DsToggleButton } from '../DsToggleButton'
 import { DsTypography } from '../DsTypography'
 
 export class DsSwitch extends PureComponent<DsSwitchProps> {
-  static defaultProp = DsSwitchDefaultProps
+  static defaultProps = DsSwitchDefaultProps
 
   handleChange = (event: React.SyntheticEvent, value: NonNullable<any>) => {
     const { name, onChange } = this.props
