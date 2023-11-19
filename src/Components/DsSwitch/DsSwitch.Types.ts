@@ -8,9 +8,9 @@ export interface DsSwitchProps
   name: string
   value: NonNullable<any>
   positiveLabel?: string
-  positiveValue: NonNullable<any>
+  positiveValue?: NonNullable<any>
   negativeLabel?: string
-  negativeValue: NonNullable<any>
+  negativeValue?: NonNullable<any>
   onChange: (name: string, value: any) => void
 }
 
