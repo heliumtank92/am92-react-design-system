@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { DragEvent } from 'react'
 
 import { DsBox } from '../DsBox'
 import { DsButton } from '../DsButton'
@@ -75,6 +75,66 @@ export class DsFileUploader extends React.Component<
         onChange(name, newFiles)
       }
     }
+  }
+
+  handleDrop = (event: DragEvent) => {
+    // Prevent default behavior (Prevent file from being opened)
+    event.preventDefault()
+
+    const { InputProps = {}, onChange, name } = this.props
+    const { accept, multiple } = InputProps
+
+    if (!event.dataTransfer) {
+      return
+    }
+
+    let files: File[] = []
+    const items = event.dataTransfer.items
+      ? [...event.dataTransfer.items]
+      : [...event.dataTransfer.files]
+
+    items.forEach(item => {
+      let file
+
+      if (!multiple && files.length) {
+        return
+      }
+
+      if (item instanceof DataTransferItem) {
+        if (item.kind === 'file') {
+          file = item.getAsFile()
+        }
+      } else {
+        file = item
+      }
+
+      if (!file) {
+        return
+      }
+
+      const { type } = file
+      const astrerikType = `${type.split('/')[0]}/*`
+
+      if (accept.includes(type) || accept.includes(astrerikType)) {
+        files.push(file)
+      }
+    })
+
+    const { files: stateFiles } = this.state
+    const newFiles = multiple
+      ? [...stateFiles, ...files]
+      : (files[0] && [files[0]]) || (stateFiles[0] && [stateFiles[0]]) || []
+
+    this.setState({ files: newFiles })
+
+    if (onChange && typeof onChange === 'function') {
+      onChange(name, newFiles)
+    }
+  }
+
+  handleDragOverHandler = (event: DragEvent) => {
+    // Prevent default behavior (Prevent file from being opened)
+    event.preventDefault()
   }
 
   renderFiles = () => {
@@ -194,9 +254,6 @@ export class DsFileUploader extends React.Component<
           }}
           direction="column"
           spacing="var(--ds-spacing-glacial)"
-          onDrop={() => {}}
-          onDragOver={() => {}}
-          onClick={this.handleOnClick}
         >
           <DsRemixIcon
             className="ri-upload-cloud-2-line"
@@ -223,18 +280,27 @@ export class DsFileUploader extends React.Component<
               position: 'absolute',
               top: 0,
               left: 0,
-              height: '0px',
+              height: '100%',
               width: '100%',
               opacity: 0,
               cursor: 'pointer',
               margin: 'var(--ds-spacing-zero) !important'
             }}
             onChange={this.handleChange}
+            onDrop={this.handleDrop}
+            onDragOver={this.handleDragOverHandler}
             disableUnderline
             inputProps={{
+              title: titleButtonText as string,
               ref: this.inputRef,
               value: '',
-              ...InputProps
+              ...InputProps,
+              style: {
+                height: '100%',
+                width: '100%',
+                cursor: 'pointer',
+                ...InputProps?.style
+              }
             }}
           />
         </DsStack>
