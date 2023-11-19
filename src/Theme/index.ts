@@ -77,6 +77,7 @@ export function getTheme(
 
   let theme = extendTheme(cssVarsThemeOptions)
   theme = responsiveFontSizes(theme, {
+    disableAlign: true,
     breakpoints: breakpoints.keys,
     factor: 2,
     variants: DSTYPOGRAPHY_TOKENS

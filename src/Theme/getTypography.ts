@@ -9,7 +9,7 @@ export type Typography = {
 export default function getTypography(fontFamilyName: string = ''): any {
   const fontFamily = `"${fontFamilyName}", "Helvetica"`
 
-  const dsTypoPrimitive: any = {
+  const dsTypoPrimitive = {
     primaryFont: fontFamilyName,
     fontFamily,
 
