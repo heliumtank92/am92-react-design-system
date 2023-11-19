@@ -47,8 +47,15 @@ export class DsTextArea extends PureComponent<
   }
 
   render() {
-    const { maxLength, helperText, inputProps, ref, fullWidth, ...rest } =
-      this.props
+    const {
+      maxLength,
+      hideCharacterCount,
+      helperText,
+      inputProps,
+      ref,
+      fullWidth,
+      ...rest
+    } = this.props
     const { count } = this.state
 
     // Provide counter if MaxLength Provided
@@ -89,7 +96,7 @@ export class DsTextArea extends PureComponent<
           }}
           helperText={helperText}
         />
-        {hasMaxLength && (
+        {hasMaxLength && !hideCharacterCount && (
           <DsTypography
             sx={counterStyle}
             variant="supportRegularFootnote"
