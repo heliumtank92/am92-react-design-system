@@ -7,7 +7,9 @@ export interface DsSwitchProps
   > {
   name: string
   value: NonNullable<any>
+  positiveLabel?: string
   positiveValue: NonNullable<any>
+  negativeLabel?: string
   negativeValue: NonNullable<any>
   onChange: (name: string, value: any) => void
 }
@@ -15,7 +17,9 @@ export interface DsSwitchProps
 export const DsSwitchDefaultProps: DsSwitchProps = {
   name: '',
   value: false,
+  positiveLabel: 'YES',
   positiveValue: true,
+  negativeLabel: 'NO',
   negativeValue: false,
   onChange: () => {}
 }

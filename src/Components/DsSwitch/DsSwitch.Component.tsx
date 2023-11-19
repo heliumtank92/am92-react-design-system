@@ -13,7 +13,13 @@ export class DsSwitch extends PureComponent<DsSwitchProps> {
   }
 
   render() {
-    const { positiveValue, negativeValue, ...restProps } = this.props
+    const {
+      positiveLabel,
+      positiveValue,
+      negativeLabel,
+      negativeValue,
+      ...restProps
+    } = this.props
 
     return (
       <DsToggleButtonGroup
@@ -24,10 +30,14 @@ export class DsSwitch extends PureComponent<DsSwitchProps> {
         onChange={this.handleChange}
       >
         <DsToggleButton value={positiveValue}>
-          <DsTypography variant="supportBoldTextButton">YES</DsTypography>
+          <DsTypography variant="supportBoldTextButton">
+            {positiveLabel}
+          </DsTypography>
         </DsToggleButton>
         <DsToggleButton value={negativeValue}>
-          <DsTypography variant="supportBoldTextButton">NO</DsTypography>
+          <DsTypography variant="supportBoldTextButton">
+            {negativeLabel}
+          </DsTypography>
         </DsToggleButton>
       </DsToggleButtonGroup>
     )
