@@ -48,7 +48,11 @@ export class DsHeader extends PureComponent<DsHeaderProps> {
           <DsStack {...StackProps}>{children}</DsStack>
         </DsBox>
         {logoUrl && (
-          <DsImage src={logoUrl} style={{ height: '100%' }} alt="logo" />
+          <DsImage
+            srcSet={[{ src: logoUrl, alt: 'logo' }]}
+            WrapperProps={{ height: '100%' }}
+            style={{ height: '100%' }}
+          />
         )}
         {logo && logo}
       </DsBox>
