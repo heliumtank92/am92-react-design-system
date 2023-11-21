@@ -180,7 +180,7 @@ export const DsChipOverrides = {
       } as CSSInterpolation,
       deleteIcon: {
         fontSize: 'var(--ds-typo-fontSizeBitterCold)',
-        marginRight: 'var(--ds-spacing-deepFreeze)',
+        marginRight: 'var(--ds-spacing-frostbite)',
         marginLeft: 'calc(var(--ds-spacing-quickFreeze) * -1)'
       } as CSSInterpolation
     }
