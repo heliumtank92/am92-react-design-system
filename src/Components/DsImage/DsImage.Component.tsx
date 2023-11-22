@@ -19,13 +19,14 @@ export class DsImage extends React.Component<DsImageProps, DsImageState> {
 
   hasSource = () => {
     const { srcSet = [] } = this.props
-    return srcSet && srcSet.length > 1
+    return srcSet && srcSet.length > 0
   }
 
   renderLoadingComponent = () => {
     const { stage } = this.state
     const { aspectRatio, LoaderProps } = this.props
-    const isLoading = stage === 'LOADING'
+    const hasSource = this.hasSource()
+    const isLoading = hasSource && stage === 'LOADING'
 
     if (!isLoading) {
       return false
@@ -112,7 +113,7 @@ export class DsImage extends React.Component<DsImageProps, DsImageState> {
   render() {
     const { stage } = this.state
     const { srcSet, aspectRatio, WrapperProps } = this.props
-    const hasSource = srcSet && srcSet.length > 1
+    const hasSource = srcSet && srcSet.length > 0
     const isError = !hasSource || stage === 'ERROR'
 
     const isLoading = !isError && stage === 'LOADING'
