@@ -143,8 +143,9 @@ export class DsOtp extends Component<DsOtpProps, DsOtpState> {
     return lengthArray.map((value, index) => (
       <DsTextField
         key={index}
-        {...restProps}
         type="tel"
+        inputMode="tel"
+        {...restProps}
         name={`${name}.${index}`}
         ds-variant="otp"
         inputProps={otpInputProps}
