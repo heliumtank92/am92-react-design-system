@@ -22,7 +22,7 @@
     "date-fns": "^2.30.0",
     "notistack": "^3.0.1",
     "prop-types": "^15.8.1",
-    "react-slick": "^0.29.0"
+    "swiper": "^11.0.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
