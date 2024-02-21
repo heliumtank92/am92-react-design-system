@@ -98,7 +98,7 @@ export class DsProgressTracker extends PureComponent<
             >
               {isNextStepLastStep
                 ? 'Yay! you are almost done'
-                : `Next: Step ${nextStep.stepName}`}
+                : `Next Step: ${nextStep.stepName}`}
             </DsTypography>
           )}
         </DsStack>
