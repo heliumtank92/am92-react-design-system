@@ -33,7 +33,13 @@ export class DsTextFieldPassword extends Component<
 
   render() {
     const { isVisible } = this.state
-    const { type, endAdornment, disabled, ...restProps } = this.props
+    const {
+      type,
+      isVisible: isVisibleProp,
+      endAdornment,
+      disabled,
+      ...restProps
+    } = this.props
 
     const inputType = (isVisible && type) || 'password'
 
