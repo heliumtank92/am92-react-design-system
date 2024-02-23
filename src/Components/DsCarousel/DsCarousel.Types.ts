@@ -10,6 +10,7 @@ export interface DsCarouselNavigationButtonProps extends DsIconButtonProps {
 }
 
 export interface DsCarouselNavigationProps {
+  uid: string
   isEnabled: boolean
   NavigationProps?: {
     PrevButtonProps?: DsCarouselNavigationButtonProps
@@ -18,6 +19,7 @@ export interface DsCarouselNavigationProps {
 }
 
 export interface DsCarouselPaginationProps {
+  uid: string
   isEnabled: boolean
   isAutoplayEnabled: boolean
   AutoplaySettings: DsCarouselProps['autoplay']
@@ -33,10 +35,10 @@ export type DsCaroselPaginationSettings = SwiperProps['pagination'] & {
 
 export interface DsCarouselProps
   extends Omit<SwiperProps, 'direction' | 'pagination'>,
-    Omit<DsCarouselNavigationProps, 'isEnabled'>,
+    Omit<DsCarouselNavigationProps, 'uid' | 'isEnabled'>,
     Omit<
       DsCarouselPaginationProps,
-      'isEnabled' | 'isAutoplayEnabled' | 'AutoplaySettings'
+      'uid' | 'isEnabled' | 'isAutoplayEnabled' | 'AutoplaySettings'
     > {
   PaginationWrapperProps?: DsBoxProps
   SwiperConatinerWrapperProps?: DsBoxProps

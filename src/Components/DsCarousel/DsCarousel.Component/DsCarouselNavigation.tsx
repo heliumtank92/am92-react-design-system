@@ -6,7 +6,7 @@ import { DsRemixIcon } from '../../DsRemixIcon'
 
 export default class DsCarouselNavigation extends React.PureComponent<DsCarouselNavigationProps> {
   render() {
-    const { isEnabled, NavigationProps = {} } = this.props
+    const { uid, isEnabled, NavigationProps = {} } = this.props
     if (!isEnabled) {
       return false
     }
@@ -19,7 +19,7 @@ export default class DsCarouselNavigation extends React.PureComponent<DsCarousel
     return (
       <>
         <DsIconButton
-          className="swiper-button-prev"
+          className={`swiper-button-prev-${uid}`}
           {...PrevIconButtonProps}
           sx={{
             position: 'absolute',
@@ -33,13 +33,16 @@ export default class DsCarouselNavigation extends React.PureComponent<DsCarousel
             '&:hover': {
               backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
             },
+            '&.Mui-disabled': {
+              pointerEvents: 'unset'
+            },
             ...PrevIconButtonProps?.sx
           }}
         >
           <DsRemixIcon className="ri-arrow-left-s-line" {...PrevIconProps} />
         </DsIconButton>
         <DsIconButton
-          className="swiper-button-next"
+          className={`swiper-button-next-${uid}`}
           {...NextIconButtonProps}
           sx={{
             position: 'absolute',
@@ -52,6 +55,9 @@ export default class DsCarouselNavigation extends React.PureComponent<DsCarousel
             zIndex: 1,
             '&:hover': {
               backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
+            },
+            '&.Mui-disabled': {
+              pointerEvents: 'unset'
             },
             ...NextIconButtonProps?.sx
           }}

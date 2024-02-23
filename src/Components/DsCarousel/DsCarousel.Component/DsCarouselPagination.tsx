@@ -26,6 +26,7 @@ export default class DsCarouselPagination extends React.PureComponent<DsCarousel
 
   render() {
     const {
+      uid,
       isEnabled,
       isAutoplayEnabled,
       PaginationSettings,
@@ -36,15 +37,16 @@ export default class DsCarouselPagination extends React.PureComponent<DsCarousel
       return false
     }
 
-    let className = 'swiper-pagination'
+    let className = `swiper-pagination-${uid}`
     let transitionSpeed = 0
 
     if (isAutoplayEnabled) {
-      className = 'swiper-pagination rds-pilled'
+      className = `swiper-pagination-${uid} rds-pilled`
       transitionSpeed =
         (typeof AutoplaySettings !== 'boolean' && AutoplaySettings?.delay) ||
         3000
     }
+
     return (
       <DsBox
         ref={this.paginationRef}

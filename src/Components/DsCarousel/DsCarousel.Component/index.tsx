@@ -14,13 +14,19 @@ import {
 import DsCarouselNavigation from './DsCarouselNavigation'
 import DsCarouselPagination from './DsCarouselPagination'
 import { DsBox } from '../../DsBox'
-import { setRef } from '@mui/material'
 
 // register Swiper custom elements
 register && typeof register === 'function' && register()
 
+const generateUid = () => {
+  const random = Math.trunc((Math.random() + 1) * 1000000)
+  return `${random.toString(36)}`
+}
+
 export class DsCarousel extends React.PureComponent<DsCarouselProps> {
   SwiperContainer: SwiperContainer | null = null
+  uid: string = generateUid()
+
   componentDidMount() {
     this.initialize()
   }
@@ -54,26 +60,33 @@ export class DsCarousel extends React.PureComponent<DsCarouselProps> {
   _getNavigationSettings = (): DsCarouselProps['navigation'] | undefined => {
     const { navigation } = this.props
     const isEnabled = this._isNavigationEnabled()
-    if (typeof navigation !== 'boolean') {
-      return isEnabled
-        ? { ...SWIPER_NAVIGATION_SETTINGS, ...navigation }
-        : undefined
+    const defaultSettings = {
+      ...SWIPER_NAVIGATION_SETTINGS,
+      nextEl: `${SWIPER_NAVIGATION_SETTINGS.nextEl}-${this.uid}`,
+      prevEl: `${SWIPER_NAVIGATION_SETTINGS.prevEl}-${this.uid}`
     }
 
-    return (isEnabled && { ...SWIPER_NAVIGATION_SETTINGS }) || undefined
+    if (typeof navigation !== 'boolean') {
+      return isEnabled ? { ...defaultSettings, ...navigation } : undefined
+    }
+
+    return (isEnabled && { ...defaultSettings }) || undefined
   }
 
   _getPaginationSettings = (): DsCaroselPaginationSettings | undefined => {
     const { pagination } = this.props
     const isEnabled = this._isPaginationEnabled()
 
-    if (typeof pagination !== 'boolean') {
-      return isEnabled
-        ? { ...SWIPER_PAGINATION_SETTINGS, ...pagination }
-        : undefined
+    const defaultSettings = {
+      ...SWIPER_PAGINATION_SETTINGS,
+      el: `${SWIPER_PAGINATION_SETTINGS.el}-${this.uid}`
     }
 
-    return (isEnabled && SWIPER_PAGINATION_SETTINGS) || undefined
+    if (typeof pagination !== 'boolean') {
+      return isEnabled ? { ...defaultSettings, ...pagination } : undefined
+    }
+
+    return (isEnabled && { ...defaultSettings }) || undefined
   }
 
   _getAutoPlaySettings = (): DsCarouselProps['autoplay'] | undefined => {
@@ -202,11 +215,13 @@ export class DsCarousel extends React.PureComponent<DsCarouselProps> {
             })}
           </swiper-container>
           <DsCarouselNavigation
+            uid={this.uid}
             isEnabled={this._isNavigationEnabled()}
             NavigationProps={NavigationProps}
           />
         </DsBox>
         <DsCarouselPagination
+          uid={this.uid}
           isEnabled={this._isPaginationEnabled()}
           isAutoplayEnabled={this._isAutoplayEnabled()}
           AutoplaySettings={this._getAutoPlaySettings()}
