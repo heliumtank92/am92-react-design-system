@@ -1,6 +1,6 @@
 import React from 'react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
-import { register, SwiperContainer } from 'swiper/swiper-element'
+import { SwiperContainer } from 'swiper/swiper-element'
 import { SwiperProps } from 'swiper/swiper-react'
 
 import {
@@ -14,9 +14,10 @@ import {
 import DsCarouselNavigation from './DsCarouselNavigation'
 import DsCarouselPagination from './DsCarouselPagination'
 import { DsBox } from '../../DsBox'
+import 'swiper/swiper-element'
 
-// register Swiper custom elements
-register && typeof register === 'function' && register()
+// TODO: For development purpose import register from swiper/swiper-element
+// register && typeof register === 'function' && register()
 
 const generateUid = () => {
   const random = Math.trunc((Math.random() + 1) * 1000000)
