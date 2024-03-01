@@ -35,9 +35,6 @@ dependencies:
   notistack:
     specifier: ~3.0.1
     version: 3.0.1(csstype@3.1.2)(react-dom@18.2.0)(react@18.2.0)
-  prop-types:
-    specifier: ~15.8.1
-    version: 15.8.1
   react:
     specifier: ^18.x.x
     version: 18.2.0
