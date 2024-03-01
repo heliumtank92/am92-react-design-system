@@ -19,7 +19,7 @@ import {
 import { DateCalenderLeftArrowIcon } from './DateCalenderLeftArrowIcon'
 import { DateCalenderRightArrowIcon } from './DateCalenderRightArrowIcon'
 import { parseISO } from 'date-fns/esm'
-import { PickerChangeHandlerContext } from '@mui/x-date-pickers/internals/hooks/usePicker/usePickerValue.types'
+import { PickerChangeHandlerContext } from '@mui/x-date-pickers/models'
 import { format } from 'date-fns'
 
 export class DsDatePicker extends PureComponent<
