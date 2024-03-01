@@ -22,7 +22,6 @@ export class DsLoader extends PureComponent<DsLoaderProps> {
       ...lottieProps
     } = mergedProps
 
-    console.log('lottieProps', lottieProps)
     return (
       <DsBackdrop
         {...BackdropProps}
@@ -33,8 +32,7 @@ export class DsLoader extends PureComponent<DsLoaderProps> {
             '.dot-class': {
               fill: `var(--ds-colour-${color}, var(--ds-colour-dotLoader))`
             },
-            position,
-            color: ''
+            position
           },
           backdrop
             ? {
