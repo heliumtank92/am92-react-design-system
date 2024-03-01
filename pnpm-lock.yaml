@@ -12,10 +12,10 @@ dependencies:
     specifier: ~11.10.6
     version: 11.10.8(@emotion/react@11.10.8)(@types/react@18.2.12)(react@18.2.0)
   '@mui/base':
-    specifier: 5.0.0-alpha.118
-    version: 5.0.0-alpha.118(@types/react@18.2.12)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ~5.0.0-alpha.118
+    version: 5.0.0-alpha.124(@types/react@18.2.12)(react-dom@18.2.0)(react@18.2.0)
   '@mui/lab':
-    specifier: 5.0.0-alpha.120
+    specifier: ~5.0.0-alpha.120
     version: 5.0.0-alpha.120(@emotion/react@11.10.8)(@emotion/styled@11.10.8)(@mui/material@5.11.16)(@types/react@18.2.12)(react-dom@18.2.0)(react@18.2.0)
   '@mui/material':
     specifier: ~5.11.10
@@ -25,10 +25,13 @@ dependencies:
     version: 5.11.16(@emotion/react@11.10.8)(@emotion/styled@11.10.8)(@types/react@18.2.12)(react@18.2.0)
   '@mui/x-date-pickers':
     specifier: ~6.7.0
-    version: 6.7.0(@emotion/react@11.10.8)(@emotion/styled@11.10.8)(@mui/base@5.0.0-alpha.118)(@mui/material@5.11.16)(@mui/system@5.11.16)(date-fns@2.30.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 6.7.0(@emotion/react@11.10.8)(@emotion/styled@11.10.8)(@mui/base@5.0.0-alpha.124)(@mui/material@5.11.16)(@mui/system@5.11.16)(date-fns@2.30.0)(react-dom@18.2.0)(react@18.2.0)
   date-fns:
     specifier: ~2.30.0
     version: 2.30.0
+  lottie-react:
+    specifier: ~2.4.0
+    version: 2.4.0(react-dom@18.2.0)(react@18.2.0)
   notistack:
     specifier: ~3.0.1
     version: 3.0.1(csstype@3.1.2)(react-dom@18.2.0)(react@18.2.0)
@@ -748,7 +751,7 @@ packages:
       react-is: 18.2.0
     dev: false
 
-  /@mui/x-date-pickers@6.7.0(@emotion/react@11.10.8)(@emotion/styled@11.10.8)(@mui/base@5.0.0-alpha.118)(@mui/material@5.11.16)(@mui/system@5.11.16)(date-fns@2.30.0)(react-dom@18.2.0)(react@18.2.0):
+  /@mui/x-date-pickers@6.7.0(@emotion/react@11.10.8)(@emotion/styled@11.10.8)(@mui/base@5.0.0-alpha.124)(@mui/material@5.11.16)(@mui/system@5.11.16)(date-fns@2.30.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Nf1wpBKp1DHS4gSrPXbxUfEBSVeqxVuZqJRh8oqreBG4ogZ8Sas3QpWIMGehpjmBjMXGyeWl0RUlTyUwMwhdng==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -789,7 +792,7 @@ packages:
       '@babel/runtime': 7.22.5
       '@emotion/react': 11.10.8(@types/react@18.2.12)(react@18.2.0)
       '@emotion/styled': 11.10.8(@emotion/react@11.10.8)(@types/react@18.2.12)(react@18.2.0)
-      '@mui/base': 5.0.0-alpha.118(@types/react@18.2.12)(react-dom@18.2.0)(react@18.2.0)
+      '@mui/base': 5.0.0-alpha.124(@types/react@18.2.12)(react-dom@18.2.0)(react@18.2.0)
       '@mui/material': 5.11.16(@emotion/react@11.10.8)(@emotion/styled@11.10.8)(@types/react@18.2.12)(react-dom@18.2.0)(react@18.2.0)
       '@mui/system': 5.11.16(@emotion/react@11.10.8)(@emotion/styled@11.10.8)(@types/react@18.2.12)(react@18.2.0)
       '@mui/utils': 5.13.1(react@18.2.0)
@@ -1508,6 +1511,21 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+    dev: false
+
+  /lottie-react@2.4.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-pDJGj+AQlnlyHvOHFK7vLdsDcvbuqvwPZdMlJ360wrzGFurXeKPr8SiRCjLf3LrNYKANQtSsh5dz9UYQHuqx4w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      lottie-web: 5.12.2
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /lottie-web@5.12.2:
+    resolution: {integrity: sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==}
     dev: false
 
   /lru-cache@5.1.1:

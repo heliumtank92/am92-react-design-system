@@ -57,6 +57,7 @@ export type DsColorTokens =
   | 'stateDisabledSurface'
   | 'overlay'
   | 'overlayLoader'
+  | 'dotLoader'
 
 export type DsColorClassTokens =
   | 'colorActionPrimary'
@@ -117,6 +118,7 @@ export type DsColorClassTokens =
   | 'colorStateDisabledSurface'
   | 'colorOverlay'
   | 'colorOverlayLoader'
+  | 'colorDotLoader'
 
 interface DsColorGenerics<T> extends Partial<Record<DsColorTokens, T>> {}
 interface DsColorClassGenerics<T>

@@ -164,7 +164,8 @@ export default function getModeColorScheme(
     overlayLoader:
       mode === 'light'
         ? hexToRgbA(primaryWhite, 0.3)
-        : hexToRgbA(primaryBlack, 0.3)
+        : hexToRgbA(primaryBlack, 0.3),
+    dotLoader: mode === 'light' ? secondary100 : primaryWhite
   }
 
   const palette: PaletteOptions = {
