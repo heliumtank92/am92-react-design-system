@@ -5,13 +5,16 @@ export const DsCheckboxOverrides = {
     styleOverrides: {
       root: {
         color: 'var(--ds-colour-iconDefault)',
-        '&:hover': {
+        '&:hover:not(.Mui-checked)': {
           backgroundColor: 'var(--ds-colour-stateUnselectedHover)'
         },
-        '&:focus': {
+        '&:focus:not(.Mui-checked)': {
           backgroundColor: 'var(--ds-colour-stateUnselectedHover)'
         },
-        '&.Mui-checked': {
+        '&.MuiCheckbox-colorPrimary.Mui-checked': {
+          color: 'var(--ds-colour-iconActionPrimary)'
+        },
+        '&.MuiCheckbox-colorSecondary.Mui-checked': {
           color: 'var(--ds-colour-iconActionSecondary)',
           '&:hover': {
             backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
@@ -19,6 +22,15 @@ export const DsCheckboxOverrides = {
           '&:focus': {
             backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
           }
+        },
+        '&.MuiCheckbox-colorError.Mui-checked': {
+          color: 'var(--ds-colour-iconNegative)'
+        },
+        '&.MuiCheckbox-colorSuccess.Mui-checked': {
+          color: 'var(--ds-colour-iconPositive)'
+        },
+        '&.MuiCheckbox-colorWarning.Mui-checked': {
+          color: 'var(--ds-colour-iconWarning)'
         },
         '&.Mui-disabled': {
           color: 'var(--ds-colour-iconDisabled)'
