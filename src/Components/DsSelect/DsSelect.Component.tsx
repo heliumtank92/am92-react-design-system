@@ -95,7 +95,19 @@ export class DsSelect extends PureComponent<DsSelectProps> {
         >
           {children}
           {options.map(({ label, value }, index) => (
-            <DsMenuItem value={value} key={index}>
+            <DsMenuItem
+              value={value}
+              key={index}
+              sx={{
+                '&.Mui-selected': {
+                  backgroundColor: 'transparent',
+                  fontWeight: 'var(--ds-typo-bodyBoldMedium-fontWeight)',
+                  fontSize: 'var(--ds-typo-bodyBoldMedium-fontSize)',
+                  lineHeight: 'var(--ds-typo-bodyBoldMedium-lineHeight)',
+                  letterSpacing: 'var(--ds-typo-bodyBoldMedium-letterSpacing)'
+                }
+              }}
+            >
               <span>{label}</span>
             </DsMenuItem>
           ))}
