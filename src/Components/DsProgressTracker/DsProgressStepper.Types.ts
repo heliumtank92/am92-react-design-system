@@ -1,7 +1,14 @@
+import { DsStepProps } from '../DsStep'
+import { DsStepLabelProps } from '../DsStepLabel'
 import { DsStepperProps } from '../DsStepper'
 
 export interface DsProgressStepperStepProps {
-  stepName: string
+  stepName?: string
+  error?: DsStepLabelProps['error']
+  icon?: DsStepLabelProps['icon']
+  optional?: DsStepLabelProps['optional']
+  completed?: DsStepProps['completed']
+  disabled?: DsStepProps['disabled']
 }
 
 export interface DsProgressStepperProps

@@ -5,8 +5,8 @@ import {
   DsProgressStepperStepProps
 } from './DsProgressStepper.Types'
 import { DsStepper } from '../DsStepper'
-import { DsStep } from '../DsStep'
-import { DsStepLabel } from '../DsStepLabel'
+import { DsStep, DsStepProps } from '../DsStep'
+import { DsStepLabel, DsStepLabelProps } from '../DsStepLabel'
 import { DsRemixIcon } from '../DsRemixIcon'
 import { StepIconProps } from '@mui/material'
 
@@ -14,7 +14,17 @@ export class DsProgressStepper extends PureComponent<DsProgressStepperProps> {
   static defaultProps = DsProgressStepperDefaultProps
 
   renderStepIcon = (stepProps: StepIconProps) => {
-    const { active, completed, icon } = stepProps
+    const { activeStep } = this.props
+    const { active, error, completed, icon } = stepProps
+
+    if (error) {
+      return (
+        <DsRemixIcon
+          className="ri-close-circle-fill"
+          sx={{ color: 'var(--ds-colour-iconNegative)' }}
+        />
+      )
+    }
 
     if (completed) {
       return (
@@ -38,10 +48,24 @@ export class DsProgressStepper extends PureComponent<DsProgressStepperProps> {
   }
 
   renderStep = (step: DsProgressStepperStepProps, index: number) => {
-    const { stepName } = step
+    const { stepName, error, icon, optional, completed, disabled } = step
+
+    const stepProps: DsStepProps = { completed, disabled }
+    const stepLabelProps: DsStepLabelProps = { error, icon, optional }
+
+    if (icon) {
+      stepLabelProps.sx = {
+        '.MuiStepLabel-iconContainer.Mui-disabled ': {
+          borderStyle: 'none'
+        }
+      }
+    }
     return (
-      <DsStep key={index}>
-        <DsStepLabel StepIconComponent={this.renderStepIcon}>
+      <DsStep key={index} {...stepProps}>
+        <DsStepLabel
+          {...stepLabelProps}
+          StepIconComponent={this.renderStepIcon}
+        >
           {stepName}
         </DsStepLabel>
       </DsStep>
