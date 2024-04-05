@@ -5,7 +5,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import {
   DateOrTimeView,
   DatePicker,
-  DateValidationError
+  DateValidationError,
+  PickerChangeHandlerContext
 } from '@mui/x-date-pickers'
 import { DefaultActionBar } from './DefaultActionBar'
 import { DefaultToolbar } from './DefaultToolbar'
@@ -19,7 +20,6 @@ import {
 import { DateCalenderLeftArrowIcon } from './DateCalenderLeftArrowIcon'
 import { DateCalenderRightArrowIcon } from './DateCalenderRightArrowIcon'
 import { parseISO } from 'date-fns/esm'
-import { PickerChangeHandlerContext } from '@mui/x-date-pickers/models'
 import { format } from 'date-fns'
 
 export class DsDatePicker extends PureComponent<
@@ -74,7 +74,8 @@ export class DsDatePicker extends PureComponent<
           slotProps={{
             ...this.props.slotProps,
             day: {
-              disableHighlightToday: true,
+              //commented to show current day border highlight
+              // disableHighlightToday: true,
               ...this.props.slotProps?.day
             },
             textField: {
@@ -87,6 +88,12 @@ export class DsDatePicker extends PureComponent<
             },
             popper: {
               anchorEl: this.ref.current,
+              //style to unset fixed width
+              sx: {
+                '.MuiMonthCalendar-root': {
+                  width: '100%'
+                }
+              },
               ...this.props.slotProps?.popper
             }
           }}
