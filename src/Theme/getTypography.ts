@@ -1,32 +1,26 @@
-import { PaletteOptions, Typography } from '@mui/material'
 import { DsColor, DsTypographyVariants } from '../Types'
 
-export type Typography = {
-  palette?: PaletteOptions
-  dsColor?: DsColor
-}
-
-export default function getTypography(fontFamilyName: string = ''): any {
+export default function getTypography(fontFamilyName: string = '') {
   const fontFamily = `"${fontFamilyName}", "Helvetica"`
 
   const dsTypoPrimitive = {
     primaryFont: fontFamilyName,
     fontFamily,
 
-    fontSizeScorched: '76px',
-    fontSizeTorrid: '56px',
-    fontSizeBlazzing: '48px',
-    fontSizeHot: '44px',
-    fontSizeTropical: '40px',
-    fontSizeWarm: '32px',
-    fontSizeMild: '24px',
-    fontSizeCool: '20px',
-    fontSizeCold: '18px',
-    fontSizeBitterCold: '16px',
-    fontSizeFrigid: '14px',
-    fontSizeFrostbite: '12px',
-    fontSizeBlizzard: '11px',
-    fontSizeIceAge: '10px',
+    fontSizeScorched: '4.75rem',
+    fontSizeTorrid: '3.5rem',
+    fontSizeBlazzing: '3rem',
+    fontSizeHot: '2.75rem',
+    fontSizeTropical: '2.5rem',
+    fontSizeWarm: '2rem',
+    fontSizeMild: '1.5rem',
+    fontSizeCool: '1.25rem',
+    fontSizeCold: '1.125rem',
+    fontSizeBitterCold: '1rem',
+    fontSizeFrigid: '0.875rem',
+    fontSizeFrostbite: '0.75rem',
+    fontSizeBlizzard: '0.688rem',
+    fontSizeIceAge: '0.625rem',
 
     fontWeightLight: '300',
     fontWeightRegular: '400',
@@ -403,8 +397,19 @@ export default function getTypography(fontFamilyName: string = ''): any {
   return { dsTypo, typography }
 }
 
+function getFontSizePixelNumber(fontSize: string): number {
+  let getFontSizePixel
+  if (fontSize.includes('rem')) {
+    getFontSizePixel = parseInt(fontSize.replace('rem', ''), 10) * 16
+    return getFontSizePixel
+  }
+
+  getFontSizePixel = parseInt(fontSize.replace('px', ''))
+  return getFontSizePixel
+}
+
 function lineHeightCalculator(fontSize: string, lineHeightAdjustment: string) {
-  const fontSizeNumber = parseInt(fontSize.replace('px', ''))
+  const fontSizeNumber = getFontSizePixelNumber(fontSize)
   const lineHeightAdjustmentNumber = parseInt(
     lineHeightAdjustment.replace('px', '')
   )
