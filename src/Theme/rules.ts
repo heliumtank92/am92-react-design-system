@@ -1,4 +1,6 @@
-const dsRules = {
+import { DsRules } from '../Types/DsRules'
+
+const dsRules: DsRules = {
   headerMobileHeight: '64px',
   headerDesktopHeight: '84px',
 

@@ -4,9 +4,10 @@ import {
   CssVarsThemeOptions,
   experimental_extendTheme as extendTheme,
   responsiveFontSizes,
+  SupportedColorScheme,
   Theme
 } from '@mui/material/styles'
-import getModeColorScheme, { ColorScheme } from './getColorScheme'
+import getColorScheme from './getColorScheme'
 import getTypography from './getTypography'
 import breakpoints from './breakpoints'
 import componentOverrides from './componentOverrides'
@@ -18,52 +19,24 @@ import { DsPalette } from '../Types'
 import { DSTYPOGRAPHY_TOKENS } from '../Constants'
 import dsRadius from './radius'
 
-interface colorSchemes {
-  light?: any
-  dark?: any
-}
-
 export function getTheme(
   palette: DsPalette = PALETTE,
   fontFamilyName: string = FONT_FAMILY_NAME
 ): Omit<Theme, 'palette'> & CssVarsTheme {
   const { typography, dsTypo } = getTypography(fontFamilyName)
 
-  const colorPalette: DsPalette = { ...PALETTE, ...palette }
-  const lightColorScheme: ColorScheme = getModeColorScheme(
-    colorPalette,
-    'light'
-  )
-  const darkColorScheme: ColorScheme = getModeColorScheme(colorPalette, 'dark')
-  let colorSchemes: colorSchemes = {}
-
-  if (lightColorScheme) {
-    colorSchemes.light = {
-      palette: lightColorScheme.palette,
-      ds: {
-        colour: lightColorScheme.dsColor,
-        spacing: dsSpacingCssVars,
-        typo: dsTypo,
-        rules: dsRules,
-        radius: dsRadius,
-        elevation: dsElevation
-      }
+  const colorSchemes = getColorScheme(palette)
+  const colorSchemesKeys = Object.keys(colorSchemes) as SupportedColorScheme[]
+  colorSchemesKeys.forEach((colorSchemesKey: SupportedColorScheme) => {
+    colorSchemes[colorSchemesKey].ds = {
+      ...colorSchemes[colorSchemesKey].ds,
+      spacing: dsSpacingCssVars,
+      typo: dsTypo,
+      rules: dsRules,
+      radius: dsRadius,
+      elevation: dsElevation
     }
-  }
-
-  if (darkColorScheme) {
-    colorSchemes.dark = {
-      palette: darkColorScheme.palette,
-      ds: {
-        colour: darkColorScheme.dsColor,
-        spacing: dsSpacingCssVars,
-        typo: dsTypo,
-        rules: dsRules,
-        radius: dsRadius,
-        elevation: dsElevation
-      }
-    }
-  }
+  })
 
   const cssVarsThemeOptions: CssVarsThemeOptions = {
     cssVarPrefix: '',
