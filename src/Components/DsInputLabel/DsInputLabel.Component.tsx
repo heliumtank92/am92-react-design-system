@@ -9,7 +9,7 @@ export class DsInputLabel extends PureComponent<DsInputLabelProps> {
       this.props
 
     if (!label && !labelSupportText) {
-      return
+      return null
     }
 
     return (
