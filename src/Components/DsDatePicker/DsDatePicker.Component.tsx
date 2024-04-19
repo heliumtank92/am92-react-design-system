@@ -5,7 +5,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import {
   DateOrTimeView,
   DatePicker,
-  DateValidationError
+  DateValidationError,
+  PickerChangeHandlerContext
 } from '@mui/x-date-pickers'
 import { DefaultActionBar } from './DefaultActionBar'
 import { DefaultToolbar } from './DefaultToolbar'
@@ -18,7 +19,6 @@ import {
 } from './DsDatePicker.Types'
 import { DateCalenderLeftArrowIcon } from './DateCalenderLeftArrowIcon'
 import { DateCalenderRightArrowIcon } from './DateCalenderRightArrowIcon'
-import { PickerChangeHandlerContext } from '@mui/x-date-pickers/internals/hooks/usePicker/usePickerValue.types'
 import { parseISO } from 'date-fns/esm'
 import { format } from 'date-fns'
 
