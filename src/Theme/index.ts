@@ -3,6 +3,7 @@ import {
   CssVarsTheme,
   CssVarsThemeOptions,
   experimental_extendTheme as extendTheme,
+  PaletteColorOptions,
   responsiveFontSizes,
   SupportedColorScheme,
   Theme
@@ -59,3 +60,24 @@ export function getTheme(
 }
 
 export { dsSpacing, SPACE_COEFFICIENT }
+
+declare module '@mui/material/styles' {
+  interface ColorSchemeOverrides {
+    highContrast: true
+  }
+}
+
+declare module '@mui/material/styles' {
+  interface TypeText {
+    tertiary: string
+  }
+
+  interface CommonColors {
+    blackLight: string
+  }
+
+  interface PaletteOptions {
+    surface?: PaletteColorOptions
+    tertiary?: PaletteColorOptions
+  }
+}

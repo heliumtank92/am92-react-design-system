@@ -23,23 +23,3 @@ export interface DsColorSystemOptions extends ColorSystemOptions {
 
 export interface DsColorScheme
   extends Record<SupportedColorScheme, DsColorSystemOptions> {}
-
-// Record<SupportedColorScheme, ColorSystemOptions>
-declare module '@mui/material/styles' {
-  interface ColorSchemeOverrides {
-    highContrast: true
-  }
-
-  interface TypeText {
-    tertiary: string
-  }
-
-  interface CommonColors {
-    blackLight: string
-  }
-
-  interface PaletteOptions {
-    surface?: PaletteColorOptions
-    tertiary?: PaletteColorOptions
-  }
-}

@@ -83,8 +83,8 @@ export default function getHighContrastModeColorScheme(
     actionSecondary: highContrast1,
     actionTertiary: highContrast1,
 
-    surfaceBackground: primaryWhite,
-    surfacePrimary: primaryWhite,
+    surfaceBackground: primaryBlackLight,
+    surfacePrimary: primaryBlack,
     surfaceSecondary: primaryBlackLight,
     surfaceTertiary: primaryBlackLight,
 
@@ -95,7 +95,7 @@ export default function getHighContrastModeColorScheme(
     typoActionSecondary: highContrast1,
     typoActionTertiary: highContrast1,
     typoOnSurface: primaryBlackLight,
-    typoDisabled: secondaryGrey50,
+    typoDisabled: secondaryGrey60,
     typoTypical: highContrast2,
 
     neutral1: neutral1Dark,
