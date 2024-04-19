@@ -1,10 +1,10 @@
 import { SliderProps } from '@mui/material'
 
 export interface DsSliderProps extends SliderProps {
-  'design-mode'?: 'true' | 'false'
+  'ds-mode'?: 'true' | 'false'
 }
 
 export const DsSliderDefaultProps: DsSliderProps = {
-  'design-mode': 'true',
+  'ds-mode': 'true',
   color: 'secondary'
 }

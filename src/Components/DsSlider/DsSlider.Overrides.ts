@@ -6,7 +6,7 @@ export const DsSliderOverrides = {
     defaultProps: DsSlideDefaultProps,
     variants: [
       {
-        props: { 'design-mode': 'true' } as Partial<DsSliderProps>,
+        props: { 'ds-mode': 'true' } as Partial<DsSliderProps>,
         style: {
           '&:not(.Mui-diabled, :has(.MuiSlider-thumb:hover), :has(.Mui-focusVisible))':
             {
