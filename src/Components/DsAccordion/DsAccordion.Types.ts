@@ -1,6 +1,7 @@
 import { AccordionProps } from '@mui/material'
 import { DsAccordionSummaryProps } from '../DsAccordionSummary'
 import { DsAccordionDetailsProps } from '../DsAccordionDetails'
+import { DsRemixIcon } from '../DsRemixIcon'
 
 export interface DsAccordionProps extends Omit<AccordionProps, 'children'> {
   header: string | React.ReactElement
@@ -12,8 +13,5 @@ export interface DsAccordionProps extends Omit<AccordionProps, 'children'> {
 
 export const DsAccordionDefaultProps: DsAccordionProps = {
   header: '',
-  summary: '',
-  TransitionProps: {
-    unmountOnExit: true
-  }
+  summary: ''
 }

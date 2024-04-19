@@ -5,15 +5,27 @@ import { DsRemixIcon } from '../DsRemixIcon'
 import { DsAccordionSummary } from '../DsAccordionSummary'
 import { DsAccordionDetails } from '../DsAccordionDetails'
 
-import { DsAccordionProps } from './DsAccordion.Types'
+import { DsAccordionDefaultProps, DsAccordionProps } from './DsAccordion.Types'
 
 export class DsAccordion extends PureComponent<DsAccordionProps> {
-  static defaultProps = {
-    expandIcon: <DsRemixIcon className="ri-arrow-drop-down-line" />
+  static defaultProps = DsAccordionDefaultProps
+
+  getMergedProps = (): DsAccordionProps => {
+    return {
+      expandIcon: (
+        <DsRemixIcon
+          className="ri-arrow-drop-down-line"
+          fontSize="bitterCold"
+        />
+      ),
+      ...DsAccordionDefaultProps,
+      ...this.props
+    }
   }
 
   render() {
-    const { header, summary, expandIcon, ...AccordionProps } = this.props
+    const mergedProps = this.getMergedProps()
+    const { header, summary, expandIcon, ...AccordionProps } = mergedProps
     return (
       <Accordion {...AccordionProps}>
         <DsAccordionSummary expandIcon={expandIcon}>
