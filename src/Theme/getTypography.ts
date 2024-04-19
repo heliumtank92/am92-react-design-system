@@ -400,17 +400,17 @@ export default function getTypography(fontFamilyName: string = '') {
 function getFontSizePixelNumber(fontSize: string): number {
   let getFontSizePixel
   if (fontSize.includes('rem')) {
-    getFontSizePixel = parseInt(fontSize.replace('rem', ''), 10) * 16
+    getFontSizePixel = parseFloat(fontSize.replace('rem', '')) * 16
     return getFontSizePixel
   }
 
-  getFontSizePixel = parseInt(fontSize.replace('px', ''))
+  getFontSizePixel = parseFloat(fontSize.replace('px', ''))
   return getFontSizePixel
 }
 
 function lineHeightCalculator(fontSize: string, lineHeightAdjustment: string) {
   const fontSizeNumber = getFontSizePixelNumber(fontSize)
-  const lineHeightAdjustmentNumber = parseInt(
+  const lineHeightAdjustmentNumber = parseFloat(
     lineHeightAdjustment.replace('px', '')
   )
   const lineHeight =
