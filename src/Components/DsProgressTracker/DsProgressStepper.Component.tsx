@@ -14,7 +14,6 @@ export class DsProgressStepper extends PureComponent<DsProgressStepperProps> {
   static defaultProps = DsProgressStepperDefaultProps
 
   renderStepIcon = (stepProps: StepIconProps) => {
-    const { activeStep } = this.props
     const { active, error, completed, icon } = stepProps
 
     if (error) {

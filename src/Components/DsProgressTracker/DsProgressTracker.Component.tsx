@@ -27,15 +27,27 @@ export class DsProgressTracker extends PureComponent<
     this.state = state
   }
 
+  getMergedProps = () => {
+    return {
+      ...DsProgressTrackerDefaultProps,
+      ...this.props,
+      StepperProps: {
+        ...DsProgressTrackerDefaultProps?.StepperProps,
+        ...this.props?.StepperProps
+      }
+    }
+  }
+
   handleToggleCollapse = () => this.setState({ open: !this.state.open })
 
   renderStepper = () => {
+    const mergedProps = this.getMergedProps()
     // Don Not Render steps if variant is `header`
-    if (this.props['ds-variant'] === 'header') {
+    if (mergedProps['ds-variant'] === 'header') {
       return null
     }
 
-    const { StepperProps, activeStep, steps } = this.props
+    const { StepperProps, activeStep, steps } = mergedProps
     const { open } = this.state
 
     return (
@@ -50,12 +62,14 @@ export class DsProgressTracker extends PureComponent<
   }
 
   renderHeader = () => {
+    const mergedProps = this.getMergedProps()
+
     // Don Not Render Header if variant is `steps`
-    if (this.props['ds-variant'] === 'steps') {
+    if (mergedProps['ds-variant'] === 'steps') {
       return null
     }
 
-    const { activeStep, steps } = this.props
+    const { activeStep, steps, nextStepLabelPrefix } = mergedProps
     const currentStep = steps[activeStep] || {}
     const nextStepIndex = activeStep + 1
     const nextStep = steps[nextStepIndex]
@@ -69,7 +83,7 @@ export class DsProgressTracker extends PureComponent<
           alignItems: 'center',
           borderBottom: '1px solid var(--ds-colour-strokeDefault)',
           backgroundColor: 'var(--ds-colour-surfaceBackground)',
-          cursor: this.props['ds-variant'] === 'default' ? 'pointer' : 'unset'
+          cursor: mergedProps['ds-variant'] === 'default' ? 'pointer' : 'unset'
         }}
         spacing="var(--ds-spacing-bitterCold)"
         direction="row"
@@ -98,7 +112,7 @@ export class DsProgressTracker extends PureComponent<
             >
               {isNextStepLastStep
                 ? 'Yay! you are almost done'
-                : `Next Step: ${nextStep.stepName}`}
+                : `${nextStepLabelPrefix}${nextStep.stepName}`}
             </DsTypography>
           )}
         </DsStack>
@@ -107,7 +121,8 @@ export class DsProgressTracker extends PureComponent<
   }
 
   render() {
-    const { sx } = this.props
+    const mergedProps = this.props
+    const { sx } = mergedProps
     return (
       <DsBox sx={{ width: '100%', ...sx }}>
         {this.renderHeader()}
