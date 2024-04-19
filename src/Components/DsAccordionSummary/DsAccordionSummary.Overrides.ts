@@ -23,6 +23,9 @@ export const DsAccordionSummaryOverrides = {
           margin: 'var(--ds-spacing-zero)',
           marginRight: 'var(--ds-spacing-bitterCold)'
         }
+      },
+      expandIconWrapper: {
+        color: 'var(--ds-colour-iconDefault)'
       }
     }
   }
