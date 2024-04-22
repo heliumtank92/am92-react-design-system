@@ -8,19 +8,8 @@ export const DsAccordionOverrides = {
         backgroundColor: 'var(--ds-colour-surfacePrimary)',
         boxShadow: 'var(--ds-elevation--1)',
         overflow: 'hidden',
-        borderStyle: 'solid',
-        borderColor: 'var(--ds-colour-strokeDefault)',
-        borderWidth: '1px',
-        '&:first-of-type': {
-          borderTopLeftRadius: '8px',
-          borderTopRightRadius: '8px'
-        },
         '&:not(:first-of-type):not(.Mui-expanded)': {
           marginTop: '-1px'
-        },
-        '&:last-of-type': {
-          borderBottomLeftRadius: '8px',
-          borderBottomRightRadius: '8px'
         }
       }
     }

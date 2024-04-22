@@ -4,9 +4,6 @@ export const DsAccordionSummaryOverrides = {
       root: {
         padding: 'var(--ds-spacing-frostbite) var(--ds-spacing-bitterCold)',
         '&.Mui-expanded': {
-          borderBottomStyle: 'solid',
-          borderBottomWidth: '1px',
-          borderBottomColor: 'var(--ds-colour-strokeDefault)',
           minHeight: '0px',
           backgroundColor: 'var(--ds-colour-surfaceSecondary)'
         }
