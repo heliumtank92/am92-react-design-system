@@ -97,6 +97,7 @@ export class DsImage extends React.Component<DsImageProps, DsImageState> {
                 {...ImageProps}
                 style={{
                   ...(aspectRatio ? INNER_COMPONENT_STYLE : {}),
+                  display: 'block',
                   maxWidth: '100%',
                   ...ImageProps?.style
                 }}
