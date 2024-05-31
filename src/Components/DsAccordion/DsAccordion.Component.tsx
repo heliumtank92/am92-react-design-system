@@ -8,30 +8,23 @@ import { DsAccordionDetails } from '../DsAccordionDetails'
 import { DsAccordionDefaultProps, DsAccordionProps } from './DsAccordion.Types'
 
 export class DsAccordion extends PureComponent<DsAccordionProps> {
-  static defaultProps = DsAccordionDefaultProps
-
-  getMergedProps = (): DsAccordionProps => {
-    return {
-      expandIcon: (
-        <DsRemixIcon
-          className="ri-arrow-drop-down-line"
-          fontSize="bitterCold"
-        />
-      ),
-      ...DsAccordionDefaultProps,
-      ...this.props
-    }
-  }
-
   render() {
-    const mergedProps = this.getMergedProps()
-    const { header, summary, expandIcon, ...AccordionProps } = mergedProps
+    const {
+      header,
+      HeaderProps,
+      summary,
+      SummaryProps,
+      expandIcon,
+      ...AccordionProps
+    } = this.props
     return (
       <Accordion {...AccordionProps}>
-        <DsAccordionSummary expandIcon={expandIcon}>
+        <DsAccordionSummary expandIcon={expandIcon} {...HeaderProps}>
           {header}
         </DsAccordionSummary>
-        {summary && <DsAccordionDetails>{summary}</DsAccordionDetails>}
+        {summary && (
+          <DsAccordionDetails {...SummaryProps}>{summary}</DsAccordionDetails>
+        )}
       </Accordion>
     )
   }
