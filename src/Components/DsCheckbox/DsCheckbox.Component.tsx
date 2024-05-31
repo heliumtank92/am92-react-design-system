@@ -1,10 +1,21 @@
 import * as React from 'react'
-import { DsCheckboxProps } from './DsCheckbox.Types'
+import { DsCheckboxDefaultProps, DsCheckboxProps } from './DsCheckbox.Types'
 import { Checkbox } from '@mui/material'
 import { DsRemixIcon } from '../DsRemixIcon'
 
 export class DsCheckbox extends React.PureComponent<DsCheckboxProps> {
+  static defaultProps = DsCheckboxDefaultProps
+
+  getMergedProps = (): DsCheckboxProps => {
+    return {
+      ...DsCheckboxDefaultProps,
+      ...this.props
+    }
+  }
+
   render() {
+    const mergedProps = this.getMergedProps()
+
     return (
       <Checkbox
         icon={
@@ -19,7 +30,7 @@ export class DsCheckbox extends React.PureComponent<DsCheckboxProps> {
             color="inherit"
           />
         }
-        {...this.props}
+        {...mergedProps}
       />
     )
   }

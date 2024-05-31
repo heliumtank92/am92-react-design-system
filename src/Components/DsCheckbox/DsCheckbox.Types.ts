@@ -2,4 +2,6 @@ import { CheckboxProps } from '@mui/material'
 
 export interface DsCheckboxProps extends CheckboxProps {}
 
-export const DsCheckboxDefaultProps: DsCheckboxProps = {}
+export const DsCheckboxDefaultProps: DsCheckboxProps = {
+  color: 'secondary'
+}
