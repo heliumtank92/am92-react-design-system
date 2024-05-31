@@ -45,7 +45,9 @@ export class DsNotistackProvider extends Component<SnackbarProviderProps> {
 }
 
 function enqueueNotistack(notistackOptions: EnqueNotistackProps): void {
-  const key: DsNotistackKey = new Date().getTime()
+  const key: DsNotistackKey = `${
+    notistackOptions.message
+  }-${new Date().getTime()}`
   const notificationObj = { ...notistackOptions, key }
   enqueueSnackbar(notificationObj)
 }

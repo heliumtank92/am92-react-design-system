@@ -7,7 +7,8 @@ export const DsBottomNavigationOverrides = {
       root: {
         background: 'var(--ds-colour-surfacePrimary)',
         height: 'auto',
-        maxHeight: 'var(--ds-rule-bottomNavigationMaxHeight)'
+        maxHeight: 'var(--ds-rule-bottomNavigationMaxHeight)',
+        boxShadow: 'var(--ds-elevation-0)'
       }
     }
   }
