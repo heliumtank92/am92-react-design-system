@@ -36,9 +36,9 @@ export const PALETTE: DsPalette = {
   snackBlue: '#145599',
   typical: '#165964',
 
-  errorRedDark: '#EB0000',
-  successGreenDark: '#278829',
-  warningOrangeDark: '#D84008',
+  errorRedDark: '#FF6C6C',
+  successGreenDark: '#62D264',
+  warningOrangeDark: '#F87647',
 
   errorRedNeutralLight: '#F9EBEF',
   successGreenNeutralLight: '#EFF9EB',
