@@ -8,7 +8,7 @@ export interface DsAccordionProps extends Omit<AccordionProps, 'children'> {
   HeaderProps?: DsAccordionSummaryProps
   summary: string | React.ReactElement
   SummaryProps?: DsAccordionDetailsProps
-  expandIcon?: React.ReactElement
+  expandIcon?: React.ReactNode
 }
 
 export const DsAccordionDefaultProps: DsAccordionProps = {
