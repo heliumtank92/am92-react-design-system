@@ -2,6 +2,7 @@ import { DsCheckboxDefaultProps } from './DsCheckbox.Types'
 
 export const DsCheckboxOverrides = {
   MuiCheckbox: {
+    defaultProps: DsCheckboxDefaultProps,
     styleOverrides: {
       root: {
         color: 'var(--ds-colour-iconDefault)',
