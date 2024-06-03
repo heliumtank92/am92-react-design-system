@@ -1,6 +1,9 @@
+import { CSSInterpolation } from '@mui/system'
+import { DsTabDefaultProps } from './DsTab.Types'
+
 export const DsTabOverrides = {
   MuiTab: {
-    defaultProps: {},
+    defaultProps: DsTabDefaultProps,
     styleOverrides: {
       root: {
         fontWeight: 'var(--ds-typo-bodyRegularMedium-fontWeight)',
@@ -10,11 +13,15 @@ export const DsTabOverrides = {
         padding: 'var(--ds-spacing-glacial)',
         gap: 'var(--ds-spacing-glacial)',
         minHeight: '36px',
+        textTransform: 'none',
+        borderBottomWidth: '1px',
+        borderBottomStyle: 'solid',
+        borderBottomColor: 'var(--ds-colour-stateDisabledSurface)',
         '> .MuiTab-iconWrapper': {
           fontSize: 'var(--ds-typo-fontSizeFrostbite)',
           margin: 'var(--ds-spacing-zero)'
         }
-      }
+      } as CSSInterpolation
     }
   }
 }

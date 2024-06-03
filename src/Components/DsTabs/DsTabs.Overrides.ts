@@ -1,14 +1,13 @@
-import { CSSInterpolation } from '@mui/system'
-import { DsTabsProps } from './DsTabs.Types'
+import { CSSInterpolation, borderBottom, borderBottomColor } from '@mui/system'
+import { DsTabsDefaultProps, DsTabsProps } from './DsTabs.Types'
 
 export const DsTabsOverrides = {
   MuiTabs: {
-    defaultProps: {},
+    defaultProps: DsTabsDefaultProps,
     variants: [
       {
         props: { 'ds-variant': 'container' } as Partial<DsTabsProps>,
         style: {
-          minHeight: '48px',
           '> .MuiTabs-scroller > .MuiTabs-indicator': {
             height: '0px'
           },
@@ -46,7 +45,7 @@ export const DsTabsOverrides = {
     styleOverrides: {
       root: {
         minHeight: '36px'
-      },
+      } as CSSInterpolation,
       indicator: {
         height: '1px'
       }
