@@ -95,6 +95,8 @@ export class DsTextArea extends PureComponent<
             maxLength: maxLength || ''
           }}
           helperText={helperText}
+          // TODO: To be fixed when we fix the sx passing to inputbase
+          style={{ paddingBottom: 'var(--ds-spacing-mild)' }}
         />
         {hasMaxLength && !hideCharacterCount && (
           <DsTypography
