@@ -10,7 +10,11 @@ export const DsInputBaseOverrides = {
         style: {
           textAlign: 'center',
           '> input': {
-            padding: 'var(--ds-spacing-zero)'
+            padding: 'var(--ds-spacing-zero)',
+            fontWeight: 'var(--ds-typo-headingBoldMedium-fontWeight)',
+            fontSize: 'var(--ds-typo-headingBoldMedium-fontSize)',
+            lineHeight: 'var(--ds-typo-headingBoldMedium-lineHeight)',
+            letterSpacing: 'var(--ds-typo-headingBoldMedium-letterSpacing)'
           }
         } as CSSInterpolation
       },
