@@ -90,7 +90,11 @@ export class DsSelect extends PureComponent<DsSelectProps> {
           {...selectProps}
           MenuProps={{
             anchorEl: () => this.selectRef.current!,
-            ...selectProps.MenuProps
+            ...selectProps?.MenuProps,
+            sx: {
+              marginTop: 'var(--ds-spacing-glacial)',
+              ...selectProps?.MenuProps?.sx
+            }
           }}
         >
           {children}
@@ -128,7 +132,7 @@ const IconComponent = (props: Omit<DsRemixIconProps, 'ref'>) => {
   return (
     <DsRemixIcon
       {...props}
-      className={`${props.className} ri-arrow-drop-down-line`}
+      className={`${props.className} ri-arrow-down-s-line`}
     />
   )
 }
