@@ -1,4 +1,5 @@
 import { AutocompleteProps } from '@mui/material'
+import { DsRemixIcon } from '../DsRemixIcon'
 
 export interface DsAutocompleteProps<
   T,
@@ -13,6 +14,8 @@ export const DsAutocompleteDefaultProps: DsAutocompleteProps<
   boolean,
   boolean
 > = {
+  popupIcon: <DsRemixIcon className="ri-arrow-down-s-line" />,
+  clearIcon: <DsRemixIcon color="secondary" className="ri-close-line" />,
   multiple: false,
   disableClearable: false,
   freeSolo: false,
