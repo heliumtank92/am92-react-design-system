@@ -31,7 +31,8 @@ class AlertMessage extends Component<AlertMessageProps> {
   }
 
   render() {
-    const { forwardedRef, message, toastVariant, variant, sx } = this.props
+    const { forwardedRef, message, toastVariant, variant, icon, action, sx } =
+      this.props
 
     return (
       <DsToast
@@ -39,6 +40,8 @@ class AlertMessage extends Component<AlertMessageProps> {
         variant={toastVariant}
         color={variant}
         sx={sx}
+        icon={icon}
+        action={action}
         onClose={this.handleClose}
       >
         {message}
