@@ -5,7 +5,6 @@ export interface DsTabsProps extends TabsProps {
 }
 
 export const DsTabsDefaultProps: DsTabsProps = {
-  variant: 'fullWidth',
   indicatorColor: 'secondary',
   textColor: 'secondary'
 }
