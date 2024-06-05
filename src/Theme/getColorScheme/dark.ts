@@ -90,6 +90,7 @@ export default function getDarkModeColorScheme(colorPalette: DsPalette) {
     typoOnSurface: primaryWhite,
     typoDisabled: secondaryGrey60,
     typoTypical: typical,
+    typoOnSurfaceDynamic: primaryBlackLight,
 
     neutral1: neutral1Dark,
     neutral2: neutral2Dark,
@@ -108,6 +109,7 @@ export default function getDarkModeColorScheme(colorPalette: DsPalette) {
     iconDisabled: secondaryGrey60,
     iconDefault: primaryWhite,
     iconTypical: typical,
+    iconOnSurfaceDynamic: primaryBlackLight,
 
     strokeDefault: secondaryGrey80,
     strokeSelected: secondary60,

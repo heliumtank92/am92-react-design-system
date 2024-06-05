@@ -97,6 +97,7 @@ export default function getHighContrastModeColorScheme(
     typoOnSurface: primaryBlackLight,
     typoDisabled: secondaryGrey60,
     typoTypical: highContrast2,
+    typoOnSurfaceDynamic: primaryBlackLight,
 
     neutral1: neutral1Dark,
     neutral2: neutral1Dark,
@@ -115,6 +116,7 @@ export default function getHighContrastModeColorScheme(
     iconDisabled: secondaryGrey60,
     iconDefault: primaryWhite,
     iconTypical: highContrast2,
+    iconOnSurfaceDynamic: primaryBlackLight,
 
     strokeDefault: secondaryGrey10,
     strokeSelected: highContrast1,

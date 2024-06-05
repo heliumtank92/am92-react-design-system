@@ -51,7 +51,7 @@ export const DsNotistackAlertDefault = React.forwardRef<
   HTMLDivElement,
   AlertMessageProps
 >((props, ref) => {
-  return <AlertMessage forwardedRef={ref} {...props} />
+  return <AlertMessage forwardedRef={ref} {...props} variant="default" />
 })
 
 export const DsNotistackAlertSuccess = React.forwardRef<

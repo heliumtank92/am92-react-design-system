@@ -91,6 +91,7 @@ export default function getLightModeColorScheme(colorPalette: DsPalette) {
     typoOnSurface: primaryWhite,
     typoDisabled: secondaryGrey50,
     typoTypical: typical,
+    typoOnSurfaceDynamic: primaryWhite,
 
     neutral1: neutral1Light,
     neutral2: neutral2Light,
@@ -109,6 +110,7 @@ export default function getLightModeColorScheme(colorPalette: DsPalette) {
     iconDisabled: secondaryGrey50,
     iconDefault: secondaryGrey100,
     iconTypical: typical,
+    iconOnSurfaceDynamic: primaryWhite,
 
     strokeDefault: secondaryGrey30,
     strokeSelected: secondary80,

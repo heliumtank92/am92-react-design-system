@@ -10,9 +10,6 @@ export const DsToastOverrides = {
         borderWidth: '1px',
         borderStyle: 'solid',
         boxShadow: 'var(--ds-elevation-1)',
-        borderColor: 'var(--ds-colour-strokeDefault)',
-        backgroundColor: 'var(--ds-colour-surfaceSecondary)',
-        color: 'var(--ds-colour-typoPrimary)',
         alignItems: 'center',
         fontWeight: 'var(--ds-typo-bodyRegularMedium-fontWeight)',
         fontSize: 'var(--ds-typo-bodyRegularMedium-fontSize)',
@@ -38,6 +35,11 @@ export const DsToastOverrides = {
           fontSize: 'inherit'
         }
       },
+      filledDefault: {
+        borderColor: 'var(--ds-colour-strokeDefault)',
+        backgroundColor: 'var(--ds-colour-surfaceTertiary)',
+        color: 'var(--ds-colour-typoOnSurfaceDynamic)'
+      },
       filledSuccess: {
         color: 'var(--ds-colour-typoOnSurface)',
         borderColor: 'var(--ds-colour-supportPositive)',
@@ -57,6 +59,10 @@ export const DsToastOverrides = {
         color: 'var(--ds-colour-typoOnSurface)',
         borderColor: 'var(--ds-colour-supportNegative)',
         backgroundColor: 'var(--ds-colour-supportNegative)'
+      },
+      outlinedDefault: {
+        color: 'var(--ds-colour-typoOnSurfaceDynamic)',
+        backgroundColor: 'var(--ds-colour-surfaceTertiary)'
       },
       outlinedSuccess: {
         color: 'var(--ds-colour-supportPositive)',
