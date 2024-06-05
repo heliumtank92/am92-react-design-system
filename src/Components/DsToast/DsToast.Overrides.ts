@@ -27,6 +27,7 @@ export const DsToastOverrides = {
         marginRight: 'var(--ds-spacing-zero)',
         padding: 'var(--ds-spacing-zero)',
         marginLeft: 'var(--ds-spacing-frostbite)',
+        color: 'var(--ds-colour-typoOnSurfaceDynamic)',
         fontSize: 'var(--ds-typo-fontSizeMild)',
         '.MuiIconButton-root': {
           fontSize: 'var(--ds-typo-fontSizeMild)'

@@ -18,7 +18,7 @@ import { DsNotistackKey, EnqueNotistackProps } from './DsNotistack.Types'
 
 const useNotistack = useSnackbar
 
-export { closeNotistack, useNotistack, enqueueNotistack }
+export { closeNotistack, useNotistack, enqueueNotistack, generateKeyNotistack }
 
 export class DsNotistackProvider extends Component<SnackbarProviderProps> {
   static defaultProps = {
@@ -44,11 +44,18 @@ export class DsNotistackProvider extends Component<SnackbarProviderProps> {
   }
 }
 
+function generateKeyNotistack(message?: string): string {
+  const key: DsNotistackKey = `${message || ''}-${new Date().getTime()}`
+  return key
+}
+
 function enqueueNotistack(notistackOptions: EnqueNotistackProps): void {
   const key: DsNotistackKey = `${
     notistackOptions.message
   }-${new Date().getTime()}`
-  const notificationObj = { ...notistackOptions, key }
+
+  // Handle if key has been passed
+  const notificationObj = { key, ...notistackOptions }
   enqueueSnackbar(notificationObj)
 }
 
