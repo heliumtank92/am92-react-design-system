@@ -86,7 +86,7 @@ export default function getHighContrastModeColorScheme(
     surfaceBackground: primaryBlackLight,
     surfacePrimary: primaryBlack,
     surfaceSecondary: primaryBlackLight,
-    surfaceTertiary: primaryBlackLight,
+    surfaceTertiary: secondaryGrey10,
 
     typoPrimary: primaryWhite,
     typoSecondary: primaryWhite,
