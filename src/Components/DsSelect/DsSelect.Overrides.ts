@@ -2,6 +2,11 @@ import { DsSelectDefaultProps } from './DsSelect.Types'
 
 export const DsSelectOverrides = {
   MuiSelect: {
-    defaultProps: DsSelectDefaultProps
+    defaultProps: DsSelectDefaultProps,
+    styleOverrides: {
+      icon: {
+        color: 'var(--ds-colour-iconDefault)'
+      }
+    }
   }
 }
