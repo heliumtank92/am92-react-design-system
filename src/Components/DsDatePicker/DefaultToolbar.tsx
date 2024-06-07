@@ -1,51 +1,47 @@
 import React, { Component } from 'react'
 
+import { DatePickerToolbarProps } from '@mui/x-date-pickers'
+import { DsIconButton } from '../DsIconButton'
+import { DsRemixIcon } from '../DsRemixIcon'
 import { DsStack } from '../DsStack'
 import { DsTypography } from '../DsTypography'
-import { DatePickerToolbarProps } from '@mui/x-date-pickers'
-import { parseISO } from 'date-fns'
+import { DsDatePickerProps } from './DsDatePicker.Types'
 
-export class DefaultToolbar extends Component<DatePickerToolbarProps<Date>> {
-  setViewYear = () => {
-    const { onViewChange } = this.props
-    onViewChange('year')
-  }
-
+export class DefaultToolbar extends Component<
+  DatePickerToolbarProps<Date> & { ownerState?: any }
+> {
   render(): React.ReactNode {
-    const { disabled, readOnly, view, value } = this.props
-    const isClickable = !(disabled || readOnly || view === 'year')
-    const currentYear = (value && value.getFullYear()) || '----'
+    const { value, ownerState } = this.props
+    const { onCancel } = ownerState
     const formatOptions = {
-      month: 'short',
       day: 'numeric',
-      weekday: 'short'
+      month: 'short',
+      year: 'numeric'
     } as Intl.DateTimeFormatOptions
     const currentDateAndDay =
-      (value && value.toLocaleDateString('en-us', formatOptions)) ||
-      '---, --- --'
-
+      value && value.toLocaleDateString('en-GB', formatOptions)
     return (
       <DsStack
         sx={{
           backgroundColor: 'var(--ds-colour-surfaceSecondary)',
-          padding: 'var(--ds-spacing-bitterCold) var(--ds-spacing-bitterCold)',
+          padding: 'var(--ds-spacing-cool) var(--ds-spacing-bitterCold)',
           gridArea: '1 / 2 / auto / 4',
-          cursor: isClickable ? 'pointer' : 'unset'
+          borderRadius: '16px 16px 0px 0px',
+          borderBottom: '1px solid var(--ds-colour-strokeDefault)'
         }}
-        spacing="var(--ds-spacing-quickFreeze)"
-        onClick={(isClickable && this.setViewYear) || undefined}
       >
         <DsTypography
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
           variant="headingBoldExtraSmall"
-          sx={{ color: 'var(--ds-colour-typoSecondary)' }}
         >
-          {currentYear}
-        </DsTypography>
-        <DsTypography
-          variant="headingBoldMedium"
-          sx={{ color: 'var(--ds-colour-typoPrimary)' }}
-        >
-          {currentDateAndDay}
+          {value ? `Selected date: ${currentDateAndDay}` : 'Select a date'}
+          <DsIconButton onClick={onCancel}>
+            <DsRemixIcon className="ri-close-line" />
+          </DsIconButton>
         </DsTypography>
       </DsStack>
     )

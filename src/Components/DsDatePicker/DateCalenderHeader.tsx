@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { DateView, PickersCalendarHeaderProps } from '@mui/x-date-pickers'
-import { format, addMonths, addYears } from 'date-fns'
+import { format, addMonths } from 'date-fns'
+import { DsButtonBase } from '../DsButtonBase'
 import { DsIconButton } from '../DsIconButton'
 import { DsRemixIcon } from '../DsRemixIcon'
 import { DsStack } from '../DsStack'
@@ -21,12 +22,16 @@ export class DateCalenderHeader extends PureComponent<
   }
 
   render(): React.ReactNode {
-    const { currentMonth, onMonthChange, ...restProps } = this.props
+    const { currentMonth, onMonthChange, view } = this.props
+
+    const isYearNavigationDisabled = view === 'month'
+    const isMonthNavigationDisabled = view === 'year'
+
     return (
       <DsStack
         direction="row"
         justifyContent="space-between"
-        spacing="var(--ds-spacing-frostbite)"
+        // spacing='var(--ds-spacing-frostbite)'
         sx={{ p: 'var(--ds-spacing-frostbite)' }}
       >
         <DsStack
@@ -35,20 +40,34 @@ export class DateCalenderHeader extends PureComponent<
           alignItems="center"
           spacing="var(--ds-spacing-frostbite)"
         >
-          <DsIconButton onClick={this.handleMonthChange('left', -1)}>
+          <DsIconButton
+            disabled={isYearNavigationDisabled || isMonthNavigationDisabled}
+            onClick={this.handleMonthChange('left', -1)}
+          >
             <DsRemixIcon className="ri-arrow-drop-left-line" />
           </DsIconButton>
-          <DsStack
-            direction="row"
-            spacing="var(--ds-spacing-quickFreeze)"
-            onClick={this.handleViewShow('year')}
+          <DsButtonBase
+            disabled={isMonthNavigationDisabled}
+            onClick={this.handleViewShow('month')}
           >
-            <DsTypography variant="bodyBoldSmall">
+            <DsTypography
+              variant="bodyBoldSmall"
+              color={
+                isMonthNavigationDisabled ? 'text.disabled' : 'text.primary'
+              }
+            >
               {format(currentMonth, 'MMM')}
             </DsTypography>
-            <DsRemixIcon className="ri-arrow-drop-down-fill" />
-          </DsStack>
-          <DsIconButton onClick={this.handleMonthChange('right', 1)}>
+            <DsRemixIcon
+              className="ri-arrow-drop-down-fill"
+              color={isMonthNavigationDisabled ? 'iconDisabled' : 'iconDefault'}
+              sx={{ mr: 'var(--ds-spacing-quickFreeze)' }}
+            />
+          </DsButtonBase>
+          <DsIconButton
+            disabled={isYearNavigationDisabled || isMonthNavigationDisabled}
+            onClick={this.handleMonthChange('right', 1)}
+          >
             <DsRemixIcon className="ri-arrow-drop-right-line" />
           </DsIconButton>
         </DsStack>
@@ -58,20 +77,34 @@ export class DateCalenderHeader extends PureComponent<
           alignItems="center"
           spacing="var(--ds-spacing-frostbite)"
         >
-          <DsIconButton onClick={this.handleMonthChange('left', -12)}>
+          <DsIconButton
+            disabled={isYearNavigationDisabled || isMonthNavigationDisabled}
+            onClick={this.handleMonthChange('left', -12)}
+          >
             <DsRemixIcon className="ri-arrow-drop-left-line" />
           </DsIconButton>
-          <DsStack
-            direction="row"
-            spacing="var(--ds-spacing-quickFreeze)"
+          <DsButtonBase
+            disabled={isYearNavigationDisabled}
             onClick={this.handleViewShow('year')}
           >
-            <DsTypography variant="bodyBoldSmall">
+            <DsTypography
+              variant="bodyBoldSmall"
+              color={
+                isYearNavigationDisabled ? 'text.disabled' : 'text.primary'
+              }
+            >
               {format(currentMonth, 'yyyy')}
             </DsTypography>
-            <DsRemixIcon className="ri-arrow-drop-down-fill" />
-          </DsStack>
-          <DsIconButton onClick={this.handleMonthChange('right', 12)}>
+            <DsRemixIcon
+              className="ri-arrow-drop-down-fill"
+              color={isYearNavigationDisabled ? 'iconDisabled' : 'iconDefault'}
+              sx={{ mr: 'var(--ds-spacing-quickFreeze)' }}
+            />
+          </DsButtonBase>
+          <DsIconButton
+            disabled={isYearNavigationDisabled || isMonthNavigationDisabled}
+            onClick={this.handleMonthChange('right', 12)}
+          >
             <DsRemixIcon className="ri-arrow-drop-right-line" />
           </DsIconButton>
         </DsStack>

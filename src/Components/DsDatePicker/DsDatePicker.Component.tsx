@@ -2,62 +2,104 @@ import React, { PureComponent } from 'react'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 
-import {
-  DatePicker,
-  DateValidationError,
-  PickerChangeHandlerContext
-} from '@mui/x-date-pickers'
+import { DatePicker, DateValidationError, DateView } from '@mui/x-date-pickers'
 import { DefaultActionBar } from './DefaultActionBar'
 import { DefaultToolbar } from './DefaultToolbar'
-import { DatePickerTextField } from './DatePickerTextField'
 import {
   DsDatePickerDefaultProps,
   DsDatePickerDefaultState,
   DsDatePickerProps,
   DsDatePickerState
 } from './DsDatePicker.Types'
-import { DateCalenderLeftArrowIcon } from './DateCalenderLeftArrowIcon'
-import { DateCalenderRightArrowIcon } from './DateCalenderRightArrowIcon'
-import { parseISO } from 'date-fns/esm'
-import { format } from 'date-fns'
+import { PickerChangeHandlerContext } from '@mui/x-date-pickers/models'
+import { DateCalenderHeader } from './DateCalenderHeader'
+import { DsIconButton } from '../DsIconButton'
+import { DsInputAdornment } from '../DsInputAdornment'
+import { DsRemixIcon } from '../DsRemixIcon'
+import {
+  DatePickerTextField,
+  DatePickerTextFieldProps
+} from './DatePickerTextField'
+import {
+  getDateFromValue,
+  getErrorFromErrorMap,
+  getValueTypeFromValue
+} from './utils'
 
 export class DsDatePicker extends PureComponent<
   DsDatePickerProps<Date>,
   DsDatePickerState
 > {
   static defaultProps = DsDatePickerDefaultProps
-
   state = DsDatePickerDefaultState
   ref = React.createRef<HTMLInputElement>()
 
   setOpen = (open: boolean) => this.setState({ open })
   onOpen = () => this.setOpen(true)
   onClose = () => this.setOpen(false)
+
   handleChange = (
     value: Date | null,
     context: PickerChangeHandlerContext<DateValidationError>
   ) => {
-    const { onChange, onError, name, format: formatType } = this.props
+    const {
+      onChange,
+      onError,
+      errorMap,
+      name,
+      valueType,
+      format: formatType,
+      views
+    } = this.props
+
+    if (!views) this.setState({ views: ['day'] })
+
     if (context.validationError && typeof onError === 'function') {
-      onError(name, context.validationError)
+      const error = getErrorFromErrorMap(
+        errorMap,
+        context.validationError,
+        value
+      )
+      onError(
+        name,
+        error,
+        context.validationError,
+        getValueTypeFromValue(value, valueType, formatType)
+      )
       return
     }
 
     if (typeof onChange === 'function' && value && formatType) {
-      onChange(name, format(value, formatType))
+      onChange(name, getValueTypeFromValue(value, valueType, formatType))
     }
   }
 
   handleError = (error: DateValidationError, value: Date | null) => {
-    const { onError, name } = this.props
+    const { onError, errorMap, name } = this.props
     if (error && typeof onError === 'function') {
-      onError(name, error)
+      const errorMsg = getErrorFromErrorMap(errorMap, error, value)
+      onError(name, errorMsg, error, value)
     }
   }
 
+  handleViewChange = (value: DateView) => {
+    this.setState({ views: [value, 'day'] })
+  }
+
   render() {
-    const { onChange, onError, defaultValue, value, ...restProps } = this.props
-    const { open } = this.state
+    const {
+      onChange,
+      onError,
+      defaultValue,
+      value,
+      valueType,
+      format,
+      onViewChange,
+      views: propViews,
+      disabled,
+      ...restProps
+    } = this.props
+    const { open, views } = this.state
     return (
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
@@ -66,8 +108,7 @@ export class DsDatePicker extends PureComponent<
             actionBar: DefaultActionBar,
             toolbar: DefaultToolbar,
             textField: DatePickerTextField,
-            leftArrowIcon: DateCalenderLeftArrowIcon,
-            rightArrowIcon: DateCalenderRightArrowIcon,
+            calendarHeader: DateCalenderHeader,
             ...this.props.slots
           }}
           slotProps={{
@@ -79,12 +120,24 @@ export class DsDatePicker extends PureComponent<
             },
             textField: {
               ...this.props.slotProps?.textField,
-              setOpen: this.setOpen
-            } as any,
-            actionBar: {
-              actions: ['accept', 'cancel'],
+              endAdornment: (
+                <DsInputAdornment
+                  position="end"
+                  disablePointerEvents={disabled}
+                >
+                  <DsIconButton disabled={disabled} onClick={this.onOpen}>
+                    <DsRemixIcon
+                      className="ri-calendar-line"
+                      fontSize="bitterCold"
+                    />
+                  </DsIconButton>
+                </DsInputAdornment>
+              )
+            } as DatePickerTextFieldProps,
+            actionBar: ownerState => ({
+              actions: ownerState.view === 'day' ? ['clear', 'accept'] : [],
               ...this.props.slotProps?.actionBar
-            },
+            }),
             popper: {
               anchorEl: this.ref.current,
               //style to unset fixed width
@@ -96,13 +149,18 @@ export class DsDatePicker extends PureComponent<
               ...this.props.slotProps?.popper
             }
           }}
+          disabled={disabled}
+          format={format}
           open={open}
+          reduceAnimations
           onOpen={this.onOpen}
           onClose={this.onClose}
           onChange={this.handleChange}
+          onViewChange={this.handleViewChange}
           onError={this.handleError}
-          value={parseISO(value || '')}
-          defaultValue={(defaultValue && parseISO(defaultValue)) || undefined}
+          views={propViews || views}
+          value={getDateFromValue(value, valueType, format)}
+          defaultValue={getDateFromValue(defaultValue, valueType, format)}
           inputRef={this.ref}
         />
       </LocalizationProvider>
