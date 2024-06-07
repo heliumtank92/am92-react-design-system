@@ -1,0 +1,20 @@
+export type DsRulesKeys =
+  | 'headerMobileHeight'
+  | 'headerDesktopHeight'
+  | 'appBarMobileMinHeight'
+  | 'stepperConnectorMinHeight'
+  | 'searchbarMinWidth'
+  | 'searchbarHeight'
+  | 'drawerWidth'
+  | 'drawerMiniWidth'
+  | 'dialogMdMaxWidth'
+  | 'bottomSheetWorkingAreaHeight'
+  | 'avatarSSize'
+  | 'avatarMSize'
+  | 'avatarLSize'
+  | 'avatarXLSize'
+  | 'avatarXXLSize'
+  | 'avatar3XLSize'
+  | 'formHelperTextMinHeight'
+
+export type DsRules = { [key in DsRulesKeys]: string }

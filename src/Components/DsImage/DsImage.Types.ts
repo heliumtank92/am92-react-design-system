@@ -1,28 +1,41 @@
-interface SrcSetProps<T>
-  extends Omit<React.SourceHTMLAttributes<T>, 'srcSet'>,
-    Omit<React.ImgHTMLAttributes<T>, 'srcSet'> {}
+import { DsBoxProps } from '../DsBox'
+import { DsRemixIconProps } from '../DsRemixIcon'
+import { DsSkeletonProps } from '../DsSkeleton'
 
-export interface DsImageProps {
-  src?: string
-  srcSet?: SrcSetProps<any>[]
-  alt?: string
-  errorIconFontSize?: number | string
-  errorIconClass?: string
-  style?: object
+export interface DsImageSrcSetProps
+  extends Omit<React.SourceHTMLAttributes<any>, 'srcSet'>,
+    Omit<React.ImgHTMLAttributes<any>, 'srcSet'> {
+  src: string
+  alt: string
+}
+
+interface IErrorIconProps extends Omit<DsRemixIconProps, 'ref'> {}
+
+export interface DsImageProps
+  extends Omit<React.ImgHTMLAttributes<any>, 'srcSet'> {
+  srcSet?: DsImageSrcSetProps[]
+  aspectRatio?: number
+  WrapperProps?: DsBoxProps
+  LoaderProps?: DsSkeletonProps
+  ErrorIconProps?: IErrorIconProps
 }
 
 export interface DsImageState {
-  loadState: 'LOADING' | 'LOADED' | 'ERROR'
+  stage: 'LOADING' | 'LOADED' | 'ERROR'
 }
 
-export const DsImageDefaultProps: DsImageProps = {
-  src: '',
-  srcSet: [],
-  alt: '',
-  errorIconFontSize: 'var(--ds-typo-fontSizeMild)',
-  errorIconClass: 'ri-image-2-line'
+export const DsImageDefaultState: DsImageState = {
+  stage: 'LOADING'
 }
 
-export const DsImageDefultState: DsImageState = {
-  loadState: 'LOADING'
+export const DEFULT_ERROR_ICON_PROPS: IErrorIconProps = {
+  fontSize: 'mild',
+  className: 'ri-image-2-line'
+}
+
+export const INNER_COMPONENT_STYLE: React.CSSProperties = {
+  position: 'absolute',
+  transform: 'translate(-50%, -50%)',
+  left: '50%',
+  top: '50%'
 }

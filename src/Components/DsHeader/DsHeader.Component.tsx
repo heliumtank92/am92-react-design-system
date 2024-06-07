@@ -20,7 +20,7 @@ export class DsHeader extends PureComponent<DsHeaderProps> {
             xs: 'var(--ds-rules-headerMobileHeight)',
             lg: 'var(--ds-rules-headerDesktopHeight)'
           },
-          backgroundColor: 'var(--ds-color-surfacePrimary)',
+          backgroundColor: 'var(--ds-colour-surfacePrimary)',
           display: 'flex',
           boxShadow: 'var(--ds-elevation-3)',
           position: 'relative',
@@ -48,7 +48,11 @@ export class DsHeader extends PureComponent<DsHeaderProps> {
           <DsStack {...StackProps}>{children}</DsStack>
         </DsBox>
         {logoUrl && (
-          <DsImage src={logoUrl} style={{ height: '100%' }} alt="logo" />
+          <DsImage
+            srcSet={[{ src: logoUrl, alt: 'logo' }]}
+            WrapperProps={{ height: '100%' }}
+            style={{ height: '100%' }}
+          />
         )}
         {logo && logo}
       </DsBox>

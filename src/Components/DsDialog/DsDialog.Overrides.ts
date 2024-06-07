@@ -2,8 +2,8 @@ export const DsDialogOverrides = {
   MuiDialog: {
     styleOverrides: {
       paper: {
-        backgroundColor: 'var(--ds-color-surfacePrimary)',
-        borderRadius: '16px',
+        backgroundColor: 'var(--ds-colour-surfacePrimary)',
+        borderRadius: 'var(--ds-radius-bitterCold)',
         boxShadow: 'var(--ds-elevation-24)',
         backgroundImage: 'none',
         '& .MuiDialogContent-root': {
@@ -12,8 +12,8 @@ export const DsDialogOverrides = {
           }
         }
       },
-      paperWidthXs: {
-        maxWidth: 'var(--ds-rules-dialogXsMaxWidth)'
+      paperWidthMd: {
+        maxWidth: 'var(--ds-rules-dialogMdMaxWidth)'
       }
     }
   }

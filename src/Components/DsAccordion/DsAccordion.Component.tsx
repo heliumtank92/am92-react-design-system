@@ -1,23 +1,35 @@
 import React, { PureComponent } from 'react'
 import Accordion from '@mui/material/Accordion'
 
-import { DsRemixIcon } from '../DsRemixIcon'
 import { DsAccordionSummary } from '../DsAccordionSummary'
 import { DsAccordionDetails } from '../DsAccordionDetails'
 
-import { DsAccordionProps } from './DsAccordion.Types'
+import { DsAccordionDefaultProps, DsAccordionProps } from './DsAccordion.Types'
 
 export class DsAccordion extends PureComponent<DsAccordionProps> {
-  static defaultProps = {
-    expandIcon: <DsRemixIcon className="ri-arrow-drop-down-line" />
+  // Since we have custome props defined merging of default props is necessary
+  getMergedProps = (): DsAccordionProps => {
+    return { ...DsAccordionDefaultProps, ...this.props }
   }
 
   render() {
-    const { header, summary, expandIcon, ...AccordionProps } = this.props
+    const mergedProps = this.getMergedProps()
+    const {
+      header,
+      HeaderProps,
+      summary,
+      SummaryProps,
+      expandIcon,
+      ...AccordionProps
+    } = mergedProps
     return (
       <Accordion {...AccordionProps}>
-        <DsAccordionSummary expandIcon={expandIcon}>{header}</DsAccordionSummary>
-        <DsAccordionDetails>{summary}</DsAccordionDetails>
+        <DsAccordionSummary expandIcon={expandIcon} {...HeaderProps}>
+          {header}
+        </DsAccordionSummary>
+        {summary && (
+          <DsAccordionDetails {...SummaryProps}>{summary}</DsAccordionDetails>
+        )}
       </Accordion>
     )
   }

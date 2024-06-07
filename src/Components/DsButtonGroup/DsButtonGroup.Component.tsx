@@ -8,9 +8,14 @@ import {
 export class DsButtonGroup extends PureComponent<DsButtonGroupProps> {
   static defaultProps = DsButtonGroupDefaultProps
 
+  getMergedProps = (): DsButtonGroupProps => {
+    return { ...DsButtonGroupDefaultProps, ...this.props }
+  }
+
   render() {
+    const mergedProps = this.getMergedProps()
     const { fullWidth, noPadding, size, sx, children, ...restProps } =
-      this.props
+      mergedProps
     const childrenArray = children instanceof Array ? children : [children]
 
     return (
@@ -18,7 +23,7 @@ export class DsButtonGroup extends PureComponent<DsButtonGroupProps> {
         direction="row"
         spacing="var(--ds-spacing-frostbite)"
         sx={{
-          bgcolor: 'var(--ds-color-surfacePrimary)',
+          bgcolor: 'var(--ds-colour-surfacePrimary)',
           p: noPadding
             ? 'var(--ds-spacing-zero)'
             : 'var(--ds-spacing-bitterCold)',

@@ -9,18 +9,23 @@ export class DsInputLabel extends PureComponent<DsInputLabelProps> {
       this.props
 
     if (!label && !labelSupportText) {
-      return
+      return null
     }
 
     return (
       <InputLabel error={error} {...inputLabelProps}>
-        <DsTypography component="p" variant="bodyRegularMedium">
+        <DsTypography
+          component="span"
+          variant="bodyRegularMedium"
+          sx={{ float: 'left' }}
+        >
           {label}
         </DsTypography>
         <DsTypography
-          component="p"
+          component="span"
           variant="bodyRegularSmall"
           color="text.secondary"
+          sx={{ float: 'right', width: '100%' }}
         >
           {labelSupportText}
         </DsTypography>

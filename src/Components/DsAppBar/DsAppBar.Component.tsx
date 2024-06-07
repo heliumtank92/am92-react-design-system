@@ -16,7 +16,9 @@ export class DsAppBar extends PureComponent<DsAppBarProps> {
 
     const contentJSX =
       typeof appBarTitle === 'string' ? (
-        <DsTypography variant="headingBoldSmall">{appBarTitle}</DsTypography>
+        <DsTypography variant="headingBoldSmall" color="inherit">
+          {appBarTitle}
+        </DsTypography>
       ) : (
         appBarTitle
       )

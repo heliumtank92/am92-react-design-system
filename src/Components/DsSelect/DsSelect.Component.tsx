@@ -90,12 +90,28 @@ export class DsSelect extends PureComponent<DsSelectProps> {
           {...selectProps}
           MenuProps={{
             anchorEl: () => this.selectRef.current!,
-            ...selectProps.MenuProps
+            ...selectProps?.MenuProps,
+            sx: {
+              marginTop: 'var(--ds-spacing-glacial)',
+              ...selectProps?.MenuProps?.sx
+            }
           }}
         >
           {children}
           {options.map(({ label, value }, index) => (
-            <DsMenuItem value={value} key={index}>
+            <DsMenuItem
+              value={value}
+              key={index}
+              sx={{
+                '&.Mui-selected': {
+                  backgroundColor: 'transparent',
+                  fontWeight: 'var(--ds-typo-bodyBoldMedium-fontWeight)',
+                  fontSize: 'var(--ds-typo-bodyBoldMedium-fontSize)',
+                  lineHeight: 'var(--ds-typo-bodyBoldMedium-lineHeight)',
+                  letterSpacing: 'var(--ds-typo-bodyBoldMedium-letterSpacing)'
+                }
+              }}
+            >
               <span>{label}</span>
             </DsMenuItem>
           ))}
@@ -116,7 +132,7 @@ const IconComponent = (props: Omit<DsRemixIconProps, 'ref'>) => {
   return (
     <DsRemixIcon
       {...props}
-      className={`${props.className} ri-arrow-drop-down-line`}
+      className={`${props.className} ri-arrow-down-s-line`}
     />
   )
 }

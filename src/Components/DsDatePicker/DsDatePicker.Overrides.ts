@@ -6,17 +6,17 @@ export const DsDatePickerOverrides = {
           marginLeft: '34px !important'
         },
         ' &[data-popper-placement^="bottom"]': {
-          marginTop: '5px !important'
+          marginTop: '10px !important'
         },
         ' &[data-popper-placement^="left"]': {
-          marginRight: '5px !important'
+          marginRight: '10px !important'
         },
         ' &[data-popper-placement^="top"]': {
-          marginBottom: '5px !important'
+          marginBottom: '10px !important'
         }
       },
       paper: {
-        borderRadius: '16px',
+        borderRadius: 'var(--ds-radius-bitterCold)',
         boxShadow: 'var(--ds-elevation-24)'
       }
     }
@@ -24,10 +24,12 @@ export const DsDatePickerOverrides = {
   MuiDateCalendar: {
     styleOverrides: {
       root: {
-        width: '284px',
-        paddingTop: 'var(--ds-spacing-bitterCold)',
-        paddingLeft: 'var(--ds-spacing-bitterCold)',
-        paddingRight: 'var(--ds-spacing-bitterCold)'
+        width: '328px',
+        maxHeight: '416px',
+        height: '100%',
+        paddingTop: 'var(--ds-spacing-glacial)'
+        // paddingLeft: 'var(--ds-spacing-bitterCold)',
+        // paddingRight: 'var(--ds-spacing-bitterCold)'
       }
     }
   },
@@ -74,15 +76,51 @@ export const DsDatePickerOverrides = {
         lineHeight: 'var(--ds-typo-bodyRegularMedium-lineHeight)',
         letterSpacing: 'var(--ds-typo-bodyRegularMedium-letterSpacing)',
         '&.Mui-selected': {
-          backgroundColor: 'var(--ds-color-actionSecondary)',
-          color: 'var(--ds-color-typoOnSurface)',
+          backgroundColor: 'var(--ds-colour-actionSecondary)',
+          color: 'var(--ds-colour-typoOnSurface)',
           '&:hover': {
-            backgroundColor: 'var(--ds-color-actionSecondary)',
-            color: 'var(--ds-color-typoOnSurface)'
+            backgroundColor: 'var(--ds-colour-actionSecondary)',
+            color: 'var(--ds-colour-typoOnSurface)'
           },
           '&:focus': {
-            backgroundColor: 'var(--ds-color-actionSecondary)',
-            color: 'var(--ds-color-typoOnSurface)'
+            backgroundColor: 'var(--ds-colour-actionSecondary)',
+            color: 'var(--ds-colour-typoOnSurface)'
+          }
+        }
+      },
+      today: {
+        ':not(.Mui-selected)': {
+          background: 'transparent',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'var(--ds-colour-actionSecondary)'
+        }
+      }
+    }
+  },
+  MuiPickersMonth: {
+    styleOverrides: {
+      monthButton: {
+        fontWeight: 'var(--ds-typo-bodyRegularLarge-fontWeight)',
+        fontSize: 'var(--ds-typo-bodyRegularLarge-fontSize)',
+        lineHeight: 'var(--ds-typo-bodyRegularLarge-lineHeight)',
+        letterSpacing: 'var(--ds-typo-bodyRegularLarge-letterSpacing)',
+        borderRadius: 'var(--ds-radius-quickFreeze)',
+        '&.Mui-selected': {
+          backgroundColor: 'var(--ds-colour-surfaceSecondary)',
+          color: 'var(--ds-colour-typoActionSecondary)',
+          fontWeight: 'var(--ds-typo-bodyBoldLarge-fontWeight)',
+          fontSize: 'var(--ds-typo-bodyBoldLarge-fontSize)',
+          lineHeight: 'var(--ds-typo-bodyBoldLarge-lineHeight)',
+          letterSpacing: 'var(--ds-typo-bodyBoldLarge-letterSpacing)',
+          borderRadius: 'var(--ds-radius-quickFreeze)',
+          '&:hover': {
+            backgroundColor: 'var(--ds-colour-surfaceSecondary)',
+            color: 'var(--ds-colour-typoActionSecondary)'
+          },
+          '&:focus': {
+            backgroundColor: 'var(--ds-colour-surfaceSecondary)',
+            color: 'var(--ds-colour-typoActionSecondary)'
           }
         }
       }
@@ -90,8 +128,12 @@ export const DsDatePickerOverrides = {
   },
   MuiDayCalendar: {
     styleOverrides: {
+      root: {
+        padding: 'var(--ds-spacing-bitterCold)',
+        maxHeight: '300px'
+      },
       weekDayLabel: {
-        color: 'var(--ds-color-typoDisabled)',
+        color: 'var(--ds-colour-typoDisabled)',
         width: '36px',
         height: '36px',
         margin: 'var(--ds-spacing-zero)',
@@ -100,6 +142,9 @@ export const DsDatePickerOverrides = {
         lineHeight: 'var(--ds-typo-bodyRegularMedium-lineHeight)',
         letterSpacing: 'var(--ds-typo-bodyRegularMedium-letterSpacing)'
       },
+      weekContainer: {
+        justifyContent: 'space-between'
+      },
       slideTransition: {
         minHeight: 'unset'
       },
@@ -107,18 +152,30 @@ export const DsDatePickerOverrides = {
         position: 'unset'
       },
       header: {
-        marginBottom: 'var(--ds-spacing-deepFreeze)'
+        marginBottom: 'var(--ds-spacing-deepFreeze)',
+        justifyContent: 'space-between'
       }
     }
   },
   MuiYearCalendar: {
     styleOverrides: {
       root: {
-        width: '252px',
-        maxHeight: '302px',
-        padding: 'var(--ds-spacing-glacial)',
-        marginTop: '-34px',
-        backgroundColor: 'var(--ds-color-surfaceBackground)'
+        paddingLeft: 'var(--ds-spacing-bitterCold)',
+        paddingRight: 'var(--ds-spacing-bitterCold)',
+        marginTop: 'var(--ds-spacing-warm)',
+        marginBottom: 'var(--ds-spacing-warm)',
+        backgroundColor: 'var(--ds-colour-surfaceBackground)'
+      }
+    }
+  },
+  MuiMonthCalendar: {
+    styleOverrides: {
+      root: {
+        rowGap: 'var(--ds-spacing-mild)',
+        paddingTop: 'var(--ds-spacing-tropical)',
+        paddingBottom: 'var(--ds-spacing-tropical)',
+        paddingLeft: 'var(--ds-spacing-bitterCold)',
+        paddingRight: 'var(--ds-spacing-bitterCold)'
       }
     }
   },
@@ -128,31 +185,36 @@ export const DsDatePickerOverrides = {
         flexBasis: '100%'
       },
       yearButton: {
-        padding: 'var(--ds-spacing-zero)',
+        width: '100%',
+        paddingTop: 'var(--ds-spacing-quickFreeze)',
+        paddingBottom: 'var(--ds-spacing-quickFreeze)',
         height: 'unset',
+        borderRadius: 'var(--ds-radius-quickFreeze)',
+        marginTop: 'var(--ds-spacing-frostbite)',
+        marginBottom: 'var(--ds-spacing-frostbite)',
         fontWeight: 'var(--ds-typo-bodyRegularLarge-fontWeight)',
         fontSize: 'var(--ds-typo-bodyRegularLarge-fontSize)',
         lineHeight: 'var(--ds-typo-bodyRegularLarge-lineHeight)',
         letterSpacing: 'var(--ds-typo-bodyRegularLarge-letterSpacing)',
-        color: 'var(--ds-color-typoPrimary)',
+        color: 'var(--ds-colour-typoPrimary)',
         '&:hover': {
-          backgroundColor: 'transparent'
+          backgroundColor: 'var(--ds-colour-surfaceSecondary)'
         },
         '&:focus': {
-          backgroundColor: 'transparent'
+          backgroundColor: 'var(--ds-colour-surfaceSecondary)'
         },
         '&.Mui-selected': {
           fontWeight: 'var(--ds-typo-headingBoldMedium-fontWeight)',
           fontSize: 'var(--ds-typo-headingBoldMedium-fontSize)',
           lineHeight: 'var(--ds-typo-headingBoldMedium-lineHeight)',
           letterSpacing: 'var(--ds-typo-headingBoldMedium-letterSpacing)',
-          color: 'var(--ds-color-actionSecondary)',
-          backgroundColor: 'transparent',
+          color: 'var(--ds-colour-typoActionSecondary)',
+          backgroundColor: 'var(--ds-colour-surfaceSecondary)',
           '&:hover': {
-            backgroundColor: 'transparent'
+            backgroundColor: 'var(--ds-colour-surfaceSecondary)'
           },
           '&:focus': {
-            backgroundColor: 'transparent'
+            backgroundColor: 'var(--ds-colour-surfaceSecondary)'
           }
         }
       }

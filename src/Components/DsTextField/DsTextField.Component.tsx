@@ -21,6 +21,7 @@ export class DsTextField extends PureComponent<DsTextFieldProps> {
       ref,
       inputRef,
       disabled,
+      required,
       FormControlProps,
       InputLabelProps,
       HelperTextProps,
@@ -36,6 +37,7 @@ export class DsTextField extends PureComponent<DsTextFieldProps> {
         error={error}
         sx={sx}
         disabled={disabled}
+        required={required}
         {...FormControlProps}
       >
         <DsInputLabel
@@ -45,6 +47,7 @@ export class DsTextField extends PureComponent<DsTextFieldProps> {
           success={success}
           htmlFor={id || name}
           disabled={disabled}
+          required={required}
           {...InputLabelProps}
         />
         <DsInputBase
@@ -55,6 +58,7 @@ export class DsTextField extends PureComponent<DsTextFieldProps> {
           name={name}
           inputRef={ref || inputRef}
           disabled={disabled}
+          required={required}
           {...inputBaseProps}
         />
         <DsHelperText

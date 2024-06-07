@@ -9,7 +9,7 @@ import { AutocompleteRenderInputParams } from '@mui/material'
 import { DsInputAdornment } from '../DsInputAdornment'
 
 export class DsSearchbar extends Component<
-  DsSearchbarProps<false, false, false, false>
+  DsSearchbarProps<any, false, false, false>
 > {
   static defaultProps = DsSearchbarDefaultProps
 

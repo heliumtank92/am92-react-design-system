@@ -11,9 +11,9 @@ export const DsFabOverrides = {
         textTransform: 'none',
         height: 'auto',
         width: 'auto',
-        borderRadius: '28px',
+        borderRadius: 'var(--ds-radius-pleasant)',
         '&.MuiFab-default': {
-          backgroundColor: 'var(--ds-color-surfacePrimary)'
+          backgroundColor: 'var(--ds-colour-surfacePrimary)'
         },
         '&.MuiFab-extended .MuiTypography-root': {
           fontWeight: 'var(--ds-typo-bodyBoldMedium-fontWeight)',

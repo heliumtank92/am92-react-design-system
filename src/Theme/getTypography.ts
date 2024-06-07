@@ -1,32 +1,26 @@
-import { PaletteOptions, Typography } from '@mui/material'
 import { DsColor, DsTypographyVariants } from '../Types'
 
-export type Typography = {
-  palette?: PaletteOptions
-  dsColor?: DsColor
-}
-
-export default function getTypography(fontFamilyName: string = ''): any {
+export default function getTypography(fontFamilyName: string = '') {
   const fontFamily = `"${fontFamilyName}", "Helvetica"`
 
-  const dsTypoPrimitive: any = {
+  const dsTypoPrimitive = {
     primaryFont: fontFamilyName,
     fontFamily,
 
-    fontSizeScorched: '76px',
-    fontSizeTorrid: '56px',
-    fontSizeBlazzing: '48px',
-    fontSizeHot: '44px',
-    fontSizeTropical: '40px',
-    fontSizeWarm: '32px',
-    fontSizeMild: '24px',
-    fontSizeCool: '20px',
-    fontSizeCold: '18px',
-    fontSizeBitterCold: '16px',
-    fontSizeFrigid: '14px',
-    fontSizeFrostbite: '12px',
-    fontSizeBlizzard: '11px',
-    fontSizeIceAge: '10px',
+    fontSizeScorched: '4.75rem',
+    fontSizeTorrid: '3.5rem',
+    fontSizeBlazzing: '3rem',
+    fontSizeHot: '2.75rem',
+    fontSizeTropical: '2.5rem',
+    fontSizeWarm: '2rem',
+    fontSizeMild: '1.5rem',
+    fontSizeCool: '1.25rem',
+    fontSizeCold: '1.125rem',
+    fontSizeBitterCold: '1rem',
+    fontSizeFrigid: '0.875rem',
+    fontSizeFrostbite: '0.75rem',
+    fontSizeBlizzard: '0.688rem',
+    fontSizeIceAge: '0.625rem',
 
     fontWeightLight: '300',
     fontWeightRegular: '400',
@@ -40,11 +34,11 @@ export default function getTypography(fontFamilyName: string = ''): any {
     lineHeightDeepfreeze: '2px',
     lineHeightZero: '0px',
 
-    characterSpacingArctic: '1',
-    characterSpacingAlps: '0.32',
-    characterSpacingHindukush: '0.24',
-    characterSpacingHimalayas: '0.16',
-    characterSpacingZero: '0',
+    characterSpacingArctic: '1px',
+    characterSpacingAlps: '0.32px',
+    characterSpacingHindukush: '0.24px',
+    characterSpacingHimalayas: '0.16px',
+    characterSpacingZero: '0px',
 
     paragraphSpacing: '0px'
   }
@@ -54,21 +48,30 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeTorrid,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeTorrid} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeTorrid,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingZero
     },
     displayBoldMedium: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeBlazzing,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeBlazzing} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeBlazzing,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingZero
     },
     displayBoldSmall: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeTropical,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeTropical} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeTropical,
+        dsTypoPrimitive.lineHeightQuickFreeze
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingZero
     },
 
@@ -77,7 +80,10 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontStyle: 'italic',
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeTorrid,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeTorrid} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeTorrid,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingZero
     },
     displayBoldItalicMedium: {
@@ -85,7 +91,10 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontStyle: 'italic',
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeBlazzing,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeBlazzing} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeBlazzing,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingZero
     },
     displayBoldItalicSmall: {
@@ -93,7 +102,10 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontStyle: 'italic',
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeTropical,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeTropical} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeTropical,
+        dsTypoPrimitive.lineHeightQuickFreeze
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingZero
     },
 
@@ -101,42 +113,60 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeWarm,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeWarm} + ${dsTypoPrimitive.lineHeightIceAge})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeWarm,
+        dsTypoPrimitive.lineHeightIceAge
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingZero
     },
     headingBoldLarge: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeMild,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeMild} + ${dsTypoPrimitive.lineHeightGlacial})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeMild,
+        dsTypoPrimitive.lineHeightGlacial
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldMedium: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeCool,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeCool} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeCool,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldSmall: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeCold,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeCold} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeCold,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldExtraSmall: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeBitterCold,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeBitterCold,
+        dsTypoPrimitive.lineHeightQuickFreeze
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     subheadingSemiboldLarge: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightSemibold,
       fontSize: dsTypoPrimitive.fontSizeFrigid,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeFrigid,
+        dsTypoPrimitive.lineHeightQuickFreeze
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush,
       textTransform: 'uppercase'
     },
@@ -144,7 +174,10 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightSemibold,
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeFrostbite,
+        dsTypoPrimitive.lineHeightQuickFreeze
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush,
       textTransform: 'uppercase'
     },
@@ -154,7 +187,10 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontStyle: 'italic',
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeWarm,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeWarm} + ${dsTypoPrimitive.lineHeightIceAge})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeWarm,
+        dsTypoPrimitive.lineHeightIceAge
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingZero
     },
     headingBoldItalicLarge: {
@@ -162,7 +198,10 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontStyle: 'italic',
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeMild,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeMild} + ${dsTypoPrimitive.lineHeightGlacial})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeMild,
+        dsTypoPrimitive.lineHeightGlacial
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldItalicMedium: {
@@ -170,7 +209,10 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontStyle: 'italic',
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeCool,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeCool} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeCool,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldItalicSmall: {
@@ -178,7 +220,10 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontStyle: 'italic',
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeCold,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeCold} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeCold,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldItalicExtraSmall: {
@@ -186,7 +231,10 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontStyle: 'italic',
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeBitterCold,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeBitterCold,
+        dsTypoPrimitive.lineHeightQuickFreeze
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
 
@@ -194,21 +242,30 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontSizeBitterCold,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightGlacial})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeBitterCold,
+        dsTypoPrimitive.lineHeightGlacial
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     bodyRegularMedium: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontSizeFrigid,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeFrigid,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     bodyRegularSmall: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeFrostbite,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingAlps
     },
 
@@ -216,21 +273,30 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeBitterCold,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightGlacial})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeBitterCold,
+        dsTypoPrimitive.lineHeightGlacial
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     bodyBoldMedium: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeFrigid,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeFrigid,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     bodyBoldSmall: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightGelid})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeFrostbite,
+        dsTypoPrimitive.lineHeightGelid
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingAlps
     },
 
@@ -238,21 +304,30 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontSizeBlizzard,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeBlizzard} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeBlizzard,
+        dsTypoPrimitive.lineHeightQuickFreeze
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingAlps
     },
     supportRegularFootnote: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontSizeIceAge,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeIceAge} + ${dsTypoPrimitive.lineHeightDeepfreeze})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeIceAge,
+        dsTypoPrimitive.lineHeightDeepfreeze
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingAlps
     },
     supportBoldTextButton: {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightZero})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeFrostbite,
+        dsTypoPrimitive.lineHeightZero
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingArctic,
       textTransform: 'uppercase'
     },
@@ -260,7 +335,10 @@ export default function getTypography(fontFamilyName: string = ''): any {
       fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightZero})`,
+      lineHeight: lineHeightCalculator(
+        dsTypoPrimitive.fontSizeFrostbite,
+        dsTypoPrimitive.lineHeightZero
+      ),
       letterSpacing: dsTypoPrimitive.characterSpacingAlps,
       textTransform: 'uppercase'
     }
@@ -317,6 +395,27 @@ export default function getTypography(fontFamilyName: string = ''): any {
   }
 
   return { dsTypo, typography }
+}
+
+function getFontSizePixelNumber(fontSize: string): number {
+  let getFontSizePixel
+  if (fontSize.includes('rem')) {
+    getFontSizePixel = parseFloat(fontSize.replace('rem', '')) * 16
+    return getFontSizePixel
+  }
+
+  getFontSizePixel = parseFloat(fontSize.replace('px', ''))
+  return getFontSizePixel
+}
+
+function lineHeightCalculator(fontSize: string, lineHeightAdjustment: string) {
+  const fontSizeNumber = getFontSizePixelNumber(fontSize)
+  const lineHeightAdjustmentNumber = parseFloat(
+    lineHeightAdjustment.replace('px', '')
+  )
+  const lineHeight =
+    (fontSizeNumber + lineHeightAdjustmentNumber) / fontSizeNumber
+  return lineHeight
 }
 
 declare module '@mui/material/styles' {

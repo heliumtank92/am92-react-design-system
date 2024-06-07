@@ -36,6 +36,10 @@ export const PALETTE: DsPalette = {
   snackBlue: '#145599',
   typical: '#165964',
 
+  errorRedDark: '#FF6C6C',
+  successGreenDark: '#62D264',
+  warningOrangeDark: '#F87647',
+
   errorRedNeutralLight: '#F9EBEF',
   successGreenNeutralLight: '#EFF9EB',
   warningOrangeNeutralLight: '#F9F1EB',
@@ -60,5 +64,10 @@ export const PALETTE: DsPalette = {
   neutral3Dark: '#0F1B32',
   neutral4Dark: '#260F32',
   neutral5Dark: '#322A0F',
-  neutral6Dark: '#3D7F7C'
+  neutral6Dark: '#3D7F7C',
+
+  highContrast1: '#68EBB2',
+  highContrast2: '#A0E2F7',
+  highContrast3: '#CFFFEA',
+  highContrast4: '#91F3C8'
 }

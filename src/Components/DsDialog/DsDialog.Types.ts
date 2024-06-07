@@ -1,25 +1,32 @@
 import { DialogProps } from '@mui/material'
+import { DsDialogTitleProps } from '../DsDialogTitle'
+import { DsTypographyProps } from '../DsTypography'
+import { DsIconButtonProps } from '../DsIconButton'
+import { DsRemixIconProps } from '../DsRemixIcon'
+import { DsDialogContentProps } from '../DsDialogContent'
+import { DsDialogActionsProps } from '../DsDialogActions'
+import { DsButtonProps } from '../DsButton'
 
 export interface DsDialogProps extends DialogProps {
-  imageSrc?: string
-  imageAlt?: string
-  heading?: string
+  title?: string
   description?: string
-  buttonGroup?: React.ReactElement
-
-  textAlign?: 'right' | 'left' | 'center' | 'inherit' | 'justify' | undefined
   showClose?: boolean
-
-  fullWidth?: boolean
+  primaryButtonText?: DsButtonProps['children']
+  primaryButtonProps?: Omit<DsButtonProps, 'children' | 'ref'>
+  secondaryButtonText?: DsButtonProps['children']
+  secondaryButtonProps?: Omit<DsButtonProps, 'children' | 'ref'>
+  TitleProps?: DsDialogTitleProps
+  DescriptionProps?: DsTypographyProps
+  CloseIconButtonProps?: DsIconButtonProps
+  CloseIconProps?: Omit<DsRemixIconProps, 'ref'>
+  ContentProps?: DsDialogContentProps
+  ActionsProps?: DsDialogActionsProps
 }
 
 export const DsDialogDefaultProps: DsDialogProps = {
   open: false,
   scroll: 'paper',
-  maxWidth: 'xs',
-  imageSrc: '',
-  imageAlt: '',
-  textAlign: 'left',
+  maxWidth: 'md',
   showClose: true,
   fullWidth: true
 }

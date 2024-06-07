@@ -4,10 +4,8 @@ export const DsMenuOverrides = {
   MuiMenu: {
     defaultProps: DsMenuDefaultProps,
     styleOverrides: {
-      list: {
-        boxShadow: 'var(--ds-elevation-4)',
-        borderRadius: '8px'
-      }
+      paper: { borderRadius: 'var(--ds-radius-glacial)' },
+      list: { boxShadow: 'var(--ds-elevation-4)' }
     }
   }
 }

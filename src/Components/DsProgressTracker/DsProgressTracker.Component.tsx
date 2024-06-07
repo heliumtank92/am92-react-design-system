@@ -2,54 +2,132 @@ import React, { PureComponent } from 'react'
 import {
   DsProgressTrackerDefaultProps,
   DsProgressTrackerProps,
-  DsProgressTrackerStepProps
+  DsProgressTrackerState
 } from './DsProgressTracker.Types'
-import { DsStepper } from '../DsStepper'
-import { DsStep } from '../DsStep'
-import { DsStepLabel } from '../DsStepLabel'
-import { DsRemixIcon } from '../DsRemixIcon'
-import { StepIconProps } from '@mui/material'
+import { DsProgressStepper } from './DsProgressStepper.Component'
+import { DsProgressIndicator } from '../DsProgressIndicator'
+import { DsCollapse } from '../DsCollapse'
+import { DsBox } from '../DsBox'
+import { DsTypography } from '../DsTypography'
+import { DsStack } from '../DsStack'
 
-export class DsProgressTracker extends PureComponent<DsProgressTrackerProps> {
+export class DsProgressTracker extends PureComponent<
+  DsProgressTrackerProps,
+  DsProgressTrackerState
+> {
   static defaultProps = DsProgressTrackerDefaultProps
 
-  renderStepIcon = (stepProps: StepIconProps) => {
-    const { active, completed, icon } = stepProps
+  constructor(props: DsProgressTrackerProps) {
+    super(props)
 
-    if (completed) {
-      return (
-        <DsRemixIcon
-          className="ri-checkbox-circle-fill"
-          color="iconSupportPositive"
-        />
-      )
+    const state: DsProgressTrackerState = {
+      open: props['ds-variant'] === 'steps' ? true : false
     }
 
-    if (active) {
-      return (
-        <DsRemixIcon
-          className="ri-play-circle-fill"
-          color="iconActionSecondary"
-        />
-      )
-    }
-
-    return <>{icon}</>
+    this.state = state
   }
 
-  renderStep = (step: DsProgressTrackerStepProps, index: number) => {
-    const { stepName } = step
+  getMergedProps = () => {
+    return {
+      ...DsProgressTrackerDefaultProps,
+      ...this.props,
+      StepperProps: {
+        ...DsProgressTrackerDefaultProps?.StepperProps,
+        ...this.props?.StepperProps
+      }
+    }
+  }
+
+  handleToggleCollapse = () => this.setState({ open: !this.state.open })
+
+  renderStepper = () => {
+    const mergedProps = this.getMergedProps()
+    // Don Not Render steps if variant is `header`
+    if (mergedProps['ds-variant'] === 'header') {
+      return null
+    }
+
+    const { StepperProps, activeStep, steps } = mergedProps
+    const { open } = this.state
+
     return (
-      <DsStep key={index}>
-        <DsStepLabel StepIconComponent={this.renderStepIcon}>
-          {stepName}
-        </DsStepLabel>
-      </DsStep>
+      <DsCollapse in={open}>
+        <DsProgressStepper
+          activeStep={activeStep}
+          steps={steps}
+          {...StepperProps}
+        />
+      </DsCollapse>
+    )
+  }
+
+  renderHeader = () => {
+    const mergedProps = this.getMergedProps()
+
+    // Don Not Render Header if variant is `steps`
+    if (mergedProps['ds-variant'] === 'steps') {
+      return null
+    }
+
+    const { activeStep, steps, nextStepLabelPrefix } = mergedProps
+    const currentStep = steps[activeStep] || {}
+    const nextStepIndex = activeStep + 1
+    const nextStep = steps[nextStepIndex]
+    const haveNextStep = nextStepIndex <= steps.length
+    const isNextStepLastStep = nextStepIndex === steps.length
+
+    return (
+      <DsStack
+        sx={{
+          p: 'var(--ds-spacing-bitterCold)',
+          alignItems: 'center',
+          borderBottom: '1px solid var(--ds-colour-strokeDefault)',
+          backgroundColor: 'var(--ds-colour-surfaceBackground)',
+          cursor: mergedProps['ds-variant'] === 'default' ? 'pointer' : 'unset'
+        }}
+        spacing="var(--ds-spacing-bitterCold)"
+        direction="row"
+        onClick={this.handleToggleCollapse}
+      >
+        <DsProgressIndicator activeStep={activeStep + 1} steps={steps.length} />
+        <DsStack
+          flexGrow={1}
+          direction="column"
+          spacing="var(--ds-spacing-quickFreeze)"
+        >
+          <DsTypography
+            component="div"
+            textAlign="right"
+            color="var(--ds-colour-actionSecondary)"
+            variant="headingBoldExtraSmall"
+          >
+            {currentStep.stepName}
+          </DsTypography>
+          {haveNextStep && (
+            <DsTypography
+              component="div"
+              textAlign="right"
+              color="var(--ds-colour-typoTertiary)"
+              variant="subheadingSemiboldDefault"
+            >
+              {isNextStepLastStep
+                ? 'Yay! you are almost done'
+                : `${nextStepLabelPrefix}${nextStep.stepName}`}
+            </DsTypography>
+          )}
+        </DsStack>
+      </DsStack>
     )
   }
 
   render() {
-    const { steps, ...stepperProps } = this.props
-    return <DsStepper {...stepperProps}>{steps.map(this.renderStep)}</DsStepper>
+    const mergedProps = this.props
+    const { sx } = mergedProps
+    return (
+      <DsBox sx={{ width: '100%', ...sx }}>
+        {this.renderHeader()}
+        {this.renderStepper()}
+      </DsBox>
+    )
   }
 }

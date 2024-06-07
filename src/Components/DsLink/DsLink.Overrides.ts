@@ -6,19 +6,19 @@ export const DsLinkOverrides = {
     styleOverrides: {
       root: {
         cursor: 'pointer',
-        textDecorationColor: 'var(--ds-color-actionSecondary)',
+        textDecorationColor: 'var(--ds-colour-actionSecondary)',
         textUnderlinePosition: 'under',
         '&:visited': {
-          color: 'var(--ds-color-stateSelectedVisitedTextLink)',
-          textDecorationColor: 'var(--ds-color-stateSelectedVisitedTextLink)'
+          color: 'var(--ds-colour-stateSelectedVisitedTextLink)',
+          textDecorationColor: 'var(--ds-colour-stateSelectedVisitedTextLink)'
         },
         '&:active': {
-          color: 'var(--ds-color-typoActionPrimary)',
-          textDecorationColor: 'var(--ds-color-typoActionPrimary)'
+          color: 'var(--ds-colour-typoActionPrimary)',
+          textDecorationColor: 'var(--ds-colour-typoActionPrimary)'
         },
         '&:disabled': {
-          color: 'var(--ds-color-typoDisabled)',
-          textDecorationColor: 'var(--ds-color-typoDisabled)'
+          color: 'var(--ds-colour-typoDisabled)',
+          textDecorationColor: 'var(--ds-colour-typoDisabled)'
         },
         '&:focus': {
           textDecoration: 'underline'

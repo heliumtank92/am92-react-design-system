@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import Chip from '@mui/material/Chip'
 import { DsTagProps, DsTagDefaultProps } from './DsTag.Types'
+import { DsRemixIcon } from '../DsRemixIcon'
 
 export class DsTag extends PureComponent<DsTagProps> {
   static defaultProps = DsTagDefaultProps
@@ -25,12 +26,13 @@ export class DsTag extends PureComponent<DsTagProps> {
 
     return (
       <Chip
-        {...chipProps}
+        deleteIcon={<DsRemixIcon className="ri-close-circle-fill" />}
         skipFocusWhenDisabled
+        {...chipProps}
         clickable
         color={color}
+        onDelete={(onDelete && this.handleDelete) || undefined}
         onClick={this.handleClick}
-        onDelete={this.handleDelete}
       />
     )
   }

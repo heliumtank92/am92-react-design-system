@@ -9,7 +9,7 @@ export const DsChipOverrides = {
         props: { 'ds-variant': 'chip' } as Partial<DsChipProps>,
         style: {
           border: 'none',
-          borderRadius: 'var(--ds-spacing-quickFreeze)',
+          borderRadius: 'var(--ds-radius-quickFreeze)',
           paddingLeft: 'var(--ds-spacing-glacial)',
           paddingRight: 'var(--ds-spacing-glacial)',
           height: '20px',
@@ -35,8 +35,8 @@ export const DsChipOverrides = {
           textTransform: 'uppercase',
           paddingTop: 'var(--ds-spacing-quickFreeze)',
           paddingBottom: 'var(--ds-spacing-quickFreeze)',
-          backgroundColor: 'var(--ds-color-supportTypical)',
-          color: 'var(--ds-color-typoOnSurface)'
+          backgroundColor: 'var(--ds-colour-supportTypical)',
+          color: 'var(--ds-colour-typoOnSurface)'
         } as CSSInterpolation
       },
       {
@@ -46,7 +46,7 @@ export const DsChipOverrides = {
           color: 'success'
         } as Partial<DsChipProps>,
         style: {
-          backgroundColor: 'var(--ds-color-supportPositive)'
+          backgroundColor: 'var(--ds-colour-supportPositive)'
         } as CSSInterpolation
       },
       {
@@ -56,7 +56,7 @@ export const DsChipOverrides = {
           color: 'warning'
         } as Partial<DsChipProps>,
         style: {
-          backgroundColor: 'var(--ds-color-supportWarning)'
+          backgroundColor: 'var(--ds-colour-supportWarning)'
         } as CSSInterpolation
       },
       {
@@ -66,7 +66,7 @@ export const DsChipOverrides = {
           color: 'error'
         } as Partial<DsChipProps>,
         style: {
-          backgroundColor: 'var(--ds-color-supportNegative)'
+          backgroundColor: 'var(--ds-colour-supportNegative)'
         } as CSSInterpolation
       },
       {
@@ -76,8 +76,8 @@ export const DsChipOverrides = {
           color: 'info'
         } as Partial<DsChipProps>,
         style: {
-          backgroundColor: 'var(--ds-color-neutral1)',
-          color: 'var(--ds-color-typoPrimary)'
+          backgroundColor: 'var(--ds-colour-neutral1)',
+          color: 'var(--ds-colour-typoPrimary)'
         } as CSSInterpolation
       },
       {
@@ -90,8 +90,8 @@ export const DsChipOverrides = {
           textTransform: 'none',
           paddingTop: 'var(--ds-spacing-deepFreeze)',
           paddingBottom: 'var(--ds-spacing-deepFreeze)',
-          backgroundColor: 'var(--ds-color-supportTypicalNeutral)',
-          color: 'var(--ds-color-supportTypical)'
+          backgroundColor: 'var(--ds-colour-supportTypicalNeutral)',
+          color: 'var(--ds-colour-supportTypical)'
         } as CSSInterpolation
       },
       {
@@ -101,8 +101,8 @@ export const DsChipOverrides = {
           color: 'success'
         } as Partial<DsChipProps>,
         style: {
-          backgroundColor: 'var(--ds-color-supportPositiveNeutral)',
-          color: 'var(--ds-color-supportPositive)'
+          backgroundColor: 'var(--ds-colour-supportPositiveNeutral)',
+          color: 'var(--ds-colour-supportPositive)'
         } as CSSInterpolation
       },
       {
@@ -112,8 +112,8 @@ export const DsChipOverrides = {
           color: 'warning'
         } as Partial<DsChipProps>,
         style: {
-          backgroundColor: 'var(--ds-color-supportWarningNeutral)',
-          color: 'var(--ds-color-supportWarning)'
+          backgroundColor: 'var(--ds-colour-supportWarningNeutral)',
+          color: 'var(--ds-colour-supportWarning)'
         } as CSSInterpolation
       },
       {
@@ -123,8 +123,8 @@ export const DsChipOverrides = {
           color: 'error'
         } as Partial<DsChipProps>,
         style: {
-          backgroundColor: 'var(--ds-color-supportNegativeNeutral)',
-          color: 'var(--ds-color-supportNegative)'
+          backgroundColor: 'var(--ds-colour-supportNegativeNeutral)',
+          color: 'var(--ds-colour-supportNegative)'
         } as CSSInterpolation
       },
       {
@@ -134,8 +134,8 @@ export const DsChipOverrides = {
           color: 'info'
         } as Partial<DsChipProps>,
         style: {
-          backgroundColor: 'var(--ds-color-neutral1)',
-          color: 'var(--ds-color-typoPrimary)'
+          backgroundColor: 'var(--ds-colour-neutral1)',
+          color: 'var(--ds-colour-typoPrimary)'
         } as CSSInterpolation
       }
     ],
@@ -149,15 +149,15 @@ export const DsChipOverrides = {
         letterSpacing: 'var(--ds-typo-bodyRegularMedium-letterSpacing)'
       } as CSSInterpolation,
       filled: {
-        backgroundColor: 'var(--ds-color-surfacePrimary)',
-        border: '1px solid var(--ds-color-strokeDefault)',
+        backgroundColor: 'var(--ds-colour-surfacePrimary)',
+        border: '1px solid var(--ds-colour-strokeDefault)',
         '> .MuiIcon-root': {
-          color: 'var(--ds-color-iconDefault)'
+          color: 'var(--ds-colour-iconDefault)'
         }
       } as CSSInterpolation,
       filledSecondary: {
-        backgroundColor: 'var(--ds-color-actionSecondary)',
-        border: '1px solid var(--ds-color-strokeSelected)',
+        backgroundColor: 'var(--ds-colour-actionSecondary)',
+        border: '1px solid var(--ds-colour-strokeSelected)',
         fontWeight: 'var(--ds-typo-bodyBoldMedium-fontWeight)',
         fontSize: 'var(--ds-typo-bodyBoldMedium-fontSize)',
         lineHeight: 'var(--ds-typo-bodyBoldMedium-lineHeight)',
@@ -180,7 +180,7 @@ export const DsChipOverrides = {
       } as CSSInterpolation,
       deleteIcon: {
         fontSize: 'var(--ds-typo-fontSizeBitterCold)',
-        marginRight: 'var(--ds-spacing-deepFreeze)',
+        marginRight: 'var(--ds-spacing-frostbite)',
         marginLeft: 'calc(var(--ds-spacing-quickFreeze) * -1)'
       } as CSSInterpolation
     }

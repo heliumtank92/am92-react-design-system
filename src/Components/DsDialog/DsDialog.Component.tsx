@@ -1,20 +1,17 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-
-import Dialog from '@mui/material/Dialog'
-import DialogActions from '@mui/material/DialogActions'
-
-import { DsBox } from '../DsBox'
-import { DsImage } from '../DsImage'
-import { DsTypography } from '../DsTypography'
-import { DsRemixIcon } from '../DsRemixIcon'
-import { DsIconButton } from '../DsIconButton'
-import { DsStack } from '../DsStack'
+import * as React from 'react'
 import { DsDialogDefaultProps, DsDialogProps } from './DsDialog.Types'
+import { DsDialogTitle } from '../DsDialogTitle'
+import { Dialog } from '@mui/material'
+import { DsIconButton } from '../DsIconButton'
+import { DsRemixIcon } from '../DsRemixIcon'
+import { DsTypography } from '../DsTypography'
+import { DsDialogContent } from '../DsDialogContent'
+import { DsDialogActions } from '../DsDialogActions'
+import { DsButton } from '../DsButton'
+import { Theme } from '@emotion/react'
 
-export class DsDialog extends PureComponent<DsDialogProps> {
+export class DsDialog extends React.Component<DsDialogProps> {
   static defaultProps = DsDialogDefaultProps
-
   handleDialogClose = (
     event: React.SyntheticEvent,
     reason: 'backdropClick' | 'escapeKeyDown'
@@ -32,133 +29,161 @@ export class DsDialog extends PureComponent<DsDialogProps> {
     }
   }
 
-  render() {
+  public render() {
     const {
-      imageSrc,
-      imageAlt,
-      heading,
+      title,
       description,
-      buttonGroup,
-
-      textAlign,
       showClose,
-
-      onClose,
-
+      primaryButtonText,
+      primaryButtonProps,
+      secondaryButtonText,
+      secondaryButtonProps,
+      PaperProps,
+      TitleProps,
+      DescriptionProps,
+      CloseIconButtonProps,
+      CloseIconProps,
+      ContentProps,
+      ActionsProps,
       children,
-
-      ...restDialogProps
+      ...DialogProps
     } = this.props
+
+    const actionsAvailable = !!(primaryButtonText || secondaryButtonText)
+    const accessibilityProps: Partial<DsDialogProps> = {}
+    const isFlushed =
+      primaryButtonText &&
+      !secondaryButtonText &&
+      primaryButtonProps &&
+      primaryButtonProps?.variant === 'flushed'
+
+    if (title) {
+      accessibilityProps['aria-labelledby'] = title
+    }
+
+    if (description) {
+      accessibilityProps['aria-describedby'] = description
+    }
 
     return (
       <Dialog
-        onClose={this.handleDialogClose}
-        {...restDialogProps}
+        keepMounted
+        {...accessibilityProps}
+        {...DialogProps}
         PaperProps={{
+          ...PaperProps,
           sx: {
-            paddingTop: {
+            pb: isFlushed
+              ? undefined
+              : {
+                  xs: 'var(--ds-spacing-bitterCold)',
+                  md: 'var(--ds-spacing-warm)'
+                },
+            pt: {
               xs: 'var(--ds-spacing-mild)',
-              md: 'calc(var(--ds-spacing-mild) + var(--ds-spacing-warm))'
+              md: 'var(--ds-spacing-warm)'
             },
-            paddingLeft: {
-              xs: 'var(--ds-spacing-bitterCold)',
-              md: 'calc(var(--ds-spacing-bitterCold) + var(--ds-spacing-warm))'
-            },
-            paddingRight: {
-              xs: 'var(--ds-spacing-bitterCold)',
-              md: 'calc(var(--ds-spacing-bitterCold) + var(--ds-spacing-warm))'
-            },
-            paddingBottom: {
-              xs: 'var(--ds-spacing-mild)',
-              md: 'calc(var(--ds-spacing-bitterCold) + var(--ds-spacing-mild))'
-            },
-            position: 'relative'
+            ...PaperProps?.sx
           }
         }}
       >
+        {title && (
+          <DsDialogTitle
+            {...TitleProps}
+            sx={{
+              width: showClose ? 'calc(100% - 44px)' : '100%',
+              px: {
+                xs: 'var(--ds-spacing-bitterCold)',
+                md: 'var(--ds-spacing-warm)'
+              },
+              ...TitleProps?.sx
+            }}
+          >
+            {title}
+          </DsDialogTitle>
+        )}
+        {description && (
+          <DsTypography
+            variant="subheadingSemiboldDefault"
+            color="text.secondary"
+            {...DescriptionProps}
+            sx={{
+              px: {
+                xs: 'var(--ds-spacing-bitterCold)',
+                md: 'var(--ds-spacing-warm)'
+              },
+              ...DescriptionProps?.sx
+            }}
+          >
+            {description}
+          </DsTypography>
+        )}
         {showClose && (
           <DsIconButton
             onClick={this.handleCloseClick}
+            {...CloseIconButtonProps}
             sx={{
               position: 'absolute',
-              padding: 'var(--ds-spacing-glacial)',
-              borderRadius: '8px',
+              padding: 'var(--ds-spacing-quickFreeze)',
+              borderRadius: 'var(--ds-radius-mild)',
               top: {
-                xs: 'calc(var(--ds-spacing-mild) + var(--ds-spacing-mild))',
-                md: 'calc(var(--ds-spacing-mild))'
+                xs: 'var(--ds-spacing-mild)',
+                md: 'var(--ds-spacing-warm)'
               },
               right: {
-                xs: 'calc(var(--ds-spacing-bitterCold) + var(--ds-spacing-bitterCold))',
-                md: 'calc(var(--ds-spacing-mild))'
-              }
+                xs: 'var(--ds-spacing-bitterCold)',
+                md: 'var(--ds-spacing-warm)'
+              },
+              ...CloseIconButtonProps?.sx
             }}
           >
-            <DsRemixIcon className="ri-close-line" />
+            <DsRemixIcon className="ri-close-line" {...CloseIconProps} />
           </DsIconButton>
         )}
-        <DsStack
-          spacing={{
-            xs: 'var(--ds-spacing-bitterCold)',
-            md: 'var(--ds-spacing-warm)'
-          }}
-        >
-          {imageSrc && (
-            <DsBox
-              sx={{
-                width: '100%',
-                textAlign: 'center'
-              }}
-            >
-              <DsImage src={imageSrc} alt={imageAlt} />
-            </DsBox>
-          )}
-          <DsBox
+        {children && (
+          <DsDialogContent
+            {...ContentProps}
             sx={{
-              width: '100%'
+              px: {
+                xs: 'var(--ds-spacing-bitterCold)',
+                md: 'var(--ds-spacing-warm)'
+              },
+              ...ContentProps?.sx
             }}
           >
-            {heading && (
-              <DsTypography
-                variant="headingBoldMedium"
-                component="div"
-                align={textAlign}
-                sx={{
-                  mb: {
-                    xs: 'var(--ds-spacing-bitterCold)',
-                    md: 'var(--ds-spacing-glacial)'
-                  },
-                  p: 'var(--ds-spacing-glacial)  var(--ds-spacing-pleasant) var(--ds-spacing-zero)  var(--ds-spacing-pleasant)'
-                }}
-              >
-                {heading}
-              </DsTypography>
-            )}
-            {description && (
-              <DsTypography
-                variant="bodyRegularLarge"
-                component="div"
-                align={textAlign}
-                color="text.secondary"
-                sx={{
-                  p: 'var(--ds-spacing-zero)  var(--ds-spacing-pleasant) var(--ds-spacing-glacial)  var(--ds-spacing-pleasant)'
-                }}
-              >
-                {description}
-              </DsTypography>
-            )}
             {children}
-          </DsBox>
-          {buttonGroup && (
-            <DialogActions disableSpacing>
-              {buttonGroup &&
-                React.cloneElement(buttonGroup, {
-                  size: 'medium',
-                  noPadding: true,
-                  fullWidth: true
-                })}
-            </DialogActions>
-          )}
-        </DsStack>
+          </DsDialogContent>
+        )}
+        {actionsAvailable && (
+          <DsDialogActions
+            {...ActionsProps}
+            sx={{
+              px: isFlushed
+                ? undefined
+                : {
+                    xs: 'var(--ds-spacing-bitterCold)',
+                    md: 'var(--ds-spacing-warm)'
+                  },
+              ...ActionsProps?.sx
+            }}
+          >
+            {secondaryButtonText && (
+              <DsButton
+                color="secondary"
+                size="medium"
+                fullWidth
+                {...secondaryButtonProps}
+              >
+                {secondaryButtonText}
+              </DsButton>
+            )}
+            {primaryButtonText && (
+              <DsButton size="medium" fullWidth {...primaryButtonProps}>
+                {primaryButtonText}
+              </DsButton>
+            )}
+          </DsDialogActions>
+        )}
       </Dialog>
     )
   }

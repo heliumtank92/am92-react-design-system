@@ -5,7 +5,7 @@ export const DsToggleOverrides = {
         height: '20px',
         width: '40px',
         padding: 'var(--ds-spacing-zero)',
-        borderRadius: '10px',
+        borderRadius: 'var(--ds-radius-frostbite)',
         '.Mui-disabled': {
           pointerEvents: 'all',
           cursor: 'not-allowed',
@@ -18,13 +18,13 @@ export const DsToggleOverrides = {
         padding: 'var(--ds-spacing-deepFreeze)',
         height: '100%',
         width: '50%',
-        borderRadius: '8px',
+        borderRadius: 'var(--ds-radius-glacial)',
         '&.Mui-checked + .MuiSwitch-track': {
           opacity: 1
         },
         '&.Mui-disabled + .MuiSwitch-track': {
           opacity: 1,
-          backgroundColor: 'var(--ds-color-stateDisabledSurface)'
+          backgroundColor: 'var(--ds-colour-stateDisabledSurface)'
         },
         '.MuiTouchRipple-root': {
           height: '30px',
@@ -36,11 +36,11 @@ export const DsToggleOverrides = {
       thumb: {
         height: '100%',
         width: '100%',
-        color: 'var(--ds-color-iconOnSurface)'
+        color: 'var(--ds-colour-iconOnSurface)'
       },
       track: {
         opacity: 1,
-        backgroundColor: 'var(--ds-color-stateUnselectedDefault)'
+        backgroundColor: 'var(--ds-colour-stateUnselectedDefault)'
       }
     }
   }

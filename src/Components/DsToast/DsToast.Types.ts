@@ -7,5 +7,12 @@ export interface DsToastProps extends AlertProps {
 export const DsToastDefaultProps: DsToastProps = {
   variant: 'filled',
   icon: false,
-  severity: undefined
+  severity: undefined,
+  color: 'default'
+}
+
+declare module '@mui/material/Alert' {
+  interface AlertPropsColorOverrides {
+    default: true
+  }
 }

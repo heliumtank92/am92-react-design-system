@@ -6,11 +6,7 @@ import { DsLink } from '../DsLink'
 
 export class DsTooltip extends PureComponent<DsTooltipProps> {
   renderTitle = () => {
-    const { heading, description, buttonGroup, title } = this.props
-
-    if (title) {
-      return title
-    }
+    const { heading, description, buttonGroup } = this.props
 
     const tooltipButtonGroup = buttonGroup
       ? React.cloneElement(buttonGroup, {
@@ -26,7 +22,7 @@ export class DsTooltip extends PureComponent<DsTooltipProps> {
         {heading && (
           <DsTypography
             component="div"
-            variant="headingBoldExtraSmall"
+            variant="bodyBoldMedium"
             sx={{ mb: 'var(--ds-spacing-glacial)' }}
           >
             {heading}
@@ -47,7 +43,6 @@ export class DsTooltip extends PureComponent<DsTooltipProps> {
       heading,
       description,
       buttonGroup,
-      title,
 
       children,
       ...tooltipProps

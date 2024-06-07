@@ -27,6 +27,9 @@ export type DsPaletteTokens =
   | 'errorRed'
   | 'successGreen'
   | 'warningOrange'
+  | 'errorRedDark'
+  | 'successGreenDark'
+  | 'warningOrangeDark'
   | 'snackBlue'
   | 'typical'
   | 'errorRedNeutralLight'
@@ -51,5 +54,9 @@ export type DsPaletteTokens =
   | 'neutral4Dark'
   | 'neutral5Dark'
   | 'neutral6Dark'
+  | 'highContrast1'
+  | 'highContrast2'
+  | 'highContrast3'
+  | 'highContrast4'
 
 export interface DsPalette extends Partial<Record<DsPaletteTokens, string>> {}

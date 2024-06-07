@@ -2,7 +2,7 @@ export const DsInputAdornmentOverrides = {
   MuiInputAdornment: {
     styleOverrides: {
       root: {
-        color: 'var(--ds-color-iconDefault)',
+        color: 'var(--ds-colour-iconDefault)',
         '& .MuiSvgIcon-root': {
           cursor: 'pointer'
         }

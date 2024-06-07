@@ -6,13 +6,10 @@ export const DsToastOverrides = {
     styleOverrides: {
       root: {
         padding: 'var(--ds-spacing-frostbite)',
-        borderRadius: '4px',
+        borderRadius: 'var(--ds-radius-quickFreeze)',
         borderWidth: '1px',
         borderStyle: 'solid',
         boxShadow: 'var(--ds-elevation-1)',
-        borderColor: 'var(--ds-color-strokeDefault)',
-        backgroundColor: 'var(--ds-color-surfaceTertiary)',
-        color: 'var(--ds-color-surfaceSecondary)',
         alignItems: 'center',
         fontWeight: 'var(--ds-typo-bodyRegularMedium-fontWeight)',
         fontSize: 'var(--ds-typo-bodyRegularMedium-fontSize)',
@@ -30,6 +27,7 @@ export const DsToastOverrides = {
         marginRight: 'var(--ds-spacing-zero)',
         padding: 'var(--ds-spacing-zero)',
         marginLeft: 'var(--ds-spacing-frostbite)',
+        color: 'var(--ds-colour-typoOnSurfaceDynamic)',
         fontSize: 'var(--ds-typo-fontSizeMild)',
         '.MuiIconButton-root': {
           fontSize: 'var(--ds-typo-fontSizeMild)'
@@ -38,41 +36,50 @@ export const DsToastOverrides = {
           fontSize: 'inherit'
         }
       },
+      filledDefault: {
+        borderColor: 'var(--ds-colour-strokeDefault)',
+        backgroundColor: 'var(--ds-colour-surfaceTertiary)',
+        color: 'var(--ds-colour-typoOnSurfaceDynamic)'
+      },
       filledSuccess: {
-        color: 'var(--ds-color-typoOnSurface)',
-        borderColor: 'var(--ds-color-supportPositive)',
-        backgroundColor: 'var(--ds-color-supportPositive)'
+        color: 'var(--ds-colour-typoOnSurface)',
+        borderColor: 'var(--ds-colour-supportPositive)',
+        backgroundColor: 'var(--ds-colour-supportPositive)'
       },
       filledInfo: {
-        color: 'var(--ds-color-typoOnSurface)',
-        borderColor: 'var(--ds-color-supportTypical)',
-        backgroundColor: 'var(--ds-color-supportTypical)'
+        color: 'var(--ds-colour-typoOnSurface)',
+        borderColor: 'var(--ds-colour-supportTypical)',
+        backgroundColor: 'var(--ds-colour-supportTypical)'
       },
       filledWarning: {
-        color: 'var(--ds-color-typoOnSurface)',
-        borderColor: 'var(--ds-color-supportWarning)',
-        backgroundColor: 'var(--ds-color-supportWarning)'
+        color: 'var(--ds-colour-typoOnSurface)',
+        borderColor: 'var(--ds-colour-supportWarning)',
+        backgroundColor: 'var(--ds-colour-supportWarning)'
       },
       filledError: {
-        color: 'var(--ds-color-typoOnSurface)',
-        borderColor: 'var(--ds-color-supportNegative)',
-        backgroundColor: 'var(--ds-color-supportNegative)'
+        color: 'var(--ds-colour-typoOnSurface)',
+        borderColor: 'var(--ds-colour-supportNegative)',
+        backgroundColor: 'var(--ds-colour-supportNegative)'
+      },
+      outlinedDefault: {
+        color: 'var(--ds-colour-typoOnSurfaceDynamic)',
+        backgroundColor: 'var(--ds-colour-surfaceTertiary)'
       },
       outlinedSuccess: {
-        color: 'var(--ds-color-supportPositive)',
-        backgroundColor: 'var(--ds-color-surfaceBackground)'
+        color: 'var(--ds-colour-supportPositive)',
+        backgroundColor: 'var(--ds-colour-surfaceBackground)'
       },
       outlinedInfo: {
-        color: 'var(--ds-color-supportTypical)',
-        backgroundColor: 'var(--ds-color-surfaceBackground)'
+        color: 'var(--ds-colour-supportTypical)',
+        backgroundColor: 'var(--ds-colour-surfaceBackground)'
       },
       outlinedWarning: {
-        color: 'var(--ds-color-supportWarning)',
-        backgroundColor: 'var(--ds-color-surfaceBackground)'
+        color: 'var(--ds-colour-supportWarning)',
+        backgroundColor: 'var(--ds-colour-surfaceBackground)'
       },
       outlinedError: {
-        color: 'var(--ds-color-supportNegative)',
-        backgroundColor: 'var(--ds-color-surfaceBackground)'
+        color: 'var(--ds-colour-supportNegative)',
+        backgroundColor: 'var(--ds-colour-surfaceBackground)'
       }
     }
   }

@@ -3,10 +3,12 @@ export const DsAccordionDetailsOverrides = {
     styleOverrides: {
       root: {
         border: 'none',
-        paddingTop: 'var(--ds-spacing-mild)',
-        paddingBottom: 'var(--ds-spacing-mild)',
-        paddingLeft: 'var(--ds-spacing-bitterCold)',
-        paddingRight: 'var(--ds-spacing-bitterCold)'
+        borderBottom: '1px solid var(--ds-colour-strokeDefault)',
+        padding: 'var(--ds-spacing-bitterCold)',
+        fontWeight: 'var(--ds-typo-bodyRegularSmall-fontWeight)',
+        fontSize: 'var(--ds-typo-bodyRegularSmall-fontSize)',
+        lineHeight: 'var(--ds-typo-bodyRegularSmall-lineHeight)',
+        letterSpacing: 'var(--ds-typo-bodyRegularSmall-letterSpacing)'
       }
     }
   }

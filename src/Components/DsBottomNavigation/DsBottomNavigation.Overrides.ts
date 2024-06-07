@@ -5,9 +5,10 @@ export const DsBottomNavigationOverrides = {
     defaultProps: DsBottomNavigationDefaultProps,
     styleOverrides: {
       root: {
-        background: 'var(--ds-color-surfacePrimary)',
+        background: 'var(--ds-colour-surfacePrimary)',
         height: 'auto',
-        maxHeight: 'var(--ds-rule-bottomNavigationMaxHeight)'
+        maxHeight: 'var(--ds-rule-bottomNavigationMaxHeight)',
+        boxShadow: 'var(--ds-elevation-0)'
       }
     }
   }

@@ -6,10 +6,10 @@ export const DsDividerOverrides = {
     defaultProps: DsDividerDefaultProps,
     styleOverrides: {
       root: {
-        borderColor: 'var(--ds-color-strokeDefault)'
+        borderColor: 'var(--ds-colour-strokeDefault)'
       },
       light: {
-        borderColor: 'var(--ds-color-strokeDisabled)'
+        borderColor: 'var(--ds-colour-strokeDisabled)'
       }
     },
     variants: [

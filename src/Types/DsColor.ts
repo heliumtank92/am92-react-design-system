@@ -13,6 +13,7 @@ export type DsColorTokens =
   | 'typoActionSecondary'
   | 'typoActionTertiary'
   | 'typoOnSurface'
+  | 'typoOnSurfaceDynamic'
   | 'typoDisabled'
   | 'typoTypical'
   | 'neutral1'
@@ -21,13 +22,14 @@ export type DsColorTokens =
   | 'neutral4'
   | 'neutral5'
   | 'neutral6'
-  | 'iconSupportNegative'
-  | 'iconSupportPositive'
-  | 'iconSupportWarning'
+  | 'iconNegative'
+  | 'iconPositive'
+  | 'iconWarning'
   | 'iconActionPrimary'
   | 'iconActionSecondary'
   | 'iconActionTertiary'
   | 'iconOnSurface'
+  | 'iconOnSurfaceDynamic'
   | 'iconDisabled'
   | 'iconDefault'
   | 'iconTypical'
@@ -57,6 +59,7 @@ export type DsColorTokens =
   | 'stateDisabledSurface'
   | 'overlay'
   | 'overlayLoader'
+  | 'dotLoader'
 
 export type DsColorClassTokens =
   | 'colorActionPrimary'
@@ -73,6 +76,7 @@ export type DsColorClassTokens =
   | 'colorTypoActionSecondary'
   | 'colorTypoActionTertiary'
   | 'colorTypoOnSurface'
+  | 'colorTypoOnSurfaceDynamic'
   | 'colorTypoDisabled'
   | 'colorTypoTypical'
   | 'colorNeutral1'
@@ -91,6 +95,7 @@ export type DsColorClassTokens =
   | 'colorIconDisabled'
   | 'colorIconDefault'
   | 'colorIconTypical'
+  | 'colorIconOnSurfaceDynamic'
   | 'colorStrokeDefault'
   | 'colorStrokeSelected'
   | 'colorStrokeSecondarySelected'
@@ -117,6 +122,7 @@ export type DsColorClassTokens =
   | 'colorStateDisabledSurface'
   | 'colorOverlay'
   | 'colorOverlayLoader'
+  | 'colorDotLoader'
 
 interface DsColorGenerics<T> extends Partial<Record<DsColorTokens, T>> {}
 interface DsColorClassGenerics<T>

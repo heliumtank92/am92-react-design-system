@@ -4,7 +4,7 @@ const STATE_STYLES: any = {
       zIndex: 1
     },
     '&:hover:not(.Mui-disabled)': {
-      backgroundColor: 'var(--ds-color-actionPrimary)'
+      backgroundColor: 'var(--ds-colour-actionPrimary)'
     },
     '&:focus-visible:not(.Mui-disabled)': {
       '& .MuiTouchRipple-root': {
@@ -14,8 +14,7 @@ const STATE_STYLES: any = {
           opacity: 1,
           '& .MuiTouchRipple-child': {
             mixBlendMode: 'color-dodge',
-            backgroundColor:
-              'var(--ds-color-stateSelectedPrimaryHover)'
+            backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
           }
         }
       }
@@ -28,8 +27,7 @@ const STATE_STYLES: any = {
           opacity: 1,
           '& .MuiTouchRipple-child': {
             mixBlendMode: 'color-dodge',
-            backgroundColor:
-              'var(--ds-color-stateSelectedPrimaryHover)'
+            backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
           }
         }
       }
@@ -37,7 +35,7 @@ const STATE_STYLES: any = {
   },
   ACTION_SECONDARY_STATE_SECONDARY: {
     '&:hover:not(.Mui-disabled)': {
-      backgroundColor: 'var(--ds-color-actionSecondary)'
+      backgroundColor: 'var(--ds-colour-actionSecondary)'
     }
   },
   SURFACE_PRIMARY_STATE_PRIMARY: {
@@ -45,7 +43,7 @@ const STATE_STYLES: any = {
       zIndex: 1
     },
     '&:hover:not(.Mui-disabled)': {
-      backgroundColor: 'var(--ds-color-stateSelectedPrimaryHover)'
+      backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
     },
     '&:focus-visible:not(.Mui-disabled)': {
       '& .MuiTouchRipple-root': {
@@ -54,8 +52,7 @@ const STATE_STYLES: any = {
         '& .MuiTouchRipple-ripple.MuiTouchRipple-rippleVisible': {
           opacity: 1,
           '& .MuiTouchRipple-child': {
-            backgroundColor:
-              'var(--ds-color-stateSelectedPrimaryHover)'
+            backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
           }
         }
       }
@@ -67,8 +64,7 @@ const STATE_STYLES: any = {
         '& .MuiTouchRipple-ripple.MuiTouchRipple-rippleVisible': {
           opacity: 1,
           '& .MuiTouchRipple-child': {
-            backgroundColor:
-              'var(--ds-color-stateSelectedPrimaryPressed)'
+            backgroundColor: 'var(--ds-colour-stateSelectedPrimaryPressed)'
           }
         }
       }
@@ -79,7 +75,7 @@ const STATE_STYLES: any = {
       zIndex: 1
     },
     '&:hover:not(.Mui-disabled)': {
-      backgroundColor: 'var(--ds-color-surfaceSecondary)'
+      backgroundColor: 'var(--ds-colour-surfaceSecondary)'
     },
     '&:focus-visible:not(.Mui-disabled)': {
       '& .MuiTouchRipple-root': {
@@ -88,8 +84,7 @@ const STATE_STYLES: any = {
         '& .MuiTouchRipple-ripple.MuiTouchRipple-rippleVisible': {
           opacity: 1,
           '& .MuiTouchRipple-child': {
-            backgroundColor:
-              'var(--ds-color-stateSelectedPrimaryHover)'
+            backgroundColor: 'var(--ds-colour-stateSelectedPrimaryHover)'
           }
         }
       }
@@ -101,8 +96,7 @@ const STATE_STYLES: any = {
         '& .MuiTouchRipple-ripple.MuiTouchRipple-rippleVisible': {
           opacity: 1,
           '& .MuiTouchRipple-child': {
-            backgroundColor:
-              'var(--ds-color-stateSelectedPrimaryPressed)'
+            backgroundColor: 'var(--ds-colour-stateSelectedPrimaryPressed)'
           }
         }
       }

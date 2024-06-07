@@ -1,4 +1,6 @@
-const dsRules = {
+import { DsRules } from '../Types/DsRules'
+
+const dsRules: DsRules = {
   headerMobileHeight: '64px',
   headerDesktopHeight: '84px',
 
@@ -11,8 +13,8 @@ const dsRules = {
   drawerWidth: '240px',
   drawerMiniWidth: '56px',
 
-  dialogXsMaxWidth: '600px',
-  bottomStaggerWorkingAreaHeight: '45vh',
+  dialogMdMaxWidth: '600px',
+  bottomSheetWorkingAreaHeight: '68vh',
 
   avatarSSize: '24px',
   avatarMSize: '32px',
