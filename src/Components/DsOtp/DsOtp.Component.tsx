@@ -17,9 +17,36 @@ export class DsOtp extends Component<DsOtpProps, DsOtpState> {
 
   constructor(props: DsOtpProps) {
     super(props)
-    const { initialOtp = '', length } = this.props
+    const { initialOtp, value, length } = this.props
+
+    const otpValue = (value || initialOtp || '').replace(/\D/g, '')
     this.state = {
-      otp: initialOtp ? [...initialOtp].slice(0, length) : []
+      otp: [...otpValue].slice(0, length)
+    }
+  }
+
+  componentDidMount() {
+    const { autoFocus } = this.props
+
+    if (autoFocus) {
+      this.optInputRefs.get(0).focus()
+    }
+  }
+
+  componentDidUpdate(
+    prevProps: Readonly<DsOtpProps>,
+    prevState: Readonly<DsOtpState>,
+    snapshot?: any
+  ): void {
+    const { value, length } = this.props
+    const { value: prevPropsValue } = prevProps
+    const { otp } = this.state
+
+    const otpValue = otp.join('')
+    if (value !== undefined && prevPropsValue !== value && value !== otpValue) {
+      const newOtp = [...value].slice(0, length)
+
+      this.setState({ otp: newOtp })
     }
   }
 
@@ -127,6 +154,8 @@ export class DsOtp extends Component<DsOtpProps, DsOtpState> {
       HelperTextProps,
       BoxProps,
       InputLabelProps,
+      initialOtp,
+      onComplete,
       ...restProps
     } = this.props
     const lengthArray = Array(length).fill('')
