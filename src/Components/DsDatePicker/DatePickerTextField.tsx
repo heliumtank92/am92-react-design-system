@@ -21,6 +21,7 @@ export const DatePickerTextField = React.forwardRef(
     inputRef: React.Ref<any>
   ): React.ReactNode => {
     const { setOpen, ref, InputProps, focused, ownerState, ...other } = props
-    return <DsTextField {...other} />
+    const { readOnly } = InputProps || {}
+    return <DsTextField readOnly={readOnly} {...other} />
   }
 )
