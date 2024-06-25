@@ -28,41 +28,43 @@ export class DsTextFieldPassword extends Component<
     }
   }
 
+  getMergedProps = (): DsTextFieldPasswordProps => {
+    return { ...DsTextFieldPasswordDefaultProps, ...this.props }
+  }
+
   handleTogglePassword = (): void =>
     this.setState({ isVisible: !this.state.isVisible })
 
   render() {
     const { isVisible } = this.state
+    const mergedProps = this.getMergedProps()
     const {
       type,
       isVisible: isVisibleProp,
-      endAdornment,
       disabled,
+      toggleNode,
       ...restProps
-    } = this.props
+    } = mergedProps
 
     const inputType = (isVisible && type) || 'password'
 
-    const rightIcon = (
-      <DsButton
-        onClick={this.handleTogglePassword}
-        variant="text"
-        color="secondary"
-        disabled={disabled}
-        sx={{
-          minWidth: '50px'
-        }}
-      >
-        {isVisible ? 'HIDE' : 'SHOW'}
-      </DsButton>
-    )
+    const endAdornment = isVisible
+      ? React.cloneElement(toggleNode?.toHide || <></>, { disabled })
+      : React.cloneElement(toggleNode?.toShow || <></>, { disabled })
 
     return (
       <DsTextField
         {...restProps}
         disabled={disabled}
         type={inputType}
-        endAdornment={rightIcon}
+        endAdornment={
+          <DsInputAdornment
+            position="end"
+            onClick={(!disabled && this.handleTogglePassword) || undefined}
+          >
+            {endAdornment}
+          </DsInputAdornment>
+        }
       />
     )
   }
