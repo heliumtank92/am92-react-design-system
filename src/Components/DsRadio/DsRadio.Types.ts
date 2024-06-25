@@ -2,7 +2,7 @@ import { RadioProps } from '@mui/material'
 import { DsFormControlLabelProps } from '../DsFormControlLabel'
 
 export interface DsRadioProps extends Omit<DsFormControlLabelProps, 'control'> {
-  RadioProps?: Omit<RadioProps, 'icon' | 'checkedIcon' | 'color' | 'disabled'>
+  RadioProps?: Omit<RadioProps, 'disabled'>
 }
 
 export const DsRadioDefaultProps: DsRadioProps = {

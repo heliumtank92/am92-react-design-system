@@ -11,31 +11,29 @@ export class DsRadio extends PureComponent<DsRadioProps> {
   render() {
     const { disabled, RadioProps, ...restProps } = this.props
     return (
-      <>
-        <DsFormControlLabel
-          {...restProps}
-          disabled={disabled}
-          control={
-            <Radio
-              icon={
-                <DsRemixIcon
-                  className="ri-checkbox-blank-circle-line"
-                  sx={{ fontSize: 'var(--ds-typo-fontSizeCool)' }}
-                />
-              }
-              checkedIcon={
-                <DsRemixIcon
-                  className="ri-radio-button-line"
-                  sx={{ fontSize: 'var(--ds-typo-fontSizeCool)' }}
-                />
-              }
-              color="secondary"
-              disabled={disabled}
-              {...RadioProps}
-            />
-          }
-        />
-      </>
+      <DsFormControlLabel
+        {...restProps}
+        disabled={disabled}
+        control={
+          <Radio
+            icon={
+              <DsRemixIcon
+                className="ri-checkbox-blank-circle-line"
+                sx={{ fontSize: 'var(--ds-typo-fontSizeCool)' }}
+              />
+            }
+            checkedIcon={
+              <DsRemixIcon
+                className="ri-radio-button-line"
+                sx={{ fontSize: 'var(--ds-typo-fontSizeCool)' }}
+              />
+            }
+            color="secondary"
+            {...RadioProps}
+            disabled={disabled}
+          />
+        }
+      />
     )
   }
 }
