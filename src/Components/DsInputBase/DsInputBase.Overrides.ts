@@ -106,7 +106,13 @@ export const DsInputBaseOverrides = {
           borderColor: 'var(--ds-colour-strokeDisabled)',
           pointerEvents: 'none',
           '> .MuiInputAdornment-root': {
-            color: 'var(--ds-colour-iconDisabled)'
+            color: 'var(--ds-colour-iconDisabled)',
+            '> .MuiIcon-root': {
+              color: 'var(--ds-colour-iconDisabled)'
+            },
+            '> .MuiIconButton-root': {
+              color: 'var(--ds-colour-iconDisabled)'
+            }
           }
         },
         '> .MuiInputAdornment-root': {
