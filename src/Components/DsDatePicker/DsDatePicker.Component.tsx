@@ -69,7 +69,7 @@ export class DsDatePicker extends PureComponent<
       return
     }
 
-    if (typeof onChange === 'function' && value && formatType) {
+    if (typeof onChange === 'function' && formatType) {
       onChange(name, getValueTypeFromValue(value, valueType, formatType))
     }
   }
