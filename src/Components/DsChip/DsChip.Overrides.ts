@@ -1,9 +1,10 @@
 import { CSSInterpolation } from '@mui/system'
 import STATE_STYLES from '../../Theme/STATE_STYLES'
-import { DsChipProps } from './DsChip.Types'
+import { DsChipDefaultProps, DsChipProps } from './DsChip.Types'
 
 export const DsChipOverrides = {
   MuiChip: {
+    defaultProps: DsChipDefaultProps,
     variants: [
       {
         props: { 'ds-variant': 'chip' } as Partial<DsChipProps>,
