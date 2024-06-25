@@ -117,18 +117,24 @@ export const DsButtonOverrides = {
         } as CSSInterpolation,
 
         '&.MuiButton-sizeLarge': {
+          // To override the padding from size attributes
+          padding: 'var(--ds-spacing-glacial) var(--ds-spacing-quickFreeze)',
           fontWeight: 'var(--ds-typo-supportBoldTextButton-fontWeight)',
           fontSize: 'var(--ds-typo-supportBoldTextButton-fontSize)',
           lineHeight: 'var(--ds-typo-supportBoldTextButton-lineHeight)',
           letterSpacing: 'var(--ds-typo-supportBoldTextButton-letterSpacing)'
         } as CSSInterpolation,
         '&.MuiButton-sizeMedium': {
+          // To override the padding from size attributes
+          padding: 'var(--ds-spacing-glacial) var(--ds-spacing-quickFreeze)',
           fontWeight: 'var(--ds-typo-supportBoldTextButton-fontWeight)',
           fontSize: 'var(--ds-typo-supportBoldTextButton-fontSize)',
           lineHeight: 'var(--ds-typo-supportBoldTextButton-lineHeight)',
           letterSpacing: 'var(--ds-typo-supportBoldTextButton-letterSpacing)'
         } as CSSInterpolation,
         '&.MuiButton-sizeSmall': {
+          // To override the padding from size attributes
+          padding: 'var(--ds-spacing-glacial) var(--ds-spacing-quickFreeze)',
           fontWeight: 'var(--ds-typo-supportBoldTextButton-fontWeight)',
           fontSize: 'var(--ds-typo-supportBoldTextButton-fontSize)',
           lineHeight: 'var(--ds-typo-supportBoldTextButton-lineHeight)',
