@@ -9,7 +9,10 @@ import { DsIconButtonProps } from '../DsIconButton'
 import { DsRemixIconProps } from '../DsRemixIcon'
 import { DsTypographyProps } from '../DsTypography'
 
-export interface DsPopupProps extends IwithBreakpoints {
+export interface DsPopupProps
+  extends IwithBreakpoints,
+    Pick<DsDialogProps, 'onClose'> {
+  open?: DsDialogProps['open']
   title?: string
   description?: string
   showClose?: boolean
