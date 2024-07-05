@@ -17,9 +17,7 @@ interface DsBottomSheetPropsCustom
   open?: DsBottomSheetProps['open']
 }
 
-export interface DsPopupProps
-  extends IwithBreakpoints,
-    Pick<DsDialogProps, 'onClose'> {
+export interface DsPopupProps extends Pick<DsDialogProps, 'onClose'> {
   open?: DsDialogProps['open']
   title?: string
   description?: string
@@ -37,5 +35,5 @@ export interface DsPopupProps
 
   DsBottomSheetProps?: DsBottomSheetPropsCustom
   DsDialogProps?: DsDialogPropsCustom
-  children: React.ReactNode
+  children?: React.ReactNode
 }
