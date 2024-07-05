@@ -97,6 +97,16 @@ export class DsDatePicker extends PureComponent<
       onViewChange,
       views: propViews,
       disabled,
+      readOnly = false,
+      required,
+      label,
+      InputLabelProps,
+      labelSupportText,
+      helperText,
+      HelperTextProps,
+      FormControlProps,
+      success,
+      error,
       ...restProps
     } = this.props
     const { open, views } = this.state
@@ -119,6 +129,16 @@ export class DsDatePicker extends PureComponent<
               ...this.props.slotProps?.day
             },
             textField: {
+              required,
+              label,
+              InputLabelProps,
+              labelSupportText,
+              helperText,
+              HelperTextProps,
+              FormControlProps,
+              success,
+              error,
+              readOnly,
               ...this.props.slotProps?.textField,
               endAdornment: (
                 <DsInputAdornment
@@ -149,6 +169,7 @@ export class DsDatePicker extends PureComponent<
               ...this.props.slotProps?.popper
             }
           }}
+          readOnly={readOnly}
           disabled={disabled}
           format={format}
           open={open}

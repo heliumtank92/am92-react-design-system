@@ -3,23 +3,36 @@ import {
   DateValidationError,
   DateView
 } from '@mui/x-date-pickers'
+import { DsTextFieldProps } from '../DsTextField'
 
 export type TErrorMapKeys = Exclude<DateValidationError, null>
 export type TValue = string | Date | undefined | null
 export type TValueType = 'date' | 'formattedValue' | undefined
 export interface DsDatePickerProps<TDate>
   extends Omit<
-    DatePickerProps<TDate>,
-    | 'open'
-    | 'onOpen'
-    | 'onClose'
-    | 'yearsPerRow'
-    | 'monthsPerRow'
-    | 'onChange'
-    | 'onError'
-    | 'value'
-    | 'defaultValue'
-  > {
+      DatePickerProps<TDate>,
+      | 'open'
+      | 'onOpen'
+      | 'onClose'
+      | 'yearsPerRow'
+      | 'monthsPerRow'
+      | 'onChange'
+      | 'onError'
+      | 'value'
+      | 'defaultValue'
+    >,
+    Pick<
+      DsTextFieldProps,
+      | 'required'
+      | 'label'
+      | 'InputLabelProps'
+      | 'labelSupportText'
+      | 'helperText'
+      | 'HelperTextProps'
+      | 'FormControlProps'
+      | 'success'
+      | 'error'
+    > {
   onChange?: (name: string, value: TValue) => void
   onError?: (
     name: string,
