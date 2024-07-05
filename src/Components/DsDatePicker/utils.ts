@@ -11,9 +11,13 @@ export const getDateFromValue = (
   value: TValue,
   valueType: TValueType,
   format: DsDatePickerProps<Date>['format'] = DsDatePickerDefaultProps.format
-): Date | undefined => {
-  if (!value) {
+): Date | undefined | null => {
+  if (value === undefined) {
     return
+  }
+
+  if (!value) {
+    return null
   }
 
   switch (valueType) {
@@ -24,7 +28,7 @@ export const getDateFromValue = (
         console.warn(
           `Expected the value to be of Date type but recived ${value}. Please check the value passed in your integration.`
         )
-        return undefined
+        return null
       }
     }
     case 'formattedValue': {
@@ -36,7 +40,7 @@ export const getDateFromValue = (
         console.warn(
           `Expected the value to be of ${format} type but recived ${value}. Please check the value passed in your integration.`
         )
-        return undefined
+        return null
       }
     }
   }
@@ -46,9 +50,13 @@ export const getValueTypeFromValue = (
   value: Date | null,
   valueType: TValueType,
   format: DsDatePickerProps<Date>['format'] = DsDatePickerDefaultProps.format
-) => {
+): TValue => {
+  if (value === undefined) {
+    return
+  }
+
   if (!value) {
-    return undefined
+    return null
   }
 
   switch (valueType) {
@@ -57,7 +65,6 @@ export const getValueTypeFromValue = (
     }
     case 'formattedValue': {
       const formattedDate = formatDate(value, format as string)
-
       return formattedDate
     }
   }

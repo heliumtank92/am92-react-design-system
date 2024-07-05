@@ -5,7 +5,7 @@ import {
 } from '@mui/x-date-pickers'
 
 export type TErrorMapKeys = Exclude<DateValidationError, null>
-export type TValue = string | Date | undefined
+export type TValue = string | Date | undefined | null
 export type TValueType = 'date' | 'formattedValue' | undefined
 export interface DsDatePickerProps<TDate>
   extends Omit<
