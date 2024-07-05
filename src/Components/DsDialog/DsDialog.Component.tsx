@@ -167,19 +167,19 @@ export class DsDialog extends React.Component<DsDialogProps> {
               ...ActionsProps?.sx
             }}
           >
-            {secondaryButtonText && (
+            {(secondaryButtonText || secondaryButtonProps?.children) && (
               <DsButton
                 color="secondary"
                 size="medium"
                 fullWidth
                 {...secondaryButtonProps}
               >
-                {secondaryButtonText}
+                {secondaryButtonText || secondaryButtonProps?.children}
               </DsButton>
             )}
-            {primaryButtonText && (
+            {(primaryButtonText || primaryButtonProps?.children) && (
               <DsButton size="medium" fullWidth {...primaryButtonProps}>
-                {primaryButtonText}
+                {primaryButtonText || primaryButtonProps?.children}
               </DsButton>
             )}
           </DsDialogActions>

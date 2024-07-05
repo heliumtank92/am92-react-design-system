@@ -22,8 +22,8 @@ export interface DsBottomSheetProps extends Omit<DsDrawerProps, 'title'> {
   CloseIconProps?: Omit<DsRemixIconProps, 'ref'>
   ContentProps?: DsDialogContentProps
   ActionsProps?: DsDialogActionsProps
-  primaryButtonProps?: Omit<DsButtonProps, 'children' | 'ref'>
-  secondaryButtonProps?: Omit<DsButtonProps, 'children' | 'ref'>
+  primaryButtonProps?: Omit<DsButtonProps, 'ref'>
+  secondaryButtonProps?: Omit<DsButtonProps, 'ref'>
 }
 
 export const DsBottomSheetDefaultProps: DsBottomSheetProps = {

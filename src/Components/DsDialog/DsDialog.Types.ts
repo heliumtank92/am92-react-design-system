@@ -12,9 +12,9 @@ export interface DsDialogProps extends DialogProps {
   description?: string
   showClose?: boolean
   primaryButtonText?: DsButtonProps['children']
-  primaryButtonProps?: Omit<DsButtonProps, 'children' | 'ref'>
+  primaryButtonProps?: Omit<DsButtonProps, 'ref'>
   secondaryButtonText?: DsButtonProps['children']
-  secondaryButtonProps?: Omit<DsButtonProps, 'children' | 'ref'>
+  secondaryButtonProps?: Omit<DsButtonProps, 'ref'>
   TitleProps?: DsDialogTitleProps
   DescriptionProps?: DsTypographyProps
   CloseIconButtonProps?: DsIconButtonProps

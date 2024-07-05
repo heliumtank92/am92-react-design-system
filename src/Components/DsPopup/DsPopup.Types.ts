@@ -9,6 +9,14 @@ import { DsIconButtonProps } from '../DsIconButton'
 import { DsRemixIconProps } from '../DsRemixIcon'
 import { DsTypographyProps } from '../DsTypography'
 
+interface DsDialogPropsCustom extends Omit<DsDialogProps, 'ref' | 'open'> {
+  open: DsDialogProps['open']
+}
+interface DsBottomSheetPropsCustom
+  extends Omit<DsBottomSheetProps, 'ref' | 'open'> {
+  open: DsBottomSheetProps['open']
+}
+
 export interface DsPopupProps
   extends IwithBreakpoints,
     Pick<DsDialogProps, 'onClose'> {
@@ -17,9 +25,9 @@ export interface DsPopupProps
   description?: string
   showClose?: boolean
   primaryButtonText?: DsButtonProps['children']
-  primaryButtonProps?: Omit<DsButtonProps, 'children' | 'ref'>
+  primaryButtonProps?: Omit<DsButtonProps, 'ref'>
   secondaryButtonText?: DsButtonProps['children']
-  secondaryButtonProps?: Omit<DsButtonProps, 'children' | 'ref'>
+  secondaryButtonProps?: Omit<DsButtonProps, 'ref'>
   TitleProps?: DsDialogTitleProps
   DescriptionProps?: DsTypographyProps
   CloseIconButtonProps?: DsIconButtonProps
@@ -27,7 +35,7 @@ export interface DsPopupProps
   ContentProps?: DsDialogContentProps
   ActionsProps?: DsDialogActionsProps
 
-  DsBottomSheetProps?: Omit<DsBottomSheetProps, 'ref'>
-  DsDialogProps?: Omit<DsDialogProps, 'ref'>
+  DsBottomSheetProps?: DsBottomSheetPropsCustom
+  DsDialogProps?: DsDialogPropsCustom
   children: React.ReactNode
 }

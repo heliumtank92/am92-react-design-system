@@ -169,19 +169,19 @@ export class DsBottomSheet extends PureComponent<DsBottomSheetProps> {
                 ...ActionsProps?.sx
               }}
             >
-              {secondaryButtonText && (
+              {(secondaryButtonText || secondaryButtonProps?.children) && (
                 <DsButton
                   color="secondary"
                   size="large"
                   fullWidth
                   {...secondaryButtonProps}
                 >
-                  {secondaryButtonText}
+                  {secondaryButtonText || secondaryButtonProps?.children}
                 </DsButton>
               )}
-              {primaryButtonText && (
+              {(primaryButtonText || primaryButtonProps?.children) && (
                 <DsButton size="large" fullWidth {...primaryButtonProps}>
-                  {primaryButtonText}
+                  {primaryButtonText || primaryButtonProps?.children}
                 </DsButton>
               )}
             </DsDialogActions>
