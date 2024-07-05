@@ -154,6 +154,7 @@ export class DsBottomSheet extends PureComponent<DsBottomSheetProps> {
               {...ContentProps}
               sx={{
                 px: 'var(--ds-spacing-bitterCold)',
+                marginTop: 'var(--ds-spacing-mild)',
                 ...ContentProps?.sx
               }}
             >
