@@ -5,6 +5,7 @@ export const DsDialogOverrides = {
         backgroundColor: 'var(--ds-colour-surfacePrimary)',
         borderRadius: 'var(--ds-radius-bitterCold)',
         boxShadow: 'var(--ds-elevation-24)',
+        margin: 'var(--ds-spacing-glacial)',
         backgroundImage: 'none',
         '& .MuiDialogContent-root': {
           '&:has(.MuiCalendarOrClockPicker-root) + .MuiDialogActions-root': {

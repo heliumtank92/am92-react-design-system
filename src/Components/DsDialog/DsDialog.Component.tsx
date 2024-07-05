@@ -148,6 +148,7 @@ export class DsDialog extends React.Component<DsDialogProps> {
                 xs: 'var(--ds-spacing-bitterCold)',
                 md: 'var(--ds-spacing-warm)'
               },
+              marginTop: 'var(--ds-spacing-mild)',
               ...ContentProps?.sx
             }}
           >
