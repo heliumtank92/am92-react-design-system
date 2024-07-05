@@ -10,11 +10,11 @@ import { DsRemixIconProps } from '../DsRemixIcon'
 import { DsTypographyProps } from '../DsTypography'
 
 interface DsDialogPropsCustom extends Omit<DsDialogProps, 'ref' | 'open'> {
-  open: DsDialogProps['open']
+  open?: DsDialogProps['open']
 }
 interface DsBottomSheetPropsCustom
   extends Omit<DsBottomSheetProps, 'ref' | 'open'> {
-  open: DsBottomSheetProps['open']
+  open?: DsBottomSheetProps['open']
 }
 
 export interface DsPopupProps
