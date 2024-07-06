@@ -7,7 +7,7 @@ import { DsTextFieldProps } from '../DsTextField'
 
 export type TErrorMapKeys = Exclude<DateValidationError, null>
 export type TValue = string | Date | undefined | null
-export type TValueType = 'date' | 'formattedValue' | undefined
+export type TValueType = 'date' | 'formattedValue' | 'ISO' | undefined
 export interface DsDatePickerProps<TDate>
   extends Omit<
       DatePickerProps<TDate>,

@@ -1,4 +1,10 @@
-import { format as formatDate, isValid, parse } from 'date-fns'
+import {
+  format as formatDate,
+  formatISO,
+  isValid,
+  parse,
+  parseISO
+} from 'date-fns'
 import {
   DsDatePickerDefaultProps,
   DsDatePickerProps,
@@ -43,6 +49,18 @@ export const getDateFromValue = (
         return null
       }
     }
+    case 'ISO': {
+      const parsedValue = parseISO(value as string)
+
+      if (isValid(parsedValue)) {
+        return parsedValue
+      } else {
+        console.warn(
+          `Expected the value to be of ISO type but recived ${value}. Please check the value passed in your integration.`
+        )
+        return null
+      }
+    }
   }
 }
 
@@ -55,16 +73,28 @@ export const getValueTypeFromValue = (
     return
   }
 
-  if (!value) {
-    return null
-  }
-
   switch (valueType) {
     case 'date': {
+      if (!value) {
+        return null
+      }
+
       return value
     }
     case 'formattedValue': {
+      if (!value) {
+        return ''
+      }
+
       const formattedDate = formatDate(value, format as string)
+      return formattedDate
+    }
+    case 'ISO': {
+      if (!value) {
+        return ''
+      }
+
+      const formattedDate = formatISO(value)
       return formattedDate
     }
   }
