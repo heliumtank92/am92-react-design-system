@@ -97,8 +97,12 @@ export class DsDatePicker extends PureComponent<
       onViewChange,
       views: propViews,
       disabled,
+
       readOnly = false,
       required,
+      fullWidth,
+      onBlur,
+      onFocus,
       label,
       InputLabelProps,
       labelSupportText,
@@ -130,6 +134,9 @@ export class DsDatePicker extends PureComponent<
             },
             textField: {
               required,
+              fullWidth,
+              onBlur,
+              onFocus,
               label,
               InputLabelProps,
               labelSupportText,

@@ -24,6 +24,7 @@ export interface DsDatePickerProps<TDate>
     Pick<
       DsTextFieldProps,
       | 'required'
+      | 'fullWidth'
       | 'label'
       | 'InputLabelProps'
       | 'labelSupportText'
@@ -32,6 +33,8 @@ export interface DsDatePickerProps<TDate>
       | 'FormControlProps'
       | 'success'
       | 'error'
+      | 'onFocus'
+      | 'onBlur'
     > {
   onChange?: (name: string, value: TValue) => void
   onError?: (
