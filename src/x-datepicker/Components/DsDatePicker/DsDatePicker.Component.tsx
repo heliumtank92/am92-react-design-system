@@ -1,15 +1,16 @@
-import React, { PureComponent } from 'react'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import React, { useState, useRef } from 'react'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
-
-import { DatePicker, DateValidationError, DateView } from '@mui/x-date-pickers'
+import {
+  DatePicker,
+  DateValidationError,
+  DateView,
+  LocalizationProvider
+} from '@mui/x-date-pickers'
 import { DefaultActionBar } from './DefaultActionBar'
 import { DefaultToolbar } from './DefaultToolbar'
 import {
   DsDatePickerDefaultProps,
-  DsDatePickerDefaultState,
-  DsDatePickerProps,
-  DsDatePickerState
+  DsDatePickerProps
 } from './DsDatePicker.Types'
 import { PickerChangeHandlerContext } from '@mui/x-date-pickers/models'
 import { DateCalenderHeader } from './DateCalenderHeader'
@@ -27,20 +28,23 @@ import {
   DsIconButton,
   DsRemixIcon
 } from '../../../Components'
+import { useThemeProps } from '@mui/system'
 
-export class DsDatePicker extends PureComponent<
-  DsDatePickerProps<Date>,
-  DsDatePickerState
-> {
-  static defaultProps = DsDatePickerDefaultProps
-  state = DsDatePickerDefaultState
-  ref = React.createRef<HTMLInputElement>()
+export const DsDatePicker: React.FC<DsDatePickerProps<Date>> = inProps => {
+  const props = useThemeProps({
+    props: inProps,
+    name: 'MuiDatePicker'
+  })
 
-  setOpen = (open: boolean) => this.setState({ open })
-  onOpen = () => this.setOpen(true)
-  onClose = () => this.setOpen(false)
+  const [open, setOpen] = useState<boolean>(false)
+  const [views, setViews] = useState<readonly DateView[]>(['day'])
 
-  handleChange = (
+  const ref = useRef<HTMLInputElement>(null)
+
+  const onOpen = () => setOpen(true)
+  const onClose = () => setOpen(false)
+
+  const handleChange = (
     value: Date | null,
     context: PickerChangeHandlerContext<DateValidationError>
   ) => {
@@ -52,9 +56,9 @@ export class DsDatePicker extends PureComponent<
       valueType,
       format: formatType,
       views
-    } = this.props
+    } = props
 
-    if (!views) this.setState({ views: ['day'] })
+    if (!views) setViews(['day'])
 
     if (context.validationError && typeof onError === 'function') {
       const error = getErrorFromErrorMap(
@@ -76,128 +80,128 @@ export class DsDatePicker extends PureComponent<
     }
   }
 
-  handleError = (error: DateValidationError, value: Date | null) => {
-    const { onError, errorMap, name } = this.props
+  const handleError = (error: DateValidationError, value: Date | null) => {
+    const { onError, errorMap, name } = props
     if (error && typeof onError === 'function') {
       const errorMsg = getErrorFromErrorMap(errorMap, error, value)
       onError(name, errorMsg, error, value)
     }
   }
 
-  handleViewChange = (value: DateView) => {
-    this.setState({ views: [value, 'day'] })
+  const handleViewChange = (value: DateView) => {
+    setViews([value, 'day'])
   }
 
-  render() {
-    const {
-      onChange,
-      onError,
-      defaultValue,
-      value,
-      valueType,
-      format,
-      onViewChange,
-      views: propViews,
-      disabled,
+  const {
+    onChange,
+    onError,
+    defaultValue,
+    value,
+    valueType,
+    format,
+    views: propViews,
+    disabled,
+    readOnly = false,
+    required,
+    fullWidth,
+    onBlur,
+    onFocus,
+    label,
+    InputLabelProps,
+    labelSupportText,
+    helperText,
+    HelperTextProps,
+    FormControlProps,
+    success,
+    error,
+    LocalizationProviderProps: inLocalizationProviderProps,
+    ...restProps
+  } = props
 
-      readOnly = false,
-      required,
-      fullWidth,
-      onBlur,
-      onFocus,
-      label,
-      InputLabelProps,
-      labelSupportText,
-      helperText,
-      HelperTextProps,
-      FormControlProps,
-      success,
-      error,
-      LocalizationProviderProps,
-      ...restProps
-    } = this.props
-    const { open, views } = this.state
-    return (
-      <LocalizationProvider
-        dateAdapter={AdapterDateFns}
-        {...LocalizationProviderProps}
-      >
-        <DatePicker
-          {...restProps}
-          slots={{
-            actionBar: DefaultActionBar,
-            toolbar: DefaultToolbar,
-            textField: DatePickerTextField,
-            calendarHeader: DateCalenderHeader,
-            ...this.props.slots
-          }}
-          slotProps={{
-            ...this.props.slotProps,
-            day: {
-              //commented to show current day border highlight
-              // disableHighlightToday: true,
-              ...this.props.slotProps?.day
+  const LocalizationProviderProps = useThemeProps({
+    props: inLocalizationProviderProps,
+    name: 'MuiLocalizationProvider'
+  })
+
+  return (
+    <LocalizationProvider
+      dateAdapter={AdapterDateFns}
+      {...LocalizationProviderProps}
+    >
+      <DatePicker
+        {...restProps}
+        slots={{
+          actionBar: DefaultActionBar,
+          toolbar: DefaultToolbar,
+          textField: DatePickerTextField,
+          calendarHeader: DateCalenderHeader,
+          ...props.slots
+        }}
+        slotProps={{
+          ...props.slotProps,
+          day: {
+            // commented to show current day border highlight
+            // disableHighlightToday: true,
+            ...props.slotProps?.day
+          },
+          textField: {
+            required,
+            fullWidth,
+            onBlur,
+            onFocus,
+            label,
+            InputLabelProps,
+            labelSupportText,
+            helperText,
+            HelperTextProps,
+            FormControlProps,
+            success,
+            error,
+            readOnly,
+            ...props.slotProps?.textField,
+            endAdornment: (
+              <DsInputAdornment position="end" disablePointerEvents={disabled}>
+                <DsIconButton disabled={disabled} onClick={onOpen}>
+                  <DsRemixIcon
+                    className="ri-calendar-line"
+                    fontSize="bitterCold"
+                  />
+                </DsIconButton>
+              </DsInputAdornment>
+            )
+          } as DatePickerTextFieldProps,
+          actionBar: ownerState => ({
+            actions: ownerState.view === 'day' ? ['clear', 'accept'] : [],
+            ...props.slotProps?.actionBar
+          }),
+          popper: {
+            anchorEl: ref.current,
+            // style to unset fixed width
+            sx: {
+              '.MuiMonthCalendar-root': {
+                width: '100%'
+              }
             },
-            textField: {
-              required,
-              fullWidth,
-              onBlur,
-              onFocus,
-              label,
-              InputLabelProps,
-              labelSupportText,
-              helperText,
-              HelperTextProps,
-              FormControlProps,
-              success,
-              error,
-              readOnly,
-              ...this.props.slotProps?.textField,
-              endAdornment: (
-                <DsInputAdornment
-                  position="end"
-                  disablePointerEvents={disabled}
-                >
-                  <DsIconButton disabled={disabled} onClick={this.onOpen}>
-                    <DsRemixIcon
-                      className="ri-calendar-line"
-                      fontSize="bitterCold"
-                    />
-                  </DsIconButton>
-                </DsInputAdornment>
-              )
-            } as DatePickerTextFieldProps,
-            actionBar: ownerState => ({
-              actions: ownerState.view === 'day' ? ['clear', 'accept'] : [],
-              ...this.props.slotProps?.actionBar
-            }),
-            popper: {
-              anchorEl: this.ref.current,
-              //style to unset fixed width
-              sx: {
-                '.MuiMonthCalendar-root': {
-                  width: '100%'
-                }
-              },
-              ...this.props.slotProps?.popper
-            }
-          }}
-          readOnly={readOnly}
-          disabled={disabled}
-          format={format}
-          open={open}
-          reduceAnimations
-          onOpen={this.onOpen}
-          onClose={this.onClose}
-          onChange={this.handleChange}
-          onViewChange={this.handleViewChange}
-          onError={this.handleError}
-          views={propViews || views}
-          value={getDateFromValue(value, valueType, format)}
-          defaultValue={getDateFromValue(defaultValue, valueType, format)}
-          inputRef={this.ref}
-        />
-      </LocalizationProvider>
-    )
-  }
+            ...props.slotProps?.popper
+          }
+        }}
+        readOnly={readOnly}
+        disabled={disabled}
+        format={format}
+        open={open}
+        reduceAnimations
+        onOpen={onOpen}
+        onClose={onClose}
+        onChange={handleChange}
+        onViewChange={handleViewChange}
+        onError={handleError}
+        views={propViews || views}
+        value={getDateFromValue(value, valueType, format)}
+        defaultValue={getDateFromValue(defaultValue, valueType, format)}
+        inputRef={ref}
+      />
+    </LocalizationProvider>
+  )
 }
+
+DsDatePicker.defaultProps = DsDatePickerDefaultProps

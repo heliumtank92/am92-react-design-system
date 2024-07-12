@@ -1,8 +1,13 @@
+import { DsDatePickerLocaleEnUS } from '../../Locale'
 import { DsDatePickerDefaultProps } from './DsDatePicker.Types'
 
 export const DsDatePickerOverrides = {
   MuiDatePicker: {
     defaultProps: DsDatePickerDefaultProps
+  },
+  MuiLocalizationProvider: {
+    defaultProps:
+      DsDatePickerLocaleEnUS.components.MuiLocalizationProvider.defaultProps
   },
   MuiPickersPopper: {
     styleOverrides: {

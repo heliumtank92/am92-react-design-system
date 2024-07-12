@@ -1,11 +1,9 @@
 import {
   DatePickerProps,
   DateValidationError,
-  DateView,
   LocalizationProviderProps
 } from '@mui/x-date-pickers'
 import { DsTextFieldProps } from '../../../Components'
-import { DsDatePickerLocaleEnUS } from '../../Locale'
 import { Locale } from 'date-fns'
 
 export type TErrorMapKeys = Exclude<DateValidationError, null>
@@ -60,17 +58,5 @@ export const DsDatePickerDefaultProps: DsDatePickerProps<Date> = {
   format: 'dd/MM/yyyy',
   name: '',
   valueType: 'date',
-  fixedWeekNumber: 6,
-  localeText:
-    DsDatePickerLocaleEnUS.components.MuiLocalizationProvider.defaultProps
-      .localeText
-}
-
-export interface DsDatePickerState {
-  open: boolean
-  views: readonly DateView[]
-}
-export const DsDatePickerDefaultState: DsDatePickerState = {
-  open: false,
-  views: ['day']
+  fixedWeekNumber: 6
 }
