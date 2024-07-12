@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 
 import { DatePicker, DateValidationError, DateView } from '@mui/x-date-pickers'
 import { DefaultActionBar } from './DefaultActionBar'
@@ -13,9 +13,6 @@ import {
 } from './DsDatePicker.Types'
 import { PickerChangeHandlerContext } from '@mui/x-date-pickers/models'
 import { DateCalenderHeader } from './DateCalenderHeader'
-import { DsIconButton } from '../DsIconButton'
-import { DsInputAdornment } from '../DsInputAdornment'
-import { DsRemixIcon } from '../DsRemixIcon'
 import {
   DatePickerTextField,
   DatePickerTextFieldProps
@@ -25,6 +22,11 @@ import {
   getErrorFromErrorMap,
   getValueTypeFromValue
 } from './utils'
+import {
+  DsInputAdornment,
+  DsIconButton,
+  DsRemixIcon
+} from '../../../Components'
 
 export class DsDatePicker extends PureComponent<
   DsDatePickerProps<Date>,
@@ -111,11 +113,15 @@ export class DsDatePicker extends PureComponent<
       FormControlProps,
       success,
       error,
+      LocalizationProviderProps,
       ...restProps
     } = this.props
     const { open, views } = this.state
     return (
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <LocalizationProvider
+        dateAdapter={AdapterDateFns}
+        {...LocalizationProviderProps}
+      >
         <DatePicker
           {...restProps}
           slots={{

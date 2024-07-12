@@ -30,8 +30,8 @@ import {
   DsCircularProgressOverrides,
   DsClickAwayListenerOverrides,
   DsCollapseOverrides,
-  DsContainerOverrides,
   DsCssBaselineOverrides,
+  DsContainerOverrides,
   DsDialogOverrides,
   DsDialogActionsOverrides,
   DsDialogContentOverrides,
@@ -142,9 +142,10 @@ import {
   DsToolbarOverrides,
   DsTooltipOverrides,
   DsTypographyOverrides,
-  DsZoomOverrides,
-  DsDatePickerOverrides
+  DsZoomOverrides
 } from '../Components'
+
+import XDatePickerComponentOverrides from '../x-datepicker/componentOverrides'
 
 const componentOverrides = {
   ...DsAccordionOverrides,
@@ -180,7 +181,6 @@ const componentOverrides = {
   ...DsCollapseOverrides,
   ...DsContainerOverrides,
   ...DsCssBaselineOverrides,
-  ...DsDatePickerOverrides,
   ...DsDialogOverrides,
   ...DsDialogActionsOverrides,
   ...DsDialogContentOverrides,
@@ -291,7 +291,9 @@ const componentOverrides = {
   ...DsToolbarOverrides,
   ...DsTooltipOverrides,
   ...DsTypographyOverrides,
-  ...DsZoomOverrides
+  ...DsZoomOverrides,
+
+  ...XDatePickerComponentOverrides
 }
 
 export default componentOverrides

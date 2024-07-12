@@ -1,4 +1,9 @@
+import { DsDatePickerDefaultProps } from './DsDatePicker.Types'
+
 export const DsDatePickerOverrides = {
+  MuiDatePicker: {
+    defaultProps: DsDatePickerDefaultProps
+  },
   MuiPickersPopper: {
     styleOverrides: {
       root: {

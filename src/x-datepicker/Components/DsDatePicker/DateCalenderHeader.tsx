@@ -1,28 +1,41 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { DateView, PickersCalendarHeaderProps } from '@mui/x-date-pickers'
-import { format, addMonths } from 'date-fns'
-import { DsButtonBase } from '../DsButtonBase'
-import { DsIconButton } from '../DsIconButton'
-import { DsRemixIcon } from '../DsRemixIcon'
-import { DsStack } from '../DsStack'
-import { DsTypography } from '../DsTypography'
+import { useThemeProps } from '@mui/system'
+import { useUtils } from '@mui/x-date-pickers/internals'
+import {
+  DsStack,
+  DsIconButton,
+  DsRemixIcon,
+  DsButtonBase,
+  DsTypography
+} from '../../../Components'
 
-export class DateCalenderHeader extends PureComponent<
-  PickersCalendarHeaderProps<Date>
-> {
-  handleMonthChange =
-    (direction: 'left' | 'right', numberOfMonths: 1 | -1 | 12 | -12) => () => {
-      const { currentMonth, onMonthChange } = this.props
-      onMonthChange(addMonths(currentMonth, numberOfMonths), direction)
+export const DateCalenderHeader = React.forwardRef(
+  function PickersCalendarHeader<TDate extends Date>(
+    inProps: PickersCalendarHeaderProps<TDate>,
+    ref: React.Ref<HTMLDivElement>
+  ) {
+    // const translations = usePickersTranslations<TDate>()
+    const utils = useUtils<TDate>()
+
+    const props = useThemeProps({
+      props: inProps,
+      name: 'MuiPickersCalendarHeader'
+    })
+
+    const { currentMonth, view } = props
+
+    const handleMonthChange =
+      (direction: 'left' | 'right', numberOfMonths: 1 | -1 | 12 | -12) =>
+      () => {
+        const { currentMonth, onMonthChange } = props
+        onMonthChange(utils.addMonths(currentMonth, numberOfMonths), direction)
+      }
+
+    const handleViewShow = (view: DateView) => () => {
+      const { onViewChange } = props
+      onViewChange && onViewChange(view)
     }
-
-  handleViewShow = (view: DateView) => () => {
-    const { onViewChange } = this.props
-    onViewChange && onViewChange(view)
-  }
-
-  render(): React.ReactNode {
-    const { currentMonth, onMonthChange, view } = this.props
 
     const isYearNavigationDisabled = view === 'month'
     const isMonthNavigationDisabled = view === 'year'
@@ -42,13 +55,13 @@ export class DateCalenderHeader extends PureComponent<
         >
           <DsIconButton
             disabled={isYearNavigationDisabled || isMonthNavigationDisabled}
-            onClick={this.handleMonthChange('left', -1)}
+            onClick={handleMonthChange('left', -1)}
           >
             <DsRemixIcon className="ri-arrow-drop-left-line" />
           </DsIconButton>
           <DsButtonBase
             disabled={isMonthNavigationDisabled}
-            onClick={this.handleViewShow('month')}
+            onClick={handleViewShow('month')}
           >
             <DsTypography
               variant="bodyBoldSmall"
@@ -56,7 +69,7 @@ export class DateCalenderHeader extends PureComponent<
                 isMonthNavigationDisabled ? 'text.disabled' : 'text.primary'
               }
             >
-              {format(currentMonth, 'MMM')}
+              {utils.formatByString(currentMonth, utils.formats.monthShort)}
             </DsTypography>
             <DsRemixIcon
               className="ri-arrow-drop-down-fill"
@@ -66,7 +79,7 @@ export class DateCalenderHeader extends PureComponent<
           </DsButtonBase>
           <DsIconButton
             disabled={isYearNavigationDisabled || isMonthNavigationDisabled}
-            onClick={this.handleMonthChange('right', 1)}
+            onClick={handleMonthChange('right', 1)}
           >
             <DsRemixIcon className="ri-arrow-drop-right-line" />
           </DsIconButton>
@@ -79,13 +92,13 @@ export class DateCalenderHeader extends PureComponent<
         >
           <DsIconButton
             disabled={isYearNavigationDisabled || isMonthNavigationDisabled}
-            onClick={this.handleMonthChange('left', -12)}
+            onClick={handleMonthChange('left', -12)}
           >
             <DsRemixIcon className="ri-arrow-drop-left-line" />
           </DsIconButton>
           <DsButtonBase
             disabled={isYearNavigationDisabled}
-            onClick={this.handleViewShow('year')}
+            onClick={handleViewShow('year')}
           >
             <DsTypography
               variant="bodyBoldSmall"
@@ -93,7 +106,7 @@ export class DateCalenderHeader extends PureComponent<
                 isYearNavigationDisabled ? 'text.disabled' : 'text.primary'
               }
             >
-              {format(currentMonth, 'yyyy')}
+              {utils.formatByString(currentMonth, utils.formats.year)}
             </DsTypography>
             <DsRemixIcon
               className="ri-arrow-drop-down-fill"
@@ -103,7 +116,7 @@ export class DateCalenderHeader extends PureComponent<
           </DsButtonBase>
           <DsIconButton
             disabled={isYearNavigationDisabled || isMonthNavigationDisabled}
-            onClick={this.handleMonthChange('right', 12)}
+            onClick={handleMonthChange('right', 12)}
           >
             <DsRemixIcon className="ri-arrow-drop-right-line" />
           </DsIconButton>
@@ -111,4 +124,4 @@ export class DateCalenderHeader extends PureComponent<
       </DsStack>
     )
   }
-}
+)

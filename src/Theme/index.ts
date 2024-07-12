@@ -22,7 +22,8 @@ import dsRadius from './radius'
 
 export function getTheme(
   palette: DsPalette = PALETTE,
-  fontFamilyName: string = FONT_FAMILY_NAME
+  fontFamilyName: string = FONT_FAMILY_NAME,
+  themeArgs?: object[]
 ): Omit<Theme, 'palette'> & CssVarsTheme {
   const { typography, dsTypo } = getTypography(fontFamilyName)
 
@@ -49,7 +50,7 @@ export function getTheme(
     spacing: (input: number) => input * SPACE_COEFFICIENT
   }
 
-  let theme = extendTheme(cssVarsThemeOptions)
+  let theme = extendTheme(cssVarsThemeOptions, ...(themeArgs || []))
   theme = responsiveFontSizes(theme, {
     disableAlign: true,
     breakpoints: breakpoints.keys,
