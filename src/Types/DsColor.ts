@@ -129,5 +129,5 @@ interface DsColorClassGenerics<T>
   extends Partial<Record<DsColorClassTokens, T>> {}
 
 export interface DsColor extends DsColorGenerics<string> {}
-export interface DsColorOverides extends DsColorGenerics<true> {}
+export interface DsColorOverrides extends DsColorGenerics<true> {}
 export interface DsColorClass extends DsColorClassGenerics<string> {}

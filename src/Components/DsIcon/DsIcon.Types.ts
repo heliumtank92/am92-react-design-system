@@ -1,7 +1,7 @@
 import { IconProps } from '@mui/material'
 import {
   DsColorClass,
-  DsColorOverides,
+  DsColorOverrides,
   DsFontSizeClass,
   DsFontSizeOverides
 } from '../../Types'
@@ -14,7 +14,7 @@ export const DsIconDefaultProps: DsIconProps = {
 }
 
 declare module '@mui/material/Icon' {
-  interface IconPropsColorOverrides extends DsColorOverides {}
+  interface IconPropsColorOverrides extends DsColorOverrides {}
   interface IconPropsSizeOverrides extends DsFontSizeOverides {}
   interface IconClasses extends DsColorClass, DsFontSizeClass {}
 }

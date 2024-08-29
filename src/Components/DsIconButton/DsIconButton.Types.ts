@@ -1,5 +1,5 @@
 import { IconButtonProps } from '@mui/material'
-import { DsColorClass, DsColorOverides, DsFontSizeClass } from '../../Types'
+import { DsColorClass, DsColorOverrides, DsFontSizeClass } from '../../Types'
 
 export interface DsIconButtonProps extends IconButtonProps {}
 
@@ -8,6 +8,6 @@ export const DsIconButtonDefaultProps: DsIconButtonProps = {
 }
 
 declare module '@mui/material/IconButton' {
-  interface IconButtonPropsColorOverrides extends DsColorOverides {}
+  interface IconButtonPropsColorOverrides extends DsColorOverrides {}
   interface IconButtonClasses extends DsColorClass, DsFontSizeClass {}
 }
