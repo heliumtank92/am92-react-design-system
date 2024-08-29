@@ -22,7 +22,6 @@ export class DsLoader extends PureComponent<DsLoaderProps> {
       ...lottieProps
     } = mergedProps
 
-    console.log('lottieProps', lottieProps)
     return (
       <DsBackdrop
         {...BackdropProps}
