@@ -8,7 +8,7 @@ export const DsSliderOverrides = {
       {
         props: { 'ds-mode': 'true' } as Partial<DsSliderProps>,
         style: {
-          '&:not(.Mui-diabled, :has(.MuiSlider-thumb:hover), :has(.Mui-focusVisible))':
+          '&:not(.Mui-disabled, :has(.MuiSlider-thumb:hover), :has(.Mui-focusVisible))':
             {
               '> .MuiSlider-thumb, > .MuiSlider-mark, > .MuiSlider-track': {
                 backgroundColor: 'var(--ds-colour-iconDefault)'
