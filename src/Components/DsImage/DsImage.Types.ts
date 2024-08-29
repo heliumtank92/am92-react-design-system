@@ -3,8 +3,7 @@ import { DsRemixIconProps } from '../DsRemixIcon'
 import { DsSkeletonProps } from '../DsSkeleton'
 
 export interface DsImageSrcSetProps
-  extends Omit<React.SourceHTMLAttributes<HTMLImageElement>, 'srcSet'>,
-    Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'srcSet'> {
+  extends Omit<React.SourceHTMLAttributes<HTMLSourceElement>, 'srcSet'> {
   src: string
   alt: string
 }
