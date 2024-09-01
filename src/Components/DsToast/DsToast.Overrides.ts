@@ -42,22 +42,22 @@ export const DsToastOverrides = {
         color: 'var(--ds-colour-typoOnSurfaceDynamic)'
       },
       filledSuccess: {
-        color: 'var(--ds-colour-typoOnSurface)',
+        color: 'var(--ds-colour-typoOnSurfaceDynamic)',
         borderColor: 'var(--ds-colour-supportPositive)',
         backgroundColor: 'var(--ds-colour-supportPositive)'
       },
       filledInfo: {
-        color: 'var(--ds-colour-typoOnSurface)',
+        color: 'var(--ds-colour-typoOnSurfaceDynamic)',
         borderColor: 'var(--ds-colour-supportTypical)',
         backgroundColor: 'var(--ds-colour-supportTypical)'
       },
       filledWarning: {
-        color: 'var(--ds-colour-typoOnSurface)',
+        color: 'var(--ds-colour-typoOnSurfaceDynamic)',
         borderColor: 'var(--ds-colour-supportWarning)',
         backgroundColor: 'var(--ds-colour-supportWarning)'
       },
       filledError: {
-        color: 'var(--ds-colour-typoOnSurface)',
+        color: 'var(--ds-colour-typoOnSurfaceDynamic)',
         borderColor: 'var(--ds-colour-supportNegative)',
         backgroundColor: 'var(--ds-colour-supportNegative)'
       },
