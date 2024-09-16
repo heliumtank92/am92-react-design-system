@@ -86,17 +86,20 @@ export class DsTextArea extends PureComponent<
           multiline
           inputProps={{
             ref: ref || this.areRef,
+            ...inputProps,
             sx: {
               minWidth: '288px',
-              ...inputProps?.sx,
-              ...maxLengthHandlingInputStyle
+              ...maxLengthHandlingInputStyle,
+              ...inputProps?.sx
             },
-            ...inputProps,
             maxLength: maxLength || ''
           }}
           helperText={helperText}
           // TODO: To be fixed when we fix the sx passing to inputbase
-          style={{ paddingBottom: 'var(--ds-spacing-mild)' }}
+          style={{
+            paddingBottom: 'var(--ds-spacing-mild)',
+            ...rest?.style
+          }}
         />
         {hasMaxLength && !hideCharacterCount && (
           <DsTypography
