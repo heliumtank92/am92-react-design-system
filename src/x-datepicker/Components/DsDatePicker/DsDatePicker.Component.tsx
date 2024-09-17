@@ -15,10 +15,6 @@ import {
 import { PickerChangeHandlerContext } from '@mui/x-date-pickers/models'
 import { DateCalenderHeader } from './DateCalenderHeader'
 import {
-  DatePickerTextField,
-  DatePickerTextFieldProps
-} from './DatePickerTextField'
-import {
   getDateFromValue,
   getErrorFromErrorMap,
   getValueTypeFromValue
@@ -29,6 +25,9 @@ import {
   DsRemixIcon
 } from '../../../Components'
 import { useThemeProps } from '@mui/system'
+import DatePickerTextField, {
+  IDatePickerTextFieldProps
+} from './DatePickerTextField'
 
 export const DsDatePicker: React.FC<DsDatePickerProps<Date>> = inProps => {
   const props = useThemeProps({
@@ -169,7 +168,7 @@ export const DsDatePicker: React.FC<DsDatePickerProps<Date>> = inProps => {
                 </DsIconButton>
               </DsInputAdornment>
             )
-          } as DatePickerTextFieldProps,
+          } as IDatePickerTextFieldProps,
           actionBar: ownerState => ({
             actions: ownerState.view === 'day' ? ['clear', 'accept'] : [],
             ...props.slotProps?.actionBar

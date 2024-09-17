@@ -1,9 +1,9 @@
-import React from 'react'
+import { useThemeProps } from '@mui/system'
 import { DateFieldProps } from '@mui/x-date-pickers'
-import { useThemeProps } from '@mui/material'
-import { DsTextFieldProps, DsTextField } from '../../../Components'
+import React, { FunctionComponent } from 'react'
+import { DsTextField, DsTextFieldProps } from '../../../Components'
 
-export interface DatePickerTextFieldProps
+export interface IDatePickerTextFieldProps
   extends Omit<
     DsTextFieldProps,
     'margin' | 'onInvalid' | 'onKeyDown' | 'onBlur' | 'onKeyUp' | 'ref'
@@ -15,18 +15,18 @@ export interface DatePickerTextFieldProps
   ownerState?: any
 }
 
-export const DatePickerTextField = React.forwardRef(
-  (
-    inProps: DatePickerTextFieldProps,
-    inputRef: React.Ref<any>
-  ): React.ReactNode => {
-    const props = useThemeProps({
-      props: inProps,
-      name: 'MuiPickersInput'
-    })
+const DatePickerTextField: FunctionComponent<IDatePickerTextFieldProps> = (
+  props: IDatePickerTextFieldProps
+) => {
+  const mergedProps = useThemeProps({
+    props: props,
+    name: 'MuiPickersInput'
+  })
 
-    const { setOpen, ref, InputProps, focused, ownerState, ...other } = props
-    const { readOnly } = InputProps || {}
-    return <DsTextField readOnly={readOnly} {...other} />
-  }
-)
+  const { setOpen, ref, InputProps, focused, ownerState, ...other } =
+    mergedProps
+  const { readOnly } = InputProps || {}
+  return <DsTextField readOnly={readOnly} {...other} />
+}
+
+export default DatePickerTextField
