@@ -19,6 +19,7 @@ export interface DsSearchbarProps<
   name: string
   onChange: (name: string, value: any) => void
   startAdornmentProps?: DsInputAdornmentProps
+  placeholder?: string
 }
 
 export const DsSearchbarDefaultProps: DsSearchbarProps<
