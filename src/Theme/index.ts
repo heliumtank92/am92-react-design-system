@@ -24,7 +24,7 @@ export function getTheme(
   palette: DsPalette = PALETTE,
   fontFamilyName: string = FONT_FAMILY_NAME,
   themeArgs?: object[]
-): Omit<Theme, 'palette'> & CssVarsTheme {
+): Omit<Theme, 'palette' | 'applyStyles'> & CssVarsTheme {
   const { typography, dsTypo } = getTypography(fontFamilyName)
 
   const colorSchemes = getColorScheme(palette)
@@ -56,7 +56,7 @@ export function getTheme(
     breakpoints: breakpoints.keys,
     factor: 2,
     variants: DSTYPOGRAPHY_TOKENS
-  })
+  }) as Omit<Theme, 'palette' | 'applyStyles'> & CssVarsTheme
   return theme
 }
 
