@@ -86,6 +86,7 @@ export class DsBottomSheet extends PureComponent<DsBottomSheetProps> {
             ...PaperProps?.sx
           }
         }}
+        onClose={this.handleDrawerClose}
       >
         {showClose && (
           <DsIconButton
