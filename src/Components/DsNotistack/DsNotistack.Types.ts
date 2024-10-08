@@ -1,5 +1,5 @@
 import {
-  SharedProps,
+  OptionsObject,
   SnackbarKey,
   SnackbarMessage,
   SnackbarProviderProps
@@ -9,11 +9,11 @@ import { DsToastProps } from '../DsToast'
 export interface DsNotistackProviderProps extends SnackbarProviderProps {}
 
 export type DsNotistackKey = SnackbarKey
-export interface EnqueNotistackProps extends SharedProps {
+export interface NotiStackMessage {
   message: SnackbarMessage
-  key?: DsNotistackKey
-  toastVariant?: Omit<DsToastProps['variant'], 'standard'>
-  icon?: DsToastProps['icon']
 }
 
-export const DsNotistackDefaultProps: DsNotistackProviderProps = {}
+export interface EnqueNotistackProps
+  extends OptionsObject,
+    NotiStackMessage,
+    Pick<DsToastProps, Exclude<keyof DsToastProps, keyof OptionsObject>> {}

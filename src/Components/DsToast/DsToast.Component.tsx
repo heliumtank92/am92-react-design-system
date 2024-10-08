@@ -3,9 +3,12 @@ import Alert from '@mui/material/Alert'
 import { DsToastProps } from './DsToast.Types'
 import { DsRemixIcon } from '../DsRemixIcon'
 
-const CloseIcon = (props: object) => (
-  <DsRemixIcon {...props} fontSize="mild" className="ri-close-line" />
-)
+const CloseIcon = (props: any) => {
+  const { ownerState, ...restProps } = props
+  return (
+    <DsRemixIcon fontSize="mild" className="ri-close-line" {...restProps} />
+  )
+}
 
 export class DsToast extends PureComponent<DsToastProps> {
   render() {
@@ -14,10 +17,7 @@ export class DsToast extends PureComponent<DsToastProps> {
       <Alert
         ref={forwardedRef}
         {...restProps}
-        components={{
-          ...this.props.components,
-          CloseIcon
-        }}
+        slots={{ closeIcon: CloseIcon, ...restProps?.slots }}
       />
     )
   }

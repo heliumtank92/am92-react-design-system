@@ -1,47 +1,47 @@
 import React, { Component } from 'react'
-import { VariantType, closeSnackbar } from 'notistack'
+import { OptionsObject, closeSnackbar } from 'notistack'
 
 import { DsToast, DsToastProps } from '../DsToast'
+import { DsNotistackProviderProps, NotiStackMessage } from './DsNotistack.Types'
 
 export interface AlertMessageProps
-  extends Omit<DsToastProps, 'variant' | 'color' | 'ref'> {
-  message: string
+  extends Omit<DsToastProps, 'variant'>,
+    Pick<
+      OptionsObject,
+      Exclude<keyof OptionsObject, keyof Omit<DsToastProps, 'variant'>>
+    >,
+    NotiStackMessage {
   toastVariant: DsToastProps['variant']
-  onClose: (props: object) => void
-  variant?: VariantType & DsToastProps['color']
-  sx?: object
-}
-
-const AlertMessageDefaultProps: AlertMessageProps = {
-  toastVariant: 'filled',
-  message: '',
-  onClose: props => undefined
+  iconVariant: DsNotistackProviderProps['iconVariant']
 }
 
 class AlertMessage extends Component<AlertMessageProps> {
-  static defaultProps = AlertMessageDefaultProps
-
   handleClose = () => {
-    const { id, onClose } = this.props
-    if (onClose && typeof onClose === 'function') {
-      onClose(this.props)
-    }
-
+    const { id } = this.props
     closeSnackbar(id)
   }
 
   render() {
-    const { forwardedRef, message, toastVariant, variant, icon, action, sx } =
-      this.props
+    const {
+      ref,
+      toastVariant,
+      variant,
+      message,
+      id,
+      autoHideDuration,
+      hideIconVariant,
+      anchorOrigin,
+      persist,
+      iconVariant,
+
+      ...restProps
+    } = this.props
 
     return (
       <DsToast
-        forwardedRef={forwardedRef}
+        {...restProps}
         variant={toastVariant}
         color={variant}
-        sx={sx}
-        icon={icon}
-        action={action}
         onClose={this.handleClose}
       >
         {message}
