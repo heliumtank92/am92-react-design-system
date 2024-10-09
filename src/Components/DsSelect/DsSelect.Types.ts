@@ -32,6 +32,8 @@ export interface DsSelectProps extends Omit<SelectProps, 'ref'> {
 
 export const DsSelectDefaultProps: DsSelectProps = {
   options: [],
+  variant: 'filled',
+  defaultValue: '',
   MenuProps: {
     anchorOrigin: {
       vertical: 'bottom',
