@@ -9,8 +9,5 @@ export interface DsAppBarProps extends AppBarProps {
 export const DsAppBarDefaultProps: DsAppBarProps = {
   color: 'default',
   enableColorOnDark: true,
-  elevation: 0,
-  appBarTitle: '',
-  navigation: false,
-  actions: false
+  elevation: 0
 }
