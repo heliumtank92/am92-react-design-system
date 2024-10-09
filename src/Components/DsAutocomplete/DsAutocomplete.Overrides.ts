@@ -25,7 +25,6 @@ export const DsAutocompleteOverrides = {
         }
       },
       endAdornment: {
-        top: 'unset',
         right: '8px',
         display: 'flex',
         alignItems: 'center',
