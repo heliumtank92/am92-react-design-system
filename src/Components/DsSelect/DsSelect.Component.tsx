@@ -33,6 +33,7 @@ export class DsSelect extends PureComponent<DsSelectProps> {
       FormControlProps,
       InputLabelProps,
       FormHelperTextProps,
+      required,
       ...selectProps
     } = this.props
 
@@ -50,6 +51,7 @@ export class DsSelect extends PureComponent<DsSelectProps> {
         error={error}
         sx={sx}
         disabled={disabled}
+        required={required}
         {...FormControlProps}
       >
         <DsInputLabel
