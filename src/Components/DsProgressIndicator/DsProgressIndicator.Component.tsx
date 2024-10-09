@@ -60,7 +60,6 @@ export class DsProgressIndicator extends Component<DsProgressIndicatorProps> {
           thickness={4}
         />
         <DsCircularProgress
-          disableShrink
           variant="determinate"
           color={fillColor}
           value={fillPercentage}
